@@ -1,0 +1,27 @@
+uuid: 2483ebd0-6254-4134-a6c5-3765b1128a05
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hero_ogg_video
+    - node.type.landing_details
+  module:
+    - file
+id: node.landing_details.field_hero_ogg_video
+field_name: field_hero_ogg_video
+entity_type: node
+bundle: landing_details
+label: 'Hero Ogg Video'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: ogg
+  max_filesize: ''
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

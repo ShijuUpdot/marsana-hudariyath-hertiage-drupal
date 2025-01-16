@@ -1,0 +1,8 @@
+uuid: 45bf42dc-201a-4824-b260-75ab50a93321
+langcode: en
+status: true
+dependencies: {  }
+id: marsana_main
+label: 'Marsana Main'
+threshold: 0.9
+challenge: default

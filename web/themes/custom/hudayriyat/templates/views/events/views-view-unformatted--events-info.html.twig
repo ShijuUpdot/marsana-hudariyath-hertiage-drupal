@@ -1,0 +1,41 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a view of unformatted rows.
+ *
+ * Available variables:
+ * - title: The title of this group of rows. May be empty.
+ * - rows: A list of the view's row items.
+ *   - attributes: The row's HTML attributes.
+ *   - content: The row's content.
+ * - view: The view object.
+ * - default_row_class: A flag indicating whether default classes should be
+ *   used on rows.
+ *
+ * @see template_preprocess_views_view_unformatted()
+ *
+ * @ingroup themeable
+ */
+#}
+<div class="content-right p-section">
+   {% for row in rows %}
+      <div class="details-group-right">
+         <div class="details-title">
+            <img src="/images/static/icon-hour.svg" alt="">
+            <p>{{ 'Date & Time' | t }}</p>
+         </div>
+         <p class="detailed-txt">{{ row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_event_date }}'] }}</p>
+      </div>
+      <div class="details-group-right">
+         <div class="details-title">
+            <img src="/images/static/icon-location.svg" alt="">
+            <p>{{ 'Location' | t }}</p>
+         </div>
+         <p class="detailed-txt">{{ row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_event_place }}'] }}</p>
+         <div class="details-img">
+            <div id="map"></div>
+         </div>
+      </div>
+      </div>
+{% endfor %}
+</div>

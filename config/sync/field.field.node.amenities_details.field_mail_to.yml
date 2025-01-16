@@ -1,0 +1,19 @@
+uuid: bb749c30-1276-4ffe-b10e-d0222102e392
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_mail_to
+    - node.type.amenities_details
+id: node.amenities_details.field_mail_to
+field_name: field_mail_to
+entity_type: node
+bundle: amenities_details
+label: 'Mail To'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

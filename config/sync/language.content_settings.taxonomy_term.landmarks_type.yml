@@ -1,0 +1,11 @@
+uuid: d8dc1ca9-bbeb-4602-b982-e0fd41ac31d5
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.landmarks_type
+id: taxonomy_term.landmarks_type
+target_entity_type_id: taxonomy_term
+target_bundle: landmarks_type
+default_langcode: site_default
+language_alterable: false

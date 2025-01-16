@@ -1,0 +1,29 @@
+uuid: 8f556b01-c544-4cb0-9972-ae10412d0174
+langcode: en
+status: true
+dependencies:
+  module:
+    - schedule_item
+title: 'Default cron handler'
+id: schedule_item_cron
+weight: 0
+module: schedule_item
+callback: schedule_item_cron
+scheduler:
+  id: simple
+  configuration:
+    rules:
+      - '* * * * *'
+launcher:
+  id: serial
+  configuration:
+    timeouts:
+      lock_timeout: 3600
+    launcher:
+      thread: 0
+logger:
+  id: database
+  configuration:
+    method: '3'
+    expire: 1209600
+    retain: 1000

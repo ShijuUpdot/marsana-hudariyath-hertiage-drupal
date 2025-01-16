@@ -1,0 +1,30 @@
+uuid: 8552b8f7-b807-4ae6-aa28-a7aa49fb055a
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+    - file
+    - image
+id: block_content.field_contact_us_icon
+field_name: field_contact_us_icon
+entity_type: block_content
+type: image
+settings:
+  uri_scheme: azblob
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+  target_type: file
+  display_field: false
+  display_default: false
+module: image
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

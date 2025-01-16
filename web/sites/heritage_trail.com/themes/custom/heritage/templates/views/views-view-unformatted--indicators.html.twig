@@ -1,0 +1,75 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a view of unformatted rows.
+ *
+ * Available variables:
+ * - title: The title of this group of rows. May be empty.
+ * - rows: A list of the view's row items.
+ *   - attributes: The row's HTML attributes.
+ *   - content: The row's content.
+ * - view: The view object.
+ * - default_row_class: A flag indicating whether default classes should be
+ *   used on rows.
+ *
+ * @see template_preprocess_views_view_unformatted()
+ *
+ * @ingroup themeable
+ */
+#}
+
+
+<div id="trigger-map"></div>
+  <div class="interactive-map-wrapper">
+    <!-- MAP & TRAIL -->
+    <div class="inner-map">
+      <div class="img-wrap">
+      {% for row in rows %}
+
+        {% set image1 = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_image }}'] %}
+        {% set image2 = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_background_image2 }}'] %}
+
+        <img src="{{image1 | striptags | trim }}" alt="">
+        <img class="trail-img" src="{{ image2 | striptags | trim }}" alt="">
+      {% endfor %}
+      </div>
+    </div>
+    <!-- SECTIONS -->
+    <div class="section right section-one">
+      <div class="img-rounded"><img src="{{file_url(indicators[0]['bg_image']) }}" alt="{{ indicators[0]['banner_title'] | upper | striptags | trim}}"></div>
+      <h3>{{ indicators[0]['banner_title'] | upper | striptags | trim}}</h3>
+      <p >{{ indicators[0]['field_description'] | striptags | trim}}</p>
+    </div>
+    <div class="section right section-two">
+      <div class="img-rounded"><img src="{{ file_url(indicators[1]['bg_image']) }}" alt="{{ indicators[1]['banner_title'] | upper | striptags | trim}}"></div>
+      <h3>{{ indicators[1]['banner_title'] | upper | striptags | trim}}</h3>
+      <p>{{ indicators[1]['field_description'] | striptags | trim}}</p>
+    </div>
+    <div class="section left section-three">
+      <div class="img-rounded"><img src="{{ file_url(indicators[2]['bg_image']) }}" alt="{{ indicators[2]['banner_title'] | upper | striptags | trim}}"></div>
+      <h3>{{ indicators[2]['banner_title'] | upper | striptags | trim}}</h3>
+      <p>{{ indicators[2]['field_description'] | striptags | trim}}</p>
+    </div>
+    <div class="section left section-four">
+      <div class="img-rounded"><img src="{{ file_url(indicators[3]['bg_image']) }}" alt="{{ indicators[3]['banner_title'] | upper | striptags | trim}}"></div>
+      <h3>{{ indicators[3]['banner_title'] | upper | striptags | trim}}</h3>
+      <p>{{ indicators[3]['field_description'] | striptags | trim}}</p>
+    </div>
+    <!-- INDICATORS -->
+    <div class="indicative-sections">
+      <ul>
+      {%  for key, row in indicators %}
+        {% set  field_title = row.banner_title | upper %}
+        <li>{{ field_title }}</li>
+      {% endfor %}
+      </ul>
+    </div>
+    {% for row in rows %}
+      {% set map = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_upload_map }}'] %}
+      <a href="{{ map | striptags | trim }}" target="_blank" class="download-map">{{ 'Download Map' | t }}</a>
+    {% endfor %}
+   
+  </div>
+
+    
+    

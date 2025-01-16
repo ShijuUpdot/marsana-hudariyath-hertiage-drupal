@@ -1,0 +1,30 @@
+uuid: 9fbaa897-aa35-4946-9376-15c249750d1f
+langcode: en
+status: true
+dependencies:
+  module:
+    - file
+    - image
+    - node
+id: node.field_next_landing_image
+field_name: field_next_landing_image
+entity_type: node
+type: image
+settings:
+  uri_scheme: azblob
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+  target_type: file
+  display_field: false
+  display_default: false
+module: image
+locked: false
+cardinality: 2
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

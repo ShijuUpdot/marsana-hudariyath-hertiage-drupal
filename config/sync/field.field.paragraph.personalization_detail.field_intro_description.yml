@@ -1,0 +1,21 @@
+uuid: 01446507-bbdf-4a19-a654-17454fb4beb9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_intro_description
+    - paragraphs.paragraphs_type.personalization_detail
+  module:
+    - text
+id: paragraph.personalization_detail.field_intro_description
+field_name: field_intro_description
+entity_type: paragraph
+bundle: personalization_detail
+label: Description
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

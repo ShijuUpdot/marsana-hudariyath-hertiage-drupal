@@ -1,0 +1,19 @@
+uuid: 73875947-3a95-492c-bcef-bdae56331277
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_link_twitter
+    - node.type.amenities_details
+id: node.amenities_details.field_link_twitter
+field_name: field_link_twitter
+entity_type: node
+bundle: amenities_details
+label: 'Link Twitter'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

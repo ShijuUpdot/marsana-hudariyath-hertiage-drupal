@@ -1,0 +1,45 @@
+uuid: e10e2891-98de-4f4c-8e3d-e6a494c71947
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.message.community_post_rejected_notific.field_action
+    - field.field.message.community_post_rejected_notific.field_read
+    - message.template.community_post_rejected_notific
+id: message.community_post_rejected_notific.default
+targetEntityType: message
+bundle: community_post_rejected_notific
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_action:
+    weight: 12
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_read:
+    weight: 13
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  uid:
+    type: entity_reference_autocomplete
+    weight: 5
+    '#group': advanced
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      match_limit: 10
+    region: content
+    third_party_settings: {  }
+hidden: {  }

@@ -1,0 +1,18 @@
+uuid: 5c8b1f5f-86f6-45e3-b620-c76cede8d9c1
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.social_feeds
+id: node.social_feeds.title
+field_name: title
+entity_type: node
+bundle: social_feeds
+label: Title
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

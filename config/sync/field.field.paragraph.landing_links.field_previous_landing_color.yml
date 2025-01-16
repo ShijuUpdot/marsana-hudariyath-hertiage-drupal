@@ -1,0 +1,21 @@
+uuid: cd7f63aa-1732-412d-bb19-5cda845625ed
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_previous_landing_color
+    - paragraphs.paragraphs_type.landing_links
+  module:
+    - options
+id: paragraph.landing_links.field_previous_landing_color
+field_name: field_previous_landing_color
+entity_type: paragraph
+bundle: landing_links
+label: 'Previous Landing Color'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

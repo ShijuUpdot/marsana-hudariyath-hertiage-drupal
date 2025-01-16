@@ -1,0 +1,18 @@
+uuid: d392da70-2bd8-473e-b6b7-0d45662df5d7
+langcode: en
+status: true
+dependencies:
+  config:
+    - community_post.community_post_type.review
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: community_post.review
+target_entity_type_id: community_post
+target_bundle: review
+default_langcode: site_default
+language_alterable: false

@@ -1,0 +1,19 @@
+react:
+  version: 16.3.1
+  js:
+    base/react.production.min.js: {}
+    base/react-dom.production.min.js: {}
+
+marsana_js:
+  version: 1.x
+  js:
+    dist/app/bundle.js: { cache: False }
+  dependencies:
+  - core/jquery
+  - core/drupalSettings
+  - marsana_events/react
+
+marsana_css:
+  css:
+    theme:
+      css/style.css: {}

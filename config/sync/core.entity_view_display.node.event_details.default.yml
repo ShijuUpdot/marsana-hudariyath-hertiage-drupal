@@ -1,0 +1,363 @@
+uuid: 1152629a-9252-414c-972b-2e4d54314075
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.event_details.body
+    - field.field.node.event_details.field_amenity_experience
+    - field.field.node.event_details.field_amenity_tags
+    - field.field.node.event_details.field_amenity_type
+    - field.field.node.event_details.field_direct_url
+    - field.field.node.event_details.field_event_date
+    - field.field.node.event_details.field_event_date_range
+    - field.field.node.event_details.field_event_dates
+    - field.field.node.event_details.field_event_end_date
+    - field.field.node.event_details.field_event_guidelines
+    - field.field.node.event_details.field_event_header_text
+    - field.field.node.event_details.field_event_info_block
+    - field.field.node.event_details.field_event_location
+    - field.field.node.event_details.field_event_logo
+    - field.field.node.event_details.field_event_multi_dates
+    - field.field.node.event_details.field_event_place
+    - field.field.node.event_details.field_event_slider_images
+    - field.field.node.event_details.field_events_gallery
+    - field.field.node.event_details.field_facilities
+    - field.field.node.event_details.field_hero_image
+    - field.field.node.event_details.field_hero_image_title
+    - field.field.node.event_details.field_intro_description
+    - field.field.node.event_details.field_intro_short_description
+    - field.field.node.event_details.field_intro_sub_description
+    - field.field.node.event_details.field_intro_sub_headlines
+    - field.field.node.event_details.field_intro_title
+    - field.field.node.event_details.field_link_facebook
+    - field.field.node.event_details.field_link_instagram
+    - field.field.node.event_details.field_link_twitter
+    - field.field.node.event_details.field_opening_hours
+    - field.field.node.event_details.field_opening_hours_title
+    - field.field.node.event_details.field_other_events
+    - field.field.node.event_details.field_primary_color
+    - field.field.node.event_details.field_schedule_headline
+    - field.field.node.event_details.field_secondary_color
+    - field.field.node.event_details.field_suitable
+    - field.field.node.event_details.field_suitable_for_event
+    - field.field.node.event_details.field_title_social_media
+    - field.field.node.event_details.field_title_translation
+    - node.type.event_details
+  module:
+    - datetime
+    - entity_reference_revisions
+    - options
+    - svg_image
+    - text
+    - user
+id: node.event_details.default
+targetEntityType: node
+bundle: event_details
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_amenity_experience:
+    weight: 125
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_amenity_tags:
+    weight: 129
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_amenity_type:
+    weight: 126
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_direct_url:
+    weight: 131
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_event_date:
+    weight: 125
+    region: content
+  field_event_header_text:
+    weight: 138
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_event_info_block:
+    type: entity_reference_revisions_entity_view
+    weight: 18
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_event_location:
+    type: entity_reference_revisions_entity_view
+    weight: 7
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_event_logo:
+    weight: 16
+    label: above
+    settings:
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_event_multi_dates:
+    weight: 19
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_event_place:
+    weight: 17
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_event_slider_images:
+    weight: 139
+    label: above
+    settings:
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_events_gallery:
+    weight: 137
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
+    region: content
+  field_facilities:
+    weight: 122
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_hero_image:
+    weight: 2
+    label: above
+    settings:
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_hero_image_title:
+    weight: 3
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_intro_description:
+    weight: 5
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_intro_sub_description:
+    weight: 14
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_intro_sub_headlines:
+    weight: 13
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_intro_title:
+    weight: 4
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_link_facebook:
+    weight: 134
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_link_instagram:
+    weight: 135
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_link_twitter:
+    weight: 136
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_opening_hours:
+    type: entity_reference_revisions_entity_view
+    weight: 12
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_opening_hours_title:
+    weight: 6
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_other_events:
+    weight: 11
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_primary_color:
+    weight: 9
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_schedule_headline:
+    weight: 15
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_secondary_color:
+    weight: 10
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_suitable_for_event:
+    weight: 128
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_title_social_media:
+    weight: 133
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_title_translation:
+    weight: 130
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  flag_node_favorite:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  flag_node_removed:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  flag_turn_off_node_notification:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  addtoany: true
+  field_amenity_experience: true
+  field_amenity_type: true
+  field_event_date: true
+  field_event_date_range: true
+  field_event_dates: true
+  field_event_end_date: true
+  field_event_guidelines: true
+  field_facilities: true
+  field_intro_short_description: true
+  field_suitable: true
+  langcode: true
+  search_api_excerpt: true

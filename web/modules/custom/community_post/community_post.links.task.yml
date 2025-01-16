@@ -1,0 +1,22 @@
+# Community post routing definition
+
+entity.community_post.canonical:
+  route_name: entity.community_post.canonical
+  base_route: entity.community_post.canonical
+  title: 'View'
+
+entity.community_post.edit_form:
+  route_name: entity.community_post.edit_form
+  base_route: entity.community_post.canonical
+  title: 'Edit'
+
+entity.community_post.version_history:
+  route_name: entity.community_post.version_history
+  base_route: entity.community_post.canonical
+  title: 'Revisions'
+
+entity.community_post.delete_form:
+  route_name:  entity.community_post.delete_form
+  base_route:  entity.community_post.canonical
+  title: Delete
+  weight: 10

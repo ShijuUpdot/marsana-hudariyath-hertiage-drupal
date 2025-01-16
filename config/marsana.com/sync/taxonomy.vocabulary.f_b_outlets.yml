@@ -1,0 +1,8 @@
+uuid: fbe1c8a8-01f3-4a00-8da0-8df2ac85a4de
+langcode: en
+status: true
+dependencies: {  }
+name: 'F&B OUTLETS'
+vid: f_b_outlets
+description: 'F&B OUTLETS'
+weight: 0

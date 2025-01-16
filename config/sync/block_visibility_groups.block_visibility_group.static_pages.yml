@@ -1,0 +1,9 @@
+uuid: 90c0fe9c-d321-498b-8940-5b70c5ad8b12
+langcode: en
+status: true
+dependencies: {  }
+id: static_pages
+label: 'Static Pages'
+logic: and
+conditions: {  }
+allow_other_conditions: false

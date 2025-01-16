@@ -1,0 +1,21 @@
+uuid: 0e822b85-afd6-4ae6-b989-0cf5c29525ac
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_experience_metatag
+    - node.type.experience_details
+  module:
+    - metatag
+id: node.experience_details.field_experience_metatag
+field_name: field_experience_metatag
+entity_type: node
+bundle: experience_details
+label: 'Experience Metatag'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: metatag

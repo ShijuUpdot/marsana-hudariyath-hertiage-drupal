@@ -1,0 +1,19 @@
+uuid: c64988d1-e090-4b8c-a654-a88f2a2373ec
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.booking_instructions
+    - field.storage.block_content.field_headline_text
+id: block_content.booking_instructions.field_headline_text
+field_name: field_headline_text
+entity_type: block_content
+bundle: booking_instructions
+label: 'Headline Text'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

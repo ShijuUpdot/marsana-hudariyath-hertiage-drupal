@@ -1,0 +1,40 @@
+uuid: e9af6020-0d7a-4a40-9d19-cdba3da9cc9d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.eat_listing_block.field_eat_bottom_image
+    - field.field.paragraph.eat_listing_block.field_eat_listing_details
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.eat_listing_block
+  module:
+    - paragraphs
+    - svg_image
+id: paragraph.eat_listing_block.default
+targetEntityType: paragraph
+bundle: eat_listing_block
+mode: default
+content:
+  field_eat_bottom_image:
+    weight: 1
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_eat_listing_details:
+    type: entity_reference_paragraphs
+    weight: 0
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  status: true

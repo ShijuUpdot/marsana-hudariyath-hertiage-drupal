@@ -1,0 +1,94 @@
+uuid: fa7fc1d0-124b-4f6e-8a5e-a5b7918e05d6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.landmarks.field_landmark_image
+    - field.field.taxonomy_term.landmarks.field_landmark_link
+    - field.field.taxonomy_term.landmarks.field_landmark_position
+    - field.field.taxonomy_term.landmarks.field_landmark_type
+    - field.field.taxonomy_term.landmarks.field_name
+    - field.field.taxonomy_term.landmarks.field_number
+    - image.style.thumbnail
+    - taxonomy.vocabulary.landmarks
+  module:
+    - svg_image
+id: taxonomy_term.landmarks.default
+targetEntityType: taxonomy_term
+bundle: landmarks
+mode: default
+content:
+  field_landmark_image:
+    weight: 4
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_landmark_link:
+    weight: 5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_landmark_position:
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_landmark_type:
+    weight: 6
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_name:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_number:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  langcode:
+    type: language_select
+    weight: 7
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 8
+    region: content
+    third_party_settings: {  }
+  translation:
+    weight: 9
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  description: true
+  path: true

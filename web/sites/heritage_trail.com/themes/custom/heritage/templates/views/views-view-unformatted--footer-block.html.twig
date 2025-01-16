@@ -1,0 +1,88 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a view of unformatted rows.
+ *
+ * Available variables:
+ * - title: The title of this group of rows. May be empty.
+ * - rows: A list of the view's row items.
+ *   - attributes: The row's HTML attributes.
+ *   - content: The row's content.
+ * - view: The view object.
+ * - default_row_class: A flag indicating whether default classes should be
+ *   used on rows.
+ *
+ * @see template_preprocess_views_view_unformatted()
+ *
+ * @ingroup themeable
+ */
+#}
+ <div class="footer">
+ {%  for key, row in rows %}
+    <div class="py-5">
+      <div class="container">
+        <div class="row align-items-center mb-4">
+          <div class="col">
+            {# {% set logo  = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_logo }}'] %} #}
+            {% set description  = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_description }}'] %}
+            {% set website_link_text  = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_website_link_text }}'] %}
+            {% set website_link  = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_website_link }}'] %}
+            {% set address_title  = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_address_title }}'] %}
+            {% set address  = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_address }}'] %}
+            {% set email_title  = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_email_text }}'] %}
+            {% set email  = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_email }}'] %}
+            {% set copyright  = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_copyright_text }}'] %}
+            {% set social_block_title  = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_footer_social_block_title }}'] %}
+            <a href="javascript:;">
+              {% if langcode == 'ar'%}
+              <img src="/{{ directory ~ '/logo-white-ar.svg' }}" alt="">
+              {% else %}
+              <img src="/{{ directory ~ '/logo-white.svg' }}" alt="">
+              {% endif %}
+            </a>
+          </div>
+        </div>
+        <div class="row justify-content-between">
+          <div class="col-12 col-md-4 mb-5 mb-md-0">
+            <div class="body-text mb-5">{{ description }}</div>
+            <div class="body-text small bold l-spacing-2">{{ website_link_text | striptags | trim }}</div>
+            <a href="https://www.hudayriyatisland.ae" class="body-text bold">{{ website_link | striptags | trim }}</a>
+          </div>
+          <div class="col-12 col-md-7 ">
+            <div class="row">
+              <div class="col-auto body-text bold mb-4">{{ address_title  | striptags | trim }}</div>
+              <div class="col body-text bold mb-4">
+                {{ address | raw }}
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-auto body-text mb-4">{{ email_title | striptags | trim }}</div>
+              <div class="col ">
+                <a href="mailto:{{ email | striptags | trim }}" class="body-text mb-4">{{ email | striptags | trim }}</a>
+              </div>
+            </div>
+		{% if social_links | length > 0 %}
+            <div class="row">
+              <div class="col-auto body-text mb-4">&nbsp;</div>
+              <div class="col-12 col-md-5 body-text bold mb-4">
+                <div class="body-text l-spacing-2 mb-2">{{ social_block_title | striptags | trim }}</div>
+                  {%  for key, row in social_links %}
+                    <a href="{{ row.social_link | trim }}" target="_blank" class="ml-3"><img src="{{ file_url(row.icon) | striptags | trim }}" alt=""></a>
+                  {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+            <div class="row">
+			      {% if langcode == 'ar' %} {% set copyrightcss = 'text-left' %} {% else %} {% set copyrightcss = 'text-right' %} {% endif %}
+              <div class="col body-text {{ copyrightcss }} opacity-50">
+                © {{ 'now' | date('Y') }} {{ copyright | striptags | trim }}
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    {% endfor %}
+  </div>

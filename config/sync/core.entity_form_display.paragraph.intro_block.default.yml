@@ -1,0 +1,47 @@
+uuid: e9c4da7c-100f-4c89-9ee5-9e34c90a3c75
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.intro_block.field_intro_descriptions
+    - field.field.paragraph.intro_block.field_section_no
+    - field.field.paragraph.intro_block.field_title
+    - paragraphs.paragraphs_type.intro_block
+  module:
+    - paragraphs
+id: paragraph.intro_block.default
+targetEntityType: paragraph
+bundle: intro_block
+mode: default
+content:
+  field_intro_descriptions:
+    type: entity_reference_paragraphs
+    weight: 4
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_section_no:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_title:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true

@@ -1,0 +1,50 @@
+uuid: 0567578a-57c8-4a54-84b7-cd2707dfcc25
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.social_feeds.body
+    - field.field.node.social_feeds.field_comments_count
+    - field.field.node.social_feeds.field_created_date
+    - field.field.node.social_feeds.field_hash_tag
+    - field.field.node.social_feeds.field_image_url
+    - field.field.node.social_feeds.field_likes
+    - field.field.node.social_feeds.field_post_url
+    - field.field.node.social_feeds.field_social_media_type
+    - field.field.node.social_feeds.field_social_post_image
+    - field.field.node.social_feeds.field_source_id
+    - node.type.social_feeds
+  module:
+    - text
+    - user
+id: node.social_feeds.teaser
+targetEntityType: node
+bundle: social_feeds
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  addtoany: true
+  field_comments_count: true
+  field_created_date: true
+  field_hash_tag: true
+  field_image_url: true
+  field_likes: true
+  field_post_url: true
+  field_social_media_type: true
+  field_social_post_image: true
+  field_source_id: true
+  langcode: true

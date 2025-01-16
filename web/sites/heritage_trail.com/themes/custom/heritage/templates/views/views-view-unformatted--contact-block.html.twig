@@ -1,0 +1,50 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a view of unformatted rows.
+ *
+ * Available variables:
+ * - title: The title of this group of rows. May be empty.
+ * - rows: A list of the view's row items.
+ *   - attributes: The row's HTML attributes.
+ *   - content: The row's content.
+ * - view: The view object.
+ * - default_row_class: A flag indicating whether default classes should be
+ *   used on rows.
+ *
+ * @see template_preprocess_views_view_unformatted()
+ *
+ * @ingroup themeable
+ */
+#}
+{% for row in rows %}
+{% set header_title = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_hero_image_title }}'] %}
+{% set contact_block_title = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_contact_block_title }}'] %}
+{# set contact_social_links = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_contact_social_links }}'] #}
+<!-- ************************* CONTACT POPUP ************************* -->
+  <div class="contact-wrapper">
+    <div class="popup-logo">{{ contact_block_title }}</div>
+    <a class="close-btn" href="javascript:;"><span></span><span></span><span></span></a>
+    <div class="container">
+      <div class="row justify-content-center align-items-center">
+        <div class="col-md-7 col-12">
+          {{ drupal_entity('webform', 'contact') }}
+          <div class="alert text-capitalize alert-dismissible fade show form-alert contact-success" role="alert">
+            <span class="form-alert-msg"></span>
+            <button type="button" class="contact-close close" data-dismiss="alert-1" aria-label="Close-1"></button>
+          </div>
+          {% if contact_social_links | length > 0 %}
+            <div class="contact-footer mt-2 mt-md-5">
+              <div class="body-text l-spacing-2 mb-1">{{ 'Follow us on' | t }}</div>
+              {%  for key, row in contact_social_links %}
+                  <a href="{{ row['contact_social_link'] }}" class="mx-2">
+                  <img src="{{ file_url(row['contact_social_icon']) }}" alt="">
+                  </a>
+              {% endfor %}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endfor %}

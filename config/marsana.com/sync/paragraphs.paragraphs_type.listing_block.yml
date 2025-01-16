@@ -1,0 +1,10 @@
+uuid: 36bb5ff4-f0b0-46d3-a4ea-de841e65a044
+langcode: en
+status: true
+dependencies: {  }
+id: listing_block
+label: 'Listing Block'
+icon_uuid: null
+icon_default: null
+description: 'Listing Block'
+behavior_plugins: {  }

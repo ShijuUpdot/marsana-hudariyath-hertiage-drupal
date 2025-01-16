@@ -1,0 +1,12 @@
+uuid: adab8916-f545-49ab-9799-58ea144892b9
+langcode: en
+status: true
+dependencies: {  }
+id: enquiry
+label: Enquiry
+recipients:
+  - ravi.merugu@pennywisesolutions.com
+reply: test
+weight: 0
+message: test
+redirect: /

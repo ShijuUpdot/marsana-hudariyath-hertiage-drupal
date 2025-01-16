@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * @file
+ * Custom Configs module install / uninstall.
+ */
+
+use Drupal\node\Entity\Node;
+
+/**
+ * Implements hook_custom_configs_uninstall().
+ */
+function hudayriyat_custom_configs_uninstall() {
+  \Drupal::service('config.factory')->getEditable('hudayriyat_custom_configs.settings')->delete();
+}

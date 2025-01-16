@@ -1,0 +1,39 @@
+uuid: 46533dd6-dc8d-43ff-8e6a-d836a18618a6
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.experience_big_image
+  module:
+    - block_visibility_groups
+    - node
+    - views
+  theme:
+    - marsana
+id: views_block__experience_big_image_experience_big_image
+theme: marsana
+region: content
+weight: -9
+provider: null
+plugin: 'views_block:experience_big_image-experience_big_image'
+settings:
+  id: 'views_block:experience_big_image-experience_big_image'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+  context_mapping: {  }
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
+    context_mapping: {  }
+  node_type:
+    id: node_type
+    bundles:
+      experience_details: experience_details
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

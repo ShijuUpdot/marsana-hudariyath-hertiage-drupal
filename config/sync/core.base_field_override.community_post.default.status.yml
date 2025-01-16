@@ -1,0 +1,22 @@
+uuid: ac5bc116-4700-4c75-bfde-82f2eb1034f8
+langcode: en
+status: true
+dependencies:
+  config:
+    - community_post.community_post_type.default
+id: community_post.default.status
+field_name: status
+entity_type: community_post
+bundle: default
+label: Published
+description: 'A boolean indicating whether the Community post is published.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,0 +1,23 @@
+uuid: e19dcecf-211b-43e7-b15a-001d70c5d323
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.flagging.community_post_favorite.field_experience
+    - flag.flag.community_post_favorite
+id: flagging.community_post_favorite.default
+targetEntityType: flagging
+bundle: community_post_favorite
+mode: default
+content:
+  field_experience:
+    weight: 0
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+hidden: {  }

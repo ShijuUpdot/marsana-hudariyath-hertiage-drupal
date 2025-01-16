@@ -1,0 +1,14 @@
+uuid: b69637d0-f967-4615-8a12-3aad99cc860e
+langcode: en
+status: true
+dependencies:
+  module:
+    - community_post
+id: search_location_near_by
+name: 'Search location Near by'
+description: ''
+backend: search_location_api_db
+backend_config:
+  database: 'default:default'
+  min_chars: '2'
+  matching: partial

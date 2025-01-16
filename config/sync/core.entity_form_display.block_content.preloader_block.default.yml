@@ -1,0 +1,89 @@
+uuid: 3f431a1a-860b-42d6-a5cb-3018a19c0f7f
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.preloader_block
+    - field.field.block_content.preloader_block.body
+    - field.field.block_content.preloader_block.field_preloader_bottom_links
+    - field.field.block_content.preloader_block.field_preloader_content
+    - field.field.block_content.preloader_block.field_preloader_discover_label
+    - field.field.block_content.preloader_block.field_preloader_social_links
+  module:
+    - link
+    - paragraphs
+    - text
+id: block_content.preloader_block.default
+targetEntityType: block_content
+bundle: preloader_block
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 26
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+    region: content
+  field_preloader_bottom_links:
+    weight: 29
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_preloader_content:
+    weight: 27
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+    type: text_textarea_with_summary
+    region: content
+  field_preloader_discover_label:
+    weight: 28
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_preloader_social_links:
+    type: entity_reference_paragraphs
+    weight: 30
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  info:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  translation:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

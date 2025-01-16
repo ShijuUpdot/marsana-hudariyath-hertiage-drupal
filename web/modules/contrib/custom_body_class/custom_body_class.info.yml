@@ -1,0 +1,9 @@
+type: module
+name : Custom body class
+description : Adds custom class
+core_version_requirement: ^8 || ^9 || ^10
+
+# Information added by Drupal.org packaging script on 2024-02-29
+version: '2.0.1'
+project: 'custom_body_class'
+datestamp: 1709190092

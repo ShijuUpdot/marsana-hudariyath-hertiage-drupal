@@ -1,0 +1,15 @@
+uuid: 627c233d-e547-4219-b25c-dc6448bc870f
+langcode: en
+status: true
+dependencies:
+  config:
+    - flag.flag.node_removed
+  module:
+    - flag
+id: flag_action.node_removed_flag
+label: 'Flag this item'
+type: node
+plugin: 'flag_action:node_removed_flag'
+configuration:
+  flag_id: node_removed
+  flag_action: flag

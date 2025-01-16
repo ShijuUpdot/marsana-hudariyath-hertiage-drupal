@@ -1,0 +1,19 @@
+uuid: 6518e7d6-dfe0-4352-99f1-da8654284b44
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.footer_block
+    - field.storage.block_content.field_address_title
+id: block_content.footer_block.field_address_title
+field_name: field_address_title
+entity_type: block_content
+bundle: footer_block
+label: 'Address Title'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

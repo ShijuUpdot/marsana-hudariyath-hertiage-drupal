@@ -1,0 +1,17 @@
+uuid: 22845f84-7b91-48c5-aee1-e7851ae34c5f
+langcode: en
+status: true
+dependencies:
+  module:
+    - community_post
+    - serialization
+    - user
+id: community_post_comment_resource
+plugin_id: community_post_comment_resource
+granularity: method
+configuration:
+  POST:
+    supported_formats:
+      - json
+    supported_auth:
+      - cookie

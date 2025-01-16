@@ -1,0 +1,45 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a view of unformatted rows.
+ *
+ * Available variables:
+ * - title: The title of this group of rows. May be empty.
+ * - rows: A list of the view's row items.
+ *   - attributes: The row's HTML attributes.
+ *   - content: The row's content.
+ * - view: The view object.
+ * - default_row_class: A flag indicating whether default classes should be
+ *   used on rows.
+ *
+ * @see template_preprocess_views_view_unformatted()
+ *
+ * @ingroup themeable
+ */
+#}
+<div class="search">
+    <div class="dark-overlay d-none">
+        <img src="/images/static/loader-new.gif" />
+    </div>
+    <div class="related-content related-interaction white-bg">
+    <div class="container">
+           {{ drupal_entity('webform', 'search') }}
+    </div>
+    </div>
+    <section class="p-section light-navy-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2 class="search-result-message"></h2>
+                </div>
+            </div>
+            <div class="row search-results"></div>
+            <div class="go-search-results"></div>
+            <div class="row load-more d-none">
+                <div class="text-center w-100 mb-3">
+                    <a href="javascript:;" class="btn border-btn border-yellow-btn">{{ 'Load More' | t }}</a>
+                </div>
+            </div>
+        </div>
+    </section>      
+</div>

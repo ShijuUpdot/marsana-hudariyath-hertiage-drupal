@@ -1,0 +1,18 @@
+uuid: 4d44cb8e-7be1-4519-9ad4-f11f832519d4
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.filter_collections
+id: taxonomy_term.filter_collections.changed
+field_name: changed
+entity_type: taxonomy_term
+bundle: filter_collections
+label: Changed
+description: 'The time that the term was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

@@ -1,0 +1,18 @@
+uuid: aaf0e2dc-ead6-4dce-8051-969ac931e983
+langcode: en
+status: true
+dependencies:
+  config:
+    - community_post.community_post_type.photo
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: community_post.photo
+target_entity_type_id: community_post
+target_bundle: photo
+default_langcode: site_default
+language_alterable: false

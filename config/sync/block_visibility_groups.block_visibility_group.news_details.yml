@@ -1,0 +1,9 @@
+uuid: 2163883d-415a-4d8a-8888-8af0bda1aa42
+langcode: en
+status: true
+dependencies: {  }
+id: news_details
+label: 'News Details'
+logic: and
+conditions: {  }
+allow_other_conditions: false

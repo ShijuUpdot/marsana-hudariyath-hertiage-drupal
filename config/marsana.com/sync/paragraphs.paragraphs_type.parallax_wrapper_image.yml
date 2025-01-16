@@ -1,0 +1,10 @@
+uuid: 932328fc-ab18-4172-8479-d53685cd3692
+langcode: en
+status: true
+dependencies: {  }
+id: parallax_wrapper_image
+label: 'Parallax Wrapper Image'
+icon_uuid: null
+icon_default: null
+description: 'Parallax Wrapper Image'
+behavior_plugins: {  }

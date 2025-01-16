@@ -1,0 +1,85 @@
+uuid: d8c891a5-832a-41cb-83f0-aa876dfe0382
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_discover_listing
+    - paragraphs.paragraphs_type.discover_listing
+    - paragraphs.paragraphs_type.listings
+  module:
+    - entity_reference_revisions
+id: paragraph.discover_listing.field_discover_listing
+field_name: field_discover_listing
+entity_type: paragraph
+bundle: discover_listing
+label: 'Discover Listing Details'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      listings: listings
+    target_bundles_drag_drop:
+      amenities_guidelines:
+        weight: 11
+        enabled: false
+      banner_block:
+        weight: 21
+        enabled: false
+      discover_listing:
+        weight: 12
+        enabled: false
+      event_guidelines:
+        weight: 13
+        enabled: false
+      features_block:
+        weight: 24
+        enabled: false
+      footer_social_links:
+        weight: 25
+        enabled: false
+      gallery_images:
+        weight: 14
+        enabled: false
+      guidelines:
+        weight: 15
+        enabled: false
+      intro_block:
+        weight: 28
+        enabled: false
+      key_points:
+        weight: 16
+        enabled: false
+      key_points_type:
+        weight: 17
+        enabled: false
+      link_type:
+        weight: 32
+        enabled: false
+      links_block:
+        weight: 31
+        enabled: false
+      listings:
+        enabled: true
+        weight: 18
+      location:
+        weight: 19
+        enabled: false
+      location_details:
+        weight: 20
+        enabled: false
+      single_banner:
+        weight: 36
+        enabled: false
+      stats_listing:
+        weight: 37
+        enabled: false
+      stay_stats_type:
+        weight: 38
+        enabled: false
+field_type: entity_reference_revisions

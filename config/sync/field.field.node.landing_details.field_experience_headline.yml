@@ -1,0 +1,19 @@
+uuid: 7e7420ab-3b3e-432f-b72b-71b28d022a27
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_experience_headline
+    - node.type.landing_details
+id: node.landing_details.field_experience_headline
+field_name: field_experience_headline
+entity_type: node
+bundle: landing_details
+label: 'Experience Headline'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

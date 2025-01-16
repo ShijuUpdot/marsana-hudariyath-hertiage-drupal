@@ -1,0 +1,48 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a view of unformatted rows.
+ *
+ * Available variables:
+ * - title: The title of this group of rows. May be empty.
+ * - rows: A list of the view's row items.
+ *   - attributes: The row's HTML attributes.
+ *   - content: The row's content.
+ * - view: The view object.
+ * - default_row_class: A flag indicating whether default classes should be
+ *   used on rows.
+ *
+ * @see template_preprocess_views_view_unformatted()
+ *
+ * @ingroup themeable
+ */
+#}
+{% set url = url('<current>') |render|render %}
+{% if ('dock' in url) or ('play' in url) %}
+  {% set bg_css = 'bg-ocean-75' %}
+{% elseif ('eat' in url) %}
+  {% set bg_css = 'bg-rooftop-100' %}
+{% elseif ('shop' in url) %}
+  {% set bg_css = 'bg-coral-50' %}
+{% elseif ('relax' in url) %}
+  {% set bg_css = 'bg-coral-75' %}
+{% else %}
+  {% set bg_css = 'bg-ocean-75' %}
+{% endif %}
+{% for row in rows %}
+{% set icon = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_header_guidelines_icon }}'] %}
+{% set text = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_header_guidelines_text }}'] %}
+{% set header_title  = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_header_guidelines_title }}'] %}
+
+<div class="covid-toolbar {{ bg_css }}">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-11">
+                <img src="{{ icon | striptags | trim }}" alt="">
+                {{ row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_header_guidelines_text }}']  | striptags | raw }} <a href="javascript:;" class="covid-btn" data-toggle="modal" data-target="#covidModal">{{ row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_header_guidelines_title }}']  | striptags | raw}}</a>
+            </div>
+            <div class="col-1 text-right p-mob"><a href="javascript:;" class="close-toolbar">{{ 'Close' | t }} </a></div>
+        </div>
+    </div>
+</div>
+{% endfor %}

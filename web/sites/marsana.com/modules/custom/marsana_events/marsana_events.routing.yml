@@ -1,0 +1,7 @@
+marsana_events.events_landing_page:
+  path: '/events'
+  defaults:
+    _controller: '\Drupal\marsana_events\Controller\Events::landigpage'
+    _title: 'Events'
+  requirements:
+    _permission: 'access content'

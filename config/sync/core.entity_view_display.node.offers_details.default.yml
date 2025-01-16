@@ -1,0 +1,193 @@
+uuid: c2bfef40-2eff-4fd3-bad4-5b100ba3f470
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.offers_details.body
+    - field.field.node.offers_details.field_amenity_experience
+    - field.field.node.offers_details.field_autosuggestion_keywords
+    - field.field.node.offers_details.field_headline
+    - field.field.node.offers_details.field_hero_image
+    - field.field.node.offers_details.field_hero_image_title
+    - field.field.node.offers_details.field_intro_description
+    - field.field.node.offers_details.field_intro_title
+    - field.field.node.offers_details.field_offer_end_date
+    - field.field.node.offers_details.field_offer_start_date
+    - field.field.node.offers_details.field_offers_gallery
+    - field.field.node.offers_details.field_offers_info
+    - field.field.node.offers_details.field_offers_location
+    - field.field.node.offers_details.field_offers_schedule
+    - field.field.node.offers_details.field_opening_hours_title
+    - field.field.node.offers_details.field_schedule_headline
+    - field.field.node.offers_details.field_search_keywords
+    - field.field.node.offers_details.field_similar_offers
+    - node.type.offers_details
+  module:
+    - datetime
+    - entity_reference_revisions
+    - svg_image
+    - text
+    - user
+id: node.offers_details.default
+targetEntityType: node
+bundle: offers_details
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_amenity_experience:
+    weight: 112
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_autosuggestion_keywords:
+    weight: 117
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_headline:
+    weight: 114
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_hero_image:
+    weight: 102
+    label: above
+    settings:
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_hero_image_title:
+    weight: 103
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_intro_description:
+    weight: 105
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_intro_title:
+    weight: 104
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_offer_end_date:
+    weight: 116
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_offer_start_date:
+    weight: 115
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_offers_gallery:
+    type: entity_reference_revisions_entity_view
+    weight: 109
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_offers_info:
+    type: entity_reference_revisions_entity_view
+    weight: 110
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_offers_location:
+    type: entity_reference_revisions_entity_view
+    weight: 108
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_offers_schedule:
+    type: entity_reference_revisions_entity_view
+    weight: 107
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_opening_hours_title:
+    weight: 106
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_schedule_headline:
+    weight: 118
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_search_keywords:
+    weight: 113
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_similar_offers:
+    weight: 111
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  addtoany: true
+  langcode: true
+  search_api_excerpt: true

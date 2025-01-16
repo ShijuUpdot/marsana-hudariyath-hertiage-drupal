@@ -1,0 +1,19 @@
+uuid: 811676f7-f078-41f2-a1fd-08a55091e71f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title
+    - paragraphs.paragraphs_type.discover_listing
+id: paragraph.discover_listing.field_title
+field_name: field_title
+entity_type: paragraph
+bundle: discover_listing
+label: 'Listing Title'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

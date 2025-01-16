@@ -1,0 +1,104 @@
+<?php
+
+/**
+ * @file
+ * Contains schedule_item.module.
+ */
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Url;
+
+/**
+ * Implements hook_help().
+ */
+function schedule_item_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the schedule_item module.
+    case 'help.page.schedule_item':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Schedule item module') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function schedule_item_theme() {
+  return [
+    'schedule_item' => [
+      'render element' => 'children',
+    ],
+  ];
+}
+
+function _schedule_item_process_item($item) {
+  try {
+    $item->delete();
+    if ($item->hasField('execute_function')) {
+      $execute_function = $item->get('execute_function')->getString();
+      if (!empty($execute_function)) {
+        if (is_callable($execute_function)) {
+          $execute_function($item);
+        }
+      }
+    }
+  }
+  catch (Throwable $throwable) {
+    \Drupal::logger('schedule_item')->error($throwable->getMessage());
+  }
+}
+
+function schedule_item_entity_operation_alter(array &$operations, EntityInterface $entity) {
+  if ($entity->getEntityTypeId() == 'schedule_item') {
+    $operations['execute'] = [
+      'title' => 'Execute',
+      'url' => Url::fromRoute('schedule_item.execute_form',
+        ['schedule_item' => $entity->id()]
+      ),
+      'weight' => 100,
+    ];
+  }
+}
+
+function schedule_item_cron() {
+  _schedule_item_process_list_schedule([], 20);
+}
+
+
+function _schedule_item_process_list_schedule($type = [], $length = 10) {
+  $entity_type_manager = \Drupal::entityTypeManager();
+  $schedule_storage = $entity_type_manager->getStorage('schedule_item');
+  $result = _schedule_item_load_item($type, $length);
+  $output = [];
+  if (!empty($result)) {
+    $items = $schedule_storage->loadMultiple(array_values($result));
+    if (!empty($items)) {
+      foreach ($items as $item) {
+        if ($item->get('queued')->value <= \Drupal::time()->getCurrentTime()) {
+          //        if (1 == 1) {
+          _schedule_item_process_item($item);
+          $output[] = $item;
+        }
+      }
+    }
+  }
+  return $output;
+}
+
+function _schedule_item_load_item($type = [], $length = 10) {
+  $entity_type_manager = \Drupal::entityTypeManager();
+  $schedule_storage = $entity_type_manager->getStorage('schedule_item');
+  $query = $schedule_storage->getQuery();
+  $query->condition('status', TRUE);
+  if (!empty($type)) {
+    $query->condition('type', $type, 'IN');
+  }
+  $query->sort('queued', 'ASC');
+  $query->range(0, $length);
+  return $query->execute();
+}

@@ -1,0 +1,22 @@
+uuid: 5074c38b-9ddc-4618-9ded-7f16a20c2ace
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.enjoy
+id: node.enjoy.status
+field_name: status
+entity_type: node
+bundle: enjoy
+label: Published
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

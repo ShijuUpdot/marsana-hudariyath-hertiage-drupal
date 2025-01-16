@@ -1,0 +1,49 @@
+uuid: 3b274d99-86f4-483d-af72-c21a9f1b6e83
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.categories.body
+    - field.field.node.categories.field_amenity_experience
+    - field.field.node.categories.field_background_image
+    - field.field.node.categories.field_filters
+    - field.field.node.categories.field_icon
+    - field.field.node.categories.field_is_single
+    - field.field.node.categories.field_priority
+    - field.field.node.categories.field_single_content
+    - field.field.node.categories.field_title_translation
+    - node.type.categories
+  module:
+    - text
+    - user
+id: node.categories.teaser
+targetEntityType: node
+bundle: categories
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  addtoany: true
+  field_amenity_experience: true
+  field_background_image: true
+  field_filters: true
+  field_icon: true
+  field_is_single: true
+  field_priority: true
+  field_single_content: true
+  field_title_translation: true
+  langcode: true
+  search_api_excerpt: true

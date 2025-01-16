@@ -1,0 +1,18 @@
+uuid: d0d02dc9-2708-497d-88d3-b99e3676386b
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.trails_color
+id: taxonomy_term.trails_color.metatag
+field_name: metatag
+entity_type: taxonomy_term
+bundle: trails_color
+label: 'Metatags (Hidden field for JSON support)'
+description: 'The meta tags for the entity.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: map

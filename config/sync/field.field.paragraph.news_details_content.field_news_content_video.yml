@@ -1,0 +1,27 @@
+uuid: 3c1496ce-4fac-4ef2-969e-69368c8e6e1e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_news_content_video
+    - paragraphs.paragraphs_type.news_details_content
+  module:
+    - file
+id: paragraph.news_details_content.field_news_content_video
+field_name: field_news_content_video
+entity_type: paragraph
+bundle: news_details_content
+label: 'News Content Video'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: mp4
+  max_filesize: ''
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

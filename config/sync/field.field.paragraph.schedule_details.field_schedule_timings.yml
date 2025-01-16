@@ -1,0 +1,97 @@
+uuid: 11636211-209e-46af-9442-0d6fa28b0aba
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_schedule_timings
+    - paragraphs.paragraphs_type.opening_hours
+    - paragraphs.paragraphs_type.schedule_details
+  module:
+    - entity_reference_revisions
+id: paragraph.schedule_details.field_schedule_timings
+field_name: field_schedule_timings
+entity_type: paragraph
+bundle: schedule_details
+label: 'Schedule Timings'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      opening_hours: opening_hours
+    target_bundles_drag_drop:
+      amenities_guidelines:
+        weight: 24
+        enabled: false
+      banner_block:
+        weight: 25
+        enabled: false
+      discover_listing:
+        weight: 26
+        enabled: false
+      event_guidelines:
+        weight: 27
+        enabled: false
+      features_block:
+        weight: 28
+        enabled: false
+      footer_social_links:
+        weight: 29
+        enabled: false
+      gallery_images:
+        weight: 30
+        enabled: false
+      guidelines:
+        weight: 31
+        enabled: false
+      info_block:
+        weight: 32
+        enabled: false
+      info_type:
+        weight: 33
+        enabled: false
+      intro_block:
+        weight: 34
+        enabled: false
+      key_points:
+        weight: 35
+        enabled: false
+      key_points_type:
+        weight: 36
+        enabled: false
+      link_type:
+        weight: 38
+        enabled: false
+      links_block:
+        weight: 37
+        enabled: false
+      listings:
+        weight: 39
+        enabled: false
+      location:
+        weight: 40
+        enabled: false
+      location_details:
+        weight: 41
+        enabled: false
+      opening_hours:
+        enabled: true
+        weight: 42
+      schedule_details:
+        weight: 43
+        enabled: false
+      single_banner:
+        weight: 44
+        enabled: false
+      stats_listing:
+        weight: 45
+        enabled: false
+      stay_stats_type:
+        weight: 46
+        enabled: false
+field_type: entity_reference_revisions

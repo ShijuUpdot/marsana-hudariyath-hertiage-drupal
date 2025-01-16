@@ -1,0 +1,9 @@
+az_blob_fs: null
+_core:
+  default_config_hash: p3lNFP1jpjrBrykUUyI54QSpe7SyauYJgrIcH4abS6Q
+az_blob_account_name: stmodonprod
+az_blob_container_name: sthudayriyatwebmobileblob
+az_blob_local_ip: 127.0.0.1
+az_blob_local_port: '10000'
+az_blob_local_emulator: 0
+az_blob_account_key: BfD6SYeJRndtkiBXWcmNJjCEwNy865Y3gWV1E1UWXw9MdrdUhX0ZCXeyU+de10G/BC/6Y1+xWoG1gS6nWDYREw==

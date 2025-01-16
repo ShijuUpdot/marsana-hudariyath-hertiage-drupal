@@ -1,0 +1,19 @@
+uuid: e9ca4a59-6fc5-435b-ac20-b399ebb4c9d9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title
+    - paragraphs.paragraphs_type.landing_mobile_app
+id: paragraph.landing_mobile_app.field_title
+field_name: field_title
+entity_type: paragraph
+bundle: landing_mobile_app
+label: Title
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

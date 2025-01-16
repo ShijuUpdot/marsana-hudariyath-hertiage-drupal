@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>get-directions-button</title>
+    <defs>
+        <filter id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.984314 0 0 0 0 0.752941 0 0 0 0 0.317647 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="V2-Pages" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="5,1-Sport-Facility" transform="translate(-302.000000, -3480.000000)">
+            <g id="4.-Locate" transform="translate(112.000000, 3120.000000)">
+                <g id="Group-7" transform="translate(16.000000, 66.000000)">
+                    <g id="get-directions-button" transform="translate(22.000000, 284.000000)" filter="url(#filter-1)">
+                        <g transform="translate(152.000000, 10.000000)">
+                            <path d="M23.64,11.16 L12.84,0.36 C12.3600471,-0.12 11.64,-0.12 11.16,0.36 L0.36,11.16 C-0.12,11.64 -0.12,12.3600471 0.36,12.84 L11.16,23.64 C11.64,24.12 12.3600471,24.12 12.84,23.64 L23.64,12.84 C24.12,12.3600471 24.12,11.6400471 23.64,11.16 Z M14.4,15.0000471 L14.4,12.0000471 L9.6,12.0000471 L9.6,15.6000471 L7.2,15.6000471 L7.2,10.8000471 C7.2,10.0800471 7.68,9.60004706 8.4,9.60004706 L14.4,9.60004706 L14.4,6.60004706 L18.6,10.8000471 L14.4,15.0000471 Z" id="directions" fill="#000000" fill-rule="nonzero"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

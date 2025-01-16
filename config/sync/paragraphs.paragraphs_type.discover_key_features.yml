@@ -1,0 +1,10 @@
+uuid: 49d30440-e069-4255-8150-1a41a0f5fb04
+langcode: en
+status: true
+dependencies: {  }
+id: discover_key_features
+label: 'Discover Key Features'
+icon_uuid: null
+icon_default: null
+description: 'Discover Key Features like Introduction, Listing, Key features, Links .......'
+behavior_plugins: {  }

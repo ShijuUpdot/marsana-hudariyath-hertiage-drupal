@@ -1,0 +1,17 @@
+uuid: 18d22f0d-c03e-4311-8082-2bae0a8f1876
+langcode: en
+status: true
+dependencies:
+  module:
+    - report_issue_and_help
+    - serialization
+    - user
+id: get_help_topic_resource
+plugin_id: get_help_topic_resource
+granularity: method
+configuration:
+  GET:
+    supported_formats:
+      - json
+    supported_auth:
+      - cookie

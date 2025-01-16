@@ -1,0 +1,30 @@
+uuid: 6d72e511-3024-4e9b-ae55-450b3b2410e3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_single_content
+    - node.type.amenities_details
+    - node.type.categories
+    - node.type.event_details
+id: node.categories.field_single_content
+field_name: field_single_content
+entity_type: node
+bundle: categories
+label: 'Single Content'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      amenities_details: amenities_details
+      event_details: event_details
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: amenities_details
+field_type: entity_reference

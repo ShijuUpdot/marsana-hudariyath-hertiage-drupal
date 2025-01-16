@@ -1,0 +1,58 @@
+uuid: b0eed0c8-64ef-48e8-ba49-85c2b86ee350
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.filter_date_time.field_icon
+    - field.field.taxonomy_term.filter_date_time.field_start_time
+    - field.field.taxonomy_term.filter_date_time.field_time
+    - taxonomy.vocabulary.filter_date_time
+  module:
+    - svg_image
+    - text
+id: taxonomy_term.filter_date_time.default
+targetEntityType: taxonomy_term
+bundle: filter_date_time
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_icon:
+    weight: 1
+    label: above
+    settings:
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_start_time:
+    weight: 3
+    label: above
+    settings:
+      date_format: medium
+      custom_date_format: ''
+      timezone: ''
+    third_party_settings: {  }
+    type: timestamp
+    region: content
+  field_time:
+    weight: 2
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

@@ -1,0 +1,4 @@
+services:
+  firebase.message_manager:
+    class: Drupal\firebase_cloud_messaging\MessageManager
+    arguments: ['@entity_type.manager']

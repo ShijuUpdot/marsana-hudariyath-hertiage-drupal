@@ -1,0 +1,18 @@
+uuid: 8753317e-f5c8-461d-83c8-2f8be5df3cc8
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.pin_positions
+id: taxonomy_term.pin_positions.changed
+field_name: changed
+entity_type: taxonomy_term
+bundle: pin_positions
+label: Changed
+description: 'The time that the term was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

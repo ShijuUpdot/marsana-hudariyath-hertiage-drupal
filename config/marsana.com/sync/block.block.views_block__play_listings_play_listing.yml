@@ -1,0 +1,36 @@
+uuid: f91005a1-aec5-48ca-9719-2c7a323f5223
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.play_listings
+  module:
+    - block_visibility_groups
+    - system
+    - views
+  theme:
+    - marsana
+id: views_block__play_listings_play_listing
+theme: marsana
+region: other
+weight: -17
+provider: null
+plugin: 'views_block:play_listings-play_listing'
+settings:
+  id: 'views_block:play_listings-play_listing'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
+    context_mapping: {  }
+  request_path:
+    id: request_path
+    pages: /play
+    negate: false
+    context_mapping: {  }

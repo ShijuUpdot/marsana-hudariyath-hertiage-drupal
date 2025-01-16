@@ -1,0 +1,23 @@
+uuid: 3765b8f3-bfd0-4e5b-acb5-18f79c419952
+langcode: en
+status: true
+dependencies:
+  config:
+    - community_post.community_post_type.review
+    - field.storage.community_post.field_rating
+id: community_post.review.field_rating
+field_name: field_rating
+entity_type: community_post
+bundle: review
+label: Rating
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: float

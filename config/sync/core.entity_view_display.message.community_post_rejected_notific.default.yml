@@ -1,0 +1,38 @@
+uuid: d53f9b1a-ed21-4310-8f20-bbc20b071dee
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.message.community_post_rejected_notific.field_action
+    - field.field.message.community_post_rejected_notific.field_read
+    - message.template.community_post_rejected_notific
+  module:
+    - options
+    - user
+id: message.community_post_rejected_notific.default
+targetEntityType: message
+bundle: community_post_rejected_notific
+mode: default
+content:
+  field_action:
+    weight: 1
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_read:
+    weight: 2
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  partial_0:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  search_api_excerpt: true

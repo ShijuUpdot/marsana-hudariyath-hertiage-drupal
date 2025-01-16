@@ -1,0 +1,21 @@
+uuid: 59fd4d3f-14ce-4b0a-82cb-b8b45e98b087
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+id: user.field_type_registration
+field_name: field_type_registration
+entity_type: user
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

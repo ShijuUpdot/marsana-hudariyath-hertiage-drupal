@@ -1,0 +1,39 @@
+uuid: d2920b8a-1192-4446-b9e1-189b6e4422f8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.multi_opening_hours_timings.field_section_timings_day
+    - field.field.paragraph.multi_opening_hours_timings.field_section_timings_other_time
+    - field.field.paragraph.multi_opening_hours_timings.field_section_timings_time
+    - paragraphs.paragraphs_type.multi_opening_hours_timings
+id: paragraph.multi_opening_hours_timings.default
+targetEntityType: paragraph
+bundle: multi_opening_hours_timings
+mode: default
+content:
+  field_section_timings_day:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_section_timings_other_time:
+    weight: 2
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_section_timings_time:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

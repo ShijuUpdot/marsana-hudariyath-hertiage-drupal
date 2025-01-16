@@ -1,0 +1,60 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a view of unformatted rows.
+ *
+ * Available variables:
+ * - title: The title of this group of rows. May be empty.
+ * - rows: A list of the view's row items.
+ *   - attributes: The row's HTML attributes.
+ *   - content: The row's content.
+ * - view: The view object.
+ * - default_row_class: A flag indicating whether default classes should be
+ *   used on rows.
+ *
+ * @see template_preprocess_views_view_unformatted()
+ *
+ * @ingroup themeable
+ */
+#}
+{% for row in rows %}
+{% set title = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_title }}'] | striptags | trim %}
+{% set headline = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_headline }}'] | striptags | trim  %}
+{% set buttonText = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_button_text }}'] | striptags | trim %}
+{% set headline_text = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_headline_text }}'] | striptags | trim  %}
+{% set icon = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_logo }}'] | striptags | trim  %}
+{% set button_text = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_button_text }}'] | striptags | trim  %}
+
+<div class="covid-toolbar booking-bar">
+  <div class="container h-100">
+      <div class="row align-items-center h-100">
+          <div class="col-10 my-auto">
+              <img src="{{ icon }}" alt="booking tooltip">
+              {{ headline_text }}
+          </div>
+          <div class="col-2 text-right"><a href="javascript:;" class="covid-btn booking-steps" data-toggle="modal" data-target="#bookingModal">{{ button_text }}</a>
+			</div>
+      </div>
+  </div>
+</div>
+<div class="modal fade" id="bookingModal" tabindex="-1" role="dialog" aria-labelledby="bookingModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">{{ 'Close' | t }}</button>
+        <div class="third-fold bg-orange p-fold" id="covid-section">
+          <div class="container">
+            {% set breaktitle = title|split(' ') %}
+            <h2 class="mb-md-5 mb-3">{{breaktitle[0]}} {{"<br/>"|raw}} {{breaktitle[2]}}</h2>
+            <div class="row">
+              <div class="col-12">
+                <ul class="icon-listing">
+                  {{ row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_instructions }}'] }}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endfor %}

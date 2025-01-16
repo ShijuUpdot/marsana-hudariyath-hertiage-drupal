@@ -1,0 +1,18 @@
+uuid: c4ffc65e-7bc0-4a4e-8538-54587c9b8847
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.parallax_wrapper_bottom_image
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: paragraph.parallax_wrapper_bottom_image
+target_entity_type_id: paragraph
+target_bundle: parallax_wrapper_bottom_image
+default_langcode: site_default
+language_alterable: true

@@ -1,0 +1,4 @@
+services:
+  hudayriyat_social_feeds.insta_handler:
+    class: Drupal\hudayriyat_social_feeds\Controller\FetchSocialFeedController
+    arguments: ['@config.factory', '@http_client', '@entity_type.manager']

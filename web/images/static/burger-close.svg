@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="52px" height="52px" viewBox="0 0 52 52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icon/BurgerMenu/Header</title>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Menu/White" transform="translate(1.000000, -26.000000)">
+            <g id="Icon/BurgerMenu/Header" transform="translate(0.000000, 27.000000)">
+                <path d="M14.7714833,19.3965517 L35.4611385,19.3965517 M14.7714833,25 L35.4611385,25 M14.7714833,31.0344828 L35.4611385,31.0344828" id="Combined-Shape" opacity="0"></path>
+                <path d="M25,50 C32.9040783,50 39.9514317,46.3319247 44.5326633,40.605171 C47.9540864,36.3282322 50,30.9030405 50,25 C50,11.1928813 38.8071187,0 25,0 C11.1928813,0 0,11.1928813 0,25 C0,38.8071187 11.1928813,50 25,50 Z" id="Combined-Shape" stroke="#FFFFFF"></path>
+                <g id="Group" transform="translate(16.379310, 18.965517)" stroke="#FFFFFF" stroke-linecap="round" stroke-width="2">
+                    <line x1="0.362068966" y1="0.431034483" x2="17.7413793" y2="0.431034483" id="Line-4"></line>
+                    <line x1="0.362068966" y1="6.46551724" x2="17.7413793" y2="6.46551724" id="Line-4-Copy"></line>
+                    <line x1="0.362068966" y1="12.5" x2="17.7413793" y2="12.5" id="Line-4-Copy-2"></line>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

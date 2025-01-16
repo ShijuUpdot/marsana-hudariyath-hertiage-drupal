@@ -1,0 +1,77 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a view of unformatted rows.
+ *
+ * Available variables:
+ * - title: The title of this group of rows. May be empty.
+ * - rows: A list of the view's row items.
+ *   - attributes: The row's HTML attributes.
+ *   - content: The row's content.
+ * - view: The view object.
+ * - default_row_class: A flag indicating whether default classes should be
+ *   used on rows.
+ *
+ * @see template_preprocess_views_view_unformatted()
+ *
+ * @ingroup themeable
+ */
+#}
+
+{% for row in rows %}
+{% set field_guidelines_headline_text = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_guidelines_headline_text }}'] %}
+{% set field_guidelines_headline_title = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_guidelines_headline_title }}'] %}
+{% set field_guidelines_title = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_guidelines_title }}'] %}
+{% set field_guidelines_text = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_guidelines_text }}'] %}
+{% set field_guidelines_description = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_guidelines_description }}'] %}
+{% set field_guidelines_listing = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_guidelines_listing }}'] %}
+{% set field_guidelines_text = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_guidelines_text }}'] %}
+{% set next_image = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_next_landing_image }}'] |split(',') %}
+{% set previous_image = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_previous_landing_image }}'] |split(',') %}
+{% set next_image1 = next_image[0] %}
+{% set next_image2 = next_image[1] %}
+{% set previous_image1 = previous_image[0] %}
+{% set previous_image2 = previous_image[1] %}
+{% set next_link_text   = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_next_landing_1 }}']| striptags | trim  %}
+{% set next_link_url   = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_next_landing }}'] | striptags | trim  %}
+{% set previous_link_text   = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_previous_landing_1 }}']| striptags | trim  %}
+{% set previous_link_url   = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_previous_landing }}'] | striptags | trim  %}
+
+<div class="covid-toolbar covid-bar">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-11">
+                <img src="/images/dynamic/coronavirus.svg" alt="">
+                {{ field_guidelines_headline_text|raw }}  <a href="javascript:;" class="covid-btn" data-toggle="modal" data-target="#covidModal">{{ field_guidelines_headline_title | raw }}</a>
+            </div>
+            <div class="col-md-1 text-right"><a href="javascript:;" class="close-toolbar">{{ 'Close' | t }}</a></div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="covidModal" tabindex="-1" role="dialog" aria-labelledby="covidModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">{{ 'Close' | t }}</button>
+        <div class="third-fold bg-orange p-fold" id="covid-section">
+          <div class="container">
+            <h2 class="mb-md-5 mb-3">{{ field_guidelines_title|raw }}</h2>
+            <div class="row justify-content-between">
+              <div class="col-12 col-md-6 mb-3 mb-md-0">
+                <div class="body-text big bold mb-3">{{ field_guidelines_text|raw }}</div>
+                <div class="body-text bold">
+                    {{ field_guidelines_description|raw }}
+                </div>
+              </div>
+              <div class="col-12 col-md-5">
+                <ul class="icon-listing">
+                   {{ row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_guidelines_listing }}'] }}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endfor %}

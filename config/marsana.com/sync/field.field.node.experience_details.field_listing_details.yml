@@ -1,0 +1,49 @@
+uuid: 47fcc806-bc51-4c60-9bf3-5cdccb29dc51
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_listing_details
+    - node.type.experience_details
+    - paragraphs.paragraphs_type.listing_block
+  module:
+    - entity_reference_revisions
+id: node.experience_details.field_listing_details
+field_name: field_listing_details
+entity_type: node
+bundle: experience_details
+label: 'Listing Details'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      listing_block: listing_block
+    target_bundles_drag_drop:
+      big_image_block:
+        weight: 8
+        enabled: false
+      guidelines_listing:
+        weight: 9
+        enabled: false
+      listing_block:
+        enabled: true
+        weight: 10
+      listing_details:
+        weight: 11
+        enabled: false
+      parallax_wrapper_bottom_image:
+        weight: 12
+        enabled: false
+      parallax_wrapper_image:
+        weight: 13
+        enabled: false
+      social_links:
+        weight: 14
+        enabled: false
+field_type: entity_reference_revisions

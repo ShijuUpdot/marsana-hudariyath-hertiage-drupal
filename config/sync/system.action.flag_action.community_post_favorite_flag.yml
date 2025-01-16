@@ -1,0 +1,15 @@
+uuid: 969e4f68-2878-43d2-8e19-c452e5c785d2
+langcode: en
+status: true
+dependencies:
+  config:
+    - flag.flag.community_post_favorite
+  module:
+    - flag
+id: flag_action.community_post_favorite_flag
+label: 'Flag this item'
+type: community_post
+plugin: 'flag_action:community_post_favorite_flag'
+configuration:
+  flag_id: community_post_favorite
+  flag_action: flag

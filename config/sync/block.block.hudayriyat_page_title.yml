@@ -1,0 +1,20 @@
+uuid: ccd4ce61-f58b-4fc1-940e-23c1b786199f
+langcode: en
+status: true
+dependencies:
+  theme:
+    - hudayriyat
+_core:
+  default_config_hash: 7rR9chwXvdM2H8OYMAYx9Zj3GGlPMrZp_M3ZA4thYTk
+id: hudayriyat_page_title
+theme: hudayriyat
+region: other
+weight: -7
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility: {  }

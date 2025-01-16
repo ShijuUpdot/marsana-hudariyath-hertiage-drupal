@@ -1,0 +1,9 @@
+uuid: 19777631-7103-452c-8a55-de8e79a3d356
+langcode: en
+status: true
+dependencies: {  }
+id: search
+label: Search
+logic: and
+conditions: {  }
+allow_other_conditions: false

@@ -1,0 +1,15 @@
+uuid: c49b0a42-22d6-41a0-8c42-417ce7442bfd
+langcode: en
+status: true
+dependencies:
+  config:
+    - flag.flag.node_removed
+  module:
+    - flag
+id: flag_action.node_removed_unflag
+label: 'Unflag this item'
+type: node
+plugin: 'flag_action:node_removed_unflag'
+configuration:
+  flag_id: node_removed
+  flag_action: unflag

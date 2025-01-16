@@ -1,0 +1,10 @@
+uuid: d3618f69-57c0-4a84-88e7-e80a698cd1ea
+langcode: en
+status: true
+dependencies:
+  module:
+    - recent_search_log
+id: recent_search_entity.token
+label: Token
+targetEntityType: recent_search_entity
+cache: true

@@ -1,0 +1,75 @@
+uuid: e3d09238-33bd-466c-861d-83c8bf3ea81b
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_primary_color
+field_name: field_primary_color
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: blue-bg
+      label: blue-bg
+    -
+      value: green-bg
+      label: green-bg
+    -
+      value: red-bg
+      label: red-bg
+    -
+      value: yellow-bg
+      label: yellow-bg
+    -
+      value: red-d-bg
+      label: red-d-bg
+    -
+      value: orange-bg
+      label: orange-bg
+    -
+      value: white-bg
+      label: white-bg
+    -
+      value: navy-bg
+      label: navy-bg
+    -
+      value: grey-bg
+      label: grey-bg
+    -
+      value: '#FBBC43'
+      label: Supernova
+    -
+      value: '#212237'
+      label: Jaguar
+    -
+      value: '#419C9B'
+      label: 'Blue Chill'
+    -
+      value: '#E75D52'
+      label: Flamingo
+    -
+      value: '#7DB2E1'
+      label: 'Jordy Blue'
+    -
+      value: '#DA7112'
+      label: Chocolate
+    -
+      value: '#185D30'
+      label: Crusoe
+    -
+      value: '#7D9731'
+      label: Sushi
+    -
+      value: '#242655'
+      label: 'Lucky Point'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,23 @@
+uuid: 4c87bc88-c1ea-40e1-a669-7d2530b94e79
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_static_link
+    - paragraphs.paragraphs_type.static_link
+  module:
+    - link
+id: paragraph.static_link.field_static_link
+field_name: field_static_link
+entity_type: paragraph
+bundle: static_link
+label: 'Static Link'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

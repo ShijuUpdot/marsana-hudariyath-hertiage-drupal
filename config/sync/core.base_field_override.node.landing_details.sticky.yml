@@ -1,0 +1,22 @@
+uuid: e96f3b5d-97dc-4f93-a666-305a1eab9ea4
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.landing_details
+id: node.landing_details.sticky
+field_name: sticky
+entity_type: node
+bundle: landing_details
+label: 'Sticky at top of lists'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

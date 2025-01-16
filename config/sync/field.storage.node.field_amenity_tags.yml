@@ -1,0 +1,20 @@
+uuid: 42e4ec21-f176-41d2-80df-3322a21cb12c
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_amenity_tags
+field_name: field_amenity_tags
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

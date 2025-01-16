@@ -1,0 +1,17 @@
+uuid: 772b62cb-0fdc-46b1-90b3-dd473e80b02b
+langcode: en
+status: true
+dependencies:
+  module:
+    - community_post
+    - serialization
+    - user
+id: flag_turn_off_post_resource
+plugin_id: flag_turn_off_post_resource
+granularity: method
+configuration:
+  POST:
+    supported_formats:
+      - json
+    supported_auth:
+      - cookie

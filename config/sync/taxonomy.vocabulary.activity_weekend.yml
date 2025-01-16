@@ -1,0 +1,8 @@
+uuid: e8248adf-b75b-4cf2-b889-97f566a4b25b
+langcode: en
+status: true
+dependencies: {  }
+name: 'Activity Weekend'
+vid: activity_weekend
+description: 'Activity Weekend'
+weight: -6

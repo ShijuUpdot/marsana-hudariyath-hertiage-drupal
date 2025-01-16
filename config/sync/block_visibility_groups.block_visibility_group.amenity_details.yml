@@ -1,0 +1,9 @@
+uuid: 5fe71dfd-a784-4348-b34d-97c7f4ce582b
+langcode: en
+status: true
+dependencies: {  }
+id: amenity_details
+label: 'Amenity Details'
+logic: and
+conditions: {  }
+allow_other_conditions: false

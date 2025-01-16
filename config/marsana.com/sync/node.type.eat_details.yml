@@ -1,0 +1,18 @@
+uuid: 411cbcc1-0998-405b-b631-d04c20733cce
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: 'Eat Details'
+type: eat_details
+description: 'Eat Landing Details'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

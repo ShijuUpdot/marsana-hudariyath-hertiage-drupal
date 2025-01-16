@@ -1,0 +1,7 @@
+uuid: db8339fc-9c4f-4a04-9012-9992ec607c3c
+langcode: en
+status: false
+dependencies: {  }
+formId: node_stay_form
+captchaType: default
+label: null

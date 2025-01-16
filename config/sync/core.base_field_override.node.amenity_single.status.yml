@@ -1,0 +1,22 @@
+uuid: 24f8898a-047f-4b2b-bfe8-1ee1590e6e96
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.amenity_single
+id: node.amenity_single.status
+field_name: status
+entity_type: node
+bundle: amenity_single
+label: Published
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

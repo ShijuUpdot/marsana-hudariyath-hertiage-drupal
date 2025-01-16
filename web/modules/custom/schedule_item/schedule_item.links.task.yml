@@ -1,0 +1,21 @@
+# Schedule item routing definition
+schedule_item.settings_tab:
+  route_name: schedule_item.settings
+  title: 'Settings'
+  base_route: schedule_item.settings
+
+entity.schedule_item.canonical:
+  route_name: entity.schedule_item.canonical
+  base_route: entity.schedule_item.canonical
+  title: 'View'
+
+entity.schedule_item.edit_form:
+  route_name: entity.schedule_item.edit_form
+  base_route: entity.schedule_item.canonical
+  title: 'Edit'
+
+entity.schedule_item.delete_form:
+  route_name:  entity.schedule_item.delete_form
+  base_route:  entity.schedule_item.canonical
+  title: Delete
+  weight: 10

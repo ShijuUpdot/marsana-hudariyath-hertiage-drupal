@@ -1,0 +1,82 @@
+uuid: 1131ccfb-ac0d-4fbb-ba17-1bf2fd4d0f86
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_descriptions
+    - paragraphs.paragraphs_type.banner_block
+    - paragraphs.paragraphs_type.intro_block
+  module:
+    - entity_reference_revisions
+id: paragraph.banner_block.field_descriptions
+field_name: field_descriptions
+entity_type: paragraph
+bundle: banner_block
+label: Descriptions
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      intro_block: intro_block
+    target_bundles_drag_drop:
+      amenities_guidelines:
+        weight: 19
+        enabled: false
+      banner_block:
+        weight: 20
+        enabled: false
+      discover_listing:
+        weight: 21
+        enabled: false
+      event_guidelines:
+        weight: 22
+        enabled: false
+      features_block:
+        weight: 23
+        enabled: false
+      footer_social_links:
+        weight: 24
+        enabled: false
+      gallery_images:
+        weight: 25
+        enabled: false
+      guidelines:
+        weight: 26
+        enabled: false
+      info_type:
+        weight: 27
+        enabled: false
+      intro_block:
+        enabled: true
+        weight: 28
+      key_points:
+        weight: 29
+        enabled: false
+      key_points_type:
+        weight: 30
+        enabled: false
+      listings:
+        weight: 31
+        enabled: false
+      location:
+        weight: 32
+        enabled: false
+      location_details:
+        weight: 33
+        enabled: false
+      single_banner:
+        weight: 34
+        enabled: false
+      stats_listing:
+        weight: 35
+        enabled: false
+      stay_stats_type:
+        weight: 36
+        enabled: false
+field_type: entity_reference_revisions

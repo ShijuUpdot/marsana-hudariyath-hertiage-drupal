@@ -1,0 +1,32 @@
+uuid: f1cc84ae-5003-4322-98f3-b7d5aa8613d7
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.event
+    - views.view.events_info_section
+  module:
+    - block_visibility_groups
+    - views
+  theme:
+    - hudayriyat
+id: views_block__events_info_section_events_info_section
+theme: hudayriyat
+region: content
+weight: -11
+provider: null
+plugin: 'views_block:events_info_section-events_info_section'
+settings:
+  id: 'views_block:events_info_section-events_info_section'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+  context_mapping: {  }
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: event
+    context_mapping: {  }

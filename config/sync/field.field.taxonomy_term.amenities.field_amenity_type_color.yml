@@ -1,0 +1,21 @@
+uuid: 1d654c1d-fd2d-4554-8e53-780333be2b51
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_amenity_type_color
+    - taxonomy.vocabulary.amenities
+  module:
+    - options
+id: taxonomy_term.amenities.field_amenity_type_color
+field_name: field_amenity_type_color
+entity_type: taxonomy_term
+bundle: amenities
+label: 'Amenity Type Color'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

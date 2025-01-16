@@ -1,0 +1,10 @@
+uuid: 77ccdf32-a99c-449c-b497-ffe9e3dcf8d2
+langcode: en
+status: true
+dependencies: {  }
+id: about_intro_section
+label: 'About Intro Section'
+icon_uuid: null
+icon_default: null
+description: 'About Modon like content'
+behavior_plugins: {  }

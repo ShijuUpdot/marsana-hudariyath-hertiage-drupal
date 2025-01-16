@@ -1,0 +1,15 @@
+entity_type_groups:
+  node:
+    eat_details:
+      basic: basic
+      advanced: advanced
+    experience_details:
+      basic: basic
+      advanced: advanced
+    home:
+      basic: basic
+      advanced: advanced
+  webform_submission:
+    contact:
+      basic: basic
+      advanced: advanced

@@ -1,0 +1,23 @@
+uuid: ec06dedd-2975-4fc3-9c08-4aa3bbaeff63
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_priority
+    - node.type.amenities_details
+id: node.amenities_details.field_priority
+field_name: field_priority
+entity_type: node
+bundle: amenities_details
+label: Priority
+description: 'Higher number is higher priority. Example: 100 -> 9 -> 8 -> 7...'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: 9999
+  prefix: ''
+  suffix: ''
+field_type: integer

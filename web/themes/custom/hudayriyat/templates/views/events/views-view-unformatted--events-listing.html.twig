@@ -1,0 +1,105 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a view of unformatted rows.
+ *
+ * Available variables:
+ * - title: The title of this group of rows. May be empty.
+ * - rows: A list of the view's row items.
+ *   - attributes: The row's HTML attributes.
+ *   - content: The row's content.
+ * - view: The view object.
+ * - default_row_class: A flag indicating whether default classes should be
+ *   used on rows.
+ *
+ * @see template_preprocess_views_view_unformatted()
+ *
+ * @ingroup themeable
+ */
+#}
+ {% if langcode == 'en' %}
+    {% set linkTitle = drupal_config('hudayriyat_custom_configs.settings', 'custom_configs_discover_events_en')  %}
+  {% else %}
+    {% set linkTitle = drupal_config('hudayriyat_custom_configs.settings', 'custom_configs_discover_events_ar') %}
+  {% endif %}
+  <div class="row">
+    <div class="col">
+      <div class="card-wrapper">
+          {% for row in rows %}
+            {% set thumbnail_image = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_hero_image }}'] | striptags | trim %}
+            {% set logo = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_event_logo }}'] | striptags | trim %}
+            {% set title = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_hero_image_title }}'] | striptags | trim %}
+            {% set link = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ view_node }}'] | striptags| trim  %}
+            {% set startMonth = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_event_multi_dates }}'] | striptags | trim %}
+            {% set endMonth = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_event_end_date_1 }}'] | striptags | trim %}
+            {% set startDay = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_event_date_2 }}'] | striptags | trim %}
+            {% set endDay = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_event_end_date_2 }}'] | striptags | trim %}
+            {% set eventTime = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_event_date_3 }}'] | striptags | trim %}
+            {% set eventLocation = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_event_place }}'] | striptags | trim %}
+
+            {% set dates = startMonth | split(', ') %}
+            {% set startDate = dates[0] | split(' ') %}
+            {% set endDate = dates[dates|length - 1]  | split(' ') %}
+
+            {% if startDate[0] == endDate[0] and startDate[1] == endDate[1] %}
+              {% set day = startDate[0] %}
+            {% else %}
+              {% set day = startDate[0]~ '-' ~endDate[0] %}
+            {% endif %}
+			{% if langcode == 'ar' %}
+                {% set day = endDate[0]~ '-' ~startDate[0] %}
+              {% endif %}
+            {% if startDate[1] == endDate[1] %}
+              {% set mnth = startDate[1] %}
+            {% else %}
+              {% set mnth = startDate[1]~ '-' ~endDate[1] %}
+            {% endif %}
+            {%  if(startMonth) %}
+              <div class="card event card-horizontal">
+              <div class="row">
+                <div class="col-md-5">
+                  <div class="card-img-wrapper">
+                    <a href="{{ link }}">
+                    </a>
+                    <img class="card-img-top" src="{{ thumbnail_image }}" alt="Card image cap">
+                  </div>
+                  {% set itemdate =  item.date | split('#') %}
+                  <div class="card-event-date">
+                    <p class="month">{{ mnth }}</p>                
+                    <p class="day">{{ day }} </p>
+                  </div>
+                </div>
+                <div class="col-md-7">
+                {% if logo %}
+                  <div class="card-tag-wrapper red-d-bg">
+                    <img class="card-tag-img" src="{{ logo }}" alt="Football">
+                  </div>
+                {% endif %}
+                  <div class="card-body">
+                    <a href="{{ link }}">
+                      <h3 class="card-title">{{ title }}</h3>
+                    </a>
+                    <ul class="card-event-details">
+                      <li>
+                        <img src="/images/static/location.svg" alt="location">
+                        <p class="detailed-txt">{{ eventLocation }}</p>
+                      </li>
+                      <li>
+                        <img src="/images/static/time.svg" alt="location">
+                        <p class="detailed-txt">{{ startDate[2] }}</p>
+                      </li>
+                    </ul>
+                    <ul class="event-external">
+                      </li>
+                      <li><a href="{{ link }}" class="btn external-btn">{{ linkTitle }}</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div></div> 
+              {% endif %}             
+            {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  

@@ -1,0 +1,17 @@
+uuid: 3529e4e3-3d8b-4084-bab6-9e1257b12f0c
+langcode: en
+status: true
+dependencies:
+  module:
+    - community_post
+    - serialization
+    - user
+id: community_post_favorite_resource
+plugin_id: community_post_favorite_resource
+granularity: method
+configuration:
+  POST:
+    supported_formats:
+      - json
+    supported_auth:
+      - cookie

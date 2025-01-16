@@ -1,0 +1,3 @@
+administer custom config settings:
+  title: 'Hudayriyat custom configuration Settings'
+  restrict access: true

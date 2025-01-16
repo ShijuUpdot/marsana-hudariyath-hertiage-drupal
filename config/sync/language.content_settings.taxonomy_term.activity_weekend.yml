@@ -1,0 +1,18 @@
+uuid: 0c1d5881-3f28-48e0-903e-2a7900a0f539
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.activity_weekend
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: taxonomy_term.activity_weekend
+target_entity_type_id: taxonomy_term
+target_bundle: activity_weekend
+default_langcode: site_default
+language_alterable: true

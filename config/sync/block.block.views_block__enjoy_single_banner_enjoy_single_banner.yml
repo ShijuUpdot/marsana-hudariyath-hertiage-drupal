@@ -1,0 +1,37 @@
+uuid: 19ce0491-2123-41b3-b9e5-ddc05f994f15
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.enjoy
+    - views.view.enjoy_single_banner
+  module:
+    - block_visibility_groups
+    - system
+    - views
+  theme:
+    - hudayriyat
+id: views_block__enjoy_single_banner_enjoy_single_banner
+theme: hudayriyat
+region: content
+weight: -6
+provider: null
+plugin: 'views_block:enjoy_single_banner-enjoy_single_banner'
+settings:
+  id: 'views_block:enjoy_single_banner-enjoy_single_banner'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: enjoy
+    context_mapping: {  }
+  request_path:
+    id: request_path
+    pages: /enjoy
+    negate: false
+    context_mapping: {  }

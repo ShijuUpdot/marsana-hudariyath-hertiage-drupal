@@ -1,0 +1,22 @@
+uuid: 08a49dab-c020-4353-9ab4-e8c8f69d3bf2
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - hudayriyat
+_core:
+  default_config_hash: 9EoWV2Lot6FVSr50t4hoKgiz1LIXYWNG-IIPYsWxBqo
+id: hudayriyat_content
+theme: hudayriyat
+region: content
+weight: -14
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

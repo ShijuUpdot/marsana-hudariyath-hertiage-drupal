@@ -1,0 +1,10 @@
+uuid: ad766c54-1058-475b-82aa-850ceae376ae
+langcode: en
+status: true
+dependencies: {  }
+id: home_slider_content
+label: 'Home Slider Content'
+icon_uuid: null
+icon_default: null
+description: 'Home Page Slider Content'
+behavior_plugins: {  }

@@ -1,0 +1,36 @@
+uuid: f3040bd5-19e7-4069-bc43-90b54fbe6460
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.eat_big_image
+  module:
+    - block_visibility_groups
+    - system
+    - views
+  theme:
+    - marsana
+id: views_block__eat_big_image_eat_big_image
+theme: marsana
+region: content
+weight: -12
+provider: null
+plugin: 'views_block:eat_big_image-eat_big_image'
+settings:
+  id: 'views_block:eat_big_image-eat_big_image'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
+    context_mapping: {  }
+  request_path:
+    id: request_path
+    pages: /eat
+    negate: false
+    context_mapping: {  }

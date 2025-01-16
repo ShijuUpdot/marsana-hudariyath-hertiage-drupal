@@ -1,0 +1,89 @@
+uuid: 7295b47a-1b15-474d-8a2b-2d81b8499cb6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.location_details.field_city
+    - field.field.paragraph.location_details.field_coordinate
+    - field.field.paragraph.location_details.field_icon
+    - field.field.paragraph.location_details.field_locat
+    - field.field.paragraph.location_details.field_location_at
+    - field.field.paragraph.location_details.field_location_iframe_url
+    - field.field.paragraph.location_details.field_location_latitude
+    - field.field.paragraph.location_details.field_location_longitude
+    - field.field.paragraph.location_details.field_street
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.location_details
+  module:
+    - geofield
+    - svg_image
+    - text
+id: paragraph.location_details.default
+targetEntityType: paragraph
+bundle: location_details
+mode: default
+content:
+  field_coordinate:
+    type: geofield_latlon
+    weight: 7
+    region: content
+    settings:
+      html5_geolocation: false
+    third_party_settings: {  }
+  field_icon:
+    weight: 0
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_locat:
+    weight: 2
+    settings:
+      size: 100
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+    region: content
+  field_location_at:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_location_iframe_url:
+    weight: 3
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_location_latitude:
+    weight: 5
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_location_longitude:
+    weight: 4
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  translation:
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  field_city: true
+  field_facilities: true
+  field_street: true
+  status: true

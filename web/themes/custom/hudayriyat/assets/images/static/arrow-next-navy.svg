@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="67px" height="67px" viewBox="0 0 67 67" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icon/Arrow/Next/Blue</title>
+    <defs>
+        <path d="M28.3374276,21.7071068 L26.7063361,23.3381983 C26.3161129,23.7284215 26.315768,24.3609919 26.7055654,24.7516404 L35.8893387,33.9554656 L35.8893387,33.9554656 L26.7055654,43.1592908 C26.315768,43.5499393 26.3161129,44.1825097 26.7063361,44.5727329 L28.3374276,46.2038244 C28.7279519,46.5943487 29.3611169,46.5943487 29.7516412,46.2038244 L42,33.9554656 L42,33.9554656 L29.7516412,21.7071068 C29.3611169,21.3165825 28.7279519,21.3165825 28.3374276,21.7071068 Z" id="path-1"></path>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icon/Arrow/Next/Filled-Blue">
+            <g id="Icon/Arrow/Next/Blue">
+                <circle id="Oval" fill="#212237" cx="33.5" cy="33.5" r="33.5"></circle>
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <use id="Mask" fill="#FFFFFF" xlink:href="#path-1"></use>
+            </g>
+        </g>
+    </g>
+</svg>

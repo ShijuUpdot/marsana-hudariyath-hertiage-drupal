@@ -1,0 +1,11 @@
+uuid: ff0b8c1b-bfae-4b01-90d5-f344c5c92a6d
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.enquiry
+id: contact_message.enquiry
+target_entity_type_id: contact_message
+target_bundle: enquiry
+default_langcode: site_default
+language_alterable: false

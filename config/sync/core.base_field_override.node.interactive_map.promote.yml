@@ -1,0 +1,22 @@
+uuid: 15880ed7-ae90-4b76-bdc1-3323eb0c864b
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.interactive_map
+id: node.interactive_map.promote
+field_name: promote
+entity_type: node
+bundle: interactive_map
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

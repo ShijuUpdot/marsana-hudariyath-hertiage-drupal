@@ -1,0 +1,6 @@
+uuid: 23e57d77-5a3a-41ed-a5e2-6430897e4915
+langcode: en
+status: true
+dependencies: {  }
+id: photo
+label: Photo

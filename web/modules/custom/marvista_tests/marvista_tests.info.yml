@@ -1,0 +1,5 @@
+name: 'Marvista Tests'
+type: module
+description: 'My Awesome Module'
+core_version_requirement: ^10.0
+package: 'Custom'

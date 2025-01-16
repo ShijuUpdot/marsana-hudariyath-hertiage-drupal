@@ -1,0 +1,69 @@
+uuid: a4ea2363-9b30-4f45-ab66-b9e3166be2ad
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.landing_details.body
+    - field.field.node.landing_details.field_experience_headline
+    - field.field.node.landing_details.field_hero_image
+    - field.field.node.landing_details.field_hero_image_title
+    - field.field.node.landing_details.field_hero_ogg_video
+    - field.field.node.landing_details.field_hero_video
+    - field.field.node.landing_details.field_hero_webm_video
+    - field.field.node.landing_details.field_intro
+    - field.field.node.landing_details.field_metatag
+    - field.field.node.landing_details.field_next_landing
+    - field.field.node.landing_details.field_next_landing_image
+    - field.field.node.landing_details.field_play_featured_section
+    - field.field.node.landing_details.field_play_single_banner_section
+    - field.field.node.landing_details.field_play_sticky_landing_links
+    - field.field.node.landing_details.field_previous_landing
+    - field.field.node.landing_details.field_previous_landing_image
+    - field.field.node.landing_details.field_primary_color
+    - field.field.node.landing_details.field_search_keywords
+    - field.field.node.landing_details.field_secondary_color
+    - node.type.landing_details
+  module:
+    - text
+    - user
+id: node.landing_details.teaser
+targetEntityType: node
+bundle: landing_details
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  addtoany: true
+  field_experience_headline: true
+  field_hero_image: true
+  field_hero_image_title: true
+  field_hero_ogg_video: true
+  field_hero_video: true
+  field_hero_webm_video: true
+  field_intro: true
+  field_metatag: true
+  field_next_landing: true
+  field_next_landing_image: true
+  field_play_featured_section: true
+  field_play_single_banner_section: true
+  field_play_sticky_landing_links: true
+  field_previous_landing: true
+  field_previous_landing_image: true
+  field_primary_color: true
+  field_search_keywords: true
+  field_secondary_color: true
+  langcode: true
+  search_api_excerpt: true

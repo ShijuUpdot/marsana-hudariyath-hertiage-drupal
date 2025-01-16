@@ -1,0 +1,17 @@
+uuid: bb4235f6-b58e-4817-8eb2-e48978d9e212
+langcode: en
+status: true
+dependencies:
+  module:
+    - community_post
+    - serialization
+    - user
+id: flag_remove_post_resource
+plugin_id: flag_remove_post_resource
+granularity: method
+configuration:
+  POST:
+    supported_formats:
+      - json
+    supported_auth:
+      - cookie

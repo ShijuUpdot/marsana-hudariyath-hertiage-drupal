@@ -1,0 +1,30 @@
+uuid: 333cbed2-9e62-45e0-82f3-a543c4bf4a0b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.static_link.field_static_link
+    - paragraphs.paragraphs_type.static_link
+  module:
+    - link
+id: paragraph.static_link.default
+targetEntityType: paragraph
+bundle: static_link
+mode: default
+content:
+  field_static_link:
+    weight: 0
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  translation:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  status: true

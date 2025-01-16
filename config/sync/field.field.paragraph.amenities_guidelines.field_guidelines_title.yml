@@ -1,0 +1,19 @@
+uuid: e1c5c220-5e7c-4a01-9394-d1962ba49214
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_guidelines_title
+    - paragraphs.paragraphs_type.amenities_guidelines
+id: paragraph.amenities_guidelines.field_guidelines_title
+field_name: field_guidelines_title
+entity_type: paragraph
+bundle: amenities_guidelines
+label: 'Guidelines Title'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

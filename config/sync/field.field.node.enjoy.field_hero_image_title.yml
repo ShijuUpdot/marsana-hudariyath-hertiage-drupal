@@ -1,0 +1,19 @@
+uuid: a7e74bd3-5213-4172-82d7-ae011f4ebf9f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hero_image_title
+    - node.type.enjoy
+id: node.enjoy.field_hero_image_title
+field_name: field_hero_image_title
+entity_type: node
+bundle: enjoy
+label: 'Hero Banner Title'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

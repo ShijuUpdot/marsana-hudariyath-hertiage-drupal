@@ -1,0 +1,29 @@
+uuid: d9b4bee4-1c92-455b-bc75-9388d3ce80b1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_landmark_type
+    - taxonomy.vocabulary.landmarks
+    - taxonomy.vocabulary.landmarks_type
+id: taxonomy_term.landmarks.field_landmark_type
+field_name: field_landmark_type
+entity_type: taxonomy_term
+bundle: landmarks
+label: 'Landmark Type'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      landmarks_type: landmarks_type
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

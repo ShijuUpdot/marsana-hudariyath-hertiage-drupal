@@ -1,0 +1,443 @@
+uuid: 6d94946a-d98c-4e15-b717-2cbd6960224c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.amenities_details.body
+    - field.field.node.amenities_details.field_activity_weekend
+    - field.field.node.amenities_details.field_amenity_experience
+    - field.field.node.amenities_details.field_amenity_gallery
+    - field.field.node.amenities_details.field_amenity_icon
+    - field.field.node.amenities_details.field_amenity_icon_color
+    - field.field.node.amenities_details.field_amenity_images
+    - field.field.node.amenities_details.field_amenity_images_title
+    - field.field.node.amenities_details.field_amenity_location
+    - field.field.node.amenities_details.field_amenity_tags
+    - field.field.node.amenities_details.field_amenity_type
+    - field.field.node.amenities_details.field_autosuggestion_keywords
+    - field.field.node.amenities_details.field_available_amenity_items
+    - field.field.node.amenities_details.field_direct_url
+    - field.field.node.amenities_details.field_facilities
+    - field.field.node.amenities_details.field_headline
+    - field.field.node.amenities_details.field_hero_image
+    - field.field.node.amenities_details.field_hero_image_logo
+    - field.field.node.amenities_details.field_hero_image_title
+    - field.field.node.amenities_details.field_hero_ogg_video
+    - field.field.node.amenities_details.field_hero_video
+    - field.field.node.amenities_details.field_hero_webm_video
+    - field.field.node.amenities_details.field_info_block
+    - field.field.node.amenities_details.field_intro_description
+    - field.field.node.amenities_details.field_intro_short_description
+    - field.field.node.amenities_details.field_is_recommended
+    - field.field.node.amenities_details.field_key_features
+    - field.field.node.amenities_details.field_link_facebook
+    - field.field.node.amenities_details.field_link_instagram
+    - field.field.node.amenities_details.field_link_twitter
+    - field.field.node.amenities_details.field_location_details
+    - field.field.node.amenities_details.field_mail_to
+    - field.field.node.amenities_details.field_opening_hours
+    - field.field.node.amenities_details.field_other_amenity_item
+    - field.field.node.amenities_details.field_phone_number
+    - field.field.node.amenities_details.field_position
+    - field.field.node.amenities_details.field_primary_color
+    - field.field.node.amenities_details.field_priority
+    - field.field.node.amenities_details.field_secondary_color
+    - field.field.node.amenities_details.field_slider_images
+    - field.field.node.amenities_details.field_suitable
+    - field.field.node.amenities_details.field_title_social_media
+    - field.field.node.amenities_details.field_title_translation
+    - field.field.node.amenities_details.field_upload
+    - image.style.thumbnail
+    - node.type.amenities_details
+  module:
+    - file
+    - paragraphs
+    - path
+    - svg_image
+    - text
+id: node.amenities_details.default
+targetEntityType: node
+bundle: amenities_details
+mode: default
+content:
+  body_class:
+    type: string_textfield
+    weight: 23
+    region: content
+    settings:
+      size: 60
+      placeholder: blue-bg
+    third_party_settings: {  }
+  created:
+    type: datetime_timestamp
+    weight: 25
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_activity_weekend:
+    weight: 19
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_amenity_experience:
+    weight: 15
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_amenity_icon:
+    weight: 14
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_amenity_icon_color:
+    weight: 32
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_amenity_images:
+    weight: 13
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_amenity_images_title:
+    weight: 12
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_amenity_location:
+    weight: 17
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_amenity_tags:
+    weight: 17
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_amenity_type:
+    weight: 16
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_autosuggestion_keywords:
+    weight: 33
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_available_amenity_items:
+    weight: 10
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_direct_url:
+    weight: 40
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_facilities:
+    weight: 31
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_headline:
+    weight: 6
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_hero_image:
+    weight: 2
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_hero_image_title:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_hero_video:
+    weight: 4
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
+  field_info_block:
+    type: entity_reference_paragraphs
+    weight: 5
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_intro_description:
+    weight: 8
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_intro_short_description:
+    weight: 7
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_is_recommended:
+    weight: 34
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_key_features:
+    type: entity_reference_paragraphs
+    weight: 9
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_link_facebook:
+    weight: 42
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_link_instagram:
+    weight: 43
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_link_twitter:
+    weight: 44
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_location_details:
+    type: entity_reference_paragraphs
+    weight: 11
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_mail_to:
+    weight: 39
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_other_amenity_item:
+    weight: 20
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_phone_number:
+    weight: 37
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_position:
+    weight: 28
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_primary_color:
+    type: options_select
+    weight: 29
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_priority:
+    weight: 38
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_secondary_color:
+    type: options_select
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_slider_images:
+    weight: 21
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_suitable:
+    weight: 18
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_title_social_media:
+    weight: 45
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_title_translation:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_upload:
+    weight: 22
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
+  langcode:
+    type: language_select
+    weight: 36
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 33
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 27
+    region: content
+    third_party_settings: {  }
+  specific_node_class:
+    type: boolean_checkbox
+    weight: 24
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 34
+    region: content
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 28
+    region: content
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  translation:
+    weight: 35
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 26
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      match_limit: 10
+    region: content
+    third_party_settings: {  }
+hidden:
+  body: true
+  field_amenity_gallery: true
+  field_hero_image_logo: true
+  field_hero_ogg_video: true
+  field_hero_webm_video: true
+  field_opening_hours: true
+  field_primary_color: true
+  field_secondary_color: true

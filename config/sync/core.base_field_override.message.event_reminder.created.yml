@@ -1,0 +1,18 @@
+uuid: 598906e9-4a67-45b4-be29-77c48874265c
+langcode: en
+status: true
+dependencies:
+  config:
+    - message.template.event_reminder
+id: message.event_reminder.created
+field_name: created
+entity_type: message
+bundle: event_reminder
+label: 'Created on'
+description: 'The time that the message was created.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

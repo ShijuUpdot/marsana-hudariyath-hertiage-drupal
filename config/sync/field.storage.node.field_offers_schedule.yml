@@ -1,0 +1,21 @@
+uuid: 3afe55a6-cec8-470f-ac5c-7a23d308d0b7
+langcode: en
+status: true
+dependencies:
+  module:
+    - entity_reference_revisions
+    - node
+    - paragraphs
+id: node.field_offers_schedule
+field_name: field_offers_schedule
+entity_type: node
+type: entity_reference_revisions
+settings:
+  target_type: paragraph
+module: entity_reference_revisions
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,38 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a view of unformatted rows.
+ *
+ * Available variables:
+ * - title: The title of this group of rows. May be empty.
+ * - rows: A list of the view's row items.
+ *   - attributes: The row's HTML attributes.
+ *   - content: The row's content.
+ * - view: The view object.
+ * - default_row_class: A flag indicating whether default classes should be
+ *   used on rows.
+ *
+ * @see template_preprocess_views_view_unformatted()
+ *
+ * @ingroup themeable
+ */
+#}
+{% for row in rows %}
+{% set header_title = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_hero_image_title }}'] %}
+    <a href="/" class="animated-logo">{{ header_title | striptags | trim }} </a>
+    <div class="container">
+      <div class="row justify-content-between align-items-center">
+        <div class="col text-right menu-right">
+          {%  for key, row in header_links %}
+          {% if key == 0 %}
+             <a href="{{ row.header_link_url }}" target="_blank" class="body-text bold small"> {{ row.header_link_title}}  
+			 <img src="https://stmodonstagblob.blob.core.windows.net/sthudayriyatblob/2020-12/external-icon.svg" alt=""></a>
+          {% elseif key == 1 %}
+            <a href="javascript:;" class="body-text bold small contact-btn">{{ row.header_link_title}}</a>
+          {% endif %}
+          {% endfor %}         
+          <a href="{{ langlink }}" class="body-text bold small">{{ langcode }}  </a>
+        </div>
+      </div>
+    </div>
+{% endfor %}

@@ -1,0 +1,19 @@
+uuid: 4308a376-09d0-4487-92a7-9c15fef8c4e3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_highlighted_news_title
+    - node.type.news_listing
+id: node.news_listing.field_highlighted_news_title
+field_name: field_highlighted_news_title
+entity_type: node
+bundle: news_listing
+label: 'Highlighted News Title'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

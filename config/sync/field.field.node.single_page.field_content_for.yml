@@ -1,0 +1,21 @@
+uuid: 3fac6f16-aea6-426d-b042-8f7e70e3b9ab
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_content_for
+    - node.type.single_page
+  module:
+    - options
+id: node.single_page.field_content_for
+field_name: field_content_for
+entity_type: node
+bundle: single_page
+label: 'Content For'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

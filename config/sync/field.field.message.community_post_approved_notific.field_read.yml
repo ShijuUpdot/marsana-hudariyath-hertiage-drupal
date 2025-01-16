@@ -1,0 +1,21 @@
+uuid: d79132bd-4ec0-406b-baa8-432da251fded
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.message.field_read
+    - message.template.community_post_approved_notific
+  module:
+    - options
+id: message.community_post_approved_notific.field_read
+field_name: field_read
+entity_type: message
+bundle: community_post_approved_notific
+label: Read
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

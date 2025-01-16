@@ -1,0 +1,23 @@
+uuid: bdeca371-3117-450e-bc38-818c5a0d291f
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - hudayriyat_social_feeds
+  module:
+    - node
+_core:
+  default_config_hash: loQruSPl4-jtqrgD8Vb0bzr0lfwgg0YXHBeV3oz80Vs
+id: node.field_post_created_date
+field_name: field_post_created_date
+entity_type: node
+type: timestamp
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,91 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a view of unformatted rows.
+ *
+ * Available variables:
+ * - title: The title of this group of rows. May be empty.
+ * - rows: A list of the view's row items.
+ *   - attributes: The row's HTML attributes.
+ *   - content: The row's content.
+ * - view: The view object.
+ * - default_row_class: A flag indicating whether default classes should be
+ *   used on rows.
+ *
+ * @see template_preprocess_views_view_unformatted()
+ *
+ * @ingroup themeable
+ */
+#}
+
+{% for row in rows %}
+{# {{ dump(row.content['#view'].style_plugin.render_tokens[ loop.index0 ] | keys) }} #}
+{% set thumbnail_image = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_hero_image }}'] %}
+{% set hero_video = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_hero_video }}'] %}
+{% set title = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_hero_image_title }}'] %}
+{% set next_image = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_link_image }}']  %}
+{% set previous_image = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_previous_link_image }}'] %}
+{% set next_image1 = next_image %}
+{% set next_image2 = next_image %}
+{% set previous_image1 = previous_image %}
+{% set previous_image2 = previous_image %}
+{% set next_link_text   = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_landing_link_1 }}']| striptags | trim  %}
+{% set next_link_url   = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_landing_link }}'] | striptags | trim  %}
+{% set previous_link_text   = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_previous_landing_link_1 }}']| striptags | trim  %}
+{% set previous_link_url   = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_previous_landing_link }}'] | striptags | trim  %}
+{% set primaryColor = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_primary_color }}'] | striptags | trim %}
+{% set next_landing_color   = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_next_landing_color }}'] | striptags | trim  %}
+{% set previous_landing_color  = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_previous_landing_color }}'] | striptags | trim  %}
+{% set hero_webm_video = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_hero_webm_video }}'] | striptags | trim %}
+{% set hero_ogg_video = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_hero_ogg_video }}'] | striptags | trim %}
+
+<section class="discovery-main">
+    <div class="upper {{ primaryColor }}">
+        <div class="discover-main-wrapper container">
+        <h1>{{ title | striptags | trim }}</h1>
+        <a href="{{ previous_link_url }}" class="discovery-main-arrows arrow-prev"><img src="/images/static/arrow-prev-white.svg" alt="Previous Discovery"><p>{{ previous_link_text }}</p></a>
+        <a href="{{ next_link_url }}" class="discovery-main-arrows arrow-next"><img src="/images/static/arrow-next-white.svg" alt="Previous Discovery"><p>{{ next_link_text }}</p></a>
+        </div>
+        <div class="discovery-main-illus">
+        <img src="{{ thumbnail_image | striptags | trim }}" alt="{{ title | striptags | trim }}" class="discovery-img-video">
+        <video autoplay="" muted="" loop="" id="mainPageVideo">
+            <source src="{{ hero_video | striptags | trim }}" type="video/mp4">
+            {% if hero_webm_video %}
+              <source src="{{ hero_webm_video }}" type="video/webm">
+            {% endif %}
+            {% if hero_ogg_video %}
+              <source src="{{ hero_ogg_video }}" type="video/ogg">
+            {% endif %}
+            Your browser does not support HTML5 video.
+        </video>
+        </div>
+    </div>
+    <div class="ground">
+        <img src="/images/static/scroll.gif" alt="Scroll Gif" class="scroll-down">
+    </div>
+</section>
+<section class="sticky-nav">
+        <ul>
+          <li class="discovery-nav next-nav img-height img-square {{ next_landing_color }}">
+            <div class="img-height-wrapper">
+              <div class="img-wrapper">
+                <img src="/images/static/arrow-next-white.svg" alt="" class="arrow">
+                <p> {{ next_link_text }}</p>
+              </div>
+              <a href="{{ next_link_url }}"></a>
+              <img src="{{ next_image1 | striptags | trim }}" alt="Stay" class="illustration">
+            </div>
+          </li>
+          <li class="discovery-nav prev-nav img-height img-square {{ previous_landing_color }}">
+            <div class="img-height-wrapper">
+              <div class="img-wrapper">
+                <img src="/images/static/arrow-prev-white.svg" alt="" class="arrow">
+                <p>{{ previous_link_text }}</p>
+              </div>
+              <a href="{{ previous_link_url }}"></a>
+              <img src="{{ previous_image1 | striptags | trim }}" alt="play" class="illustration">
+            </div>
+          </li>
+        </ul>
+</section>
+{% endfor %}

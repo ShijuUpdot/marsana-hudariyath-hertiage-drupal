@@ -1,0 +1,22 @@
+uuid: 78c06201-a276-47e0-9028-05c64dfa80e4
+langcode: en
+status: true
+dependencies:
+  theme:
+    - heritage
+_core:
+  default_config_hash: X9I1OB0W3WlWtrK-CNcg6hNWwa8wficanpH8pYnDZDE
+id: heritage_local_tasks
+theme: heritage
+region: other
+weight: -8
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

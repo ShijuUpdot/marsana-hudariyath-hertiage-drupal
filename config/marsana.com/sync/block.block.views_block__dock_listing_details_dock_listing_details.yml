@@ -1,0 +1,36 @@
+uuid: 5cdfff37-a0af-47cf-8b36-20677ad67dfa
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.dock_listing_details
+  module:
+    - block_visibility_groups
+    - system
+    - views
+  theme:
+    - marsana
+id: views_block__dock_listing_details_dock_listing_details
+theme: marsana
+region: content
+weight: -6
+provider: null
+plugin: 'views_block:dock_listing_details-dock_listing_details'
+settings:
+  id: 'views_block:dock_listing_details-dock_listing_details'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
+    context_mapping: {  }
+  request_path:
+    id: request_path
+    pages: /dock
+    negate: false
+    context_mapping: {  }

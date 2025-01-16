@@ -1,0 +1,21 @@
+uuid: 804eaff6-0f4d-4f53-b8f0-bfdeae9d9e0a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_intro_description
+    - node.type.event_details
+  module:
+    - text
+id: node.event_details.field_intro_description
+field_name: field_intro_description
+entity_type: node
+bundle: event_details
+label: 'Intro Description'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

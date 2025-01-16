@@ -1,0 +1,99 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a view of unformatted rows.
+ *
+ * Available variables:
+ * - title: The title of this group of rows. May be empty.
+ * - rows: A list of the view's row items.
+ *   - attributes: The row's HTML attributes.
+ *   - content: The row's content.
+ * - view: The view object.
+ * - default_row_class: A flag indicating whether default classes should be
+ *   used on rows.
+ *
+ * @see template_preprocess_views_view_unformatted()
+ *
+ * @ingroup themeable
+ */
+#}
+{% for key, row in listing %}
+    {% if row|length %}
+        <div class="modal fade fnbModal" id="{{ row.amenities|trim|replace({" ":"-", ".":"-", '&#039;':"-", '&amp;' : '-'})|lower }}-modal" tabindex="-1" role="dialog" aria-labelledby="{{ row.amenities|trim|replace({" ":"-", ".":"-", '&#039;':"-", '&amp;' : '-'})|lower }}-modalTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <img src="{{ row.bg_image|trim }}" alt="" class="modal-header-image">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-4">
+                                {% if row.logo and row.logo != '/' %}
+                                    <div class="modal-logo-wrapper">
+                                        <img src="{{ row.logo|trim }}" alt="">
+                                    </div>
+                                {% endif %}
+                                </div>
+                                <div class="col-8">
+                                    <div class="modal-opening">
+                                        <!-- <img src="/images/static/hour.svg" alt="">
+                                        <p class="body-text small">Open every day from 7:00 am till 11:00 pm </p> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer p-4">
+                        <div class="container">
+                            <div class="row py-5">
+                                {% if row.phone_url|trim or row.menu_pdf | trim or row.menu_link_url|trim or row.insta_url|trim or row.website_link_url|trim %}
+                                    <div class="col-md-4">
+                                        <ul class="modal-listing-info">
+                                        {% if row.phone_url|trim %}
+                                            <li>
+                                                <img src="/images/static/icon-phone-white.svg" alt="">
+                                                <a href="{{ row.phone_url|trim }}" target="_blank" class="body-text small color-white">{{ row.phone_title | trim }}</a>
+                                            </li>
+                                        {% endif %}
+                                        {% if row.menu_pdf|trim %}
+                                            <li>
+                                                <img src="/images/static/icon-menu.svg" alt="">
+                                                <a href="{{ row.menu_pdf | trim }}" target="_blank" class="body-text small color-white">{{ menuTitle|raw|trim }}</a>
+                                            </li>
+                                        {% elseif row.menu_link_url|trim %}
+                                            <li>
+                                                <img src="/images/static/icon-menu.svg" alt="">
+                                                <a href="{{ row.menu_link_url|trim }}" target="_blank" class="body-text small color-white">{{ row.menu_link_title|trim }}</a>
+                                            </li>
+                                        {% endif %}
+                                        {% if row.insta_url|trim %}
+                                            <li>
+                                                <img src="/images/static/insta-white.svg" alt="">
+                                                <a href="{{ row.insta_url|trim }}" target="_blank" class="body-text small color-white">{{ row.insta_title|trim }}</a>
+                                            </li>
+                                        {% endif %}
+                                        {% if row.website_link_url|trim %}
+                                            <li>
+                                                <img src="/images/static/icon-link.svg" alt="">
+                                                <a href="{{ row.website_link_url|trim }}" target="_blank" class="body-text small color-white">{{ row.website_link_title|trim }}</a>
+                                            </li>
+                                        {% endif %}
+                                        </ul>
+                                    </div>
+                                {% endif %}
+                                <div class="col-md-8">
+                                    <p class="body-text color-white mb-3">{{ row.title|title|raw|striptags|trim }}</p>
+                                    <p class="body-text small color-white">{{ row.description|striptags|trim }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+{% endfor %}

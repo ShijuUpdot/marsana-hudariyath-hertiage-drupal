@@ -1,0 +1,20 @@
+uuid: 47ecbb01-8f3c-478c-94fd-e299137b9b8b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_social_id
+  module:
+    - user
+id: user.user.field_social_id
+field_name: field_social_id
+entity_type: user
+bundle: user
+label: 'Social Id'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,21 @@
+uuid: 647ba752-b3d7-43b4-9382-c641c5f776ac
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_enjoymetatag
+    - node.type.enjoy
+  module:
+    - metatag
+id: node.enjoy.field_enjoymetatag
+field_name: field_enjoymetatag
+entity_type: node
+bundle: enjoy
+label: enjoymetatag
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: metatag

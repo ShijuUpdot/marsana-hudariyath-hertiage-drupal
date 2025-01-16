@@ -1,0 +1,5 @@
+entity.schedule_item.add_form:
+  route_name: entity.schedule_item.add_form
+  title: 'Add Schedule item'
+  appears_on:
+    - entity.schedule_item.collection

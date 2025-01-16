@@ -1,0 +1,55 @@
+uuid: f7393617-6a4d-4223-b80d-65ce6cda5af7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_social_links
+    - paragraphs.paragraphs_type.footer_social_block
+    - paragraphs.paragraphs_type.footer_social_links
+  module:
+    - entity_reference_revisions
+id: paragraph.footer_social_block.field_social_links
+field_name: field_social_links
+entity_type: paragraph
+bundle: footer_social_block
+label: 'Social Links'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      footer_social_links: footer_social_links
+    target_bundles_drag_drop:
+      about_block:
+        weight: 8
+        enabled: false
+      about_section:
+        weight: 9
+        enabled: false
+      footer_social_block:
+        weight: 10
+        enabled: false
+      footer_social_links:
+        enabled: true
+        weight: 11
+      guidelines_type:
+        weight: 12
+        enabled: false
+      header_links:
+        weight: 15
+        enabled: false
+      indicators_type:
+        weight: 16
+        enabled: false
+      intro_description:
+        weight: 13
+        enabled: false
+      listing_details:
+        weight: 14
+        enabled: false
+field_type: entity_reference_revisions

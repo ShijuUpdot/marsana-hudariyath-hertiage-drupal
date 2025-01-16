@@ -1,0 +1,20 @@
+uuid: 49137191-be26-4551-a16a-6eb5bb857d1b
+langcode: en
+status: true
+dependencies:
+  config:
+    - community_post.community_post_type.photo
+id: community_post.photo.user_id
+field_name: user_id
+entity_type: community_post
+bundle: photo
+label: 'Authored by'
+description: 'The user ID of author of the Community post entity.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference

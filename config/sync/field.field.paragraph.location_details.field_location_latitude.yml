@@ -1,0 +1,23 @@
+uuid: cca2bc6c-5783-4b2f-b1df-9b2d2ba5d7d9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_location_latitude
+    - paragraphs.paragraphs_type.location_details
+id: paragraph.location_details.field_location_latitude
+field_name: field_location_latitude
+entity_type: paragraph
+bundle: location_details
+label: 'Location Latitude'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: float

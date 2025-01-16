@@ -1,0 +1,28 @@
+uuid: 61f990cf-2258-4807-acbc-ab20f049056a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_other_amenity_item
+    - node.type.amenities_details
+    - node.type.amenity_single
+id: node.amenity_single.field_other_amenity_item
+field_name: field_other_amenity_item
+entity_type: node
+bundle: amenity_single
+label: 'Other Amenity Item'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      amenities_details: amenities_details
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

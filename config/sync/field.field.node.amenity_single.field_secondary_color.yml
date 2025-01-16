@@ -1,0 +1,21 @@
+uuid: 69e693ba-db9e-459c-94dd-ad6d3784fa7e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_secondary_color
+    - node.type.amenity_single
+  module:
+    - options
+id: node.amenity_single.field_secondary_color
+field_name: field_secondary_color
+entity_type: node
+bundle: amenity_single
+label: 'Secondary Color'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

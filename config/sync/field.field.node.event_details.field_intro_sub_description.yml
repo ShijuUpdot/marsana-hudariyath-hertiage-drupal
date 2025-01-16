@@ -1,0 +1,21 @@
+uuid: 402d7445-a9c1-4f9f-880a-071813357665
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_intro_sub_description
+    - node.type.event_details
+  module:
+    - text
+id: node.event_details.field_intro_sub_description
+field_name: field_intro_sub_description
+entity_type: node
+bundle: event_details
+label: 'Intro Sub Description'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

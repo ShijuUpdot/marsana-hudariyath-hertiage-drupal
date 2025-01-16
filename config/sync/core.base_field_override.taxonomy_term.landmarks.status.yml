@@ -1,0 +1,22 @@
+uuid: e1dd5a8d-caaa-49b4-8997-2c5d50cef16b
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.landmarks
+id: taxonomy_term.landmarks.status
+field_name: status
+entity_type: taxonomy_term
+bundle: landmarks
+label: Published
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

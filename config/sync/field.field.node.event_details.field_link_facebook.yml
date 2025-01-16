@@ -1,0 +1,19 @@
+uuid: e2998696-5af1-4192-b611-3605fb2a0a85
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_link_facebook
+    - node.type.event_details
+id: node.event_details.field_link_facebook
+field_name: field_link_facebook
+entity_type: node
+bundle: event_details
+label: 'Link Facebook'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

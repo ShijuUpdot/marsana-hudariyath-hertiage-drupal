@@ -1,0 +1,32 @@
+uuid: 38cff1c7-e468-44f7-8343-fac9b2eb72ea
+langcode: en
+status: true
+dependencies:
+  module:
+    - community_post
+    - file
+    - image
+_core:
+  default_config_hash: kQy7zWWdEnAsC15uiExXYnVd034lyxN4TtbK33tx8_s
+id: community_post.field_image
+field_name: field_image
+entity_type: community_post
+type: image
+settings:
+  uri_scheme: azblob
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+  target_type: file
+  display_field: false
+  display_default: false
+module: image
+locked: false
+cardinality: 3
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

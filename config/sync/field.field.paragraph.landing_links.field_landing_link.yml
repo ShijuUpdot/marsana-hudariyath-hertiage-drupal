@@ -1,0 +1,23 @@
+uuid: a147c863-9e86-4c96-9d25-e04de70ffc1f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_landing_link
+    - paragraphs.paragraphs_type.landing_links
+  module:
+    - link
+id: paragraph.landing_links.field_landing_link
+field_name: field_landing_link
+entity_type: paragraph
+bundle: landing_links
+label: 'Next Landing Link'
+description: 'Next Landing Link'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

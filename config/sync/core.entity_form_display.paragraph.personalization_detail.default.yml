@@ -1,0 +1,34 @@
+uuid: 56d21751-bf20-486f-a609-b2eb18130c8e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.personalization_detail.field_intro_description
+    - field.field.paragraph.personalization_detail.field_title
+    - paragraphs.paragraphs_type.personalization_detail
+  module:
+    - text
+id: paragraph.personalization_detail.default
+targetEntityType: paragraph
+bundle: personalization_detail
+mode: default
+content:
+  field_intro_description:
+    weight: 1
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true

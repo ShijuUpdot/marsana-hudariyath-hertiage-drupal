@@ -1,0 +1,29 @@
+uuid: 1a3cc110-ddd8-42e1-8f4b-2550b003c00a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_facilities
+    - node.type.event_details
+    - taxonomy.vocabulary.facilities
+id: node.event_details.field_facilities
+field_name: field_facilities
+entity_type: node
+bundle: event_details
+label: Facilities
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      facilities: facilities
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

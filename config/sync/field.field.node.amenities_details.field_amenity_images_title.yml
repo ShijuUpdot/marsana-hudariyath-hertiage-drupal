@@ -1,0 +1,19 @@
+uuid: edb26315-8fc1-46ff-beee-ca30b46bbebc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_amenity_images_title
+    - node.type.amenities_details
+id: node.amenities_details.field_amenity_images_title
+field_name: field_amenity_images_title
+entity_type: node
+bundle: amenities_details
+label: 'Amenity Images Title'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

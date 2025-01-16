@@ -1,0 +1,24 @@
+uuid: 7deb3967-07e7-460a-9736-63d0d3c5cb87
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.opening_hours_section.field_opening_hours
+    - paragraphs.paragraphs_type.opening_hours_section
+  module:
+    - entity_reference_revisions
+id: paragraph.opening_hours_section.default
+targetEntityType: paragraph
+bundle: opening_hours_section
+mode: default
+content:
+  field_opening_hours:
+    type: entity_reference_revisions_entity_view
+    weight: 0
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+hidden: {  }

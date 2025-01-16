@@ -1,0 +1,232 @@
+uuid: 26740f68-d39e-4675-b9c5-8c030a81ecdf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.discover.body
+    - field.field.node.discover.field_dicovermetatag
+    - field.field.node.discover.field_discover_feature_section
+    - field.field.node.discover.field_discover_intro
+    - field.field.node.discover.field_discover_key_features
+    - field.field.node.discover.field_discover_links
+    - field.field.node.discover.field_discover_listing
+    - field.field.node.discover.field_discover_single_banner
+    - field.field.node.discover.field_discover_sticky_landing_li
+    - field.field.node.discover.field_experience_headline
+    - field.field.node.discover.field_hero_image
+    - field.field.node.discover.field_hero_image_title
+    - field.field.node.discover.field_hero_ogg_video
+    - field.field.node.discover.field_hero_video
+    - field.field.node.discover.field_hero_webm_video
+    - field.field.node.discover.field_key_points
+    - field.field.node.discover.field_next_landing
+    - field.field.node.discover.field_next_landing_image
+    - field.field.node.discover.field_previous_landing
+    - field.field.node.discover.field_previous_landing_image
+    - field.field.node.discover.field_primary_color
+    - field.field.node.discover.field_search_keywords
+    - field.field.node.discover.field_secondary_color
+    - image.style.thumbnail
+    - node.type.discover
+  module:
+    - file
+    - metatag
+    - paragraphs
+    - path
+    - svg_image
+id: node.discover.default
+targetEntityType: node
+bundle: discover
+mode: default
+content:
+  body_class:
+    type: string_textfield
+    weight: 17
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  created:
+    type: datetime_timestamp
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_dicovermetatag:
+    weight: 19
+    settings:
+      sidebar: true
+    third_party_settings: {  }
+    type: metatag_firehose
+    region: content
+  field_discover_feature_section:
+    type: entity_reference_paragraphs
+    weight: 13
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_discover_single_banner:
+    type: entity_reference_paragraphs
+    weight: 14
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_discover_sticky_landing_li:
+    type: entity_reference_paragraphs
+    weight: 16
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_experience_headline:
+    weight: 27
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_hero_image:
+    weight: 9
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_hero_image_title:
+    weight: 10
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_hero_video:
+    weight: 8
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
+  field_key_points:
+    type: entity_reference_paragraphs
+    weight: 15
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_primary_color:
+    type: options_select
+    weight: 11
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_search_keywords:
+    weight: 26
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  langcode:
+    type: language_select
+    weight: 1
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 4
+    region: content
+    third_party_settings: {  }
+  specific_node_class:
+    type: boolean_checkbox
+    weight: 18
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 7
+    region: content
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 5
+    region: content
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  translation:
+    weight: 12
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 2
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      match_limit: 10
+    region: content
+    third_party_settings: {  }
+hidden:
+  body: true
+  field_discover_intro: true
+  field_discover_key_features: true
+  field_discover_links: true
+  field_discover_listing: true
+  field_hero_ogg_video: true
+  field_hero_webm_video: true
+  field_next_landing: true
+  field_next_landing_image: true
+  field_previous_landing: true
+  field_previous_landing_image: true
+  field_secondary_color: true

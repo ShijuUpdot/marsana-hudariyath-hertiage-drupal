@@ -1,0 +1,23 @@
+uuid: 98b313ec-308c-4cbc-af94-3de090bd483a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_website_link
+    - paragraphs.paragraphs_type.listing_details
+  module:
+    - link
+id: paragraph.listing_details.field_website_link
+field_name: field_website_link
+entity_type: paragraph
+bundle: listing_details
+label: 'Website Link'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

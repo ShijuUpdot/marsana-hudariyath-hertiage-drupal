@@ -1,0 +1,37 @@
+uuid: 5e57779f-0c94-4ee4-af9c-0fe56e975305
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.static_pages.body
+    - field.field.node.static_pages.field_content_for
+    - field.field.node.static_pages.field_hero_image_title
+    - field.field.node.static_pages.field_sub_title
+    - node.type.static_pages
+  module:
+    - text
+    - user
+id: node.static_pages.teaser
+targetEntityType: node
+bundle: static_pages
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_content_for: true
+  field_hero_image_title: true
+  field_sub_title: true
+  langcode: true

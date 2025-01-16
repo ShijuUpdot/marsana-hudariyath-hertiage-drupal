@@ -1,0 +1,19 @@
+uuid: 55d2be55-0926-48f9-aa58-38b71f97e12d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_location_iframe_url
+    - paragraphs.paragraphs_type.location_details
+id: paragraph.location_details.field_location_iframe_url
+field_name: field_location_iframe_url
+entity_type: paragraph
+bundle: location_details
+label: 'Location Iframe url'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

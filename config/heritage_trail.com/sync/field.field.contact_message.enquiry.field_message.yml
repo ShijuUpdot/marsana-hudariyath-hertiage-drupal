@@ -1,0 +1,19 @@
+uuid: baafd8be-b14e-4a25-b2a8-fc6edd1b6c57
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.enquiry
+    - field.storage.contact_message.field_message
+id: contact_message.enquiry.field_message
+field_name: field_message
+entity_type: contact_message
+bundle: enquiry
+label: Message
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

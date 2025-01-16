@@ -1,0 +1,9 @@
+firebase_cloud_messaging.firebase_cloud_messaging_config_form:
+  path: '/admin/config/firebase_cloud_messaging/config'
+  defaults:
+    _form: '\Drupal\firebase_cloud_messaging\Form\FirebaseCloudMessagingConfigForm'
+    _title: 'Firebase Cloud Messaging Config'
+  requirements:
+    _permission: 'access administration pages'
+  options:
+    _admin_route: TRUE

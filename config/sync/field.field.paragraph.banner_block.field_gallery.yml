@@ -1,0 +1,130 @@
+uuid: f3e8ca91-3978-4bb9-b594-b2c19bb3ea34
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_gallery
+    - paragraphs.paragraphs_type.banner_block
+    - paragraphs.paragraphs_type.gallery_images
+  module:
+    - entity_reference_revisions
+id: paragraph.banner_block.field_gallery
+field_name: field_gallery
+entity_type: paragraph
+bundle: banner_block
+label: Gallery
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      gallery_images: gallery_images
+    target_bundles_drag_drop:
+      about_contact_details:
+        weight: 35
+        enabled: false
+      about_intro_section:
+        weight: 36
+        enabled: false
+      amenities_guidelines:
+        weight: 19
+        enabled: false
+      banner_block:
+        weight: 20
+        enabled: false
+      booking_listing:
+        weight: 39
+        enabled: false
+      booking_type:
+        weight: 40
+        enabled: false
+      description_block:
+        weight: 41
+        enabled: false
+      discover_key_features:
+        weight: 42
+        enabled: false
+      discover_listing:
+        weight: 21
+        enabled: false
+      event_guidelines:
+        weight: 22
+        enabled: false
+      features_block:
+        weight: 23
+        enabled: false
+      footer_social_links:
+        weight: 24
+        enabled: false
+      gallery_images:
+        enabled: true
+        weight: 25
+      guidelines:
+        weight: 26
+        enabled: false
+      info_block:
+        weight: 49
+        enabled: false
+      info_type:
+        weight: 27
+        enabled: false
+      intro_block:
+        weight: 28
+        enabled: false
+      key_points:
+        weight: 29
+        enabled: false
+      key_points_type:
+        weight: 30
+        enabled: false
+      landing_links:
+        weight: 54
+        enabled: false
+      link_type:
+        weight: 56
+        enabled: false
+      links_block:
+        weight: 55
+        enabled: false
+      listings:
+        weight: 31
+        enabled: false
+      location:
+        weight: 32
+        enabled: false
+      location_details:
+        weight: 33
+        enabled: false
+      opening_hours:
+        weight: 60
+        enabled: false
+      opening_hours_block:
+        weight: 61
+        enabled: false
+      opening_hours_section:
+        weight: 62
+        enabled: false
+      schedule_details:
+        weight: 63
+        enabled: false
+      single_banner:
+        weight: 34
+        enabled: false
+      slider_images:
+        weight: 65
+        enabled: false
+      stats_listing:
+        weight: 35
+        enabled: false
+      stay_featured_block:
+        weight: 67
+        enabled: false
+      stay_stats_type:
+        weight: 36
+        enabled: false
+field_type: entity_reference_revisions

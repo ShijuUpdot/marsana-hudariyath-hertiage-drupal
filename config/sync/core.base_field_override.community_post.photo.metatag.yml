@@ -1,0 +1,18 @@
+uuid: 241c9acc-7ce2-4c2c-94b3-96bb9e20bcca
+langcode: en
+status: true
+dependencies:
+  config:
+    - community_post.community_post_type.photo
+id: community_post.photo.metatag
+field_name: metatag
+entity_type: community_post
+bundle: photo
+label: 'Metatags (Hidden field for JSON support)'
+description: 'The meta tags for the entity.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: map

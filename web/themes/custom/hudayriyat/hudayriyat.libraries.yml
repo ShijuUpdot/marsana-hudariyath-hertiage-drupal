@@ -1,0 +1,46 @@
+custom-styling:
+  css:
+    theme:
+      assets/css/bootstrap.min.css: {}
+      assets/css/swiper.min.css: {}
+      assets/css/styles.css: {}
+      assets/css/responsive.css: {}  
+      assets/css/jquery.zoom.css: {}
+      assets/css/daterangepicker.css: {}
+      #https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css: { type: external }  
+      https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css: { type: external }    
+  js:
+    #assets/js/jquery-3.4.1.min.js: {}
+    assets/js/popper.min.js: {}
+    #https://cdn.jsdelivr.net/momentjs/latest/moment.min.js: { type: external, minified: true}
+    #https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js: { type: external, minified: true}
+    assets/js/moment.min.js: {}
+    assets/js/daterangepicker.min.js: {}
+    assets/js/bootstrap.min.js: {}
+    assets/js/createjs.min.js: {}
+    assets/js/hudayriat-map-animated.js: {}
+    https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js: { type: external, minified: true}
+    assets/js/zoom.jquery.js: {}
+    assets/js/swiper.min.js: {}
+    https://code.jquery.com/ui/1.12.1/jquery-ui.js: { type: external, minified: true}
+    assets/js/main.js: {}
+    #maps.googleapis.com/maps/api/js?key=AIzaSyBaE9OYX8qPG6QCk19sKXvwvHNqYXd2C20&v=3.0&sensor=true&language=ee&dummy=dummy.js: { type: external }
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupal.ajax
+    - core/views.ajax
+    - core/jquery.once
+    - core/jquery.form
+    - core/drupalSettings
+    - core/drupalSettings
+    - core/autocomplete
+    - jquery_ui_datepicker/datepicker
+
+
+events-page:
+  css:
+    theme:
+      assets/css/events.css: {}
+  js:
+    assets/js/events.js: {}

@@ -1,0 +1,21 @@
+uuid: 3d5e2f8e-ba52-47a6-ada3-86cb1cb4f10f
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - node_type_class
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+  node_type_class:
+    classes: ''
+name: 'About us Content'
+type: about_us
+description: 'About us Content Pages'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

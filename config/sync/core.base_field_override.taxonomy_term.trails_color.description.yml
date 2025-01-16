@@ -1,0 +1,20 @@
+uuid: e81cf458-d525-4289-9541-435d41c7f3c5
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.trails_color
+  module:
+    - text
+id: taxonomy_term.trails_color.description
+field_name: description
+entity_type: taxonomy_term
+bundle: trails_color
+label: Description
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

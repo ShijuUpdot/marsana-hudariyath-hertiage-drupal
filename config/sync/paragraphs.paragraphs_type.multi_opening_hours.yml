@@ -1,0 +1,10 @@
+uuid: f99c38b1-eb83-4494-bd47-e7a0e0a288ed
+langcode: en
+status: true
+dependencies: {  }
+id: multi_opening_hours
+label: 'Multi Opening Hours'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

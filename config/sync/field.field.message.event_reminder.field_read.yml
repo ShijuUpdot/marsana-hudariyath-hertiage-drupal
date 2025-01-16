@@ -1,0 +1,21 @@
+uuid: 76bfc49c-1aee-4f89-a0f5-ae15c7522034
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.message.field_read
+    - message.template.event_reminder
+  module:
+    - options
+id: message.event_reminder.field_read
+field_name: field_read
+entity_type: message
+bundle: event_reminder
+label: Read
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

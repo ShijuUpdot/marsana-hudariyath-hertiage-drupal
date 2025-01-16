@@ -1,0 +1,23 @@
+uuid: 10765419-8f75-441d-beca-9b9341c52877
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.offers_listing
+  module:
+    - text
+id: node.offers_listing.body
+field_name: body
+entity_type: node
+bundle: offers_listing
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

@@ -1,0 +1,53 @@
+uuid: 57a32a94-0407-41a2-97a0-b583beed788c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.opening_hours.field_end_time
+    - field.field.paragraph.opening_hours.field_headline
+    - field.field.paragraph.opening_hours.field_start_time
+    - field.field.paragraph.opening_hours.field_timings
+    - paragraphs.paragraphs_type.opening_hours
+  module:
+    - datetime
+id: paragraph.opening_hours.default
+targetEntityType: paragraph
+bundle: opening_hours
+mode: default
+content:
+  field_end_time:
+    type: datetime_default
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_headline:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_start_time:
+    type: datetime_default
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_timings:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  translation:
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

@@ -1,0 +1,5 @@
+name: Heritage Trail Custom Configurations
+type: module
+description: To fetch Heritage Trail custom configurations
+package: Hudayriyat Heritage Trail
+core_version_requirement: ^10

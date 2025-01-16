@@ -1,0 +1,81 @@
+uuid: 8b7166ef-787c-44db-b50f-c71b7a0807f9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.activity_weekend.field_experience
+    - field.field.taxonomy_term.activity_weekend.field_image
+    - field.field.taxonomy_term.activity_weekend.field_suitable
+    - image.style.thumbnail
+    - taxonomy.vocabulary.activity_weekend
+  module:
+    - path
+    - svg_image
+    - text
+id: taxonomy_term.activity_weekend.default
+targetEntityType: taxonomy_term
+bundle: activity_weekend
+mode: default
+content:
+  description:
+    type: text_textarea
+    weight: 1
+    region: content
+    settings:
+      placeholder: ''
+      rows: 5
+    third_party_settings: {  }
+  field_experience:
+    weight: 8
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_image:
+    weight: 5
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_suitable:
+    weight: 7
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 6
+    region: content
+    third_party_settings: {  }
+  translation:
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

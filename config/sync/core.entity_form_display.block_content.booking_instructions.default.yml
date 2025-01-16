@@ -1,0 +1,87 @@
+uuid: d6eaac7a-e943-45e4-82f8-d5a810c65547
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.booking_instructions
+    - field.field.block_content.booking_instructions.body
+    - field.field.block_content.booking_instructions.field_button_text
+    - field.field.block_content.booking_instructions.field_headline_text
+    - field.field.block_content.booking_instructions.field_instructions
+    - field.field.block_content.booking_instructions.field_logo
+    - field.field.block_content.booking_instructions.field_title
+    - image.style.thumbnail
+  module:
+    - paragraphs
+    - svg_image
+id: block_content.booking_instructions.default
+targetEntityType: block_content
+bundle: booking_instructions
+mode: default
+content:
+  field_button_text:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_headline_text:
+    weight: 5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_instructions:
+    type: entity_reference_paragraphs
+    weight: 6
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_logo:
+    weight: 2
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_title:
+    weight: 4
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  info:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 1
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  translation:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  body: true

@@ -1,0 +1,23 @@
+uuid: cead1cb2-fb8b-4430-aa68-344a56a01ac4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.eat
+  module:
+    - text
+id: node.eat.body
+field_name: body
+entity_type: node
+bundle: eat
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

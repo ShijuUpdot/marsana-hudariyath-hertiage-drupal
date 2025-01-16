@@ -1,0 +1,7 @@
+firebase_cloud_messaging: null
+_core:
+  default_config_hash: saTqARsOyLE9oc_di4tWxhwa0Mc17wOkUspsLc9PHRA
+enable: '1'
+url: 'https://fcm.googleapis.com/fcm/send'
+key: 'AAAAO6vVufg:APA91bEB5DjClLgxmKLprbdXrScp05X4ixefJOfnuea9RkHJ16u7lqgDOHXb0yjvuHO1x7DHn8N7j1kejmHRIEK0sRFt2dbj5Wpza7gLekRVOYhX-oChnqjk9RSVzLdxs_Ar-h8Xya6b'
+event_subscribe_topic: /topics/topics_event

@@ -1,0 +1,19 @@
+uuid: d415159b-0779-4ae6-a77f-a5f1a1d27f77
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_autosuggestion_keywords
+    - node.type.amenities_details
+id: node.amenities_details.field_autosuggestion_keywords
+field_name: field_autosuggestion_keywords
+entity_type: node
+bundle: amenities_details
+label: 'Autosuggestion Keywords'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

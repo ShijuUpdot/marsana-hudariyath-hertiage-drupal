@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="52px" height="52px" viewBox="0 0 52 52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>play-button (18)</title>
+    <defs>
+        <path d="M22,0.333333333 C33.96,0.333333333 43.6666667,10.04 43.6666667,22 C43.6666667,33.96 33.96,43.6666667 22,43.6666667 C10.04,43.6666667 0.333333333,33.96 0.333333333,22 C0.333333333,10.04 10.04,0.333333333 22,0.333333333 Z M29.6,21.2 L19.2666667,13.45 C18.8248389,13.1186292 18.1980375,13.2081722 17.8666667,13.65 C17.7368445,13.8230962 17.6666667,14.0336298 17.6666667,14.25 L17.6666667,29.75 C17.6666667,30.3022847 18.1143819,30.75 18.6666667,30.75 C18.8830369,30.75 19.0935705,30.6798221 19.2666667,30.55 L29.6,22.8 C30.0418278,22.4686292 30.1313708,21.8418278 29.8,21.4 C29.7431458,21.3241943 29.6758057,21.2568542 29.6,21.2 Z" id="path-1"></path>
+    </defs>
+    <g id="HP" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="1,0-HP" transform="translate(-389.000000, -6382.000000)">
+            <g id="2-StayUpdated" transform="translate(125.000000, 5670.000000)">
+                <g id="Group-2-Copy-2" transform="translate(4.000000, 623.000000)">
+                    <g id="play-button-(18)" transform="translate(260.000000, 89.000000)">
+                        <g id="Atoms-/-icons-/-System-/-Play-2" transform="translate(4.000000, 4.000000)">
+                            <mask id="mask-2" fill="white">
+                                <use xlink:href="#path-1"></use>
+                            </mask>
+                            <use id="Mask" fill="#C2D1D9" xlink:href="#path-1"></use>
+                            <g id="Group" mask="url(#mask-2)">
+                                <g transform="translate(-4.000000, -4.000000)" id="↪🎨">
+                                    <rect id="Atoms-/-Colors-/-Black" fill="#FFFFFF" x="0" y="0" width="52" height="52"></rect>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,18 @@
+uuid: 170ce224-65b6-44fc-ac08-c10fb56850ce
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.experience
+id: taxonomy_term.experience.name
+field_name: name
+entity_type: taxonomy_term
+bundle: experience
+label: Name
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

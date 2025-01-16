@@ -1,0 +1,27 @@
+uuid: 32b4e9b6-8473-4e07-8d3d-5133ca0eeb21
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_upload_menu
+    - paragraphs.paragraphs_type.listing_details
+  module:
+    - file
+id: paragraph.listing_details.field_upload_menu
+field_name: field_upload_menu
+entity_type: paragraph
+bundle: listing_details
+label: 'Upload Menu'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'txt pdf'
+  max_filesize: ''
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

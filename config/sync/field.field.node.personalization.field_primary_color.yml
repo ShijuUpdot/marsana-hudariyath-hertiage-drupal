@@ -1,0 +1,21 @@
+uuid: 1c75bf9b-f84b-4ca6-861b-7dbb8f5f24a2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_primary_color
+    - node.type.personalization
+  module:
+    - options
+id: node.personalization.field_primary_color
+field_name: field_primary_color
+entity_type: node
+bundle: personalization
+label: 'Primary color'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

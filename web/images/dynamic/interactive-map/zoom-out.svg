@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="49px" height="49px" viewBox="0 0 49 49" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>-</title>
+    <defs>
+        <filter x="-86.8%" y="-54.1%" width="273.6%" height="208.2%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="12" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.141176471   0 0 0 0 0.149019608   0 0 0 0 0.333333333  0 0 0 0.472874781 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" font-family="ArialMT, Arial" font-size="30" font-weight="normal">
+        <g id="2,8-InteractiveMap" transform="translate(-1747.000000, -854.000000)" fill="#242655">
+            <g id="Zoom" filter="url(#filter-1)" transform="translate(1751.500000, 881.500000) rotate(90.000000) translate(-1751.500000, -881.500000) translate(1725.000000, 839.000000)">
+                <text id="-" transform="translate(26.000000, 22.500000) rotate(90.000000) translate(-26.000000, -22.500000) ">
+                    <tspan x="21.0048828" y="33">-</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

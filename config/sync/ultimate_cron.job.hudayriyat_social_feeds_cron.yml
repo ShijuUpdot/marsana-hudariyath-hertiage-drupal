@@ -1,0 +1,17 @@
+uuid: c6fdd202-b9e9-4da7-87a2-e4b48f025ad6
+langcode: en
+status: true
+dependencies:
+  module:
+    - hudayriyat_social_feeds
+title: 'Default cron handler'
+id: hudayriyat_social_feeds_cron
+weight: 0
+module: hudayriyat_social_feeds
+callback: hudayriyat_social_feeds_cron
+scheduler:
+  id: simple
+launcher:
+  id: serial
+logger:
+  id: database

@@ -1,0 +1,19 @@
+uuid: 5ad6629c-59ca-4fb3-b618-ce25ab8a8f5b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hero_image_title
+    - node.type.amenity_single
+id: node.amenity_single.field_hero_image_title
+field_name: field_hero_image_title
+entity_type: node
+bundle: amenity_single
+label: 'Hero Image Title'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

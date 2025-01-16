@@ -1,0 +1,55 @@
+uuid: 2a93ede5-fd77-4593-b373-de1207ea50d8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_contact_social_links
+    - node.type.home
+    - paragraphs.paragraphs_type.footer_social_links
+  module:
+    - entity_reference_revisions
+id: node.home.field_contact_social_links
+field_name: field_contact_social_links
+entity_type: node
+bundle: home
+label: 'Contact Social Links'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      footer_social_links: footer_social_links
+    target_bundles_drag_drop:
+      about_block:
+        weight: 10
+        enabled: false
+      about_section:
+        weight: 11
+        enabled: false
+      footer_social_block:
+        weight: 12
+        enabled: false
+      footer_social_links:
+        enabled: true
+        weight: 13
+      guidelines_type:
+        weight: 14
+        enabled: false
+      header_links:
+        weight: 15
+        enabled: false
+      indicators_type:
+        weight: 16
+        enabled: false
+      intro_description:
+        weight: 17
+        enabled: false
+      listing_details:
+        weight: 18
+        enabled: false
+field_type: entity_reference_revisions

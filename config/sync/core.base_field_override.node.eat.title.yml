@@ -1,0 +1,18 @@
+uuid: 1cbea43f-9e39-4f75-8443-41a9b0d75b83
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.eat
+id: node.eat.title
+field_name: title
+entity_type: node
+bundle: eat
+label: Title
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

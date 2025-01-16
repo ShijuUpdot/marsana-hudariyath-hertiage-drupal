@@ -1,0 +1,130 @@
+uuid: f6807f80-941a-480d-9d0d-961c8e1a737b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_discover_feature_section
+    - node.type.discover
+    - paragraphs.paragraphs_type.discover_key_features
+  module:
+    - entity_reference_revisions
+id: node.discover.field_discover_feature_section
+field_name: field_discover_feature_section
+entity_type: node
+bundle: discover
+label: 'Discover Feature Section'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      discover_key_features: discover_key_features
+    target_bundles_drag_drop:
+      about_contact_details:
+        weight: 35
+        enabled: false
+      about_intro_section:
+        weight: 36
+        enabled: false
+      amenities_guidelines:
+        weight: 33
+        enabled: false
+      banner_block:
+        weight: 34
+        enabled: false
+      booking_listing:
+        weight: 35
+        enabled: false
+      booking_type:
+        weight: 36
+        enabled: false
+      description_block:
+        weight: 37
+        enabled: false
+      discover_key_features:
+        enabled: true
+        weight: 38
+      discover_listing:
+        weight: 39
+        enabled: false
+      event_guidelines:
+        weight: 40
+        enabled: false
+      features_block:
+        weight: 41
+        enabled: false
+      footer_social_links:
+        weight: 42
+        enabled: false
+      gallery_images:
+        weight: 43
+        enabled: false
+      guidelines:
+        weight: 44
+        enabled: false
+      info_block:
+        weight: 45
+        enabled: false
+      info_type:
+        weight: 46
+        enabled: false
+      intro_block:
+        weight: 47
+        enabled: false
+      key_points:
+        weight: 48
+        enabled: false
+      key_points_type:
+        weight: 49
+        enabled: false
+      landing_links:
+        weight: 50
+        enabled: false
+      link_type:
+        weight: 52
+        enabled: false
+      links_block:
+        weight: 51
+        enabled: false
+      listings:
+        weight: 53
+        enabled: false
+      location:
+        weight: 54
+        enabled: false
+      location_details:
+        weight: 55
+        enabled: false
+      opening_hours:
+        weight: 56
+        enabled: false
+      opening_hours_block:
+        weight: 57
+        enabled: false
+      opening_hours_section:
+        weight: 58
+        enabled: false
+      schedule_details:
+        weight: 59
+        enabled: false
+      single_banner:
+        weight: 60
+        enabled: false
+      slider_images:
+        weight: 61
+        enabled: false
+      stats_listing:
+        weight: 62
+        enabled: false
+      stay_featured_block:
+        weight: 63
+        enabled: false
+      stay_stats_type:
+        weight: 64
+        enabled: false
+field_type: entity_reference_revisions

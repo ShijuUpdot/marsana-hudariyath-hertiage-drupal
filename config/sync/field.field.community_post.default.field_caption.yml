@@ -1,0 +1,19 @@
+uuid: 68c346a3-9b04-4b90-b837-24c3d625faf2
+langcode: en
+status: true
+dependencies:
+  config:
+    - community_post.community_post_type.default
+    - field.storage.community_post.field_caption
+id: community_post.default.field_caption
+field_name: field_caption
+entity_type: community_post
+bundle: default
+label: Caption
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

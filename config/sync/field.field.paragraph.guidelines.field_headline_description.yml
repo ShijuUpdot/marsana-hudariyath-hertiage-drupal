@@ -1,0 +1,21 @@
+uuid: 8265efe3-6702-4d81-992c-55825dd8ae9e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_headline_description
+    - paragraphs.paragraphs_type.guidelines
+  module:
+    - text
+id: paragraph.guidelines.field_headline_description
+field_name: field_headline_description
+entity_type: paragraph
+bundle: guidelines
+label: 'Headline Description'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

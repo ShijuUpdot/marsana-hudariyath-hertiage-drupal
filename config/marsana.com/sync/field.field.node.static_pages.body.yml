@@ -1,0 +1,23 @@
+uuid: 9cc54053-00dc-49e0-b5dc-d9593c009435
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.static_pages
+  module:
+    - text
+id: node.static_pages.body
+field_name: body
+entity_type: node
+bundle: static_pages
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

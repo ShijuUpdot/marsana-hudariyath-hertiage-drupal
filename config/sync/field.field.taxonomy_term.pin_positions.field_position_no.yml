@@ -1,0 +1,23 @@
+uuid: b7ea387e-c336-42dd-aad8-4d4cb7fea943
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_position_no
+    - taxonomy.vocabulary.pin_positions
+id: taxonomy_term.pin_positions.field_position_no
+field_name: field_position_no
+entity_type: taxonomy_term
+bundle: pin_positions
+label: 'Position No'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

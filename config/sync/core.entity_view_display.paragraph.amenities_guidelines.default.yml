@@ -1,0 +1,33 @@
+uuid: cc0504c7-988f-4f6c-9a99-5a20f025cd79
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.amenities_guidelines.field_amenities_guidelines
+    - field.field.paragraph.amenities_guidelines.field_guidelines_title
+    - paragraphs.paragraphs_type.amenities_guidelines
+  module:
+    - entity_reference_revisions
+id: paragraph.amenities_guidelines.default
+targetEntityType: paragraph
+bundle: amenities_guidelines
+mode: default
+content:
+  field_amenities_guidelines:
+    type: entity_reference_revisions_entity_view
+    weight: 1
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_guidelines_title:
+    weight: 2
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

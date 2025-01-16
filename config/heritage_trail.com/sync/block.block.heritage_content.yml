@@ -1,0 +1,22 @@
+uuid: 27a567b9-4005-421b-9a2d-517febf61025
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - heritage
+_core:
+  default_config_hash: 9EoWV2Lot6FVSr50t4hoKgiz1LIXYWNG-IIPYsWxBqo
+id: heritage_content
+theme: heritage
+region: content
+weight: -4
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

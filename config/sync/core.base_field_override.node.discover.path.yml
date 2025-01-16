@@ -1,0 +1,20 @@
+uuid: 30858fee-3822-4077-ac16-89274191910c
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.discover
+  module:
+    - path
+id: node.discover.path
+field_name: path
+entity_type: node
+bundle: discover
+label: 'URL alias'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

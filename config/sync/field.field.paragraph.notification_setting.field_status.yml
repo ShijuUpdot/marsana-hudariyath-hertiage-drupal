@@ -1,0 +1,23 @@
+uuid: aacd4bb9-1558-43b3-ba79-b87944f9a4d9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_status
+    - paragraphs.paragraphs_type.notification_setting
+id: paragraph.notification_setting.field_status
+field_name: field_status
+entity_type: paragraph
+bundle: notification_setting
+label: Status
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

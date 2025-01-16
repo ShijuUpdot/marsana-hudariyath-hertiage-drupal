@@ -1,0 +1,21 @@
+uuid: d8cfa94d-61c3-4d7f-b38b-39b6dfcc9930
+langcode: en
+status: true
+dependencies:
+  config:
+    - community_post.community_post_type.default
+    - field.storage.community_post.field_approval_state
+  module:
+    - options
+id: community_post.default.field_approval_state
+field_name: field_approval_state
+entity_type: community_post
+bundle: default
+label: 'Approval state'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

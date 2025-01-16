@@ -1,0 +1,148 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a view of unformatted rows.
+ *
+ * Available variables:
+ * - title: The title of this group of rows. May be empty.
+ * - rows: A list of the view's row items.
+ *   - attributes: The row's HTML attributes.
+ *   - content: The row's content.
+ * - view: The view object.
+ * - default_row_class: A flag indicating whether default classes should be
+ *   used on rows.
+ *
+ * @see template_preprocess_views_view_unformatted()
+ *
+ * @ingroup themeable
+ */
+#}
+<ul class="modal-listing-wrapper">
+    <!-- Modal -->
+{% for row in rows %}
+    {% set logo = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_hero_image_logo }}'] | striptags | trim %}
+    {% set title = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_hero_image_title }}'] | striptags | trim %}
+    {% set assetSubType = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_asset_sub_type }}'] | striptags | trim %}
+    {% set hero_image = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_hero_image }}'] | striptags | trim %}
+    {% set desc = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_intro_description }}'] | striptags | trim %}
+    {% set sub_desc = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_intro_short_description }}'] | striptags | trim %}
+    {% set pdf_url = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_upload }}'] | striptags | trim %}
+
+     <li class="modal fade" id="{{ title|replace({" ":"-"})|lower }}" tabindex="-1" role="dialog" aria-labelledby="footballLabel"  aria-hidden="true">
+      <div class="inside-wrapper modal-wrapper">
+        <div class="container">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <div class="modal-header-bg navy-bg">
+                  <img src="{{ hero_image }}" alt="">
+                </div>
+                <div class="modal-header-wrapper">
+                  <div class="modal-logo-wrapper">
+                    <img class="modal-logo-top" src="{{ logo }}" alt="Resto logo">
+                  </div>
+                  <div class="modal-header-content">
+                    <h3 class="modal-title" id="footballLabel">{{ title }}</h3>
+                  </div>
+                </div>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true"><img src="/images/static/close.svg" alt="close"></span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col px-0">
+                      <div class="detailed-group">
+                        <div class="detailed-title">
+                          <img src="/images/static/icon-hour.svg" alt="">
+                          <p>Opening Hours</p>
+                        </div>
+                        <p class="detailed-txt">
+                          Everyday from 9 AM - 11 PM
+                        </p>
+                      </div>
+                    </div>
+                    <div class="col px-0">
+                      <div class="detailed-group">
+                        <img src="/images/dynamic/location-resto.png" alt="" class="location">
+                        <div class="detailed-title">
+                          <img src="/images/static/icon-location.svg" alt="">
+                          <p>Location</p>
+                        </div>
+                        <p class="detailed-txt">Hudayriyat Island, <br> Abu Dhabi.</p>
+                        {% if pdf_url is not null %}
+                            <a href="{{ pdf_url }}" class="btn external-btn download-btn" target="_blank">{{ 'Download Menu' | t }}</a>
+                        {% endif %}
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row py-4">
+                    <div class="col-lg-4">
+                      <p class="detailed-txt bold detailed-desc">{{ sub_desc }}</p>
+                    </div>
+                    <div class="col-lg-8">
+                      <p class="detailed-txt detailed-desc"> {{ desc }}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer swiper-menu">
+                <div class="modal-footer-title">View Photos</div>
+                <!-- Swiper -->
+                <div class="swiper-container">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <div class="card-wrapper">
+                        <div class="card event">
+                          <div class="card-img-wrapper">
+                            <img class="card-img-top" src="/images/dynamic/restaurants/shrimp-pot-1.jpg" alt="Card image cap">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="card-wrapper">
+                        <div class="card event">
+                          <div class="card-img-wrapper">
+                            <img class="card-img-top" src="/images/dynamic/restaurants/shrimp-pot-2.jpg" alt="Card image cap">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="card-wrapper">
+                        <div class="card event">
+                          <div class="card-img-wrapper">
+                            <img class="card-img-top" src="/images/dynamic/restaurants/shrimp-pot-3.jpg" alt="Card image cap">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="card-wrapper">
+                        <div class="card event">
+                          <div class="card-img-wrapper">
+                            <img class="card-img-top" src="/images/dynamic/restaurants/shrimp-pot-4.jpg" alt="Card image cap">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-arrows">
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="arrow-modal-wrapper">
+        <a href="javascript:;" class="arrowModal prev-modal"><img src="/images/static/arrow-prev-white.svg" alt="Left Arrow icon"></a>
+        <a href="javascript:;" class="arrowModal next-modal"><p>Next Restaurant</p><img src="/images/static/arrow-next-white.svg" alt="Right arrow icon"></a>
+      </div>
+    </li>
+    {% endfor %}
+    </ul>

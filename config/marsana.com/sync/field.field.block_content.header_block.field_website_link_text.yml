@@ -1,0 +1,19 @@
+uuid: d2e0f032-0aa4-4e2e-bceb-0e82d1fef9b1
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.header_block
+    - field.storage.block_content.field_website_link_text
+id: block_content.header_block.field_website_link_text
+field_name: field_website_link_text
+entity_type: block_content
+bundle: header_block
+label: 'Website Link Text'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

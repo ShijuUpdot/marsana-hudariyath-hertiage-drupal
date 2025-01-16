@@ -1,0 +1,20 @@
+uuid: 5dbda79a-a43a-4356-80ab-5380abde9b64
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - text
+id: paragraph.field_headline_description
+field_name: field_headline_description
+entity_type: paragraph
+type: text
+settings:
+  max_length: 355
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

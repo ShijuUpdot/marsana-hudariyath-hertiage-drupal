@@ -1,0 +1,22 @@
+uuid: 60e2dbda-8de5-46a6-8847-32831e81f573
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.discover
+id: node.discover.status
+field_name: status
+entity_type: node
+bundle: discover
+label: Published
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,0 +1,5 @@
+name: Marsana Custom Configurations
+type: module
+description: To fetch Marsana custom configurations
+package: Marsana
+core_version_requirement: ^10

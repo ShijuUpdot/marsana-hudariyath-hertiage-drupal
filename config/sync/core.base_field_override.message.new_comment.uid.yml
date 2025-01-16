@@ -1,0 +1,20 @@
+uuid: 8b985c5d-fc2c-44d8-8132-ddf31cdd5b9c
+langcode: en
+status: true
+dependencies:
+  config:
+    - message.template.new_comment
+id: message.new_comment.uid
+field_name: uid
+entity_type: message
+bundle: new_comment
+label: 'Created by'
+description: 'The user that created the message.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: 'Drupal\message\Entity\Message::getCurrentUserId'
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference

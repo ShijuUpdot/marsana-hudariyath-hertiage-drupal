@@ -1,0 +1,27 @@
+uuid: 9a5e935b-aeef-4b2d-8895-95d23337e971
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hero_video
+    - node.type.amenities_details
+  module:
+    - file
+id: node.amenities_details.field_hero_video
+field_name: field_hero_video
+entity_type: node
+bundle: amenities_details
+label: 'Hero Video'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'mpeg mp4'
+  max_filesize: ''
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

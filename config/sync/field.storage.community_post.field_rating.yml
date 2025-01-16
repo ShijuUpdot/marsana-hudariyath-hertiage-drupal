@@ -1,0 +1,18 @@
+uuid: 9e1177f9-003a-4e50-b6af-1ee4b29e9952
+langcode: en
+status: true
+dependencies:
+  module:
+    - community_post
+id: community_post.field_rating
+field_name: field_rating
+entity_type: community_post
+type: float
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

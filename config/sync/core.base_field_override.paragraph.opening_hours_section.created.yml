@@ -1,0 +1,18 @@
+uuid: 96dccc88-4a2d-4266-a42d-d3e55eb14294
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.opening_hours_section
+id: paragraph.opening_hours_section.created
+field_name: created
+entity_type: paragraph
+bundle: opening_hours_section
+label: 'Authored on'
+description: 'The time that the Paragraph was created.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

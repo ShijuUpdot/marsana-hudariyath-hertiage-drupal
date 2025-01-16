@@ -1,0 +1,18 @@
+uuid: b67ab191-4d4f-4e94-abb7-d37e27a1df6b
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.opening_hours
+id: block_content.opening_hours.info
+field_name: info
+entity_type: block_content
+bundle: opening_hours
+label: 'Block description'
+description: 'A brief description of your block.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

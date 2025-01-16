@@ -1,0 +1,18 @@
+uuid: 8f62a0d0-4ed3-4d7b-81b9-91e249180536
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.filter_date_time
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: taxonomy_term.filter_date_time
+target_entity_type_id: taxonomy_term
+target_bundle: filter_date_time
+default_langcode: site_default
+language_alterable: true

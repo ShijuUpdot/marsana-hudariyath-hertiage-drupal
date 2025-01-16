@@ -1,0 +1,42 @@
+uuid: 4bb6886e-109e-49f3-9cb8-e27e4a28e3df
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.banner_block.field_descriptions
+    - field.field.paragraph.banner_block.field_gallery
+    - paragraphs.paragraphs_type.banner_block
+  module:
+    - paragraphs
+id: paragraph.banner_block.default
+targetEntityType: paragraph
+bundle: banner_block
+mode: default
+content:
+  field_descriptions:
+    type: entity_reference_paragraphs
+    weight: 0
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_gallery:
+    type: entity_reference_paragraphs
+    weight: 1
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  status: true

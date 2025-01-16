@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1144px" height="1px" viewBox="0 0 1144 1" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Line</title>
+    <g id="1.-Homepage" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.75" stroke-dasharray="2,5" stroke-linecap="square">
+        <g id="1,0-LP" transform="translate(-387.000000, -684.000000)" stroke="#FFFFFF">
+            <g id="Group" transform="translate(176.000000, 661.000000)">
+                <line x1="211.5" y1="23.5" x2="1357.5" y2="23.5" id="Line"></line>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,19 @@
+uuid: 7d5687c1-e1b3-40c1-8a08-e0acb8526f10
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title
+    - paragraphs.paragraphs_type.key_points
+id: paragraph.key_points.field_title
+field_name: field_title
+entity_type: paragraph
+bundle: key_points
+label: 'Key Features Title'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

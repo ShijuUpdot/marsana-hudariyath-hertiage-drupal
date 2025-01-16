@@ -1,0 +1,14 @@
+name: Hudayriyat
+type: theme
+description: 'Hudayriyat Mar Vista.'
+base theme: FALSE
+package: Custom
+libraries:
+  - hudayriyat/custom-styling
+regions:
+  header: Header
+  content: Content
+  footer: Footer
+  other: Other
+core_version_requirement: ^10.0
+datestamp: 1590734375

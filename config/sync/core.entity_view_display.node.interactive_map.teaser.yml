@@ -1,0 +1,35 @@
+uuid: 755f4cb0-7558-4448-8152-90285f04e6ff
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.interactive_map.body
+    - field.field.node.interactive_map.field_map_image
+    - node.type.interactive_map
+  module:
+    - text
+    - user
+id: node.interactive_map.teaser
+targetEntityType: node
+bundle: interactive_map
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  addtoany: true
+  field_map_image: true
+  langcode: true
+  search_api_excerpt: true

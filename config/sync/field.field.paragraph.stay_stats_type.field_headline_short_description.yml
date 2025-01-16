@@ -1,0 +1,21 @@
+uuid: e8154aca-6ad4-447f-8017-12adff65ee74
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_headline_short_description
+    - paragraphs.paragraphs_type.stay_stats_type
+  module:
+    - text
+id: paragraph.stay_stats_type.field_headline_short_description
+field_name: field_headline_short_description
+entity_type: paragraph
+bundle: stay_stats_type
+label: 'Headline short Description'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

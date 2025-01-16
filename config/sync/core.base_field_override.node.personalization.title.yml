@@ -1,0 +1,18 @@
+uuid: dc77cb72-e410-4b03-abe9-95eca8f4d54f
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.personalization
+id: node.personalization.title
+field_name: title
+entity_type: node
+bundle: personalization
+label: Title
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

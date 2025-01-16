@@ -1,0 +1,8 @@
+uuid: 0d43f109-cd97-45c8-a3c7-1964f968de63
+langcode: en
+status: true
+dependencies: {  }
+id: guidelines
+label: Guidelines
+revision: 0
+description: 'Guidelines for Covid 19 etc...'

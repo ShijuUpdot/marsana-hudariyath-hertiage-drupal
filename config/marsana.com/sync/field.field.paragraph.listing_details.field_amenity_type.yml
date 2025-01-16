@@ -1,0 +1,29 @@
+uuid: b00f1e93-6217-4a80-9e3a-a1a5de1f77d1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_amenity_type
+    - paragraphs.paragraphs_type.listing_details
+    - taxonomy.vocabulary.amenities
+id: paragraph.listing_details.field_amenity_type
+field_name: field_amenity_type
+entity_type: paragraph
+bundle: listing_details
+label: 'Amenity Type'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      amenities: amenities
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

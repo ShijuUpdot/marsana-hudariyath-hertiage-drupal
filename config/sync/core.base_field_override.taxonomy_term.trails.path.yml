@@ -1,0 +1,20 @@
+uuid: 5566284c-433a-4ff4-a9f8-b46a6d42c686
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.trails
+  module:
+    - path
+id: taxonomy_term.trails.path
+field_name: path
+entity_type: taxonomy_term
+bundle: trails
+label: 'URL alias'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

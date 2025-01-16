@@ -1,0 +1,20 @@
+uuid: ffb212d6-6841-4e67-ad60-4b4144d00c2a
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.stay
+  module:
+    - path
+id: node.stay.path
+field_name: path
+entity_type: node
+bundle: stay
+label: 'URL alias'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

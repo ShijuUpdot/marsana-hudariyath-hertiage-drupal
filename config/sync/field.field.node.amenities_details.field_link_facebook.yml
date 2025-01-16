@@ -1,0 +1,19 @@
+uuid: 0cbf9bf7-d478-4f87-a452-0c8ad3edf7c7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_link_facebook
+    - node.type.amenities_details
+id: node.amenities_details.field_link_facebook
+field_name: field_link_facebook
+entity_type: node
+bundle: amenities_details
+label: 'Link Facebook'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

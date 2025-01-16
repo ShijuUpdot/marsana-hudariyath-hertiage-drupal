@@ -1,0 +1,18 @@
+uuid: e77e57f5-a4ef-4edb-af02-7d48f5e3ae82
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.amenity_single
+id: node.amenity_single.created
+field_name: created
+entity_type: node
+bundle: amenity_single
+label: 'Authored on'
+description: 'The time that the node was created.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

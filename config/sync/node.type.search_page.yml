@@ -1,0 +1,21 @@
+uuid: 65444c0f-9b59-42a4-9505-bddd81231c08
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - node_type_class
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+  node_type_class:
+    classes: ''
+name: 'Search Page'
+type: search_page
+description: 'Search Page content type'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

@@ -1,0 +1,30 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a view of unformatted rows.
+ *
+ * Available variables:
+ * - title: The title of this group of rows. May be empty.
+ * - rows: A list of the view's row items.
+ *   - attributes: The row's HTML attributes.
+ *   - content: The row's content.
+ * - view: The view object.
+ * - default_row_class: A flag indicating whether default classes should be
+ *   used on rows.
+ *
+ * @see template_preprocess_views_view_unformatted()
+ *
+ * @ingroup themeable
+ */
+#}
+{% for row in rows %}
+{% set guidelines_title = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_header_guidelines_title }}'] %}
+{% set guidelines_text = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_header_guidelines_text }}'] %}
+{% set guidelines_icon = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_guidelines_icon }}'] %}
+ <div class="covid-toolbar text-center">
+    <div class="container">
+      <img src="{{ guidelines_icon | striptags | trim }}" alt="{{ guidelines_title | striptags | trim }}">
+      {{ guidelines_text | striptags | trim }} <a href="javascript:;" class="body-text bold small covid-btn">{{ guidelines_title | raw }}</a>
+    </div>
+  </div>
+{% endfor %}

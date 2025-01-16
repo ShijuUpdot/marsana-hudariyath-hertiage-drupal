@@ -1,0 +1,4 @@
+text:
+  -
+    value: 'سيبدأ الحدث الجديد [message:field_node:entity:title] في [message:field_start_time]'
+    format: basic_html

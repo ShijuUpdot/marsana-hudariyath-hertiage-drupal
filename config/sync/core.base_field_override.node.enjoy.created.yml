@@ -1,0 +1,18 @@
+uuid: ff388c27-b7b6-4693-809f-9c1846972b5d
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.enjoy
+id: node.enjoy.created
+field_name: created
+entity_type: node
+bundle: enjoy
+label: 'Authored on'
+description: 'The time that the node was created.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

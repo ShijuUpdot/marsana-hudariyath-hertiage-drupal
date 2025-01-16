@@ -1,0 +1,19 @@
+uuid: 9a066aea-838d-4b70-ab92-945d7d3dd866
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.basic_html
+template: event_reminder
+label: 'Event reminder'
+description: 'Notification to user about new event'
+text:
+  -
+    value: 'New event [message:field_node:entity:title] will be start at [message:field_start_time]'
+    format: basic_html
+settings:
+  'token options':
+    clear: true
+    'token replace': true
+  purge_override: false
+  purge_methods: {  }

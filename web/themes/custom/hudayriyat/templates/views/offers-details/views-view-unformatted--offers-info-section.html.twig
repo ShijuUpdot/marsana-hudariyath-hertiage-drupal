@@ -1,0 +1,25 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a view of unformatted rows.
+ *
+ * Available variables:
+ * - title: The title of this group of rows. May be empty.
+ * - rows: A list of the view's row items.
+ *   - attributes: The row's HTML attributes.
+ *   - content: The row's content.
+ * - view: The view object.
+ * - default_row_class: A flag indicating whether default classes should be
+ *   used on rows.
+ *
+ * @see template_preprocess_views_view_unformatted()
+ *
+ * @ingroup themeable
+ */
+#}
+{% for row in rows %}
+    {% set headline = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_headline }}'] | striptags | trim  %}
+    {% set subHeadline = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_intro_sub_headlines }}'] | raw %}
+    {% set introDescription = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_intro_description }}'] | raw %}
+    {{ row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_offers_info }}'] }}
+{% endfor %}

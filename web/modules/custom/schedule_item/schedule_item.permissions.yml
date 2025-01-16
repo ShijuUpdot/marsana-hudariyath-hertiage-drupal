@@ -1,0 +1,20 @@
+add schedule item entities:
+  title: 'Create new Schedule item entities'
+
+administer schedule item entities:
+  title: 'Administer Schedule item entities'
+  description: 'Allow to access the administration form to configure Schedule item entities.'
+  restrict access: true
+
+delete schedule item entities:
+  title: 'Delete Schedule item entities'
+
+edit schedule item entities:
+  title: 'Edit Schedule item entities'
+
+view published schedule item entities:
+  title: 'View published Schedule item entities'
+
+view unpublished schedule item entities:
+  title: 'View unpublished Schedule item entities'
+

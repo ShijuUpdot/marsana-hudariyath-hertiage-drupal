@@ -1,0 +1,10 @@
+uuid: d101e963-df81-41fc-ae90-cb83972ec583
+langcode: en
+status: true
+dependencies: {  }
+id: about_section
+label: 'About Section'
+icon_uuid: null
+icon_default: null
+description: 'About Section'
+behavior_plugins: {  }

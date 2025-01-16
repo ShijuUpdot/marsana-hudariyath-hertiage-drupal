@@ -1,0 +1,21 @@
+uuid: 316aa8fe-b222-4df2-9228-333dc7c9eed3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_end_time
+    - paragraphs.paragraphs_type.opening_hours
+  module:
+    - datetime
+id: paragraph.opening_hours.field_end_time
+field_name: field_end_time
+entity_type: paragraph
+bundle: opening_hours
+label: 'Close Time'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

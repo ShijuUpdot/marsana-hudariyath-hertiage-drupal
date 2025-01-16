@@ -1,0 +1,18 @@
+uuid: 9b5b23c3-f9fe-4867-95b1-c4360cee237f
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.amenities_guidelines
+id: paragraph.amenities_guidelines.created
+field_name: created
+entity_type: paragraph
+bundle: amenities_guidelines
+label: 'Authored on'
+description: 'The time that the Paragraph was created.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

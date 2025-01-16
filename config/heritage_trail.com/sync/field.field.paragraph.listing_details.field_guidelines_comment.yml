@@ -1,0 +1,21 @@
+uuid: 46eea2df-ed89-4674-a143-125740f3df82
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_guidelines_comment
+    - paragraphs.paragraphs_type.listing_details
+  module:
+    - text
+id: paragraph.listing_details.field_guidelines_comment
+field_name: field_guidelines_comment
+entity_type: paragraph
+bundle: listing_details
+label: 'Guidelines Comment'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

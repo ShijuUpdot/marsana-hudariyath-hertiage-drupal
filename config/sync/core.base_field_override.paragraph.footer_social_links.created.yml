@@ -1,0 +1,18 @@
+uuid: 4f53f3ac-8da2-4bdf-b6fa-4852be159201
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.footer_social_links
+id: paragraph.footer_social_links.created
+field_name: created
+entity_type: paragraph
+bundle: footer_social_links
+label: 'Authored on'
+description: 'The time that the Paragraph was created.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

@@ -1,0 +1,21 @@
+uuid: aea2a85e-450e-4dd5-be4c-abca696c7f21
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_section_timings_time
+field_name: field_section_timings_time
+entity_type: paragraph
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

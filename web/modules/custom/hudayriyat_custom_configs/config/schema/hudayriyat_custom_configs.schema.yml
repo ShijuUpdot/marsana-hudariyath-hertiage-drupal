@@ -1,0 +1,221 @@
+# Schema file for the configuration files of the tweets module.
+hudayriyat_custom_configs.settings:
+  type: config_object
+  label: 'Custom Configuration Settings'
+  mapping:
+    general_mail:
+      type: varchar
+      label: 'General Inquiry Mail'
+    leasing_mail:
+      type: varchar
+      label: 'Leasing Inquiry Mail'
+    info_mail:
+      type: varchar
+      label: 'Info Mail'
+    from_mail:
+      type: varchar
+      label: 'From Mail'
+    opening_hours_en:
+      type: varchar
+      label: 'Opening Hours EN'
+    opening_hours_ar:
+      type: varchar
+      label: 'Opening Hours AR'
+    book_now_en:
+      type: varchar
+      label: 'Book Now EN'
+    book_now_ar:
+      type: varchar
+      label: 'Book Now AR'
+    available_at_en:
+      type: varchar
+      label: 'Available At EN'
+    available_at_ar:
+      type: varchar
+      label: 'Available At AR'
+    available_sports_en:
+      type: varchar
+      label: 'Available Sports EN'
+    available_sports_ar:
+      type: varchar
+      label: 'Available Sports AR'
+    other_sports_en:
+      type: varchar
+      label: 'Other Sports EN'
+    other_sports_ar:
+      type: varchar
+      label: 'Other Sports AR'
+    other_facilities_en:
+      type: varchar
+      label: 'Other Facilities EN'
+    other_facilities_ar:
+      type: varchar
+      label: 'Other Facilities AR'
+    other_articles_en:
+      type: varchar
+      label: 'Other articles EN'
+    other_articles_ar:
+      type: varchar
+      label: 'Other articles AR'
+    discover_events_en:
+      type: varchar
+      label: 'Discover Events EN'
+    discover_events_ar:
+      type: varchar
+      label: 'Discover Events AR'
+    discover_offers_en:
+      type: varchar
+      label: 'Discover Offers EN'
+    discover_offers_ar:
+      type: varchar
+      label: 'Discover Offers AR'
+    events_listing_title_en:
+      type: varchar
+      label: 'Events Lising Title EN'
+    events_listing_title_ar:
+      type: varchar
+      label: 'Events Lising Title AR'
+    directions_title_en:
+      type: varchar
+      label: 'Directions Title EN'
+    directions_title_ar:
+      type: varchar
+      label: 'Directions Title AR'
+    cookie_lifetime:
+      type: varchar
+      label: 'Cookie Lifetime'
+    contact_name_en:
+      type: varchar
+      label: 'Contact us Name validation EN'
+    contact_name_ar:
+      type: varchar
+      label: 'Contact us Name validation AR'
+    contact_last_name_en:
+      type: varchar
+      label: 'Contact us Last Name validation EN'
+    contact_last_name_ar:
+      type: varchar
+      label: 'Contact us Last Name validation AR'
+    contact_email_en:
+      type: varchar
+      label: 'Contact us email validation EN'
+    contact_email_ar:
+      type: varchar
+      label: 'Contact us email validation AR'
+    contact_contactNo_en:
+      type: varchar
+      label: 'Contact us contactNo validation EN'
+    contact_contactNo_ar:
+      type: varchar
+      label: 'Contact us contactNo validation AR'
+    contact_message_en:
+      type: varchar
+      label: 'Contact us message validation EN'
+    contact_message_ar:
+      type: varchar
+      label: 'Contact us message validation AR'
+    contact_invalidemail_en:
+      type: varchar
+      label: 'Contact us Invalid email validation EN'
+    contact_invalidemail_ar:
+      type: varchar
+      label: 'Contact us Invalid email validation AR'
+    subject_en:
+      type: varchar
+      label: 'Mail Subject EN'
+    subject_ar:
+      type: varchar
+      label: 'Mail Subject AR'
+    contact_success_en:
+      type: varchar
+      label: 'Contact us Success Message validation EN'
+    contact_success_ar:
+      type: varchar
+      label: 'Contact us Success Message validation AR'
+    marital_status_single_en:
+      type: varchar
+      label: 'Marital Status Single EN'
+    marital_status_single_ar:
+      type: varchar
+      label: 'Marital Status Single AR'
+    marital_status_family_en:
+      type: varchar
+      label: 'Marital Status Family EN'
+    marital_status_family_ar:
+      type: varchar
+      label: 'Marital Status Family AR'
+    marital_status_kids_en:
+      type: varchar
+      label: 'Marital Status Kids EN'
+    marital_status_kids_ar:
+      type: varchar
+      label: 'Marital Status Kids AR'
+    default_location_lat_en:
+      type: varchar
+      label: 'Default Location Latitude EN'
+    default_location_lat_ar:
+      type: varchar
+      label: 'Default Location Latitude AR'
+    default_location_lon_en:
+      type: varchar
+      label: 'Default Location Longitude EN'
+    default_location_lon_ar:
+      type: varchar
+      label: 'Default Location Longitude AR'
+    default_distance_nearby_en:
+      type: varchar
+      label: 'Default Distance Nearby EN'
+    default_distance_nearby_ar:
+      type: varchar
+      label: 'Default Distance Nearby AR'
+    help_message_title_en:
+      type: varchar
+      label: 'Help Message Title EN'
+    help_message_title_ar:
+      type: varchar
+      label: 'Help Message Title AR'
+    help_message_sub_title_en:
+      type: varchar
+      label: 'Help Message Sub Title EN'
+    help_message_sub_title_ar:
+      type: varchar
+      label: 'Help Message Sub Title AR'
+    report_message_title_en:
+      type: varchar
+      label: 'Report Message Title EN'
+    report_message_title_ar:
+      type: varchar
+      label: 'Report Message Title AR'
+    report_message_sub_title_en:
+      type: varchar
+      label: 'Report Message Sub Title EN'
+    report_message_sub_title_ar:
+      type: varchar
+      label: 'Report Message Sub Title AR'
+    email_username:
+      type: varchar
+      label: 'Mail configuration username'
+    email_password:
+      type: varchar
+      label: 'Mail configuration password'
+    email_host:
+      type: varchar
+      label: 'Mail configuration Host'
+    email_SMTPSecure:
+      type: varchar
+      label: 'Mail configuration SMTPSecure'
+    email_port:
+      type: varchar
+      label: 'Mail configuration SMTPSecure'
+    recommendation_en:
+      type: varchar
+      label: 'recommendation EN'
+    recommendation_ar:
+      type: varchar
+      label: 'recommendation AR'
+    offers_listing_title_en:
+      type: varchar
+      label: 'Offers Lising Title EN'
+    offers_listing_title_ar:
+      type: varchar
+      label: 'Offers Lising Title AR'

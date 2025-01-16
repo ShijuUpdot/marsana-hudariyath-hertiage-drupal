@@ -1,0 +1,20 @@
+uuid: e98fd93b-5fd0-402e-ad62-5f2ce08059b6
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - text
+id: paragraph.field_headline_short_description
+field_name: field_headline_short_description
+entity_type: paragraph
+type: text
+settings:
+  max_length: 255
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

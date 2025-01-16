@@ -1,0 +1,47 @@
+uuid: 9bb9f06b-2cf9-4f18-a425-3d3752ff50e0
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.personalization.body
+    - field.field.node.personalization.field_amenity_tags
+    - field.field.node.personalization.field_amenity_type
+    - field.field.node.personalization.field_image
+    - field.field.node.personalization.field_personalization_detail
+    - field.field.node.personalization.field_primary_color
+    - field.field.node.personalization.field_secondary_color
+    - field.field.node.personalization.field_title_translation
+    - node.type.personalization
+  module:
+    - text
+    - user
+id: node.personalization.teaser
+targetEntityType: node
+bundle: personalization
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  addtoany: true
+  field_amenity_tags: true
+  field_amenity_type: true
+  field_image: true
+  field_personalization_detail: true
+  field_primary_color: true
+  field_secondary_color: true
+  field_title_translation: true
+  langcode: true
+  search_api_excerpt: true

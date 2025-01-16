@@ -1,0 +1,19 @@
+uuid: 97b6c75b-ee15-4405-8085-f658f5c4e1fb
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term.field_landmark_position
+field_name: field_landmark_position
+entity_type: taxonomy_term
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

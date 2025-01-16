@@ -1,0 +1,10 @@
+uuid: bff8d49e-e59e-41fc-8570-4b21a1294adc
+langcode: en
+status: true
+dependencies: {  }
+id: eat_listing_details
+label: 'Eat Listing Details'
+icon_uuid: null
+icon_default: null
+description: 'Eat Listing Details'
+behavior_plugins: {  }

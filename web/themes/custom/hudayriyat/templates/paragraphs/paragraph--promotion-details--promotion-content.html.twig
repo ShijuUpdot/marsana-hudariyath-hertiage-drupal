@@ -1,0 +1,41 @@
+{% set colsm = {
+    'en': {
+      1: 'col-md-4',
+      2: 'offset-md-1 col-md-7',
+      3: 'col-md-7',
+      4: 'offset-md-1 col-md-4',
+    },
+    'ar': {
+      1: 'offset-md-1 col-md-4',
+      2: 'col-md-7',
+      3: 'col-md-7 offset-md-1',
+      4: 'col-md-4',
+    }
+  } 
+%}
+
+<div class="{{colsm[langcode][1]}} pro-para-height even-hide text-vcenter">
+  <div>
+    <div class="promotion-fit-content">
+      <h3 class="font-weight-bold">{{content.field_heading[0]['#context']['value']}}</h3>
+    </div>
+    <p>{{content.field_content[0]['#text']|raw}}</p>
+  </div>
+</div>
+<div class="{{colsm[langcode][2]}} pro-para-height even-hide mob-hide">
+  <img src="{{ file_url(content.field_image['#items'][0].entity.uri.value) }}" class="promotion-content-images"/>
+</div>
+<div class="{{colsm[langcode][3]}} pro-para-height promotion-block-img-desktop odd-hide">
+  <img src="{{ file_url(content.field_image['#items'][0].entity.uri.value) }}" class="promotion-content-images"/>
+</div>
+<div class="{{colsm[langcode][4]}} pro-para-height para-desc odd-hide text-vcenter">
+  <div>
+    <div class="promotion-fit-content">
+      <h3 class="font-weight-bold">{{content.field_heading[0]['#context']['value']}}</h3>
+    </div>
+    <p>{{content.field_content[0]['#text']|raw}}</p>
+  </div>
+</div>
+<div class="col-md-8 pro-para-height promotion-block-img-mobile">
+  <img src="{{ file_url(content.field_image['#items'][0].entity.uri.value) }}" class="promotion-content-images"/>
+</div>

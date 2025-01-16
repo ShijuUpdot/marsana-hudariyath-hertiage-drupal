@@ -1,0 +1,21 @@
+uuid: 1b9fa0b6-85b9-45ec-a7a8-9e7f2f765e82
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+id: block_content.field_headline_text
+field_name: field_headline_text
+entity_type: block_content
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

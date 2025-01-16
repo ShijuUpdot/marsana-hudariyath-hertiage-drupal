@@ -1,0 +1,68 @@
+uuid: df3bb599-e39d-4e2c-8241-edeac3db349f
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.opening_hours
+    - field.field.block_content.opening_hours.body
+    - field.field.block_content.opening_hours.field_headline
+    - field.field.block_content.opening_hours.field_info
+    - field.field.block_content.opening_hours.field_title
+  module:
+    - paragraphs
+    - text
+id: block_content.opening_hours.default
+targetEntityType: block_content
+bundle: opening_hours
+mode: default
+content:
+  field_headline:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+    region: content
+  field_info:
+    type: entity_reference_paragraphs
+    weight: 26
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_title:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  info:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 1
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  translation:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  body: true

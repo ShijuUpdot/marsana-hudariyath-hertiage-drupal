@@ -1,0 +1,24 @@
+uuid: 1d205d74-f194-4d0c-bdac-e16957e02f4b
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.message.mail_subject
+    - field.field.message.amenity_reminder.field_action
+    - field.field.message.amenity_reminder.field_node
+    - message.template.amenity_reminder
+  module:
+    - user
+id: message.amenity_reminder.mail_subject
+targetEntityType: message
+bundle: amenity_reminder
+mode: mail_subject
+content:
+  partial_0:
+    weight: 0
+    region: content
+hidden:
+  field_action: true
+  field_node: true
+  partial_1: true
+  search_api_excerpt: true

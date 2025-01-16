@@ -1,0 +1,21 @@
+uuid: ff08de36-bbbe-41d4-be97-eb233f8dfdf8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_primary_color
+    - node.type.discover
+  module:
+    - options
+id: node.discover.field_primary_color
+field_name: field_primary_color
+entity_type: node
+bundle: discover
+label: 'Primary color'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

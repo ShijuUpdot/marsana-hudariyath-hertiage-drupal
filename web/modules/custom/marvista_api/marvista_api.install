@@ -1,0 +1,255 @@
+<?php
+
+/**
+ * @file
+ * Install and uninstall functions for the marvista_api module.
+ *
+ * This file contains the functions required to perform install and
+ * uninstall operations.
+ */
+
+/**
+ * Implements hook_uninstall().
+ *
+ * It's good to clean up after ourselves.
+ *
+ * @ingroup users_access_token, user_changed_password
+ */
+function marvista_api_uninstall() {
+  $db_connection = \Drupal::database();
+  $db_connection->schema()->dropTable('users_access_token');
+  $db_connection->schema()->dropTable('user_active_logs');
+  $db_connection->schema()->dropTable('user_changed_password');
+}
+
+
+/**
+ * Implements hook_schema().
+ *
+ * Defines the database tables used by this module.
+ *
+ * @see     hook_schema()
+ *
+ * @ingroup users_access_token, user_changed_password
+ */
+function marvista_api_schema() {
+  $schema['users_access_token'] = [
+    'description' => 'users_access_token.',
+    'fields'      => [
+      'id'              => [
+        'type'        => 'serial',
+        'not null'    => TRUE,
+        'description' => 'Primary Key: Unique access_token person ID.',
+      ],
+      'uid'             => [
+        'type'        => 'int',
+        'not null'    => TRUE,
+        'default'     => 0,
+        'description' => "Creator user's {users}.uid",
+      ],
+      'access_token'    => [
+        'type'        => 'varchar',
+        'length'      => 255,
+        'not null'    => TRUE,
+        'default'     => '',
+        'description' => 'access_token of the person.',
+      ],
+      'refresh_token'   => [
+        'type'        => 'varchar',
+        'length'      => 255,
+        'not null'    => TRUE,
+        'default'     => '',
+        'description' => 'refresh_token of the person.',
+      ],
+      'device_id'       => [
+        'type'        => 'varchar',
+        'length'      => 255,
+        'not null'    => TRUE,
+        'default'     => '',
+        'description' => 'device_id of the person.',
+      ],
+      'device_token'    => [
+        'type'        => 'text',
+        'not null'    => FALSE,
+        'description' => 'device_token of the person.',
+      ],
+      'type_login'      => [
+        'type'        => 'varchar',
+        'length'      => 32,
+        'not null'    => TRUE,
+        'default'     => '',
+        'description' => 'type_login of the person.',
+      ],
+      'expired'         => [
+        'type'        => 'int',
+        'not null'    => TRUE,
+        'default'     => 0,
+        'description' => 'expired.',
+      ],
+      'created'         => [
+        'type'        => 'int',
+        'not null'    => TRUE,
+        'default'     => 0,
+        'description' => 'created.',
+      ],
+      'changed'         => [
+        'type'        => 'int',
+        'not null'    => TRUE,
+        'default'     => 0,
+        'description' => 'changed.',
+      ],
+      'status'          => [
+        'type'        => 'int',
+        'not null'    => TRUE,
+        'default'     => 0,
+        'size'        => 'tiny',
+        'description' => 'status.',
+      ],
+      'personalization' => [
+        'type'        => 'text',
+        'not null'    => FALSE,
+        'description' => 'personalization of the person.',
+      ],
+    ],
+    'primary key' => ['id'],
+    'indexes'     => [
+      'uid'          => ['uid'],
+      'access_token' => ['access_token'],
+      'created'      => ['created'],
+      'expired'      => ['expired'],
+    ],
+  ];
+  $schema['user_active_logs'] = [
+    'description' => 'user_changed_password.',
+    'fields'      => [
+      'id'         => [
+        'type'        => 'serial',
+        'not null'    => TRUE,
+        'description' => 'Primary Key: Unique person ID.',
+      ],
+      'uid'        => [
+        'type'        => 'int',
+        'not null'    => TRUE,
+        'default'     => 0,
+        'description' => "Creator user's {users}.uid",
+      ],
+      'email'      => [
+        'type'        => 'varchar',
+        'length'      => 50,
+        'not null'    => TRUE,
+        'default'     => '',
+        'description' => 'email of the person.',
+      ],
+      'code'       => [
+        'type'        => 'varchar',
+        'length'      => 10,
+        'not null'    => TRUE,
+        'default'     => '',
+        'description' => 'code of the person.',
+      ],
+      'token_code' => [
+        'type'        => 'varchar',
+        'length'      => 255,
+        'not null'    => TRUE,
+        'default'     => '',
+        'description' => 'token_code of the person.',
+      ],
+      'expired'    => [
+        'type'        => 'int',
+        'not null'    => TRUE,
+        'default'     => 0,
+        'description' => 'expired.',
+      ],
+      'created'    => [
+        'type'        => 'int',
+        'not null'    => TRUE,
+        'default'     => 0,
+        'description' => 'created.',
+      ],
+      'status'     => [
+        'type'        => 'int',
+        'not null'    => TRUE,
+        'default'     => 0,
+        'size'        => 'tiny',
+        'description' => 'status.',
+      ],
+    ],
+    'primary key' => ['id'],
+    'indexes'     => [
+      'uid'        => ['uid'],
+      'email'      => ['email'],
+      'token_code' => ['token_code'],
+    ],
+  ];
+  $schema['user_changed_password'] = [
+    'description' => 'user_changed_password.',
+    'fields'      => [
+      'id'         => [
+        'type'        => 'serial',
+        'not null'    => TRUE,
+        'description' => 'Primary Key: Unique person ID.',
+      ],
+      'uid'        => [
+        'type'        => 'int',
+        'not null'    => TRUE,
+        'default'     => 0,
+        'description' => "Creator user's {users}.uid",
+      ],
+      'email'      => [
+        'type'        => 'varchar',
+        'length'      => 50,
+        'not null'    => TRUE,
+        'default'     => '',
+        'description' => 'email of the person.',
+      ],
+      'code'       => [
+        'type'        => 'varchar',
+        'length'      => 10,
+        'not null'    => TRUE,
+        'default'     => '',
+        'description' => 'code of the person.',
+      ],
+      'token_code' => [
+        'type'        => 'varchar',
+        'length'      => 255,
+        'not null'    => TRUE,
+        'default'     => '',
+        'description' => 'token_code of the person.',
+      ],
+      'expired'    => [
+        'type'        => 'int',
+        'not null'    => TRUE,
+        'default'     => 0,
+        'description' => 'expired.',
+      ],
+      'created'    => [
+        'type'        => 'int',
+        'not null'    => TRUE,
+        'default'     => 0,
+        'description' => 'created.',
+      ],
+      'changed'    => [
+        'type'        => 'int',
+        'not null'    => TRUE,
+        'default'     => 0,
+        'description' => 'changed.',
+      ],
+      'status'     => [
+        'type'        => 'int',
+        'not null'    => TRUE,
+        'default'     => 0,
+        'size'        => 'tiny',
+        'description' => 'status.',
+      ],
+    ],
+    'primary key' => ['id'],
+    'indexes'     => [
+      'uid'        => ['uid'],
+      'email'      => ['email'],
+      'token_code' => ['token_code'],
+    ],
+  ];
+
+
+  return $schema;
+}

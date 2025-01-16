@@ -1,0 +1,55 @@
+uuid: abf4d11f-ae76-4dc6-8f4b-65db1349c121
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.f_b_outlets.field_position
+    - field.field.taxonomy_term.f_b_outlets.field_position_no
+    - field.field.taxonomy_term.f_b_outlets.field_title
+    - taxonomy.vocabulary.f_b_outlets
+id: taxonomy_term.f_b_outlets.default
+targetEntityType: taxonomy_term
+bundle: f_b_outlets
+mode: default
+content:
+  field_position:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_position_no:
+    weight: 3
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_title:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  translation:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  description: true
+  langcode: true
+  path: true
+  status: true

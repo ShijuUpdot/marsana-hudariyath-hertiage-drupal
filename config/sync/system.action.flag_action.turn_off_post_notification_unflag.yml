@@ -1,0 +1,15 @@
+uuid: 8b6ab51a-49b0-4e6a-af7e-cf2b609e3ee0
+langcode: en
+status: true
+dependencies:
+  config:
+    - flag.flag.turn_off_post_notification
+  module:
+    - flag
+id: flag_action.turn_off_post_notification_unflag
+label: 'Unflag this item'
+type: community_post
+plugin: 'flag_action:turn_off_post_notification_unflag'
+configuration:
+  flag_id: turn_off_post_notification
+  flag_action: unflag

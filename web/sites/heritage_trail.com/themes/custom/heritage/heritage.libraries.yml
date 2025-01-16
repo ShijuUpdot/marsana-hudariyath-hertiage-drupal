@@ -1,0 +1,21 @@
+custom-styling:
+  css:
+    theme:
+      assets/css/bootstrap.min.css: {}
+      assets/css/styles.css: {}
+      assets/css/responsive.css: {}
+      assets/css/common.css: {}
+      assets/css/commun.css: {}
+      assets/css/swiper.min.css: {}
+  js:
+    assets/js/TweenMax.min.js: {}
+    # assets/js/jquery-3.4.1.min.js: {}
+    assets/js/bootstrap.min.js: {}
+    assets/js/ScrollMagic.min.js: {}
+    assets/js/animation.gsap.js: {}
+    assets/js/debug.addIndicators.min.js: {}
+    assets/js/intro-parallax.js: {}
+    assets/js/swiper.min.js: {}    
+    assets/js/main.js: {}
+  dependencies:
+    - core/jquery

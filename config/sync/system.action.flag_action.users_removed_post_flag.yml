@@ -1,0 +1,15 @@
+uuid: 3a6d0689-b04c-49e8-a884-b4f5823da772
+langcode: en
+status: true
+dependencies:
+  config:
+    - flag.flag.users_removed_post
+  module:
+    - flag
+id: flag_action.users_removed_post_flag
+label: 'Flag this item'
+type: community_post
+plugin: 'flag_action:users_removed_post_flag'
+configuration:
+  flag_id: users_removed_post
+  flag_action: flag

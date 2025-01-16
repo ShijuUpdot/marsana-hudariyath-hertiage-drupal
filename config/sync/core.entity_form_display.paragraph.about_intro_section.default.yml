@@ -1,0 +1,55 @@
+uuid: 2c04f176-39a3-470d-a5a7-c76c87b4aaed
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.about_intro_section.field_about_single_banner
+    - field.field.paragraph.about_intro_section.field_about_stats
+    - field.field.paragraph.about_intro_section.field_features_intro
+    - paragraphs.paragraphs_type.about_intro_section
+  module:
+    - paragraphs
+id: paragraph.about_intro_section.default
+targetEntityType: paragraph
+bundle: about_intro_section
+mode: default
+content:
+  field_about_single_banner:
+    type: entity_reference_paragraphs
+    weight: 0
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_about_stats:
+    type: entity_reference_paragraphs
+    weight: 1
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_features_intro:
+    type: entity_reference_paragraphs
+    weight: 2
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  status: true

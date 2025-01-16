@@ -1,0 +1,146 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a paragraph.
+ *
+ * Available variables:
+ * - paragraph: Full paragraph entity.
+ *   Only method names starting with "get", "has", or "is" and a few common
+ *   methods such as "id", "label", and "bundle" are available. For example:
+ *   - paragraph.getCreatedTime() will return the paragraph creation timestamp.
+ *   - paragraph.id(): The paragraph ID.
+ *   - paragraph.bundle(): The type of the paragraph, for example, "image" or "text".
+ *   - paragraph.getOwnerId(): The user ID of the paragraph author.
+ *   See Drupal\paragraphs\Entity\Paragraph for a full list of public properties
+ *   and methods for the paragraph object.
+ * - content: All paragraph items. Use {{ content }} to print them all,
+ *   or print a subset such as {{ content.field_example }}. Use
+ *   {{ content|without('field_example') }} to temporarily suppress the printing
+ *   of a given child element.
+ * - attributes: HTML attributes for the containing element.
+ *   The attributes.class element may contain one or more of the following
+ *   classes:
+ *   - paragraphs: The current template type (also known as a "theming hook").
+ *   - paragraphs--type-[type]: The current paragraphs type. For example, if the paragraph is an
+ *     "Image" it would result in "paragraphs--type--image". Note that the machine
+ *     name will often be in a short form of the human readable label.
+ *   - paragraphs--view-mode--[view_mode]: The View Mode of the paragraph; for example, a
+ *     preview would result in: "paragraphs--view-mode--preview", and
+ *     default: "paragraphs--view-mode--default".
+ * - view_mode: View mode; for example, "preview" or "full".
+ * - logged_in: Flag for authenticated user status. Will be true when the
+ *   current user is a logged-in member.
+ * - is_admin: Flag for admin user status. Will be true when the current user
+ *   is an administrator.
+ *
+ * @see template_preprocess_paragraph()
+ *
+ * @ingroup themeable
+ */
+#}
+{%
+  set classes = [
+    'paragraph',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+    not paragraph.isPublished() ? 'paragraph--unpublished'
+  ]
+%}
+{% block paragraph %}
+  {% block content %}
+  {% if content.field_information[0]|render|striptags|trim|length %}
+    {% set url =  url('<current>') |render|render %}
+    {% set linkurl = content['field_link'].0['#url'] %}
+    {% set linktitle = content['field_link'].0['#title'] %}
+    {% set multi_opening_hours = content.field_multi_opening_hours %}
+    {% if 'eat' not in url  and 'interactive' not in url %}
+		<div class="parallax white-bg" data-scroll-speed="4">
+            <section class="related-content related-interaction white-bg">
+              <ul class="interaction-external">
+                {% for key, item in content.field_information  %}
+                {% if key|first != '#' %}
+                  {% set info_title = content.field_information[key]['#paragraph'].field_title[0].value|raw|striptags %}
+                      {% if multi_opening_hours[0] |render|striptags|trim|length and  ( 'Opening Hours' in info_title or 'ساعات العمل' in info_title ) %}
+                      {% else %}
+                      <li>
+                        <div class="interaction-external-wrapper">
+                            <div class="detailed-title">
+                            <img src="{{ file_url(content.field_information[key]['#paragraph'].field_icon[0].entity.uri.value) }}" alt="">
+                            <p>{{ info_title }}</p>
+                            </div>
+                            {{ content.field_information[key]['#paragraph'].field_intro_description[0].value | raw }}
+                        </div>
+                      </li>
+                      {% endif %}
+                    {% endif %}
+                {% endfor %}
+                {% if multi_opening_hours[0] |render|striptags|trim|length %}  
+                    <li>
+                      <div class="interaction-external-wrapper">
+                        <div class="detailed-title">
+                          <button type="button" class="btn dropdown-toggle w-100" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img src="/images/static/icon-hour.svg" alt="">
+                            <p> {{ 'Opening Hours' | t }}</p>
+                          </button>
+                          <div class="dropdown-menu">
+                          {% set ocnt = 0 %}
+                          {% for okey, oitem in content.field_multi_opening_hours  %}
+                            {% if okey|first != '#' %}
+                            {% set ocnt = ocnt + 1 %}
+                            {% endif %}
+                          {% endfor %}
+                          {% for okey, oitem in content.field_multi_opening_hours  %}
+                          {% if okey|first != '#' %}
+                            {{ oitem }}
+                            {% if loop.index0 < ocnt - 1 %}
+                              <div class="dropdown-divider"></div>    
+                            {% endif %}
+                          {% endif %}
+                          {% endfor %}
+                        </div>
+                      </div>
+                    </li>
+                {% endif %}
+                {% if linkurl is not empty and  linktitle is not empty %}
+                  <li class="navy-bg ticket">
+                    <div class="interaction-external-wrapper">
+                      {% if 'hudayriyat-courts' in linkurl %}
+                        <a href="{{linkurl}}" class="external-link"></a>
+                      {% else  %}
+                        <a href="{{linkurl}}" target="_blank" class="external-link"></a>
+                      {% endif %}
+                      <img src="" alt="">
+                      <p>{{ linktitle }}</p>
+                      <img src="{{ file_url(content.field_link_icon['#items'][0].entity.uri.value) }}" alt="External">
+                    </div>
+                  </li>
+                {% endif %}
+              </ul>
+          </section>
+        {% elseif ('eat' in url) or ('interactive' in url) %}
+        {% for key, item in content.field_information  %}
+        {% if key|first != '#' %}
+            {% set background_image =  content.field_information[key]['#paragraph'].field_banner_image[0].entity.uri.value | striptags | trim %}
+            {% set upload =  content.field_information[key]['#paragraph'].field_upload[0].entity.fileuri | striptags | trim %}
+          <div class="col px-0">
+            <div class="detailed-group">
+             {% if content.field_information[key]['#paragraph'].field_banner_image[0].entity.uri.value %}
+                <img src="{{ file_url(content.field_information[key]['#paragraph'].field_banner_image[0].entity.uri.value) }}" alt="" class="location">
+              {% endif %}
+              <div class="detailed-title">
+                <img src="{{ file_url(content.field_information[key]['#paragraph'].field_icon[0].entity.uri.value) }}" alt="">
+                <p>{{ content.field_information[key]['#paragraph'].field_title[0].value|raw|striptags }}</p>
+              </div>
+              {{ content.field_information[key]['#paragraph'].field_intro_description[0].value  | raw }}
+              {% if upload is not empty %}
+                <br><br>
+                <a href="{{ file_url(content.field_information[key]['#paragraph'].field_upload[0].entity.fileuri) }}" class="btn external-btn download-btn" target="_blank">{{ 'Download Menu' | t }}</a>
+              {% endif %}
+            </div>
+          </div>
+        {% endif %}
+        {% endfor %}
+        {% endif %}
+ {% endif %}
+  {% endblock %}
+{% endblock paragraph %}

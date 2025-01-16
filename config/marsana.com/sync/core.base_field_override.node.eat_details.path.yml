@@ -1,0 +1,20 @@
+uuid: f2d201b2-fff5-4165-a093-a49e5b1f45ab
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.eat_details
+  module:
+    - path
+id: node.eat_details.path
+field_name: path
+entity_type: node
+bundle: eat_details
+label: 'URL alias'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

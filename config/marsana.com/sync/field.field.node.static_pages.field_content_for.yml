@@ -1,0 +1,21 @@
+uuid: 14778f3a-96bf-4207-823a-91bacbfcdc96
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_content_for
+    - node.type.static_pages
+  module:
+    - options
+id: node.static_pages.field_content_for
+field_name: field_content_for
+entity_type: node
+bundle: static_pages
+label: 'Content For'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

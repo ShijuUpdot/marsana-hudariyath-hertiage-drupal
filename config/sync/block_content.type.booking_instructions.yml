@@ -1,0 +1,8 @@
+uuid: 6c9416d6-fa4f-49fe-8cbc-d606364d5fef
+langcode: en
+status: true
+dependencies: {  }
+id: booking_instructions
+label: 'Booking Instructions'
+revision: 0
+description: 'Booking Instructions'

@@ -1,0 +1,21 @@
+uuid: 4eb58e36-5de9-45e8-8ac9-84682023a3ba
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.guidelines
+    - field.storage.block_content.field_short_description
+  module:
+    - text
+id: block_content.guidelines.field_short_description
+field_name: field_short_description
+entity_type: block_content
+bundle: guidelines
+label: 'Short Description'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

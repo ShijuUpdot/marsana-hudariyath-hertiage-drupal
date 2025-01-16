@@ -1,0 +1,36 @@
+uuid: 37233f19-3401-42b3-ba68-2473e83e56c5
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.header_block
+  module:
+    - block_visibility_groups
+    - system
+    - views
+  theme:
+    - marsana
+id: views_block__header_block_header_block
+theme: marsana
+region: content
+weight: -17
+provider: null
+plugin: 'views_block:header_block-header_block'
+settings:
+  id: 'views_block:header_block-header_block'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
+    context_mapping: {  }
+  request_path:
+    id: request_path
+    pages: /500
+    negate: true
+    context_mapping: {  }

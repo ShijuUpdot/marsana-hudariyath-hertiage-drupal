@@ -1,0 +1,23 @@
+uuid: c65d25d3-c651-4431-82de-9cff31c85b48
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_location_longitude
+    - paragraphs.paragraphs_type.location_details
+id: paragraph.location_details.field_location_longitude
+field_name: field_location_longitude
+entity_type: paragraph
+bundle: location_details
+label: 'Location Longitude'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: float

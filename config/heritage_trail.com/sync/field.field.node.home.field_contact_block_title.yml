@@ -1,0 +1,19 @@
+uuid: 08e8d3b1-63c2-450f-835e-ed7d0540e9c3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_contact_block_title
+    - node.type.home
+id: node.home.field_contact_block_title
+field_name: field_contact_block_title
+entity_type: node
+bundle: home
+label: 'Contact Block Title'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

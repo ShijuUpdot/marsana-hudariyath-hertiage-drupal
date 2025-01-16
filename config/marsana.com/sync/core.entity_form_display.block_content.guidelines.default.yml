@@ -1,0 +1,77 @@
+uuid: ff2fb714-6985-4f16-afb2-736adc9f8e1e
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.guidelines
+    - field.field.block_content.guidelines.body
+    - field.field.block_content.guidelines.field_description
+    - field.field.block_content.guidelines.field_guidelines_listing
+    - field.field.block_content.guidelines.field_short_description
+    - field.field.block_content.guidelines.field_title
+  module:
+    - paragraphs
+    - text
+id: block_content.guidelines.default
+targetEntityType: block_content
+bundle: guidelines
+mode: default
+content:
+  field_description:
+    weight: 4
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_guidelines_listing:
+    type: entity_reference_paragraphs
+    weight: 5
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_short_description:
+    weight: 3
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_title:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  info:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 1
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  translation:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  body: true

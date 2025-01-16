@@ -1,0 +1,10 @@
+heritage_custom_configs.admin_config:
+  route_name: heritage_custom_configs.admin_config
+  parent: system.admin_config
+  title: Custom Configuration Settings
+  description: 'Manage Heritage custom config settings.'
+heritage_custom_configs.admin_settings:
+  title: 'Custom Configurations'
+  parent: heritage_custom_configs.admin_config
+  description: 'Configure Custom Settings.'
+  route_name: heritage_custom_configs.admin_settings

@@ -1,0 +1,18 @@
+uuid: 340a5ea3-66a0-48c0-b29f-63e796d9a36b
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.amenity_single
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: node.amenity_single
+target_entity_type_id: node
+target_bundle: amenity_single
+default_langcode: site_default
+language_alterable: true

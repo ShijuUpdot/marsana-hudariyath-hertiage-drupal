@@ -1,0 +1,141 @@
+uuid: 07536393-2761-4d4c-861d-f80e2c52c4f2
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - search_api
+    - community_post
+  config:
+    - field.storage.paragraph.field_coordinate
+    - search_api.server.search_location_near_by
+id: location_near_by
+name: 'Location near by'
+description: ''
+read_only: false
+field_settings:
+  experience_id:
+    label: 'Location detail experience id'
+    property_path: experience_id
+    type: string
+  langcode:
+    label: 'Language code'
+    datasource_id: 'entity:paragraph'
+    property_path: langcode
+    type: string
+    dependencies:
+      module:
+        - paragraphs
+  langcode_1:
+    label: 'Language code'
+    datasource_id: 'entity:paragraph'
+    property_path: langcode
+    type: string
+    dependencies:
+      module:
+        - paragraphs
+  lat:
+    label: 'Coordinate » Centroid Latitude'
+    datasource_id: 'entity:paragraph'
+    property_path: 'field_coordinate:lat'
+    type: decimal
+    dependencies:
+      config:
+        - field.storage.paragraph.field_coordinate
+  lon:
+    label: 'Coordinate » Centroid Longitude'
+    datasource_id: 'entity:paragraph'
+    property_path: 'field_coordinate:lon'
+    type: decimal
+    dependencies:
+      config:
+        - field.storage.paragraph.field_coordinate
+  node_type:
+    label: 'Location detail node type'
+    property_path: node_type
+    type: string
+  parent_id:
+    label: 'Parent ID'
+    datasource_id: 'entity:paragraph'
+    property_path: parent_id
+    type: string
+    dependencies:
+      module:
+        - paragraphs
+  parent_type:
+    label: 'Parent type'
+    datasource_id: 'entity:paragraph'
+    property_path: parent_type
+    type: string
+    dependencies:
+      module:
+        - paragraphs
+  status:
+    label: Published
+    datasource_id: 'entity:paragraph'
+    property_path: status
+    type: boolean
+    dependencies:
+      module:
+        - paragraphs
+  title_parent_paragraph:
+    label: 'Title of parent paragraph'
+    property_path: title_parent_paragraph
+    type: text
+datasource_settings:
+  'entity:paragraph':
+    bundles:
+      default: false
+      selected:
+        - location_details
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  add_url: {  }
+  aggregated_field: {  }
+  ignorecase:
+    all_fields: false
+    fields:
+      - experience_id
+      - node_type
+      - parent_id
+      - parent_type
+      - title_parent_paragraph
+    weights:
+      preprocess_index: -20
+      preprocess_query: -20
+  language_with_fallback: {  }
+  paragraph_location_detail_entity_status: {  }
+  paragraph_location_detail_experience_id: {  }
+  paragraph_location_detail_node_type: {  }
+  rendered_item: {  }
+  tokenizer:
+    all_fields: false
+    fields:
+      - title_parent_paragraph
+    ignored: ._-
+    spaces: ''
+    overlap_cjk: 1
+    minimum_word_size: '2'
+    weights:
+      preprocess_index: -6
+      preprocess_query: -6
+  transliteration:
+    all_fields: false
+    fields:
+      - experience_id
+      - node_type
+      - parent_id
+      - parent_type
+      - title_parent_paragraph
+    weights:
+      preprocess_index: -20
+      preprocess_query: -20
+tracker_settings:
+  default:
+    indexing_order: fifo
+options:
+  index_directly: true
+  cron_limit: 50
+server: search_location_near_by

@@ -1,0 +1,19 @@
+uuid: c9fc24d0-a4c0-418d-8dc2-e5c840c0ce48
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+    - text
+id: block_content.field_guidelines_text
+field_name: field_guidelines_text
+entity_type: block_content
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

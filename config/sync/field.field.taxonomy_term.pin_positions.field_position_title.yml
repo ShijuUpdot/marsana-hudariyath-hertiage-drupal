@@ -1,0 +1,19 @@
+uuid: eadfc587-54af-432c-8f3b-7879949fb8ea
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_position_title
+    - taxonomy.vocabulary.pin_positions
+id: taxonomy_term.pin_positions.field_position_title
+field_name: field_position_title
+entity_type: taxonomy_term
+bundle: pin_positions
+label: 'Position Title'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

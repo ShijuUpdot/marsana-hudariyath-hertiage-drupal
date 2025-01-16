@@ -1,0 +1,23 @@
+uuid: b888c816-368b-4288-bfc5-cfcbff835c00
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_next_landing
+    - node.type.stay
+  module:
+    - link
+id: node.stay.field_next_landing
+field_name: field_next_landing
+entity_type: node
+bundle: stay
+label: 'Next Landing'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

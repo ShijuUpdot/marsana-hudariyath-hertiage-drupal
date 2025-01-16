@@ -1,0 +1,23 @@
+uuid: 1126be63-f62b-432c-9f55-e4940ef5816b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_priority
+    - node.type.categories
+id: node.categories.field_priority
+field_name: field_priority
+entity_type: node
+bundle: categories
+label: Priority
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

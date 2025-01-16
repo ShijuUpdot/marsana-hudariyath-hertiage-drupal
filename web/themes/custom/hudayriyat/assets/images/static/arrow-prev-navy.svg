@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="67px" height="67px" viewBox="0 0 67 67" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>arrow-next-navy</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="arrow-next-navy" transform="translate(33.500000, 33.500000) rotate(180.000000) translate(-33.500000, -33.500000) " fill-rule="nonzero">
+            <circle id="Oval" fill="#212237" cx="33.5" cy="33.5" r="33.5"></circle>
+            <g id="Mask" transform="translate(26.000000, 21.000000)" fill="#FFFFFF">
+                <path d="M2.3374276,0.7071068 L0.7063361,2.3381983 C0.3161129,2.7284215 0.315768,3.3609919 0.7055654,3.7516404 L9.8893387,12.9554656 L9.8893387,12.9554656 L0.7055654,22.1592908 C0.315768,22.5499393 0.3161129,23.1825097 0.7063361,23.5727329 L2.3374276,25.2038244 C2.7279519,25.5943487 3.3611169,25.5943487 3.7516412,25.2038244 L16,12.9554656 L16,12.9554656 L3.7516412,0.7071068 C3.3611169,0.3165825 2.7279519,0.3165825 2.3374276,0.7071068 Z" id="path-1"></path>
+            </g>
+        </g>
+    </g>
+</svg>

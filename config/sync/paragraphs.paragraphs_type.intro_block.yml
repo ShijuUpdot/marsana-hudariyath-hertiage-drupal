@@ -1,0 +1,10 @@
+uuid: 4feaf48e-af70-41da-b273-e57705ceb100
+langcode: en
+status: true
+dependencies: {  }
+id: intro_block
+label: 'Intro Block'
+icon_uuid: null
+icon_default: null
+description: 'Introduction fields'
+behavior_plugins: {  }

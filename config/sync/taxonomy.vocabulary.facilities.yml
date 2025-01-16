@@ -1,0 +1,8 @@
+uuid: af364de5-b153-4558-97db-b2784ef4ebf4
+langcode: en
+status: true
+dependencies: {  }
+name: Facilities
+vid: facilities
+description: ''
+weight: -2

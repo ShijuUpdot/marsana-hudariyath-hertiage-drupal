@@ -1,0 +1,91 @@
+uuid: 3c598034-285f-44a3-a519-1669c11183b1
+langcode: en
+status: true
+dependencies:
+  config:
+    - community_post.community_post_type.default
+    - field.field.community_post.default.field_approval_state
+    - field.field.community_post.default.field_caption
+    - field.field.community_post.default.field_comment
+    - field.field.community_post.default.field_image
+  module:
+    - comment
+    - options
+    - svg_image
+    - user
+_core:
+  default_config_hash: OknO7HIMrxxBtycQfsHvsA0QrzxzIOCTBfINgO7WnbA
+id: community_post.default.default
+targetEntityType: community_post
+bundle: default
+mode: default
+content:
+  field_approval_state:
+    weight: 3
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_caption:
+    weight: 2
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_comment:
+    weight: 4
+    label: above
+    settings:
+      view_mode: default
+      pager_id: 0
+    third_party_settings: {  }
+    type: comment_default
+    region: content
+  field_image:
+    weight: 1
+    label: above
+    settings:
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  flag_community_post_favorite:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  flag_turn_off_post_notification:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  flag_users_removed_post:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  name:
+    label: above
+    type: string
+    weight: -4
+    region: content
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  user_id:
+    label: hidden
+    type: author
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true
+  search_api_excerpt: true

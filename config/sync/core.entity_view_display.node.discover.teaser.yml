@@ -1,0 +1,77 @@
+uuid: 1ca932b3-4428-4415-b353-f34711f4cf7a
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.discover.body
+    - field.field.node.discover.field_dicovermetatag
+    - field.field.node.discover.field_discover_feature_section
+    - field.field.node.discover.field_discover_intro
+    - field.field.node.discover.field_discover_key_features
+    - field.field.node.discover.field_discover_links
+    - field.field.node.discover.field_discover_listing
+    - field.field.node.discover.field_discover_single_banner
+    - field.field.node.discover.field_discover_sticky_landing_li
+    - field.field.node.discover.field_experience_headline
+    - field.field.node.discover.field_hero_image
+    - field.field.node.discover.field_hero_image_title
+    - field.field.node.discover.field_hero_ogg_video
+    - field.field.node.discover.field_hero_video
+    - field.field.node.discover.field_hero_webm_video
+    - field.field.node.discover.field_key_points
+    - field.field.node.discover.field_next_landing
+    - field.field.node.discover.field_next_landing_image
+    - field.field.node.discover.field_previous_landing
+    - field.field.node.discover.field_previous_landing_image
+    - field.field.node.discover.field_primary_color
+    - field.field.node.discover.field_search_keywords
+    - field.field.node.discover.field_secondary_color
+    - node.type.discover
+  module:
+    - text
+    - user
+id: node.discover.teaser
+targetEntityType: node
+bundle: discover
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  addtoany: true
+  field_dicovermetatag: true
+  field_discover_feature_section: true
+  field_discover_intro: true
+  field_discover_key_features: true
+  field_discover_links: true
+  field_discover_listing: true
+  field_discover_single_banner: true
+  field_discover_sticky_landing_li: true
+  field_experience_headline: true
+  field_hero_image: true
+  field_hero_image_title: true
+  field_hero_ogg_video: true
+  field_hero_video: true
+  field_hero_webm_video: true
+  field_key_points: true
+  field_next_landing: true
+  field_next_landing_image: true
+  field_previous_landing: true
+  field_previous_landing_image: true
+  field_primary_color: true
+  field_search_keywords: true
+  field_secondary_color: true
+  langcode: true
+  search_api_excerpt: true

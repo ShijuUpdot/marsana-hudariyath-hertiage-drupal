@@ -1,0 +1,31 @@
+uuid: 802452ef-0590-48f5-844f-2965a35ad2c6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.parallax_wrapper_bottom_image.field_parallax_bottom_image
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.parallax_wrapper_bottom_image
+  module:
+    - svg_image
+id: paragraph.parallax_wrapper_bottom_image.default
+targetEntityType: paragraph
+bundle: parallax_wrapper_bottom_image
+mode: default
+content:
+  field_parallax_bottom_image:
+    weight: 0
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  translation:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  status: true

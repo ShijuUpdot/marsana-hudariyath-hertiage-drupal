@@ -1,0 +1,10 @@
+uuid: d768fc14-8b6b-48da-8d84-58a20b544cf8
+langcode: en
+status: true
+dependencies: {  }
+id: landing_mobile_app
+label: 'Landing Mobile App'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

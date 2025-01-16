@@ -1,0 +1,21 @@
+uuid: 233284a0-881e-4901-9570-8b87bb3d2a6a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_headline_description
+    - paragraphs.paragraphs_type.about_block
+  module:
+    - text
+id: paragraph.about_block.field_headline_description
+field_name: field_headline_description
+entity_type: paragraph
+bundle: about_block
+label: 'Headline Description'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

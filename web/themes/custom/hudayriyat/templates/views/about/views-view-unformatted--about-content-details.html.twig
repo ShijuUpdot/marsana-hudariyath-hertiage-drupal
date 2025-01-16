@@ -1,0 +1,131 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a view of unformatted rows.
+ *
+ * Available variables:
+ * - title: The title of this group of rows. May be empty.
+ * - rows: A list of the view's row items.
+ *   - attributes: The row's HTML attributes.
+ *   - content: The row's content.
+ * - view: The view object.
+ * - default_row_class: A flag indicating whether default classes should be
+ *   used on rows.
+ *
+ * @see template_preprocess_views_view_unformatted()
+ *
+ * @ingroup themeable
+ */
+#}
+<section class="related-content no-border white-bg ">
+  <ul class="nav nav-tabs nav-fill w-100" id="myTab" role="tablist">
+{% for key,item in about_content_title %}
+   {% if key == 0 %}
+      <li class="nav-item">
+      {% if about_content_title | length == 1 %}
+        <p class="nav-link active" id="first-tab" data-toggle="tab" href="#first" role="tab" aria-controls="first" aria-selected="true">{{ item }}</p>
+      {% else %}
+        <a class="nav-link active" id="first-tab" data-toggle="tab" href="#first" role="tab" aria-controls="first" aria-selected="true">{{ item }}</a>
+      {% endif %}
+      </li>
+   {% endif %}
+   {% if key == 1 %}
+      <li class="nav-item">
+        <a class="nav-link" id="second-tab" data-toggle="tab" href="#second" role="tab" aria-controls="second" aria-selected="false">{{ item }}</a>
+      </li>
+   {% endif %}
+{% endfor %}
+ </ul>
+</section>
+<section class="tab-content" id="myTabContent">
+{% for row in rows %}
+{% set description = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_intro_description }}'] | striptags | trim %}
+{% set news_listing_no = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_news_listing_no }}'] | striptags | trim %}
+{% set news_listing_title = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_news_listing_title }}'] | striptags | trim %}
+  {% if loop.index0 == 0 %}
+  <div class="tab-pane fade show active" id="first" role="tabpanel" aria-labelledby="first-tab">
+      <section class="p-section ">
+        <div class="container">
+          <div class="row">
+            <div class="col-12"><p class="detailed-txt">{{ description }}</p></div>
+          </div>
+        </div>
+      </section>
+      {{ row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_about_intro_section }}'] }}
+      {% set view = drupal_view_result('about_content', 'about_content')|length %}
+      {% if view  %}
+      <section class="p-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="listing-number">{{ news_listing_no }}</div>
+                        <h2>{{ news_listing_title }}</h2>
+                    </div>
+                </div>
+                <div class="row">
+                  <div class="col-12">
+                    <div class="swiper-listing">
+                      <!-- Swiper -->
+                      <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                          
+                          {{ drupal_view('about_content') }}
+
+                        </div>
+                        <div class="swiper-arrows">
+                          <div class="swiper-button-prev"></div>
+                          <div class="swiper-button-next"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+               </div>
+            </section>
+            {% endif %}
+      {{ row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_contact_information }}'] }}
+  </div>
+  {% endif %}
+ {% if loop.index0 == 1 %}
+  <div class="tab-pane fade" id="second" role="tabpanel" aria-labelledby="second-tab">
+    <section class="p-section ">
+        <div class="container">
+          <div class="row">
+            <div class="col-12"><p class="detailed-txt">{{ description }}</p></div>
+          </div>
+        </div>
+      </section>
+    {{ row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_about_intro_section }}'] }}
+      <section class="p-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="listing-number">{{ news_listing_no }}</div>
+                        <h2>{{ news_listing_title }}</h2>
+                    </div>
+                </div>
+                <div class="row">
+                  <div class="col-12">
+                    <div class="swiper-listing">
+                      <!-- Swiper -->
+                      <div class="swiper-container">
+                        <div class="swiper-wrapper">
+
+                          {{ drupal_view('about_content') }}
+
+                        </div>
+                        <div class="swiper-arrows">
+                          <div class="swiper-button-prev"></div>
+                          <div class="swiper-button-next"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+               </div>
+            </section>
+    {{ row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_contact_information }}'] }}
+  </div>
+  {% endif %}
+{% endfor %}
+</section>

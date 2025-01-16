@@ -1,0 +1,10 @@
+uuid: fa9a5156-8478-4248-820b-43866e3bd7a4
+langcode: en
+status: true
+dependencies: {  }
+id: opening_hours_block
+label: 'Opening Hours Block'
+icon_uuid: null
+icon_default: null
+description: 'Header Opening Hours Block'
+behavior_plugins: {  }

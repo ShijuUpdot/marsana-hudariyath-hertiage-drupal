@@ -1,0 +1,10 @@
+uuid: 4ac645d7-e792-4d24-8579-7edf36e65404
+langcode: en
+status: true
+dependencies: {  }
+id: slider_images
+label: 'Slider Images'
+icon_uuid: null
+icon_default: null
+description: 'Sidebar Images'
+behavior_plugins: {  }

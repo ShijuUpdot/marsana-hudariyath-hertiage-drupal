@@ -1,0 +1,21 @@
+uuid: 620948a2-235c-485c-b993-907fe94b5085
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_primary_color
+    - node.type.stay
+  module:
+    - options
+id: node.stay.field_primary_color
+field_name: field_primary_color
+entity_type: node
+bundle: stay
+label: 'Primary color'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,22 @@
+uuid: 582bd450-2531-437e-a071-99da7ff325e0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.flagging.community_post_favorite.field_experience
+    - flag.flag.community_post_favorite
+id: flagging.community_post_favorite.default
+targetEntityType: flagging
+bundle: community_post_favorite
+mode: default
+content:
+  field_experience:
+    weight: 0
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+hidden:
+  search_api_excerpt: true

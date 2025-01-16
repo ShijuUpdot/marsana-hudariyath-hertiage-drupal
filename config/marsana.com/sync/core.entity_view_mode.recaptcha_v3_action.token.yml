@@ -1,0 +1,10 @@
+uuid: e7f8dbb8-53e0-40fc-a9db-af8673715ba0
+langcode: en
+status: true
+dependencies:
+  module:
+    - recaptcha_v3
+id: recaptcha_v3_action.token
+label: Token
+targetEntityType: recaptcha_v3_action
+cache: true

@@ -1,0 +1,31 @@
+uuid: 298a9817-b7a9-4044-98db-9e8c2100324e
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.amenity_single
+    - views.view.amenity_single_location
+  module:
+    - block_visibility_groups
+    - views
+  theme:
+    - hudayriyat
+id: views_block__amenity_single_location_amenity_single_location
+theme: hudayriyat
+region: content
+weight: -8
+provider: null
+plugin: 'views_block:amenity_single_location-amenity_single_location'
+settings:
+  id: 'views_block:amenity_single_location-amenity_single_location'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: amenity_single
+    context_mapping: {  }

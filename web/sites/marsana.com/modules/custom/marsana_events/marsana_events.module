@@ -1,0 +1,26 @@
+<?php
+
+/**
+ * @file
+ * Managing the custom coding for attaching library.
+ */
+
+
+/**
+ * Implements hook_page_attachments().
+ */
+function marsana_events_page_attachments(array &$attachments) {
+  $route_match = \Drupal::routeMatch();
+  // only for single view
+  if ($route_match->getRouteName() == 'marsana_events.events_landing_page') {
+    // base path variable
+    global $base_path;
+    $attachments['#attached']['library'][] = 'marsana_events/marsana_js';
+    $attachments['#attached']['library'][] = 'marsana_events/marsana_css';
+    $protocol = empty($_SERVER["HTTPS"]) ? 'http://' : 'https://';
+    $attachments['#attached']['drupalSettings']['marsana_events']['marsana_js']['CurrentBaseUrl'] = $protocol . $_SERVER["HTTP_HOST"];
+    $attachments['#attached']['drupalSettings']['marsana_events']['marsana_js']['CurrentLang'] = \Drupal::languageManager()->getCurrentLanguage()->getId();
+    $attachments['#attached']['drupalSettings']['marsana_events']['marsana_js']['CurrentBasePath'] = $base_path;
+    $attachments['#attached']['drupalSettings']['marsana_events']['marsana_js']['moduleimagepath'] = '/sites/marsana.com/modules/custom/marsana_events/src/app/assets/images/';
+  }
+}

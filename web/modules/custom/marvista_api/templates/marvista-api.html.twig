@@ -1,0 +1,11 @@
+<p>content: {{ content }}</p>
+<script>
+  var device = '{{ content }}';
+  if(device == 'ios'){
+    window.location.href = 'https://apps.apple.com/vn/app/apple-store/id375380948';
+  } else if(device == 'android') {
+    window.location.href = 'https://play.google.com/store/apps';
+  } else {
+    window.location.href = '/';
+  }
+</script>

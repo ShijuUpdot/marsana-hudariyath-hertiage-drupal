@@ -1,0 +1,30 @@
+uuid: 1742574c-906c-43b8-bb92-71b89926ca3e
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.message.mail_subject
+    - field.field.message.event_reminder.field_action
+    - field.field.message.event_reminder.field_end_time
+    - field.field.message.event_reminder.field_node
+    - field.field.message.event_reminder.field_read
+    - field.field.message.event_reminder.field_start_time
+    - message.template.event_reminder
+  module:
+    - user
+id: message.event_reminder.mail_subject
+targetEntityType: message
+bundle: event_reminder
+mode: mail_subject
+content:
+  partial_0:
+    weight: 0
+    region: content
+hidden:
+  field_action: true
+  field_end_time: true
+  field_node: true
+  field_read: true
+  field_start_time: true
+  partial_1: true
+  search_api_excerpt: true

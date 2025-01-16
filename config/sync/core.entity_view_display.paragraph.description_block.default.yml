@@ -1,0 +1,30 @@
+uuid: 84616d20-706d-44cb-be48-2e4a61c2c739
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.description_block.field_intro_description
+    - field.field.paragraph.description_block.field_intro_short_description
+    - paragraphs.paragraphs_type.description_block
+  module:
+    - text
+id: paragraph.description_block.default
+targetEntityType: paragraph
+bundle: description_block
+mode: default
+content:
+  field_intro_description:
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_intro_short_description:
+    weight: 0
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+hidden: {  }

@@ -1,0 +1,8 @@
+uuid: cb5b5908-bb48-434b-9b3b-386ce38f4b73
+langcode: en
+status: true
+dependencies: {  }
+name: 'Suitable for Homepage'
+vid: suitable
+description: 'Suitable for Homepage'
+weight: -10

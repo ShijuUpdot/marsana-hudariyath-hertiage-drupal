@@ -1,0 +1,19 @@
+uuid: 0b0ca149-76f5-438d-adaf-b987ff699a9a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_location_title
+    - paragraphs.paragraphs_type.location
+id: paragraph.location.field_location_title
+field_name: field_location_title
+entity_type: paragraph
+bundle: location
+label: 'Location Title'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

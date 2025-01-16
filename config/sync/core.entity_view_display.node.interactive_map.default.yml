@@ -1,0 +1,46 @@
+uuid: 4e194ea8-76f3-4307-8b4c-070dc63c5a50
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.interactive_map.body
+    - field.field.node.interactive_map.field_map_image
+    - node.type.interactive_map
+  module:
+    - svg_image
+    - text
+    - user
+id: node.interactive_map.default
+targetEntityType: node
+bundle: interactive_map
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_map_image:
+    weight: 102
+    label: above
+    settings:
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  addtoany: true
+  langcode: true
+  search_api_excerpt: true

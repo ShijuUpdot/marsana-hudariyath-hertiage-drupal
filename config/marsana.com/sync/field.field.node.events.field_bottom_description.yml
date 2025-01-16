@@ -1,0 +1,19 @@
+uuid: bdbfbd2a-b556-4d7e-827e-dce1dc3f8d63
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_bottom_description
+    - node.type.events
+id: node.events.field_bottom_description
+field_name: field_bottom_description
+entity_type: node
+bundle: events
+label: 'Bottom Description'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

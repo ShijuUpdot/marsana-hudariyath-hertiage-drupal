@@ -1,0 +1,68 @@
+uuid: a221640c-d186-4d9e-830e-7a070a73033e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.info_block.field_information
+    - field.field.paragraph.info_block.field_link
+    - field.field.paragraph.info_block.field_link_icon
+    - field.field.paragraph.info_block.field_multi_opening_hours
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.info_block
+  module:
+    - link
+    - paragraphs
+    - svg_image
+id: paragraph.info_block.default
+targetEntityType: paragraph
+bundle: info_block
+mode: default
+content:
+  field_information:
+    type: entity_reference_paragraphs
+    weight: 0
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_link:
+    weight: 2
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_link_icon:
+    weight: 1
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_multi_opening_hours:
+    type: entity_reference_paragraphs
+    weight: 11
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  translation:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  status: true

@@ -1,0 +1,19 @@
+uuid: fd318aee-2637-4d1a-907d-72761a666452
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_section_no
+    - paragraphs.paragraphs_type.about_contact_details
+id: paragraph.about_contact_details.field_section_no
+field_name: field_section_no
+entity_type: paragraph
+bundle: about_contact_details
+label: 'Listing No'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

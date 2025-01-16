@@ -1,0 +1,10 @@
+uuid: 28208210-1497-4a6c-9d46-023e512ec48f
+langcode: en
+status: true
+dependencies:
+  module:
+    - community_post
+id: community_post_type.token
+label: Token
+targetEntityType: community_post_type
+cache: true

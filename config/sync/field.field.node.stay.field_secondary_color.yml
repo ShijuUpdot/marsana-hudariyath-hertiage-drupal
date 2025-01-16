@@ -1,0 +1,21 @@
+uuid: b5efae3c-a650-4039-8f14-7b1cadfe9975
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_secondary_color
+    - node.type.stay
+  module:
+    - options
+id: node.stay.field_secondary_color
+field_name: field_secondary_color
+entity_type: node
+bundle: stay
+label: 'Secondary Color'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

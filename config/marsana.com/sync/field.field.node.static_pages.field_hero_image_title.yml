@@ -1,0 +1,19 @@
+uuid: 632f5acf-8830-4891-8059-28ec890307dc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hero_image_title
+    - node.type.static_pages
+id: node.static_pages.field_hero_image_title
+field_name: field_hero_image_title
+entity_type: node
+bundle: static_pages
+label: 'Hero Image Title'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

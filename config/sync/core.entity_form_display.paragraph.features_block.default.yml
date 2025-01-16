@@ -1,0 +1,68 @@
+uuid: 4cea8ec7-2979-4b97-8ed5-a816c5bc487d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.features_block.field_description_block
+    - field.field.paragraph.features_block.field_featured_links
+    - field.field.paragraph.features_block.field_features_gallery
+    - field.field.paragraph.features_block.field_key_features
+    - paragraphs.paragraphs_type.features_block
+  module:
+    - paragraphs
+id: paragraph.features_block.default
+targetEntityType: paragraph
+bundle: features_block
+mode: default
+content:
+  field_description_block:
+    type: entity_reference_paragraphs
+    weight: 0
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_featured_links:
+    type: entity_reference_paragraphs
+    weight: 3
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_features_gallery:
+    type: entity_reference_paragraphs
+    weight: 2
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_key_features:
+    type: entity_reference_paragraphs
+    weight: 1
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  status: true

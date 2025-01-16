@@ -1,0 +1,18 @@
+uuid: 6cb2820b-76d6-4668-b70c-16735190e750
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.preloader_block
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: block_content.preloader_block
+target_entity_type_id: block_content
+target_bundle: preloader_block
+default_langcode: site_default
+language_alterable: true

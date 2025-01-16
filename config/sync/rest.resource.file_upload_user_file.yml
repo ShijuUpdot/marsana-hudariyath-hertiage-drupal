@@ -1,0 +1,17 @@
+uuid: db66fa6c-d0a5-4e8b-901d-537e8dd7c91b
+langcode: en
+status: true
+dependencies:
+  module:
+    - marvista_api
+    - serialization
+    - user
+id: file_upload_user_file
+plugin_id: file_upload_user_file
+granularity: method
+configuration:
+  POST:
+    supported_formats:
+      - json
+    supported_auth:
+      - cookie

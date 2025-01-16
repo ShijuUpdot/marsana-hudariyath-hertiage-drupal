@@ -1,0 +1,18 @@
+uuid: c721af48-30be-4ffc-9dcf-89e9b39fba64
+langcode: en
+status: true
+dependencies:
+  config:
+    - message.template.community_post_approved_notific
+id: message.community_post_approved_notific.metatag
+field_name: metatag
+entity_type: message
+bundle: community_post_approved_notific
+label: 'Metatags (Hidden field for JSON support)'
+description: 'The meta tags for the entity.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: map

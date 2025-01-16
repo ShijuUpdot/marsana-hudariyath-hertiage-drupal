@@ -1,0 +1,10 @@
+uuid: 99bd1b1d-123b-44bb-96b6-b47fa681224f
+langcode: en
+status: true
+dependencies: {  }
+id: footer_social_links
+label: 'Social links'
+icon_uuid: null
+icon_default: null
+description: 'Footer Social links'
+behavior_plugins: {  }

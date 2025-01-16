@@ -1,0 +1,8 @@
+uuid: 787b482c-1dcc-491f-882a-f191824f4d4c
+langcode: en
+status: true
+dependencies: {  }
+id: opening_hours
+label: 'Opening Hours'
+revision: 0
+description: 'Opening Hours'

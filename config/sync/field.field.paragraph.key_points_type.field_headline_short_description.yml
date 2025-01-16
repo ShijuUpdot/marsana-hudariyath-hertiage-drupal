@@ -1,0 +1,21 @@
+uuid: 0737cacd-d416-44d5-b0d4-3a609c2a1125
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_headline_short_description
+    - paragraphs.paragraphs_type.key_points_type
+  module:
+    - text
+id: paragraph.key_points_type.field_headline_short_description
+field_name: field_headline_short_description
+entity_type: paragraph
+bundle: key_points_type
+label: 'Headline short Description'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

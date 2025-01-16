@@ -1,0 +1,19 @@
+uuid: fadb4f88-81ac-424f-a083-59e258268a5a
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.header_block
+    - field.storage.block_content.field_address_title
+id: block_content.header_block.field_address_title
+field_name: field_address_title
+entity_type: block_content
+bundle: header_block
+label: 'Address Title'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,129 @@
+uuid: d8403696-6cb7-4a1c-b2db-e598492c7139
+langcode: en
+status: true
+dependencies:
+  config:
+    - community_post.community_post_type.review
+    - core.entity_view_display.comment.community_post_comment.default
+    - field.field.community_post.review.field_approval_state
+    - field.field.community_post.review.field_caption
+    - field.field.community_post.review.field_comment
+    - field.field.community_post.review.field_experience
+    - field.field.community_post.review.field_facilities
+    - field.field.community_post.review.field_image
+    - field.field.community_post.review.field_place
+    - field.field.community_post.review.field_rating
+  module:
+    - comment
+    - options
+    - svg_image
+    - user
+id: community_post.review.default
+targetEntityType: community_post
+bundle: review
+mode: default
+content:
+  field_approval_state:
+    weight: 3
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_caption:
+    weight: 2
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_comment:
+    weight: 4
+    label: above
+    settings:
+      view_mode: default
+      pager_id: 0
+    third_party_settings: {  }
+    type: comment_default
+    region: content
+  field_experience:
+    weight: 11
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_facilities:
+    weight: 13
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_image:
+    weight: 1
+    label: above
+    settings:
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_place:
+    weight: 12
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_rating:
+    weight: 5
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+  flag_community_post_favorite:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  flag_turn_off_post_notification:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  flag_users_removed_post:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  name:
+    label: above
+    type: string
+    weight: -4
+    region: content
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  user_id:
+    label: hidden
+    type: author
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true
+  search_api_excerpt: true

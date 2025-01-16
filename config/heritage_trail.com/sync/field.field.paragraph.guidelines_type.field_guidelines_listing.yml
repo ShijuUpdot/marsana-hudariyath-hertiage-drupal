@@ -1,0 +1,55 @@
+uuid: 17d02c1a-7275-4694-820a-55dec6caa530
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_guidelines_listing
+    - paragraphs.paragraphs_type.guidelines_type
+    - paragraphs.paragraphs_type.listing_details
+  module:
+    - entity_reference_revisions
+id: paragraph.guidelines_type.field_guidelines_listing
+field_name: field_guidelines_listing
+entity_type: paragraph
+bundle: guidelines_type
+label: 'Guidelines Listing'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      listing_details: listing_details
+    target_bundles_drag_drop:
+      about_block:
+        weight: 6
+        enabled: false
+      about_section:
+        weight: 7
+        enabled: false
+      footer_social_block:
+        weight: 12
+        enabled: false
+      footer_social_links:
+        weight: 13
+        enabled: false
+      guidelines_type:
+        weight: 8
+        enabled: false
+      header_links:
+        weight: 15
+        enabled: false
+      indicators_type:
+        weight: 16
+        enabled: false
+      intro_description:
+        weight: 9
+        enabled: false
+      listing_details:
+        enabled: true
+        weight: 10
+field_type: entity_reference_revisions

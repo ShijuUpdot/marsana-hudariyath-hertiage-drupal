@@ -1,0 +1,124 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a view of unformatted rows.
+ *
+ * Available variables:
+ * - title: The title of this group of rows. May be empty.
+ * - rows: A list of the view's row items.
+ *   - attributes: The row's HTML attributes.
+ *   - content: The row's content.
+ * - view: The view object.
+ * - default_row_class: A flag indicating whether default classes should be
+ *   used on rows.
+ *
+ *
+ * @ingroup themeable
+ */
+#}
+
+  <ul class="modal-listing-wrapper">
+
+          {% for lkey, litem in data %}
+
+              {% set logo = file_url(litem['icon']) | striptags | trim %}
+              {% set title = litem['title'] | trim %}
+              {% set hero_image = file_url(litem['image'])| striptags | trim %}
+              {% set desc = litem['desc']| striptags | trim %}
+              {% set sub_desc = litem['sub_desc']| striptags | trim %}
+              {% set pdf_url = litem['pdf_url']| striptags | trim %}
+              {% set images_title = litem['images_title']| striptags | trim %}
+              {% set aminitesType = litem['aminitesType']| striptags | trim %}
+              
+              {% if aminitesType == 'Restaurants' or aminitesType == 'Food Trucks'  or aminitesType == 'مطاعم' or aminitesType == 'شاحنات الغذاء' %}
+              <li class="modal fade" id="{{ title|replace({" ":"-", ".":"-", '&#039;':"-", '&' : '-', ' &amp; ' : '-'})|lower }}" tabindex="-1" role="dialog" aria-labelledby="footballLabel"  aria-hidden="true">
+                <div class="inside-wrapper modal-wrapper">
+                  <div class="container">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">                          
+                            <div class="modal-header-bg navy-bg">
+                              {% if hero_image %}
+                              <img src="{{ hero_image }}" alt="">
+                              {% endif %}
+                            </div>                          
+                          <div class="modal-header-wrapper">                            
+                              <div class="modal-logo-wrapper">
+                                {% if logo %}
+                                  <img class="modal-logo-top" src="{{ logo }}" alt="Resto logo">
+                                {% endif %}
+                              </div>                            
+                            <div class="modal-header-content">
+                              <h3 class="modal-title" id="footballLabel">{{ title | raw }}</h3>
+                            </div>
+                          </div>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true"><img src="/images/static/close.svg" alt="close"></span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          <div class="container-fluid">
+                            <div class="row">
+                            {% for ikey,intoItems in litem['infoBlock']['infoTitle'] %}
+                              <div class="col px-0">
+                                <div class="detailed-group">
+                                {% if  litem['infoBlock']['infoBgimage'][ikey]|length %}
+                                    <img src="{{ file_url(litem['infoBlock']['infoBgimage'][ikey]) }}" alt="" class="location">
+                                  {% endif %}
+                                  <div class="detailed-title">
+                                    <img src="{{ file_url(litem['infoBlock']['infoIcon'][ikey]) }}" alt="">
+                                    <p>{{ litem['infoBlock']['infoTitle'][ikey]|raw|striptags }}</p>
+                                  </div>
+                                  {{ litem['infoBlock']['infoDesc'][ikey]  | striptags | trim }}
+                                  {% if litem['infoBlock']['infoFile'][ikey] is not empty %}
+                                    <br><br>
+                                    <a href="{{ file_url(litem['infoBlock']['infoFile'][ikey]) }}" class="btn external-btn download-btn" target="_blank">{{ 'Download Menu' | t }}</a>
+                                  {% endif %}
+                                </div>
+                              </div>
+                            {% endfor %}
+                            </div>
+                            <div class="row py-4">
+                              <div class="col-lg-4">
+                                <p class="detailed-txt bold detailed-desc">{{ sub_desc | raw  }}</p>
+                              </div>
+                              <div class="col-lg-8">
+                                <p class="detailed-txt detailed-desc"> {{ desc | raw  }}</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        {% if litem['gallery']|length %}
+                        <div class="modal-footer swiper-menu">
+                          <div class="modal-footer-title">{{ images_title }}</div>
+                          <!-- Swiper -->
+                          <div class="swiper-container">
+                            <div class="swiper-wrapper">
+                              {% for gkey, gitem in litem['gallery'] %}
+                                  <div class="swiper-slide">
+                                      <div class="card-wrapper">
+                                          <div class="card event">
+                                              <div class="card-img-wrapper">
+                                                  <img class="card-img-top" src="{{ file_url(gitem) }}" alt="Card image cap">
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              {% endfor %}                    
+                            </div>
+                            <div class="swiper-arrows">
+                              <div class="swiper-button-prev"></div>
+                              <div class="swiper-button-next"></div>
+                            </div>
+                          </div>
+                        </div>
+                        {% endif %}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </li>
+              {% endif %}
+              {% endfor %}
+              </ul>

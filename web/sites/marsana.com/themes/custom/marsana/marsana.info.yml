@@ -1,0 +1,14 @@
+name: Marsana
+type: theme
+description: 'A flexible, recolorable theme with many regions and a responsive, mobile-first layout.'
+base theme: FALSE
+package: Custom
+libraries:
+  - marsana/custom-styling
+regions:
+  header: Header
+  content: Content
+  footer: Footer
+  other: Other
+core_version_requirement: ^10
+datestamp: 1590734375

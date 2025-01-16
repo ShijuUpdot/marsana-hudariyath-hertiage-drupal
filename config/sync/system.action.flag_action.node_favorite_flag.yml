@@ -1,0 +1,15 @@
+uuid: 1050a96f-8e02-4f7c-ad54-9a218831d47c
+langcode: en
+status: true
+dependencies:
+  config:
+    - flag.flag.node_favorite
+  module:
+    - flag
+id: flag_action.node_favorite_flag
+label: 'Flag this item'
+type: node
+plugin: 'flag_action:node_favorite_flag'
+configuration:
+  flag_id: node_favorite
+  flag_action: flag

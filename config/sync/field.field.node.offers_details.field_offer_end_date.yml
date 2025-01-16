@@ -1,0 +1,21 @@
+uuid: 16f8992b-63cc-4ec4-8549-cffb244ddc24
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_offer_end_date
+    - node.type.offers_details
+  module:
+    - datetime
+id: node.offers_details.field_offer_end_date
+field_name: field_offer_end_date
+entity_type: node
+bundle: offers_details
+label: 'Offer End Date'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

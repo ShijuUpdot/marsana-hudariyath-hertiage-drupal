@@ -1,0 +1,31 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a view of unformatted rows.
+ *
+ * Available variables:
+ * - title: The title of this group of rows. May be empty.
+ * - rows: A list of the view's row items.
+ *   - attributes: The row's HTML attributes.
+ *   - content: The row's content.
+ * - view: The view object.
+ * - default_row_class: A flag indicating whether default classes should be
+ *   used on rows.
+ *
+ * @see template_preprocess_views_view_unformatted()
+ *
+ * @ingroup themeable
+ */
+#}
+
+{% for row in rows %}
+    <div class="row">
+        <div class="col">
+            <p class="detailed-txt opacity-text bold">{{ row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_opening_hours_title }}'] | striptags | trim }}</p>
+            <h2>{{ row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_schedule_headline }}'] | striptags | trim }}</h2>
+        </div>
+    </div>
+    <div class="row">
+        {{ row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_offers_schedule }}'] }}
+    </div>
+{% endfor %}

@@ -1,0 +1,10 @@
+uuid: 5331b4dc-f7d3-45dc-ba54-6d414d57f53e
+langcode: en
+status: true
+dependencies: {  }
+id: description_block
+label: 'Description Block'
+icon_uuid: null
+icon_default: null
+description: 'Description Block'
+behavior_plugins: {  }

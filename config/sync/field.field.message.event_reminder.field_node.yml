@@ -1,0 +1,28 @@
+uuid: 53afff4e-6284-4309-9742-b3cae05186b8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.message.field_node
+    - message.template.event_reminder
+    - node.type.event_details
+id: message.event_reminder.field_node
+field_name: field_node
+entity_type: message
+bundle: event_reminder
+label: Node
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      event_details: event_details
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

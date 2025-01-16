@@ -1,0 +1,9 @@
+uuid: dda11c69-b0d1-4909-a4ed-4e1841d41285
+langcode: en
+status: true
+dependencies: {  }
+id: eat
+label: Eat
+logic: and
+conditions: {  }
+allow_other_conditions: false

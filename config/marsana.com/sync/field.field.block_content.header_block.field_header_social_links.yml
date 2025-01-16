@@ -1,0 +1,55 @@
+uuid: 73b518ca-031e-44c4-b5af-e003fb04a0d4
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.header_block
+    - field.storage.block_content.field_header_social_links
+    - paragraphs.paragraphs_type.social_links
+  module:
+    - entity_reference_revisions
+id: block_content.header_block.field_header_social_links
+field_name: field_header_social_links
+entity_type: block_content
+bundle: header_block
+label: 'Header Social Links'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      social_links: social_links
+    target_bundles_drag_drop:
+      big_image_block:
+        weight: 10
+        enabled: false
+      eat_listing_block:
+        weight: 11
+        enabled: false
+      eat_listing_details:
+        weight: 12
+        enabled: false
+      guidelines_listing:
+        weight: 13
+        enabled: false
+      listing_block:
+        weight: 14
+        enabled: false
+      listing_details:
+        weight: 15
+        enabled: false
+      parallax_wrapper_bottom_image:
+        weight: 16
+        enabled: false
+      parallax_wrapper_image:
+        weight: 17
+        enabled: false
+      social_links:
+        enabled: true
+        weight: 18
+field_type: entity_reference_revisions

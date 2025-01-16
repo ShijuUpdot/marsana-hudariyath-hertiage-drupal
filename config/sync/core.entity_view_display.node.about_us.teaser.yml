@@ -1,0 +1,47 @@
+uuid: 85f34fea-c4f8-4c21-b7f4-ce40c89413a1
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.about_us.body
+    - field.field.node.about_us.field_about_intro_section
+    - field.field.node.about_us.field_contact_information
+    - field.field.node.about_us.field_hero_image
+    - field.field.node.about_us.field_hero_image_title
+    - field.field.node.about_us.field_intro_description
+    - field.field.node.about_us.field_news_list
+    - field.field.node.about_us.field_news_listing_no
+    - field.field.node.about_us.field_news_listing_title
+    - node.type.about_us
+  module:
+    - text
+    - user
+id: node.about_us.teaser
+targetEntityType: node
+bundle: about_us
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_about_intro_section: true
+  field_contact_information: true
+  field_hero_image: true
+  field_hero_image_title: true
+  field_intro_description: true
+  field_news_list: true
+  field_news_listing_no: true
+  field_news_listing_title: true
+  langcode: true

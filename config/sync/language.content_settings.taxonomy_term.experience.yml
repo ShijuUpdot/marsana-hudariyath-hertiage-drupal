@@ -1,0 +1,18 @@
+uuid: 59809eb0-cd84-4c26-b93c-b8fdb2a272f4
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.experience
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: taxonomy_term.experience
+target_entity_type_id: taxonomy_term
+target_bundle: experience
+default_langcode: site_default
+language_alterable: true

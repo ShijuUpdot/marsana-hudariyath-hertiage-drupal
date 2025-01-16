@@ -1,0 +1,18 @@
+uuid: 5e9610ae-1349-4593-9b82-04963d6e72ef
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: 'Static Pages'
+type: static_pages
+description: 'Static Pages like 404,403, 500'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

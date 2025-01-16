@@ -1,0 +1,23 @@
+uuid: 68893a73-f9fa-4d87-b7b3-7e44cb170334
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.enquiry
+    - field.storage.contact_message.field_phone_no
+id: contact_message.enquiry.field_phone_no
+field_name: field_phone_no
+entity_type: contact_message
+bundle: enquiry
+label: 'Phone Number'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

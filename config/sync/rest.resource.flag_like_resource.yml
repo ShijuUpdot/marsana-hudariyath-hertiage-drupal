@@ -1,0 +1,17 @@
+uuid: 5969ee32-7d31-4a63-bd08-769f1ce0c1c8
+langcode: en
+status: true
+dependencies:
+  module:
+    - community_post
+    - serialization
+    - user
+id: flag_like_resource
+plugin_id: flag_like_resource
+granularity: method
+configuration:
+  POST:
+    supported_formats:
+      - json
+    supported_auth:
+      - cookie

@@ -1,0 +1,9 @@
+uuid: 83f63ce5-5615-455a-8a3c-30a038d23bbb
+langcode: en
+status: true
+dependencies: {  }
+id: discover
+label: Discover
+logic: and
+conditions: {  }
+allow_other_conditions: false

@@ -1,0 +1,22 @@
+uuid: 52647ee9-efd8-41c7-a859-973c65c16629
+langcode: en
+status: true
+dependencies:
+  module:
+    - community_post
+    - serialization
+    - user
+id: community_post_resource
+plugin_id: community_post_resource
+granularity: method
+configuration:
+  GET:
+    supported_formats:
+      - json
+    supported_auth:
+      - cookie
+  POST:
+    supported_formats:
+      - json
+    supported_auth:
+      - cookie

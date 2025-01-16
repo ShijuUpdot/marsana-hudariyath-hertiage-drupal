@@ -1,0 +1,9 @@
+uuid: 9ac704a8-6686-4c4a-a4f2-764f14a90be9
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: crLwyc9uwZ8Bv8lpMLIOEQYHOxW_mS49jaDf_95-o4I
+formId: user_login_form
+captchaType: recaptcha_v3/hudayriyatisland
+label: 'User login form'

@@ -1,0 +1,23 @@
+uuid: 0996af1a-9656-4de7-9101-9ce11c976fec
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.event_dates.field_event_date
+    - paragraphs.paragraphs_type.event_dates
+  module:
+    - datetime
+id: paragraph.event_dates.default
+targetEntityType: paragraph
+bundle: event_dates
+mode: default
+content:
+  field_event_date:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+hidden:
+  created: true
+  status: true

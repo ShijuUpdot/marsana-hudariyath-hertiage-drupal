@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="50px" height="50px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group 6</title>
+    <defs>
+        <path d="M7.31636364,0.926060606 C6.93870274,1.30372151 6.93842869,1.91594624 7.31575133,2.29394509 L12.0436364,7.03030303 L12.0436364,7.03030303 L1.21212121,7.03030303 C0.676572364,7.03030303 0.242424242,7.46445115 0.242424242,8 C0.242424242,8.53554885 0.676572364,8.96969697 1.21212121,8.96969697 L12.0436364,8.96969697 L12.0436364,8.96969697 L7.31575133,13.7060549 C6.93842869,14.0840538 6.93870274,14.6962785 7.31636364,15.0739394 C7.69392557,15.4515013 8.30607443,15.4515013 8.68363636,15.0739394 L15.7575758,8 L15.7575758,8 L8.68363636,0.926060606 C8.30607443,0.548498668 7.69392557,0.548498668 7.31636364,0.926060606 Z" id="path-1"></path>
+    </defs>
+    <g id="1.-Homepage" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="1,0-HP1" transform="translate(-651.000000, -7109.000000)">
+            <g id="9.-Footer" transform="translate(16.000000, 6885.000000)">
+                <g id="Newsletter" transform="translate(345.000000, 172.000000)">
+                    <g id="Group-9" transform="translate(0.000000, 48.000000)">
+                        <g id="Group-6" transform="translate(290.000000, 4.000000)">
+                            <g id="Category/Dropdown-Copy" fill="#E75D51">
+                                <circle id="Oval" cx="25" cy="25" r="25"></circle>
+                            </g>
+                            <g id="Icon/Arrow/Circle/White" transform="translate(18.000000, 18.000000)">
+                                <g id="Group-8">
+                                    <g id="Icon/Arrow/White" transform="translate(8.000000, 8.000000) rotate(-90.000000) translate(-8.000000, -8.000000) ">
+                                        <g id="Atoms-/-icons-/-System-/-Arrow_bottom">
+                                            <mask id="mask-2" fill="white">
+                                                <use xlink:href="#path-1"></use>
+                                            </mask>
+                                            <use id="Mask" fill="#FFFFFF" transform="translate(8.000000, 8.000000) rotate(-270.000000) translate(-8.000000, -8.000000) " xlink:href="#path-1"></use>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

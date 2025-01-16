@@ -1,0 +1,21 @@
+uuid: 3fea2b2c-c813-404a-94bc-e9a45066762a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_dicovermetatag
+    - node.type.discover
+  module:
+    - metatag
+id: node.discover.field_dicovermetatag
+field_name: field_dicovermetatag
+entity_type: node
+bundle: discover
+label: discovermetatag
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: metatag

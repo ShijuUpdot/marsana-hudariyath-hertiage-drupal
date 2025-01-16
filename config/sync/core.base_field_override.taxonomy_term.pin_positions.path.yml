@@ -1,0 +1,20 @@
+uuid: 1255b0ee-f00e-411a-9c5e-06e0767e1958
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.pin_positions
+  module:
+    - path
+id: taxonomy_term.pin_positions.path
+field_name: path
+entity_type: taxonomy_term
+bundle: pin_positions
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

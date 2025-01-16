@@ -1,0 +1,10 @@
+uuid: 105843f7-63aa-4f27-afe3-021c4732eefb
+langcode: en
+status: true
+dependencies: {  }
+id: parallax_wrapper_bottom_image
+label: 'Parallax Wrapper bottom Image'
+icon_uuid: null
+icon_default: null
+description: 'Parallax Wrapper bottom Image'
+behavior_plugins: {  }

@@ -1,0 +1,20 @@
+uuid: df7bcf95-64e5-4b41-9d49-13d9bdbddff5
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.landmarks
+  module:
+    - path
+id: taxonomy_term.landmarks.path
+field_name: path
+entity_type: taxonomy_term
+bundle: landmarks
+label: 'URL alias'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

@@ -1,0 +1,17 @@
+uuid: f5b2b0e5-6da8-4538-a109-768eb8ab89dd
+langcode: en
+status: true
+dependencies:
+  module:
+    - marvista_api
+    - serialization
+    - user
+id: file_upload
+plugin_id: file_upload
+granularity: method
+configuration:
+  POST:
+    supported_formats:
+      - json
+    supported_auth:
+      - cookie

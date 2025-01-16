@@ -1,0 +1,57 @@
+uuid: 77ba2e79-6167-4101-8a2d-e21180fe74b0
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.experience_details.body
+    - field.field.node.experience_details.field_big_image_section
+    - field.field.node.experience_details.field_experience_metatag
+    - field.field.node.experience_details.field_experience_type
+    - field.field.node.experience_details.field_hero_image
+    - field.field.node.experience_details.field_hero_image_class
+    - field.field.node.experience_details.field_hero_image_title
+    - field.field.node.experience_details.field_intro_description
+    - field.field.node.experience_details.field_listing
+    - field.field.node.experience_details.field_listing_details
+    - field.field.node.experience_details.field_parallax_wrapper
+    - field.field.node.experience_details.field_parallax_wrapper_bottom
+    - field.field.node.experience_details.field_sort_order
+    - field.field.node.experience_details.field_sub_title
+    - node.type.experience_details
+  module:
+    - text
+    - user
+id: node.experience_details.teaser
+targetEntityType: node
+bundle: experience_details
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_big_image_section: true
+  field_experience_metatag: true
+  field_experience_type: true
+  field_hero_image: true
+  field_hero_image_class: true
+  field_hero_image_title: true
+  field_intro_description: true
+  field_listing: true
+  field_listing_details: true
+  field_parallax_wrapper: true
+  field_parallax_wrapper_bottom: true
+  field_sort_order: true
+  field_sub_title: true
+  langcode: true

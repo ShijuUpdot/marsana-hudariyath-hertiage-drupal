@@ -1,0 +1,8 @@
+uuid: 15108f06-1741-4e34-9ac7-cb706eafe3ad
+langcode: en
+status: true
+dependencies: {  }
+id: header_guidelines
+label: 'Header Guidelines'
+revision: 0
+description: 'Header Guidelines like covid'

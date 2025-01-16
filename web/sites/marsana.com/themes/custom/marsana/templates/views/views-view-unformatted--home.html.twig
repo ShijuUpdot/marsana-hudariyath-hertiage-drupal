@@ -1,0 +1,107 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a view of unformatted rows.
+ *
+ * Available variables:
+ * - title: The title of this group of rows. May be empty.
+ * - rows: A list of the view's row items.
+ *   - attributes: The row's HTML attributes.
+ *   - content: The row's content.
+ * - view: The view object.
+ * - default_row_class: A flag indicating whether default classes should be
+ *   used on rows.
+ *
+ * @see template_preprocess_views_view_unformatted()
+ *
+ * @ingroup themeable
+ */
+#}
+
+{% for row in rows %}
+<div class="new-animation-main-wrapper">
+{% set text = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_hero_image_title }}'] %}
+    
+        <!-- SLIDER SECTION -->
+        <div class="slider-main">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    {{ row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_slider_content }}'] }}
+                </div>
+                <!-- Add Pagination -->
+                <div class="container swiper-pagination"></div>
+                <!-- Add Arrows -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+
+         <!-- LINKS SECTION -->
+        <div class="new-strips-links">
+            <!-- STRIPS -->
+            <div class="new-strips-wrapper">
+                <span class="bg-coral-50"></span>
+                <span class="bg-coral-100"></span>
+                <span class="bg-sunshine-100"></span>
+                <span class="bg-sunset-75"></span>
+                <span class="bg-sky-100"></span>
+                <span class="bg-grass-100"></span>
+            </div>
+            <ul>
+                {{ drupal_view('home_eat_menu')|render }}
+                {{ drupal_view('home_play_menu')|render }}
+                {{ drupal_view('home_relax_menu')|render }}
+                {{ drupal_view('home_shop_menu')|render }}
+                {{ drupal_view('home_dock_menu')|render }}
+                <!-- Event Calender Link -->
+                <li data-img="images/dynamic/restaurant-header.jpg" data-class="main-grass-100" style="z-index: 1;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <a href="/{{ langcode }}/events">
+                            {% if langcode == 'en' %}
+                                <h2 style="opacity: 1;">Events</h2>
+                            {% else %}
+                                <h2 style="opacity: 1;">حدث</h2>
+                            {% endif %}
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                </li>
+                <!-- Event Calender Link -->
+
+
+            </ul>
+        </div>
+
+        <!-- MOBILE LINKS SECTION -->
+        <div class="new-mobile-strips-links">
+            <ul>
+                {{ drupal_view('home_mobile_eat_menu')}}
+                {{ drupal_view('home_mobile_play_menu') }}
+                {{ drupal_view('home_mobile_relax_menu')|render }}
+                {{ drupal_view('home_mobile_shop_menu')|render }}
+                {{ drupal_view('home_mobile_dock_menu')|render }}
+                <!-- Event Calender -->
+                <li data-img="images/dynamic/restaurant-header.jpg" class="bg-grass-100">
+                {% if langcode == 'en' %}
+                    <h2>Events</h2>
+                {% else %}
+                    <h2>حدث</h2>
+                {% endif %}
+                <div class="strip-content bg-grass-100">
+                    <a href="/{{ langcode }}/events">
+                        {% if langcode == 'en' %}
+                            <h2>Events</h2>
+                        {% else %}
+                            <h2>حدث</h2>
+                        {% endif %}
+                    </a>
+                </div>
+                </li>
+                <!-- Event Calender -->
+            </ul>
+        </div>
+</div>
+{% endfor %}

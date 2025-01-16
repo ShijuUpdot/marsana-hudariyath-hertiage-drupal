@@ -1,0 +1,10 @@
+uuid: e783f9ee-7f6f-4c4e-b522-a4ae5f309bed
+langcode: en
+status: true
+dependencies: {  }
+id: booking_type
+label: 'Booking Type'
+icon_uuid: null
+icon_default: null
+description: 'Booking Type'
+behavior_plugins: {  }

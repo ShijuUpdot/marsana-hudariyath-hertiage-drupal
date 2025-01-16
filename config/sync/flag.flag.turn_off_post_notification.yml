@@ -1,0 +1,32 @@
+uuid: 96f1ee05-ee2d-4ce7-b1cf-2b841321998a
+langcode: en
+status: true
+dependencies:
+  module:
+    - community_post
+id: turn_off_post_notification
+label: 'Turn off post notification'
+bundles:
+  - default
+  - photo
+  - review
+entity_type: community_post
+global: false
+weight: 0
+flag_short: 'Flag this item'
+flag_long: ''
+flag_message: ''
+unflag_short: 'Unflag this item'
+unflag_long: ''
+unflag_message: ''
+unflag_denied_text: ''
+flag_type: 'entity:community_post'
+link_type: ajax_link
+flagTypeConfig:
+  show_in_links: {  }
+  show_as_field: true
+  show_on_form: false
+  show_contextual_link: false
+  extra_permissions:
+    owner: '0'
+linkTypeConfig: {  }

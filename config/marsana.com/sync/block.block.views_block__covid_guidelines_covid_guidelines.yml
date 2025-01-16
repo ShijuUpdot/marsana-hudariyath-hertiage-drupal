@@ -1,0 +1,41 @@
+uuid: 2b0038bc-3f4e-442e-a8af-8d3e3e73a900
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.covid_guidelines
+  module:
+    - block_visibility_groups
+    - node
+    - views
+  theme:
+    - marsana
+id: views_block__covid_guidelines_covid_guidelines
+theme: marsana
+region: content
+weight: -15
+provider: null
+plugin: 'views_block:covid_guidelines-covid_guidelines'
+settings:
+  id: 'views_block:covid_guidelines-covid_guidelines'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
+    context_mapping: {  }
+  node_type:
+    id: node_type
+    bundles:
+      eat_details: eat_details
+      experience_details: experience_details
+      home: home
+      static_pages: static_pages
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

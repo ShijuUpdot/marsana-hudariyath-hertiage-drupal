@@ -1,0 +1,9 @@
+entity_type_groups:
+  node:
+    eat:
+      basic: basic
+      advanced: advanced
+    landing_details:
+      basic: basic
+      advanced: advanced
+      hreflang: hreflang

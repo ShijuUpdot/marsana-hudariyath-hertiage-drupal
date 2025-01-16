@@ -1,0 +1,10 @@
+uuid: f50169ce-ad67-47a4-ada3-0d57ba6d2d7e
+langcode: en
+status: true
+dependencies: {  }
+id: notification_setting
+label: 'Notification Setting'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

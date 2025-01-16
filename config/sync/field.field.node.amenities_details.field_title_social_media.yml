@@ -1,0 +1,19 @@
+uuid: 99645c52-3a54-4a48-88f6-12e5b50cde3c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_title_social_media
+    - node.type.amenities_details
+id: node.amenities_details.field_title_social_media
+field_name: field_title_social_media
+entity_type: node
+bundle: amenities_details
+label: 'Title Social Media'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,18 @@
+uuid: 64ef8015-5d93-4524-a5c2-c135cd1586ae
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.search_page
+id: node.search_page.title
+field_name: title
+entity_type: node
+bundle: search_page
+label: Title
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

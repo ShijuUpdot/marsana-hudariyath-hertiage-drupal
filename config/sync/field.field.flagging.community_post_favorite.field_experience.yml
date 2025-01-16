@@ -1,0 +1,29 @@
+uuid: 9ee9de74-8677-4a83-9ec5-de6571ba1bc6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.flagging.field_experience
+    - flag.flag.community_post_favorite
+    - taxonomy.vocabulary.experience
+id: flagging.community_post_favorite.field_experience
+field_name: field_experience
+entity_type: flagging
+bundle: community_post_favorite
+label: Experience
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      experience: experience
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

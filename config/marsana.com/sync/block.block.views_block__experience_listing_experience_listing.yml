@@ -1,0 +1,39 @@
+uuid: 1cee4229-ac09-4065-b1b8-5a96635d56a1
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.experience_listing
+  module:
+    - block_visibility_groups
+    - node
+    - views
+  theme:
+    - marsana
+id: views_block__experience_listing_experience_listing
+theme: marsana
+region: content
+weight: -10
+provider: null
+plugin: 'views_block:experience_listing-experience_listing'
+settings:
+  id: 'views_block:experience_listing-experience_listing'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+  context_mapping: {  }
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
+    context_mapping: {  }
+  node_type:
+    id: node_type
+    bundles:
+      experience_details: experience_details
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

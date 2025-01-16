@@ -1,0 +1,20 @@
+uuid: b0161f19-ab77-4b2c-a432-bd83b270fd67
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.social_feeds
+  module:
+    - path
+id: node.social_feeds.path
+field_name: path
+entity_type: node
+bundle: social_feeds
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

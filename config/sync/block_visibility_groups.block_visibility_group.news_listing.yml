@@ -1,0 +1,9 @@
+uuid: 260e90c0-56a3-459a-ad1e-2a08259555f5
+langcode: en
+status: true
+dependencies: {  }
+id: news_listing
+label: 'News Listing'
+logic: and
+conditions: {  }
+allow_other_conditions: false

@@ -1,0 +1,46 @@
+uuid: 342a70a0-d700-4ab2-8ba4-d0531e5800ec
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.footer_block
+    - field.storage.block_content.field_social_links
+    - paragraphs.paragraphs_type.social_links
+  module:
+    - entity_reference_revisions
+id: block_content.footer_block.field_social_links
+field_name: field_social_links
+entity_type: block_content
+bundle: footer_block
+label: 'Social Links'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      social_links: social_links
+    target_bundles_drag_drop:
+      big_image_block:
+        weight: 7
+        enabled: false
+      guidelines_listing:
+        weight: 8
+        enabled: false
+      listing_details:
+        weight: 9
+        enabled: false
+      parallax_wrapper_bottom_image:
+        weight: 10
+        enabled: false
+      parallax_wrapper_image:
+        weight: 11
+        enabled: false
+      social_links:
+        enabled: true
+        weight: 12
+field_type: entity_reference_revisions

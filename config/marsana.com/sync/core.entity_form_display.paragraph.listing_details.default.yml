@@ -1,0 +1,119 @@
+uuid: 40b3361f-807b-4a6a-9368-142d17f59c37
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.listing_details.field_amenities
+    - field.field.paragraph.listing_details.field_amenity_type
+    - field.field.paragraph.listing_details.field_icon
+    - field.field.paragraph.listing_details.field_instagram_profile
+    - field.field.paragraph.listing_details.field_listing_description
+    - field.field.paragraph.listing_details.field_listing_image
+    - field.field.paragraph.listing_details.field_listing_title
+    - field.field.paragraph.listing_details.field_menu_link
+    - field.field.paragraph.listing_details.field_phone_no
+    - field.field.paragraph.listing_details.field_upload_menu
+    - field.field.paragraph.listing_details.field_website_link
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.listing_details
+  module:
+    - file
+    - link
+    - svg_image
+    - text
+id: paragraph.listing_details.default
+targetEntityType: paragraph
+bundle: listing_details
+mode: default
+content:
+  field_amenities:
+    weight: 11
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_amenity_type:
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_icon:
+    weight: 1
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_instagram_profile:
+    weight: 9
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_listing_description:
+    weight: 3
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_listing_image:
+    weight: 0
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_listing_title:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_menu_link:
+    weight: 7
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_phone_no:
+    weight: 5
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_upload_menu:
+    weight: 6
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
+  field_website_link:
+    weight: 8
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  translation:
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

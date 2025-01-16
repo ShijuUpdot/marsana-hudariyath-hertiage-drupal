@@ -1,0 +1,21 @@
+uuid: 654f90b0-bfa1-4859-96db-0a3f00ede54c
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+id: user.field_day_of_birth
+field_name: field_day_of_birth
+entity_type: user
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

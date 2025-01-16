@@ -1,0 +1,21 @@
+uuid: 5552018b-0349-4586-a5fd-891a4c1bef00
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_secondary_color
+    - node.type.eat
+  module:
+    - options
+id: node.eat.field_secondary_color
+field_name: field_secondary_color
+entity_type: node
+bundle: eat
+label: 'Secondary Color'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

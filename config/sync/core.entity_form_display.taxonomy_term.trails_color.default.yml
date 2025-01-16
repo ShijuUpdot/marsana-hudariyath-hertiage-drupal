@@ -1,0 +1,65 @@
+uuid: c7c81b94-66b3-4b9b-8df4-35bcac2d2018
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.trails_color.field_trail_color_class
+    - taxonomy.vocabulary.trails_color
+  module:
+    - path
+    - text
+id: taxonomy_term.trails_color.default
+targetEntityType: taxonomy_term
+bundle: trails_color
+mode: default
+content:
+  description:
+    type: text_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_trail_color_class:
+    weight: 101
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 100
+    region: content
+    third_party_settings: {  }
+  translation:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

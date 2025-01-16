@@ -1,0 +1,20 @@
+uuid: 99cb561d-a971-4d63-96cb-9a426958c5a6
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.eat
+  module:
+    - path
+id: node.eat.path
+field_name: path
+entity_type: node
+bundle: eat
+label: 'URL alias'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

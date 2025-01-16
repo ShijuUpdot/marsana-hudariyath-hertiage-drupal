@@ -1,0 +1,8 @@
+uuid: 7b88e76a-e854-4700-a3d5-92f3207a97af
+langcode: en
+status: true
+dependencies: {  }
+name: 'Landmarks Type'
+vid: landmarks_type
+description: 'Landmarks Type'
+weight: 0

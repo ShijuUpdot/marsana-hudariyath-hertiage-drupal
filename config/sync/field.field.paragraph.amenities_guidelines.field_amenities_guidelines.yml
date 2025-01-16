@@ -1,0 +1,82 @@
+uuid: 48391fd1-a87e-4e32-91d9-5205372264f5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_amenities_guidelines
+    - paragraphs.paragraphs_type.amenities_guidelines
+    - paragraphs.paragraphs_type.guidelines
+  module:
+    - entity_reference_revisions
+id: paragraph.amenities_guidelines.field_amenities_guidelines
+field_name: field_amenities_guidelines
+entity_type: paragraph
+bundle: amenities_guidelines
+label: 'Amenities Guidelines'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      guidelines: guidelines
+    target_bundles_drag_drop:
+      amenities_guidelines:
+        weight: 4
+        enabled: false
+      description_block:
+        weight: 20
+        enabled: false
+      discover_listing:
+        weight: 21
+        enabled: false
+      event_guidelines:
+        weight: 22
+        enabled: false
+      features_block:
+        weight: 23
+        enabled: false
+      footer_social_links:
+        weight: 24
+        enabled: false
+      gallery_images:
+        weight: 5
+        enabled: false
+      guidelines:
+        enabled: true
+        weight: 6
+      info_type:
+        weight: 27
+        enabled: false
+      intro_block:
+        weight: 28
+        enabled: false
+      key_points:
+        weight: 29
+        enabled: false
+      key_points_type:
+        weight: 30
+        enabled: false
+      listings:
+        weight: 31
+        enabled: false
+      location:
+        weight: 32
+        enabled: false
+      location_details:
+        weight: 33
+        enabled: false
+      single_banner:
+        weight: 34
+        enabled: false
+      stats_listing:
+        weight: 35
+        enabled: false
+      stay_stats_type:
+        weight: 36
+        enabled: false
+field_type: entity_reference_revisions

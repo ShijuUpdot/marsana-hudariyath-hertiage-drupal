@@ -1,0 +1,50 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a view of unformatted rows.
+ *
+ * Available variables:
+ * - title: The title of this group of rows. May be empty.
+ * - rows: A list of the view's row items.
+ *   - attributes: The row's HTML attributes.
+ *   - content: The row's content.
+ * - view: The view object.
+ * - default_row_class: A flag indicating whether default classes should be
+ *   used on rows.
+ *
+ * @see template_preprocess_views_view_unformatted()
+ *
+ * @ingroup themeable
+ */
+#}
+{% for row in rows %}
+    {% set thumbnail_image = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_hero_image }}'] | striptags | trim %}
+    {% set hero_video = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_hero_video }}'] | striptags | trim  %}
+    {% set title = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_hero_image_title }}'] | striptags | trim  %}
+    {% set hero_webm_video = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_hero_webm_video }}'] | striptags | trim %}
+    {% set hero_ogg_video = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_hero_ogg_video }}'] | striptags | trim %}
+
+    <section class="discovery-main">
+      <div class="upper">
+        <div class="discover-main-wrapper container">
+          <h1>{{ title | raw }}</h1>
+        </div>
+        <div class="discovery-main-illus">
+          <img class="card-img-top" src="{{ thumbnail_image }}"  alt="{{ title }}" class="discovery-img-video">
+          <video autoplay="" muted="" loop="" id="mainPageVideo">
+            <source src="{{ hero_video }}" type="video/mp4">
+            {% if hero_webm_video %}
+              <source src="{{ hero_webm_video }}" type="video/webm">
+            {% endif %}
+            {% if hero_ogg_video %}
+              <source src="{{ hero_ogg_video }}" type="video/ogg">
+            {% endif %}
+            Your browser does not support HTML5 video.
+          </video>
+        </div>
+      </div>
+      <div class="ground">
+        <img src="/images/static/scroll.gif" alt="Scroll Gif" class="scroll-down">
+      </div>
+    </section>
+{% endfor %}

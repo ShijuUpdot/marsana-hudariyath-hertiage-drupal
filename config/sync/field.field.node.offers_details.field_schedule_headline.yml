@@ -1,0 +1,19 @@
+uuid: 2032d6bc-dd38-4bcb-8fcf-8627a151f0f5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_schedule_headline
+    - node.type.offers_details
+id: node.offers_details.field_schedule_headline
+field_name: field_schedule_headline
+entity_type: node
+bundle: offers_details
+label: 'Schedule Headline'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

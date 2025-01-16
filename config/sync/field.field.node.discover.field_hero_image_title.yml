@@ -1,0 +1,19 @@
+uuid: 030e47ca-aeaa-461f-8f84-aa4163fd29f8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hero_image_title
+    - node.type.discover
+id: node.discover.field_hero_image_title
+field_name: field_hero_image_title
+entity_type: node
+bundle: discover
+label: 'Hero Banner Title'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,53 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a view of unformatted rows.
+ *
+ * Available variables:
+ * - title: The title of this group of rows. May be empty.
+ * - rows: A list of the view's row items.
+ *   - attributes: The row's HTML attributes.
+ *   - content: The row's content.
+ * - view: The view object.
+ * - default_row_class: A flag indicating whether default classes should be
+ *   used on rows.
+ *
+ * @see template_preprocess_views_view_unformatted()
+ *
+ * @ingroup themeable
+ */
+#}
+{% for row in rows %}
+    {% set title = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_hero_image_title }}'] | striptags | trim %}
+    {% set image = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_hero_image }}'] | striptags | trim  %}
+    {% set headline = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_headline }}'] | striptags | trim  %}
+    {% set month = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_news_date_1 }}'] | striptags | trim | upper %}
+    {% set date = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_news_date }}'] | striptags | trim %}
+    {% set link = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ view_node }}'] | striptags | trim  %}
+    {% set addtoany = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ addtoany_share }}'] %}
+    {% set year = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_news_date_2 }}'] | striptags | trim %}
+            <div class="row">
+              <div class="col-12">
+                <div class="card-basic card-single w-100">
+                  <div class="card-basic-header">
+                    <div class="card-basic-image">
+                      <img class="card-img-top" src="{{ image }}" alt="{{ title }}">
+                    </div>
+                    <div class="card-basic-date">
+                      <p class="month">{{ month | t }}</p>
+                      <p class="day">{{ date }}, {{ year }}</p>
+                    </div>
+                  </div>
+                  <div class="card-basic-information">
+                    <a href="{{ link }}"><h3 class="card-title">{{ title }}</h3></a>                    
+                      <div class="a2a_kit a2a_kit_size_32 a2a_default_style" data-a2a-url="{{ base_url }}{{ link }}" data-a2a-title="{{ title }}">
+                        <a class="a2a_dd addtoany_share share" href="https://www.addtoany.com/share"><img src="/images/static/share-white.svg" alt="Share"></a>
+                      </div>
+                    <div class="detailed-txt">{{ headline }} </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+{% endfor %}
+<script async src="https://static.addtoany.com/menu/page.js"></script>

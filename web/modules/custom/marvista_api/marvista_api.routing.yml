@@ -1,0 +1,424 @@
+marvista_api.get_config:
+  path: '/json-api/{version}/{language}/get-config'
+  defaults:
+    _controller: 'Drupal\marvista_api\Controller\JsonApiController::getConfig'
+    _title: 'Get Config'
+  methods:  [GET]
+  requirements:
+    _permission: 'access content'
+  options:
+    no_cache: 'TRUE'
+
+marvista_api.get_static_content:
+  path: '/json-api/{version}/{language}/get-static-content'
+  defaults:
+    _controller: 'Drupal\marvista_api\Controller\JsonApiController::getStaticContent'
+    _title: 'Get Static Content'
+  methods:  [GET]
+  requirements:
+    _permission: 'access content'
+  options:
+    no_cache: 'TRUE'
+
+marvista_api.get_experiences:
+  path: '/json-api/{version}/{language}/get-experiences'
+  defaults:
+    _controller: 'Drupal\marvista_api\Controller\JsonApiController::getExperiences'
+    _title: 'Get Experiences'
+  methods:  [GET]
+  requirements:
+    _permission: 'access content'
+  options:
+    no_cache: 'TRUE'
+
+marvista_api.get_suggestion:
+  path: '/json-api/{version}/{language}/get-suggestion'
+  defaults:
+    _controller: 'Drupal\marvista_api\Controller\JsonApiController::getSuggestion'
+    _title: 'Get Suggestion'
+  methods:  [GET]
+  requirements:
+    _permission: 'access content'
+  options:
+    no_cache: 'TRUE'
+
+# week|top_rated
+marvista_api.get_places:
+  path: '/json-api/{version}/{language}/get-places'
+  defaults:
+    _controller: 'Drupal\marvista_api\Controller\JsonApiController::getPlaces'
+    _title: 'Get Places'
+  methods:  [GET]
+  requirements:
+    _permission: 'access content'
+  options:
+    no_cache: 'TRUE'
+
+marvista_api.get_featured_places:
+  path: '/json-api/{version}/{language}/get-featured-places'
+  defaults:
+    _controller: 'Drupal\marvista_api\Controller\JsonApiController::getFeaturedPlaces'
+    _title: 'Get Featured Places'
+  methods:  [GET]
+  requirements:
+    _permission: 'access content'
+  options:
+    no_cache: 'TRUE'
+
+marvista_api.get_rating:
+  path: '/json-api/{version}/{language}/get-rating'
+  defaults:
+    _controller: 'Drupal\marvista_api\Controller\JsonApiController::getRating'
+    _title: 'Get Rating'
+  methods:  [GET]
+  requirements:
+    _permission: 'access content'
+  options:
+    no_cache: 'TRUE'
+
+marvista_api.get_events:
+  path: '/json-api/{version}/{language}/get-events'
+  defaults:
+    _controller: 'Drupal\marvista_api\Controller\JsonApiController::getEvents'
+    _title: 'Get Events'
+  methods:  [GET]
+  requirements:
+    _permission: 'access content'
+  options:
+    no_cache: 'TRUE'
+
+marvista_api.get_event_detail:
+  path: '/json-api/{version}/{language}/get-event-detail'
+  defaults:
+    _controller: 'Drupal\marvista_api\Controller\JsonApiController::getEventDetail'
+    _title: 'Get Event Detail'
+  methods:  [GET]
+  requirements:
+    _permission: 'access content'
+  options:
+    no_cache: 'TRUE'
+
+marvista_api.get_event_also_like:
+  path: '/json-api/{version}/{language}/get-event-also-like'
+  defaults:
+    _controller: 'Drupal\marvista_api\Controller\JsonApiController::getEventAlsoLike'
+    _title: 'Get Event Detail'
+  methods:  [GET]
+  requirements:
+    _permission: 'access content'
+  options:
+    no_cache: 'TRUE'
+
+marvista_api.get_event_categories:
+  path: '/json-api/{version}/{language}/get-event-categories'
+  defaults:
+    _controller: 'Drupal\marvista_api\Controller\JsonApiController::getEventCategories'
+    _title: 'Get Event Categories'
+  methods:  [GET]
+  requirements:
+    _permission: 'access content'
+  options:
+    no_cache: 'TRUE'
+
+marvista_api.get_history:
+  path: '/json-api/{version}/{language}/get-history'
+  defaults:
+    _controller: 'Drupal\marvista_api\Controller\JsonApiController::getHistory'
+    _title: 'History'
+  methods:  [GET]
+  requirements:
+    _permission: 'access content'
+  options:
+    no_cache: 'TRUE'
+
+marvista_api.get_flash_deals:
+  path: '/json-api/{version}/{language}/get-flash-deals'
+  defaults:
+    _controller: 'Drupal\marvista_api\Controller\JsonApiController::getFlashDeals'
+    _title: 'Flash Deals'
+  methods:  [GET]
+  requirements:
+    _permission: 'access content'
+  options:
+    no_cache: 'TRUE'
+
+marvista_api.get_profile:
+  path: '/json-api/{version}/{language}/profile'
+  defaults:
+    _controller: 'Drupal\marvista_api\Controller\JsonApiController::getProfile'
+    _title: 'Profile'
+  methods:  [GET]
+  requirements:
+    _permission: 'access content'
+  options:
+    no_cache: 'TRUE'
+
+marvista_api.get_personalization:
+  path: '/json-api/{version}/{language}/get-personalization'
+  defaults:
+    _controller: 'Drupal\marvista_api\Controller\JsonApiController::getPersonalization'
+    _title: 'Personalization'
+  methods:  [GET]
+  requirements:
+    _permission: 'access content'
+  options:
+    no_cache: 'TRUE'
+
+marvista_api.get_location:
+  path: '/json-api/{version}/{language}/get-location'
+  defaults:
+    _controller: 'Drupal\marvista_api\Controller\JsonApiController::getLocation'
+    _title: 'Location'
+  methods:  [GET]
+  requirements:
+    _permission: 'access content'
+  options:
+    no_cache: 'TRUE'
+
+marvista_api.weekend_activities:
+  path: '/json-api/{version}/{language}/weekend-activities'
+  defaults:
+    _controller: 'Drupal\marvista_api\Controller\JsonApiController::getWeekendActivities'
+    _title: 'Weekend Activities'
+  methods:  [GET]
+  requirements:
+    _permission: 'access content'
+  options:
+    no_cache: 'TRUE'
+
+marvista_api.weekend_activities_detail:
+  path: '/json-api/{version}/{language}/weekend-activities-detail'
+  defaults:
+    _controller: 'Drupal\marvista_api\Controller\JsonApiController::getWeekendActivitiesDetail'
+    _title: 'Weekend Activities Detail'
+  methods:  [GET]
+  requirements:
+    _permission: 'access content'
+  options:
+    no_cache: 'TRUE'
+
+marvista_api.weekend_activities_also_like:
+  path: '/json-api/{version}/{language}/weekend-activities-also-like'
+  defaults:
+    _controller: 'Drupal\marvista_api\Controller\JsonApiController::getWeekendActivitiesAlsoLike'
+    _title: 'Weekend Activities Also Like'
+  methods:  [GET]
+  requirements:
+    _permission: 'access content'
+  options:
+    no_cache: 'TRUE'
+
+marvista_api.amenities_also_like:
+  path: '/json-api/{version}/{language}/amenities-also-like'
+  defaults:
+    _controller: 'Drupal\marvista_api\Controller\JsonApiController::getAmenitiesAlsoLike'
+    _title: 'Amenities Also Like'
+  methods:  [GET]
+  requirements:
+    _permission: 'access content'
+  options:
+    no_cache: 'TRUE'
+
+marvista_api.post_register:
+  path: '/json-api/{version}/{language}/register'
+  defaults:
+    _controller: 'Drupal\marvista_api\Controller\JsonApiController::postRegisterForm'
+    _title: 'Register'
+  methods:  [POST]
+  requirements:
+    _permission: 'access content'
+  options:
+    no_cache: 'TRUE'
+
+marvista_api.post_login:
+  path: '/json-api/{version}/{language}/login'
+  defaults:
+    _controller: 'Drupal\marvista_api\Controller\JsonApiController::postLoginForm'
+    _title: 'Login'
+  methods:  [POST]
+  requirements:
+    _permission: 'access content'
+  options:
+    no_cache: 'TRUE'
+
+marvista_api.post_login_social:
+  path: '/json-api/{version}/{language}/login-social'
+  defaults:
+    _controller: 'Drupal\marvista_api\Controller\JsonApiController::postLoginSocialForm'
+    _title: 'Login Social'
+  methods:  [POST]
+  requirements:
+    _permission: 'access content'
+  options:
+    no_cache: 'TRUE'
+
+marvista_api.post_link_account:
+  path: '/json-api/{version}/{language}/link-account'
+  defaults:
+    _controller: 'Drupal\marvista_api\Controller\JsonApiController::postLinkAccount'
+    _title: 'Link Account'
+  methods:  [POST]
+  requirements:
+    _permission: 'access content'
+  options:
+    no_cache: 'TRUE'
+
+marvista_api.post_personalization:
+  path: '/json-api/{version}/{language}/personalization'
+  defaults:
+    _controller: 'Drupal\marvista_api\Controller\JsonApiController::postPersonalization'
+    _title: 'Personalization'
+  methods:  [POST]
+  requirements:
+    _permission: 'access content'
+  options:
+    no_cache: 'TRUE'
+
+marvista_api.post_forgot_password:
+  path: '/json-api/{version}/{language}/forgot-password'
+  defaults:
+    _controller: 'Drupal\marvista_api\Controller\JsonApiController::postForgotPasswordForm'
+    _title: 'Forgot Password'
+  methods:  [POST]
+  requirements:
+    _permission: 'access content'
+  options:
+    no_cache: 'TRUE'
+
+marvista_api.verify_code:
+  path: '/json-api/{version}/{language}/verify-code/{action}'
+  defaults:
+    _controller: 'Drupal\marvista_api\Controller\JsonApiController::postVerifyCode'
+    _title: 'Verify Code'
+  methods:  [POST]
+  requirements:
+    _permission: 'access content'
+  options:
+    no_cache: 'TRUE'
+
+marvista_api.new_password:
+  path: '/json-api/{version}/{language}/new-password'
+  defaults:
+    _controller: 'Drupal\marvista_api\Controller\JsonApiController::postNewPassword'
+    _title: 'New Password'
+  methods:  [POST]
+  requirements:
+    _permission: 'access content'
+  options:
+    no_cache: 'TRUE'
+
+marvista_api.resend_verify_code:
+  path: '/json-api/{version}/{language}/resend-verify-code'
+  defaults:
+    _controller: 'Drupal\marvista_api\Controller\JsonApiController::resendVerifyCode'
+    _title: 'Resend Verify Code'
+  methods:  [POST]
+  requirements:
+    _permission: 'access content'
+  options:
+    no_cache: 'TRUE'
+
+marvista_api.search:
+  path: '/json-api/{version}/{language}/search'
+  defaults:
+    _controller: 'Drupal\marvista_api\Controller\JsonApiController::postSearch'
+    _title: 'Search'
+  methods:  [POST]
+  requirements:
+    _permission: 'access content'
+  options:
+    no_cache: 'TRUE'
+
+marvista_api.filter:
+  path: '/json-api/{version}/{language}/filter'
+  defaults:
+    _controller: 'Drupal\marvista_api\Controller\JsonApiController::postFilter'
+    _title: 'Filter'
+  methods:  [POST]
+  requirements:
+    _permission: 'access content'
+  options:
+    no_cache: 'TRUE'
+
+marvista_api.notification_setting:
+  path: '/json-api/{version}/{language}/notification-setting'
+  defaults:
+    _controller: 'Drupal\marvista_api\Controller\JsonApiController::notificationSetting'
+    _title: 'Notification Setting'
+  methods:  [GET,POST]
+  requirements:
+    _permission: 'access content'
+  options:
+    no_cache: 'TRUE'
+marvista_api.active_code_config_form:
+  path: '/admin/config/people/active-code-config'
+  defaults:
+    _form: '\Drupal\marvista_api\Form\ActiveCodeConfigForm'
+    _title: 'Active Code Config Form'
+  requirements:
+    _permission: 'access administration pages'
+  options:
+    _admin_route: TRUE
+
+marvista_api.register_welcome_config_form:
+  path: '/admin/config/people/welcome-email'
+  defaults:
+    _form: '\Drupal\marvista_api\Form\RegisterWelcomeConfigForm'
+    _title: 'Welcome Config Form'
+  requirements:
+    _permission: 'access administration pages'
+  options:
+    _admin_route: TRUE
+
+marvista_api.check_old_password:
+  path: '/json-api/{version}/{language}/check-old-password'
+  defaults:
+    _controller: 'Drupal\marvista_api\Controller\UserAccountController::checkOldPassword'
+    _title: 'Check old password'
+  methods:  [POST]
+  requirements:
+    _custom_access: 'Drupal\marvista_api\AccessCheck::access'
+  options:
+    no_cache: 'TRUE'
+
+marvista_api.deactive_account:
+  path: '/json-api/{version}/{language}/user/deactive'
+  defaults:
+    _controller: 'Drupal\marvista_api\Controller\UserAccountController::deactive'
+    _title: 'De-active'
+  methods:  [POST]
+  requirements:
+    _custom_access: 'Drupal\marvista_api\AccessCheck::access'
+  options:
+    no_cache: 'TRUE'
+
+marvista_api.user_profile_update:
+  path: '/json-api/{version}/{language}/user/update-profile'
+  defaults:
+    _controller: 'Drupal\marvista_api\Controller\UserAccountController::updateProfile'
+    _title: 'Update profile'
+  methods:  [POST]
+  requirements:
+    _custom_access: 'Drupal\marvista_api\AccessCheck::access'
+  options:
+    no_cache: 'TRUE'
+
+
+marvista_api.user_update_device_token:
+  path: '/json-api/{version}/{language}/user/update-device-token'
+  defaults:
+    _controller: 'Drupal\marvista_api\Controller\UserAccountController::updateDeviceToken'
+    _title: 'Update device token'
+  methods:  [POST]
+  requirements:
+    _custom_access: 'Drupal\marvista_api\AccessCheck::access'
+  options:
+    no_cache: 'TRUE'
+
+marvista_api.share_social:
+  path: '/share'
+  defaults:
+    _controller: 'Drupal\marvista_api\Controller\ShareSocialController::content'
+    _title: 'Share Social'
+  requirements:
+    _permission: 'access content'

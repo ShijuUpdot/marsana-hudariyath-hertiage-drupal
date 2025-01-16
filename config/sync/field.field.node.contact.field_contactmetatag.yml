@@ -1,0 +1,21 @@
+uuid: a69d3def-7a57-4425-82b0-a1c6e087f309
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_contactmetatag
+    - node.type.contact
+  module:
+    - metatag
+id: node.contact.field_contactmetatag
+field_name: field_contactmetatag
+entity_type: node
+bundle: contact
+label: contactmetatag
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: metatag

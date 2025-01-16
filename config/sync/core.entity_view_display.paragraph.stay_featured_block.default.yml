@@ -1,0 +1,56 @@
+uuid: 0d297b47-f8a6-47d9-8ea9-6057a2a51847
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.stay_featured_block.field_stay_description
+    - field.field.paragraph.stay_featured_block.field_stay_gallery
+    - field.field.paragraph.stay_featured_block.field_stay_key_features
+    - field.field.paragraph.stay_featured_block.field_stay_links
+    - field.field.paragraph.stay_featured_block.field_stay_stats
+    - paragraphs.paragraphs_type.stay_featured_block
+  module:
+    - entity_reference_revisions
+id: paragraph.stay_featured_block.default
+targetEntityType: paragraph
+bundle: stay_featured_block
+mode: default
+content:
+  field_stay_description:
+    type: entity_reference_revisions_entity_view
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_stay_key_features:
+    type: entity_reference_revisions_entity_view
+    weight: 2
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_stay_links:
+    type: entity_reference_revisions_entity_view
+    weight: 3
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_stay_stats:
+    type: entity_reference_revisions_entity_view
+    weight: 1
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_stay_gallery: true

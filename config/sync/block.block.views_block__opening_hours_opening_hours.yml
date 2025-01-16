@@ -1,0 +1,30 @@
+uuid: f0a90cd4-2d5a-48c5-848e-9c6884594370
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.opening_hours
+  module:
+    - block_visibility_groups
+    - views
+  theme:
+    - hudayriyat
+id: views_block__opening_hours_opening_hours
+theme: hudayriyat
+region: content
+weight: -16
+provider: null
+plugin: 'views_block:opening_hours-opening_hours'
+settings:
+  id: 'views_block:opening_hours-opening_hours'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
+    context_mapping: {  }

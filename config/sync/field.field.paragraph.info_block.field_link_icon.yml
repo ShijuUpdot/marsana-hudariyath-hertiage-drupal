@@ -1,0 +1,45 @@
+uuid: eeb4b38c-b5e9-490b-a0b2-0ed7971e8aa2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_link_icon
+    - paragraphs.paragraphs_type.info_block
+  module:
+    - content_translation
+    - image
+third_party_settings:
+  content_translation:
+    translation_sync:
+      alt: alt
+      title: title
+      file: '0'
+id: paragraph.info_block.field_link_icon
+field_name: field_link_icon
+entity_type: paragraph
+bundle: info_block
+label: 'Link Icon'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'png gif jpg jpeg svg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: true
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: image

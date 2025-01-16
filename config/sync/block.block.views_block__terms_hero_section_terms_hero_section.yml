@@ -1,0 +1,40 @@
+uuid: 6ffbe059-7f0c-4eaa-8f2b-79fcae7db40c
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.static_pages
+    - views.view.terms_hero_section
+  module:
+    - block_visibility_groups
+    - node
+    - views
+  theme:
+    - hudayriyat
+id: views_block__terms_hero_section_terms_hero_section
+theme: hudayriyat
+region: content
+weight: -9
+provider: null
+plugin: 'views_block:terms_hero_section-terms_hero_section'
+settings:
+  id: 'views_block:terms_hero_section-terms_hero_section'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+  context_mapping: {  }
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: static_pages
+    context_mapping: {  }
+  node_type:
+    id: node_type
+    bundles:
+      static_pages: static_pages
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

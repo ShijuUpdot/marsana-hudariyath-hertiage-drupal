@@ -1,0 +1,18 @@
+uuid: d151634f-916c-4073-ab66-165593a0a795
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.stay
+id: node.stay.changed
+field_name: changed
+entity_type: node
+bundle: stay
+label: Changed
+description: 'The time that the node was last edited.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

@@ -1,0 +1,73 @@
+uuid: 531b4dd4-9810-4311-a708-b47526335daa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.landing_links.field_landing_link
+    - field.field.paragraph.landing_links.field_link_image
+    - field.field.paragraph.landing_links.field_next_landing_color
+    - field.field.paragraph.landing_links.field_previous_landing_color
+    - field.field.paragraph.landing_links.field_previous_landing_link
+    - field.field.paragraph.landing_links.field_previous_link_image
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.landing_links
+  module:
+    - link
+    - svg_image
+id: paragraph.landing_links.default
+targetEntityType: paragraph
+bundle: landing_links
+mode: default
+content:
+  field_landing_link:
+    weight: 1
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_link_image:
+    weight: 0
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_next_landing_color:
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_previous_landing_color:
+    weight: 6
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_previous_landing_link:
+    weight: 5
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_previous_link_image:
+    weight: 4
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  translation:
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

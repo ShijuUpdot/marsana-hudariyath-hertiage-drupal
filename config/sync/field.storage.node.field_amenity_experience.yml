@@ -1,0 +1,20 @@
+uuid: 7019be6c-1ad3-455c-ae52-c6b7187b69cd
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_amenity_experience
+field_name: field_amenity_experience
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

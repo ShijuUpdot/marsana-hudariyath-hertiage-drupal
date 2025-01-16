@@ -1,0 +1,39 @@
+uuid: 9dbc4650-08c4-4d3a-a8f8-169cc06453a2
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_visibility_groups
+    - node
+  theme:
+    - hudayriyat
+id: covid19regulations
+theme: hudayriyat
+region: other
+weight: 1
+provider: null
+plugin: 'block_content:5e142c5a-d969-4391-ac78-67daba620357'
+settings:
+  id: 'block_content:5e142c5a-d969-4391-ac78-67daba620357'
+  label: 'COVID-19 Regulations'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
+    context_mapping: {  }
+  node_type:
+    id: node_type
+    bundles:
+      discover: discover
+      eat: eat
+      enjoy: enjoy
+      landing_details: landing_details
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

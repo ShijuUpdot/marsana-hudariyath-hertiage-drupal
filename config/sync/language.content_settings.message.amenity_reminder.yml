@@ -1,0 +1,18 @@
+uuid: c79d757b-8c5a-4344-9738-d68810c02175
+langcode: en
+status: true
+dependencies:
+  config:
+    - message.template.amenity_reminder
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: message.amenity_reminder
+target_entity_type_id: message
+target_bundle: amenity_reminder
+default_langcode: site_default
+language_alterable: false

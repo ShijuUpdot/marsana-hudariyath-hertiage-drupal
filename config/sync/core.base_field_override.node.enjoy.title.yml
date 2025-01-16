@@ -1,0 +1,18 @@
+uuid: e90ae859-5cbd-4d30-a738-d316b82525c6
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.enjoy
+id: node.enjoy.title
+field_name: title
+entity_type: node
+bundle: enjoy
+label: Title
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

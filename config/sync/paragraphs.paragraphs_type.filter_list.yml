@@ -1,0 +1,10 @@
+uuid: 59218505-ceb3-4cff-a97d-0071ab989083
+langcode: en
+status: true
+dependencies: {  }
+id: filter_list
+label: 'Filter List'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

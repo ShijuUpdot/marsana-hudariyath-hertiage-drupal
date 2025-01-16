@@ -1,0 +1,21 @@
+<?php
+
+/**
+ * @file
+ * Social feeds module install / uninstall.
+ */
+
+use Drupal\node\Entity\Node;
+
+/**
+ * Implements hook_social_feeds_uninstall().
+ */
+function hudayriyat_social_feeds_uninstall() {
+  \Drupal::service('config.factory')->getEditable('hudayriyat_social_feeds.settings')->delete();
+  // Delete custom_type nodes when uninstalling.
+  $query = \Drupal::entityQuery('node')->condition('type', 'social_feeds');
+  $nids = $query->execute();
+  foreach ($nids as $nid) {
+    Node::load($nid)->delete();
+  }
+}

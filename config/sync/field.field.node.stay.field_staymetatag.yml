@@ -1,0 +1,21 @@
+uuid: b4c38a7b-dd6f-4666-8a5c-ef915327743c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_staymetatag
+    - node.type.stay
+  module:
+    - metatag
+id: node.stay.field_staymetatag
+field_name: field_staymetatag
+entity_type: node
+bundle: stay
+label: staymetatag
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: metatag

@@ -1,0 +1,22 @@
+uuid: 8c43aacc-cea7-4344-bcbb-76ae145c5f08
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.amenities_details
+id: node.amenities_details.promote
+field_name: promote
+entity_type: node
+bundle: amenities_details
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

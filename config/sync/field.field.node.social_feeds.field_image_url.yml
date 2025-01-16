@@ -1,0 +1,19 @@
+uuid: ea9dfc72-7f0d-4aa4-bf80-a004415e0f5b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_image_url
+    - node.type.social_feeds
+id: node.social_feeds.field_image_url
+field_name: field_image_url
+entity_type: node
+bundle: social_feeds
+label: 'Image Url'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

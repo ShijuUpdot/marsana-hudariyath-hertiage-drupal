@@ -1,0 +1,55 @@
+uuid: 09cfc10c-2243-427c-a08b-26deacf9e00b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.search_page.body
+    - field.field.node.search_page.field_hero_image
+    - field.field.node.search_page.field_hero_image_title
+    - node.type.search_page
+  module:
+    - svg_image
+    - text
+    - user
+id: node.search_page.default
+targetEntityType: node
+bundle: search_page
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_hero_image:
+    weight: 102
+    label: above
+    settings:
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_hero_image_title:
+    weight: 103
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  addtoany: true
+  langcode: true
+  search_api_excerpt: true

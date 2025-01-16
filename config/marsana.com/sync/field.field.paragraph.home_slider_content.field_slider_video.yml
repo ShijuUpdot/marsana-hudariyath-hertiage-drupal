@@ -1,0 +1,27 @@
+uuid: 5e5f0af2-74c9-4e20-b374-d12f8fb2cf10
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_slider_video
+    - paragraphs.paragraphs_type.home_slider_content
+  module:
+    - file
+id: paragraph.home_slider_content.field_slider_video
+field_name: field_slider_video
+entity_type: paragraph
+bundle: home_slider_content
+label: 'Slider Video'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'mpeg mp4'
+  max_filesize: ''
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

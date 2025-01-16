@@ -1,0 +1,31 @@
+uuid: 0b518329-50af-4c59-9b98-b8e91824583e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.trails_color.field_trail_color_class
+    - taxonomy.vocabulary.trails_color
+  module:
+    - text
+id: taxonomy_term.trails_color.default
+targetEntityType: taxonomy_term
+bundle: trails_color
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_trail_color_class:
+    weight: 1
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  langcode: true

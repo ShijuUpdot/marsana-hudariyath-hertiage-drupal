@@ -1,0 +1,18 @@
+uuid: b430bbc8-9f8b-45d6-a7ef-9771b0905a16
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.amenities_details
+id: node.amenities_details.created
+field_name: created
+entity_type: node
+bundle: amenities_details
+label: 'Authored on'
+description: 'The time that the node was created.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

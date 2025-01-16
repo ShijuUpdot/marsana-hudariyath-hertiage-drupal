@@ -1,0 +1,22 @@
+uuid: 1b2b78c9-57a0-43e5-be67-1cddd7c7b906
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.opening_hours_block
+id: paragraph.opening_hours_block.status
+field_name: status
+entity_type: paragraph
+bundle: opening_hours_block
+label: Published
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

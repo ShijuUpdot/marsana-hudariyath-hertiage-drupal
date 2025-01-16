@@ -1,0 +1,21 @@
+uuid: 2a81b4e1-6f13-43d7-8504-fdf8b1154630
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - node_type_class
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+  node_type_class:
+    classes: ''
+name: Discover
+type: discover
+description: "Discover experience details\t\r\n"
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

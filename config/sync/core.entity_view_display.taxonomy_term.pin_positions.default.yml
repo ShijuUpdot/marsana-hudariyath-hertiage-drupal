@@ -1,0 +1,51 @@
+uuid: b6dc8c86-1165-4b81-8c61-f073b5abae96
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.pin_positions.field_position
+    - field.field.taxonomy_term.pin_positions.field_position_no
+    - field.field.taxonomy_term.pin_positions.field_position_title
+    - taxonomy.vocabulary.pin_positions
+  module:
+    - text
+id: taxonomy_term.pin_positions.default
+targetEntityType: taxonomy_term
+bundle: pin_positions
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_position:
+    weight: 1
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_position_no:
+    weight: 2
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_position_title:
+    weight: 3
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

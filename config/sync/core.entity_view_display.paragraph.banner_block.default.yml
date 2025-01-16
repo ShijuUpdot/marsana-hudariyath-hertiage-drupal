@@ -1,0 +1,34 @@
+uuid: 265322ca-35ae-4acf-bde4-6774614d9239
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.banner_block.field_descriptions
+    - field.field.paragraph.banner_block.field_gallery
+    - paragraphs.paragraphs_type.banner_block
+  module:
+    - entity_reference_revisions
+id: paragraph.banner_block.default
+targetEntityType: paragraph
+bundle: banner_block
+mode: default
+content:
+  field_descriptions:
+    type: entity_reference_revisions_entity_view
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_gallery:
+    type: entity_reference_revisions_entity_view
+    weight: 1
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+hidden: {  }

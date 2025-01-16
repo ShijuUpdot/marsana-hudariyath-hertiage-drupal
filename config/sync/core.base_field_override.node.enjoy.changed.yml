@@ -1,0 +1,18 @@
+uuid: 7090b986-b8cc-4fab-a174-4db5c7599d0b
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.enjoy
+id: node.enjoy.changed
+field_name: changed
+entity_type: node
+bundle: enjoy
+label: Changed
+description: 'The time that the node was last edited.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

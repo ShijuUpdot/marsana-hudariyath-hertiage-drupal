@@ -1,0 +1,82 @@
+uuid: 2a4118d4-a2fc-4863-95fc-8b0a0ba87f83
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.home_slider_content.field_slider_bottom_text
+    - field.field.paragraph.home_slider_content.field_slider_description
+    - field.field.paragraph.home_slider_content.field_slider_image
+    - field.field.paragraph.home_slider_content.field_slider_ogg_video
+    - field.field.paragraph.home_slider_content.field_slider_title
+    - field.field.paragraph.home_slider_content.field_slider_video
+    - field.field.paragraph.home_slider_content.field_slider_webm_video
+    - paragraphs.paragraphs_type.home_slider_content
+  module:
+    - file
+    - svg_image
+    - text
+id: paragraph.home_slider_content.default
+targetEntityType: paragraph
+bundle: home_slider_content
+mode: default
+content:
+  field_slider_bottom_text:
+    weight: 6
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_slider_description:
+    weight: 5
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_slider_image:
+    weight: 0
+    label: hidden
+    settings:
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_slider_ogg_video:
+    weight: 2
+    label: hidden
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    type: file_default
+    region: content
+  field_slider_title:
+    weight: 4
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_slider_video:
+    weight: 1
+    label: hidden
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    type: file_default
+    region: content
+  field_slider_webm_video:
+    weight: 3
+    label: hidden
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    type: file_default
+    region: content
+hidden: {  }

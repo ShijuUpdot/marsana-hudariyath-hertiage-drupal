@@ -1,0 +1,21 @@
+uuid: 8e6e607b-0d56-438b-a616-230b87328b6c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_primary_color
+    - node.type.event_details
+  module:
+    - options
+id: node.event_details.field_primary_color
+field_name: field_primary_color
+entity_type: node
+bundle: event_details
+label: 'Primary color'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,8 @@
+uuid: 733ad770-a396-40e0-85fe-92433cba0c1d
+langcode: en
+status: true
+dependencies: {  }
+id: community_post_comment
+label: 'Community Post Comment'
+target_entity_type_id: community_post
+description: ''

@@ -1,0 +1,110 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a view of unformatted rows.
+ *
+ * Available variables:
+ * - title: The title of this group of rows. May be empty.
+ * - rows: A list of the view's row items.
+ *   - attributes: The row's HTML attributes.
+ *   - content: The row's content.
+ * - view: The view object.
+ * - default_row_class: A flag indicating whether default classes should be
+ *   used on rows.
+ *
+ * @see template_preprocess_views_view_unformatted()
+ *
+ * @ingroup themeable
+ */
+#}
+<ul class="modal-listing-wrapper">
+              <!-- Modal -->
+          {% set item_images = [] %}
+          {% for row in rows %}
+         
+              {% set logo = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_amenity_icon }}'] | striptags | trim %}
+              {% set title = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_hero_image_title }}'] | striptags | trim %}
+              {% set assetSubType = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_amenity_tags }}'] | striptags | trim %}
+              {% set hero_image = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_hero_image }}'] | striptags | trim %}
+              {% set desc = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_intro_description }}'] | striptags | trim %}
+              {% set sub_desc = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_intro_short_description }}'] | striptags | trim %}
+              {% set pdf_url = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_upload }}'] | striptags | trim %}
+              {% set gallery = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_amenity_images }}']|striptags|trim|split(',') %}
+              {% set images_title = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_amenity_images_title }}'] | striptags | trim %}
+
+              <li class="modal fade" id="{{ title|replace({" ":"-", ".":"-", '&#039;':"-", '&amp;' : '-'})|lower }}" tabindex="-1" role="dialog" aria-labelledby="footballLabel"  aria-hidden="true">
+                <div class="inside-wrapper modal-wrapper">
+                  <div class="container">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">                          
+                            <div class="modal-header-bg navy-bg">
+                              {% if hero_image %}
+                              <img src="{{ hero_image }}" alt="">
+                              {% endif %}
+                            </div>                          
+                          <div class="modal-header-wrapper">                            
+                              <div class="modal-logo-wrapper">
+                                {% if logo %}
+                                  <img class="modal-logo-top" src="{{ logo }}" alt="Resto logo">
+                                {% endif %}
+                              </div>                            
+                            <div class="modal-header-content">
+                              <h3 class="modal-title" id="footballLabel">{{ title | raw }}</h3>
+                            </div>
+                          </div>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true"><img src="/images/static/close.svg" alt="close"></span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          <div class="container-fluid">
+                            <div class="row">
+                                {{ row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_info_block }}'] }}
+                            </div>
+                            <div class="row py-4">
+                              <div class="col-lg-4">
+                                <p class="detailed-txt bold detailed-desc">{{ sub_desc | raw  }}</p>
+                              </div>
+                              <div class="col-lg-8">
+                                <p class="detailed-txt detailed-desc"> {{ desc | raw  }}</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        {% if gallery[0] %}
+                        <div class="modal-footer swiper-menu">
+                          <div class="modal-footer-title">{{ images_title }}</div>
+                          <!-- Swiper -->
+                          <div class="swiper-container">
+                            <div class="swiper-wrapper">
+                            {% for gkey, item in gallery %}
+                                <div class="swiper-slide">
+                                    <div class="card-wrapper">
+                                        <div class="card event">
+                                            <div class="card-img-wrapper">
+                                                <img class="card-img-top" src="{{ gallery[gkey] }}" alt="Card image cap">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}                    
+                            </div>
+                            <div class="swiper-arrows">
+                              <div class="swiper-button-prev"></div>
+                              <div class="swiper-button-next"></div>
+                            </div>
+                          </div>
+                        </div>
+                        {% endif %}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="arrow-modal-wrapper">
+                  <a href="javascript:;" class="arrowModal prev-modal"><img src="/images/static/arrow-prev-white.svg" alt="Left Arrow icon"></a>
+                  <a href="javascript:;" class="arrowModal next-modal"><p>{{ 'Next Restaurant' | t }}</p><img src="/images/static/arrow-next-white.svg" alt="Right arrow icon"></a>
+                </div>
+              </li>
+              {% endfor %}
+              </ul>

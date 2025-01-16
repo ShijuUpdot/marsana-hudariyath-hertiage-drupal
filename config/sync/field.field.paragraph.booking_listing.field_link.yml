@@ -1,0 +1,23 @@
+uuid: 1ee423d2-230b-418f-aa58-7a34d87ea296
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_link
+    - paragraphs.paragraphs_type.booking_listing
+  module:
+    - link
+id: paragraph.booking_listing.field_link
+field_name: field_link
+entity_type: paragraph
+bundle: booking_listing
+label: Link
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

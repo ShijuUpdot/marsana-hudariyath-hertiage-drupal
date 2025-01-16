@@ -1,0 +1,21 @@
+uuid: 21f49f49-2661-43c5-9280-39793800f09a
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.opening_hours
+    - field.storage.block_content.field_headline
+  module:
+    - text
+id: block_content.opening_hours.field_headline
+field_name: field_headline
+entity_type: block_content
+bundle: opening_hours
+label: Headline
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

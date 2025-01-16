@@ -1,0 +1,22 @@
+uuid: 45756744-5e39-4c47-932d-6836127f1aa2
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.eat
+id: node.eat.status
+field_name: status
+entity_type: node
+bundle: eat
+label: Published
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

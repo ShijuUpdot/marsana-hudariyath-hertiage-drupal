@@ -1,0 +1,8 @@
+uuid: 77c1b5a3-da88-40e0-b2cd-b64036d2ee0f
+langcode: en
+status: true
+dependencies: {  }
+id: header_guidelines
+label: 'Header Guidelines'
+revision: 0
+description: 'Header Guidelines'

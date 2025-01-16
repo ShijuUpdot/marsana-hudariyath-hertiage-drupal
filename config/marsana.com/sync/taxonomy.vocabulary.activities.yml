@@ -1,0 +1,8 @@
+uuid: 760ab8dc-9d29-4b9c-b283-fceb78123278
+langcode: en
+status: true
+dependencies: {  }
+name: activities
+vid: activities
+description: 'Map activities'
+weight: 0

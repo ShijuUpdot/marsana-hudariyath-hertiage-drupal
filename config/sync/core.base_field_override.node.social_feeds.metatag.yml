@@ -1,0 +1,18 @@
+uuid: e74d46a5-9ebb-4b01-a65b-05c389019c1e
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.social_feeds
+id: node.social_feeds.metatag
+field_name: metatag
+entity_type: node
+bundle: social_feeds
+label: 'Metatags (Hidden field for JSON support)'
+description: 'The meta tags for the entity.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: map

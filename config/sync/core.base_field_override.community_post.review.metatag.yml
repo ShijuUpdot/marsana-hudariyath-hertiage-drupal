@@ -1,0 +1,18 @@
+uuid: 4c356c97-f06d-4a2e-9db7-e92859f0b55c
+langcode: en
+status: true
+dependencies:
+  config:
+    - community_post.community_post_type.review
+id: community_post.review.metatag
+field_name: metatag
+entity_type: community_post
+bundle: review
+label: 'Metatags (Hidden field for JSON support)'
+description: 'The meta tags for the entity.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: map

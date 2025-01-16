@@ -1,0 +1,20 @@
+uuid: 95fc46d4-fc1e-4a42-9cb2-7a61e9b21635
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_has_fill_personalization
+  module:
+    - user
+id: user.user.field_has_fill_personalization
+field_name: field_has_fill_personalization
+entity_type: user
+bundle: user
+label: 'Has Fill Personalization'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

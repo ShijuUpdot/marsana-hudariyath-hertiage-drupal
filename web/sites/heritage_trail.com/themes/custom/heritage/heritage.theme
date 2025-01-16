@@ -1,0 +1,278 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the Modon theme.
+ */
+/**
+ * Implements hook_preprocess_page() for page.html.twig.
+ */
+ 
+ use Drupal\taxonomy\Entity\Term;
+ use Drupal\Core\Form\FormStateInterface;
+
+function heritage_preprocess_block(array &$variables) {
+
+  $variables['langcode'] = \Drupal::languageManager()->getCurrentLanguage()->getId();
+
+}
+
+function heritage_preprocess_menu__main(&$variables) {
+  $site_config = \Drupal::config('system.site');
+  // logo needs to be placed within specified folder
+
+  $variables['menuactive'] = '';
+  $node = \Drupal::routeMatch()->getParameter('node');
+
+  $variables['homepath'] = (get_language_class()=='ar')?'/ar':'/';
+  $variables['logopath'] = file_url_transform_relative(file_create_url(theme_get_setting('logo.url')));
+
+  $lang_codes = get_lang_codes();
+  $variables['langcode'] = $lang_codes['langcode'];
+  $variables['langlink'] = $lang_codes['langlink'];
+}
+
+function heritage_preprocess_block__headerleft(array &$variables) {   
+    $lang_codes = get_lang_codes();
+    $variables['langcode'] = $lang_codes['langcode'];
+    $variables['langlink'] = $lang_codes['langlink'];
+}
+
+function heritage_preprocess_page(&$variables) {
+  try {
+    if(\Drupal::service('path.matcher')->isFrontPage()) {
+      unset($variables['page']['content']['modon_content']);
+    }
+  } catch (Exception $e) {
+    $variables['is_front'] = FALSE;
+  }  
+}
+
+function heritage_preprocess_html(array &$variables) {
+  $variables['langclass'] = get_language_class();
+}
+
+function heritage_preprocess_html__front(array &$variables) {
+  $variables['langclass'] = get_language_class();
+}
+
+function heritage_preprocess_links(array &$variables) {
+  $variables['langclass'] = get_language_class();
+}
+
+function get_language_class() {
+  $langclass = '';
+  $language_manager = \Drupal::languageManager();
+  if($language_manager->getCurrentLanguage()->getId() == 'ar') {
+    $langclass = 'ar';
+  } else {
+    $langclass = 'en';
+  }
+  return $langclass;
+}
+
+function get_lang_codes() {
+    $lang_variables = array();
+    $language_manager = \Drupal::languageManager();
+    $lang_variables['langcode'] = $language_manager->getLanguageName('ar');
+    if($language_manager->getCurrentLanguage()->getId() == 'ar') {
+      $lang_variables['langcode'] = 'English';
+      $lang_variables['langlink'] = '/';
+    } else  {
+      $lang_variables['langcode'] = 'عربي'; //$language_manager->getLanguageName('ar');      
+      $lang_variables['langlink'] = '/ar';
+    }
+    return $lang_variables;
+}
+
+function heritage_preprocess_node(array &$variables) {
+  $rootnode = $variables['node'];
+
+  $currlanguage = \Drupal::languageManager()->getCurrentLanguage()->getId();
+  $variables['langcode'] = $currlanguage;
+ 
+}
+
+function heritage_preprocess_field(&$variables) {
+    $language = \Drupal::languageManager()->getCurrentLanguage();
+    $variables['langclass'] = $language->getId();
+}
+
+function heritage_preprocess_views_view_field(&$variables) {
+    $language = \Drupal::languageManager()->getCurrentLanguage();
+    $variables['langclass'] = $language->getId();
+}
+
+function heritage_preprocess_views_view_unformatted(&$variables) {
+  $view = $variables['view'];
+  $rows = $variables['rows'];
+  $language = $currlanguage = \Drupal::languageManager()->getCurrentLanguage()->getId();
+  $variables['langcode'] = $language;
+  if ($view->id() === 'indicators') 
+  {
+    $paragraph_storage = \Drupal::entityTypeManager()->getStorage('paragraph');
+    foreach ($rows as $id => $row) 
+    {
+      $node = $view->result[$id]->_entity;
+      // Get paragraph field.
+      if ($node->hasField('field_indicators')) 
+      {
+        foreach ($node->field_indicators->getValue() as $key=>$paras)
+        {
+          $paragraph_ref_id = $paras['target_id'] ?? NULL;
+          if ($paragraph_ref_id) 
+          {
+            $paragraph_entity = $paragraph_storage->load($paragraph_ref_id);
+            if( ! $paragraph_entity || ! ($paragraph_entity->field_image->entity 
+                || $paragraph_entity->field_description
+                || $paragraph_entity->field_title)) 
+            {
+              continue;
+            }
+
+            if($paragraph_entity->hasTranslation($language)) 
+            {
+              $variables['indicators'][$key]['banner_title'] = $paragraph_entity->getTranslation($language)->field_title->value;
+              $variables['indicators'][$key]['field_description'] = $paragraph_entity->getTranslation($language)->field_description->value;
+            } else {
+              $variables['indicators'][$key]['banner_title'] = $paragraph_entity->field_title->value;
+              $variables['indicators'][$key]['field_description'] = $paragraph_entity->field_description->value;
+            }
+            
+            if($paragraph_entity->field_image->entity ) {
+              $variables['indicators'][$key]['bg_image'] = $paragraph_entity->field_image->entity->getFileUri();
+            }
+            if( $variables['indicators'][$key]['bg_image']=="" ) 
+            {
+              unset($variables['indicators'][$key]);
+            }
+
+          }
+        }
+      }
+    }
+  } else if ($view->id() === 'footer_block')
+  {
+    $paragraph_storage = \Drupal::entityTypeManager()->getStorage('paragraph');
+    foreach ($rows as $id => $row)
+    {
+      $node = $view->result[$id]->_entity;
+      $language = getDefaultTranslation($node, $currlanguage);
+      if ($node->hasField('field_footer_social_block'))
+      {
+        foreach ($node->field_footer_social_block->getValue() as $key=>$paras)
+        {
+          $paragraph_ref_id = $paras['target_id'] ?? NULL;
+          if ($paragraph_ref_id)
+          {
+            $paragraph_entity = $paragraph_storage->load($paragraph_ref_id);
+            if($paragraph_entity->hasTranslation($language)) {
+              $variables['social_links'][$key]['social_link'] = $paragraph_entity->getTranslation($language)->field_social_link->value;
+            } else {
+              $variables['social_links'][$key]['social_link'] = $paragraph_entity->field_social_link->value;
+            }
+
+            if($paragraph_entity->field_icon->entity ) {
+              $variables['social_links'][$key]['icon'] = $paragraph_entity->field_icon->entity->getFileUri();
+            }
+          }
+        }
+      }
+    }
+  } else if ($view->id() === 'header_block')
+  {
+    $lang_codes = get_lang_codes();
+    $variables['langcode'] = $lang_codes['langcode'];
+    $variables['langlink'] = $lang_codes['langlink'];
+    $paragraph_storage = \Drupal::entityTypeManager()->getStorage('paragraph');
+    foreach ($rows as $id => $row)
+    {
+      $node = $view->result[$id]->_entity;
+      $language = getDefaultTranslation($node, $currlanguage);
+      if ($node->hasField('field_header_block'))
+      {
+        foreach ($node->field_header_block->getValue() as $key=>$paras)
+        {
+          $paragraph_ref_id = $paras['target_id'] ?? NULL;
+          if ($paragraph_ref_id)
+          {
+            $paragraph_entity = $paragraph_storage->load($paragraph_ref_id);
+            if($paragraph_entity->field_header_links->get(0) != NULL) {
+              $variables['header_links'][$key]['header_link_url'] = $paragraph_entity->field_header_links->get(0)->getUrl();
+            }
+            if($paragraph_entity->hasTranslation($language)) {
+              $variables['header_links'][$key]['header_link_title'] = $paragraph_entity->getTranslation($language)->field_header_links->title;
+            } else {
+              $variables['header_links'][$key]['header_link_title'] = $paragraph_entity->field_header_links->title;
+            }
+          }
+        }
+      }
+    }
+  } else if ($view->id() === 'contact_block') {
+      $message = \Drupal::entityTypeManager()
+          ->getStorage('contact_message')
+          ->create(array(
+          'contact_form' => 'enquiry', // The machine name of the form.
+      ));
+      $form = \Drupal::service('entity.form_builder')->getForm($message);
+      $variables['contact_form'] = $form;
+
+      $paragraph_storage = \Drupal::entityTypeManager()->getStorage('paragraph');
+      foreach ($rows as $id => $row)
+      {
+        $node = $view->result[$id]->_entity;
+        $language = getDefaultTranslation($node, $currlanguage);
+        if ($node->hasField('field_contact_social_links'))
+        {
+          foreach ($node->field_contact_social_links->getValue() as $key=>$paras)
+          {
+            $paragraph_ref_id = $paras['target_id'] ?? NULL;
+            if ($paragraph_ref_id)
+            {
+              $paragraph_entity = $paragraph_storage->load($paragraph_ref_id);
+              if($paragraph_entity->hasTranslation($language)) {
+                $variables['contact_social_links'][$key]['contact_social_link'] = $paragraph_entity->getTranslation($language)->field_social_link->value;
+              } else {
+                $variables['contact_social_links'][$key]['contact_social_link'] = $paragraph_entity->field_social_link->value;
+              }
+
+              if($paragraph_entity->field_icon->entity ) {
+                $variables['contact_social_links'][$key]['contact_social_icon'] = $paragraph_entity->field_icon->entity->getFileUri();
+              }
+            }
+          }
+        }
+      }
+      //print_r($variables['contact_social_links']); exit;
+  }
+}
+
+function getDefaultTranslation($entity, $language) {
+  $deflangcode = \Drupal::languageManager()->getDefaultLanguage()->getId();
+  if(!$entity->hasTranslation($language)) {
+    $language = $deflangcode;
+  }
+  return $language;
+}
+
+function heritage_preprocess_paragraph(&$variables) { 
+    $lang_codes = get_lang_codes();
+    $variables['langcode'] = $lang_codes['langcode'];
+    $variables['langlink'] = $lang_codes['langlink'];
+    $variables['langclass'] = get_language_class();
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function heritage_theme_suggestions_paragraph_alter(&$suggestions, $variables) {
+  $paragraph = $variables['elements']['#paragraph'];
+  $parent = $paragraph->getParentEntity();
+  if ($parent) {
+    $suggestions[] = 'paragraph__' . $parent->bundle() . '__' .  $paragraph->bundle();
+  }
+}
+
+
+

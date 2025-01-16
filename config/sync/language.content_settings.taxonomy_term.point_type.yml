@@ -1,0 +1,11 @@
+uuid: 06771faf-bd8f-468f-af72-2a194dba4862
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.point_type
+id: taxonomy_term.point_type
+target_entity_type_id: taxonomy_term
+target_bundle: point_type
+default_langcode: site_default
+language_alterable: false

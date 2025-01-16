@@ -1,0 +1,4 @@
+ajax_custom_webform:
+  js:
+    js/ajax_custom_webform.js: {}
+    # js/bootstrap-datepicker.js: {}

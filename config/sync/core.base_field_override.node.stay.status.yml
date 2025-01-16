@@ -1,0 +1,22 @@
+uuid: 6464e6e8-fd11-4af4-8794-f34b89b1e21c
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.stay
+id: node.stay.status
+field_name: status
+entity_type: node
+bundle: stay
+label: Published
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

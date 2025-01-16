@@ -1,0 +1,26 @@
+custom-styling:
+  css:
+    theme:
+      assets/css/bootstrap.min.css: {}
+      assets/css/swiper-bundle.min.css: {}
+      assets/css/styles.css: {}
+      assets/css/responsive.css: {}
+      assets/css/common.css: {}
+      assets/css/commun.css: {}
+      #assets/css/swiper.min.css: {}
+  js:
+    https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js: { type: external, minified: true}    
+    https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js: { type: external, minified: true}
+    https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.js: { type: external, minified: true}
+    https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js: { type: external, minified: true}
+    https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js: { type: external, minified: true}
+    https://rawgithub.com/debiki/utterscroll/master/jquery-scrollable.js: { type: external, minified: true}
+    assets/js/bootstrap.min.js: {}
+    assets/js/swiper-bundle.min.js: {}
+    #assets/js/jquery.zoomooz.min.js: {}
+    #assets/js/intro-parallax.js: {}
+    #assets/js/swiper.min.js: {}
+    assets/js/main.js: {}
+    https://rawgithub.com/debiki/utterscroll/master/debiki-utterscroll.js: { type: external, minified: true}
+    https://code.createjs.com/1.0.0/createjs.min.js: { type: external, minified: true}
+    assets/js/marsana-bg-animated-v1.js: {}

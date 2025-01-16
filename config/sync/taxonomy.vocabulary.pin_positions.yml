@@ -1,0 +1,8 @@
+uuid: 3fb29890-ac3d-4d03-8cb3-0bd4143ddb54
+langcode: en
+status: true
+dependencies: {  }
+name: 'Pin Positions'
+vid: pin_positions
+description: 'Pin Positions'
+weight: 0

@@ -1,0 +1,18 @@
+uuid: 8827ea60-927d-4378-b766-e8d214b1c1db
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.discover
+id: node.discover.title
+field_name: title
+entity_type: node
+bundle: discover
+label: Title
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

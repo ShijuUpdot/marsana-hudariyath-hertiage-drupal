@@ -1,0 +1,40 @@
+uuid: 32983f28-16d9-416d-b995-79c1cd4cb653
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.amenity_details
+    - views.view.amenities_location
+  module:
+    - block_visibility_groups
+    - node
+    - views
+  theme:
+    - hudayriyat
+id: views_block__amenities_location_amenities_location
+theme: hudayriyat
+region: content
+weight: -8
+provider: null
+plugin: 'views_block:amenities_location-amenities_location'
+settings:
+  id: 'views_block:amenities_location-amenities_location'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+  context_mapping: {  }
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: amenity_details
+    context_mapping: {  }
+  node_type:
+    id: node_type
+    bundles:
+      amenities_details: amenities_details
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

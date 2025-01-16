@@ -1,0 +1,48 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a view of unformatted rows.
+ *
+ * Available variables:
+ * - title: The title of this group of rows. May be empty.
+ * - rows: A list of the view's row items.
+ *   - attributes: The row's HTML attributes.
+ *   - content: The row's content.
+ * - view: The view object.
+ * - default_row_class: A flag indicating whether default classes should be
+ *   used on rows.
+ *
+ * @see template_preprocess_views_view_unformatted()
+ *
+ * @ingroup themeable
+ */
+#}
+
+{% for row in rows %}
+    {% set title = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_hero_image_title }}'] | striptags | trim %}
+    {% set image = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_hero_image }}'] | striptags | trim  %}
+    {% set headline = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_headline }}'] | striptags | trim  %}
+    {% set month = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_news_date_1 }}'] | striptags | trim %}
+    {% set date = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_news_date }}'] | striptags | trim %}
+   
+    <div class="swiper-slide">
+    <div class="card-basic">
+        <div class="card-basic-header">
+        <div class="card-basic-image">
+            <img class="card-img-top" src="{{ image }}" alt="{{ title }}">
+        </div>
+        <div class="card-basic-date">
+            <p class="month">{{ month }}</p>
+            <p class="day">{{ date }}</p>
+        </div>
+        </div>
+        <div class="card-basic-information">
+        <a href=""><h3 class="card-title">{{ title }} </h3></a>
+        <div class="detailed-txt">{{ headline }} </div>
+        </div>
+    </div>
+    </div>
+{% endfor %}
+
+
+                       

@@ -1,0 +1,23 @@
+uuid: 808ca6fe-366b-46f1-b191-9327402dcbc2
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.menu_content
+    - field.storage.block_content.field_menu_middle_links
+  module:
+    - link
+id: block_content.menu_content.field_menu_middle_links
+field_name: field_menu_middle_links
+entity_type: block_content
+bundle: menu_content
+label: 'Menu Middle links'
+description: 'Menu Middle links'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

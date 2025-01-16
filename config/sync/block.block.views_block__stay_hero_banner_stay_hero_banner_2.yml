@@ -1,0 +1,37 @@
+uuid: 1fd22982-aa41-44c8-9b60-7759689e535e
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.stay
+    - views.view.stay_hero_banner
+  module:
+    - block_visibility_groups
+    - system
+    - views
+  theme:
+    - hudayriyat
+id: views_block__stay_hero_banner_stay_hero_banner_2
+theme: hudayriyat
+region: content
+weight: -10
+provider: null
+plugin: 'views_block:stay_hero_banner-stay_hero_banner'
+settings:
+  id: 'views_block:stay_hero_banner-stay_hero_banner'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: stay
+    context_mapping: {  }
+  request_path:
+    id: request_path
+    pages: /stay
+    negate: false
+    context_mapping: {  }

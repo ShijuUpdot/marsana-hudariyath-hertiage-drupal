@@ -1,0 +1,19 @@
+uuid: 700f0d10-280c-4421-b00c-66fb77392a2d
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - text
+id: node.field_intro_sub_headlines
+field_name: field_intro_sub_headlines
+entity_type: node
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,21 @@
+uuid: 8cc31e82-9529-424c-b12b-38b2f8d6325d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_secondary_color
+    - node.type.landing_details
+  module:
+    - options
+id: node.landing_details.field_secondary_color
+field_name: field_secondary_color
+entity_type: node
+bundle: landing_details
+label: 'Secondary Color'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

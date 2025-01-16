@@ -1,0 +1,18 @@
+uuid: 5421778f-3522-45e4-abb4-2cbd69408c33
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.booking_instructions
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: block_content.booking_instructions
+target_entity_type_id: block_content
+target_bundle: booking_instructions
+default_langcode: site_default
+language_alterable: true

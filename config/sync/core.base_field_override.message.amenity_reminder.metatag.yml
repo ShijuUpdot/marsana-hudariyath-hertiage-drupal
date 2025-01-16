@@ -1,0 +1,18 @@
+uuid: fd608a09-63e6-46aa-bc63-872d10b3acab
+langcode: en
+status: true
+dependencies:
+  config:
+    - message.template.amenity_reminder
+id: message.amenity_reminder.metatag
+field_name: metatag
+entity_type: message
+bundle: amenity_reminder
+label: 'Metatags (Hidden field for JSON support)'
+description: 'The meta tags for the entity.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: map

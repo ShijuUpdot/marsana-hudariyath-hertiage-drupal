@@ -1,0 +1,19 @@
+uuid: c8e5e398-2185-45bf-8eae-74f118e8dfec
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_headline
+    - paragraphs.paragraphs_type.booking_listing
+id: paragraph.booking_listing.field_headline
+field_name: field_headline
+entity_type: paragraph
+bundle: booking_listing
+label: Headline
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

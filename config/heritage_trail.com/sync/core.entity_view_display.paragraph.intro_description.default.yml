@@ -1,0 +1,22 @@
+uuid: 3d055efe-37b4-4371-a0b1-d1b808a4e46b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.intro_description.field_intro_description
+    - paragraphs.paragraphs_type.intro_description
+  module:
+    - text
+id: paragraph.intro_description.default
+targetEntityType: paragraph
+bundle: intro_description
+mode: default
+content:
+  field_intro_description:
+    weight: 0
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+hidden: {  }

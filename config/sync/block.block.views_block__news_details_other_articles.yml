@@ -1,0 +1,40 @@
+uuid: 404f8fd6-3496-4883-812f-24ea563ad7d3
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.news_details
+    - views.view.news_details_other_articles
+  module:
+    - block_visibility_groups
+    - node
+    - views
+  theme:
+    - hudayriyat
+id: views_block__news_details_other_articles
+theme: hudayriyat
+region: content
+weight: -6
+provider: null
+plugin: 'views_block:news_details_other_articles-news_details_other_articles'
+settings:
+  id: 'views_block:news_details_other_articles-news_details_other_articles'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+  context_mapping: {  }
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: news_details
+    context_mapping: {  }
+  node_type:
+    id: node_type
+    bundles:
+      news_details: news_details
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

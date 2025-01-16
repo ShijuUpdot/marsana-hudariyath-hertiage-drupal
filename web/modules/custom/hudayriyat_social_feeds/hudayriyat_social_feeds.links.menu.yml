@@ -1,0 +1,10 @@
+hudayriyat_social_feeds.admin_config:
+  route_name: hudayriyat_social_feeds.admin_config
+  parent: system.admin_config
+  title: Hudayriyat Island API Settings
+  description: 'Manage hudayriyat API Settings.'
+hudayriyat_social_feeds.admin_settings:
+  title: 'Hudayriyat Island Instagram Feed Fetch'
+  parent: hudayriyat_social_feeds.admin_config
+  description: 'Configure Instagram Feed API Settings.'
+  route_name: hudayriyat_social_feeds.admin_settings

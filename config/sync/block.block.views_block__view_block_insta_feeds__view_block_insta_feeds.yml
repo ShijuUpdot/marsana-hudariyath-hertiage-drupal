@@ -1,0 +1,42 @@
+uuid: 0d0accf0-cc18-4e80-a33b-7bff7412d1d9
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.view_block_instagram_feeds_
+  module:
+    - block_visibility_groups
+    - node
+    - views
+  theme:
+    - hudayriyat
+id: views_block__view_block_insta_feeds__view_block_insta_feeds
+theme: hudayriyat
+region: content
+weight: -3
+provider: null
+plugin: 'views_block:view_block_instagram_feeds_-view_block_instagram_feeds'
+settings:
+  id: 'views_block:view_block_instagram_feeds_-view_block_instagram_feeds'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
+    context_mapping: {  }
+  node_type:
+    id: node_type
+    bundles:
+      discover: discover
+      eat: eat
+      enjoy: enjoy
+      landing_details: landing_details
+      stay: stay
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

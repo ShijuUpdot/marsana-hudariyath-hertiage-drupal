@@ -1,0 +1,15 @@
+uuid: 848b58d1-3952-4567-b4d9-36d8ea0f15ea
+langcode: en
+status: true
+dependencies:
+  config:
+    - flag.flag.turn_off_node_notification
+  module:
+    - flag
+id: flag_action.turn_off_node_notification_flag
+label: 'Flag this item'
+type: node
+plugin: 'flag_action:turn_off_node_notification_flag'
+configuration:
+  flag_id: turn_off_node_notification
+  flag_action: flag

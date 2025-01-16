@@ -1,0 +1,21 @@
+uuid: 3ebc6c95-8cde-48a2-9701-63d9be9161f1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_short_description
+    - paragraphs.paragraphs_type.guidelines_type
+  module:
+    - text
+id: paragraph.guidelines_type.field_short_description
+field_name: field_short_description
+entity_type: paragraph
+bundle: guidelines_type
+label: 'short Description'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,55 @@
+uuid: 40f4cac1-2e6d-4989-ac6f-2d18cfa2028c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_about
+    - paragraphs.paragraphs_type.about_block
+    - paragraphs.paragraphs_type.about_section
+  module:
+    - entity_reference_revisions
+id: paragraph.about_section.field_about
+field_name: field_about
+entity_type: paragraph
+bundle: about_section
+label: About
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      about_block: about_block
+    target_bundles_drag_drop:
+      about_block:
+        enabled: true
+        weight: 4
+      about_section:
+        weight: 5
+        enabled: false
+      footer_social_block:
+        weight: 12
+        enabled: false
+      footer_social_links:
+        weight: 13
+        enabled: false
+      guidelines_type:
+        weight: 14
+        enabled: false
+      header_links:
+        weight: 15
+        enabled: false
+      indicators_type:
+        weight: 16
+        enabled: false
+      intro_description:
+        weight: 6
+        enabled: false
+      listing_details:
+        weight: 18
+        enabled: false
+field_type: entity_reference_revisions

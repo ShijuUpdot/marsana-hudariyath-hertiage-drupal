@@ -1,0 +1,19 @@
+uuid: e0173f06-aadf-4b21-bf9c-7a0c03486a82
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_section_title
+    - paragraphs.paragraphs_type.multi_opening_hours
+id: paragraph.multi_opening_hours.field_section_title
+field_name: field_section_title
+entity_type: paragraph
+bundle: multi_opening_hours
+label: 'Section Title'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

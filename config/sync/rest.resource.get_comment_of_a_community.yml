@@ -1,0 +1,17 @@
+uuid: bb06e7f0-9f59-47df-bd62-1201b4a4cbaa
+langcode: en
+status: true
+dependencies:
+  module:
+    - community_post
+    - serialization
+    - user
+id: get_comment_of_a_community
+plugin_id: get_comment_of_a_community
+granularity: method
+configuration:
+  GET:
+    supported_formats:
+      - json
+    supported_auth:
+      - cookie

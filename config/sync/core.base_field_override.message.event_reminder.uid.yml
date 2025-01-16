@@ -1,0 +1,20 @@
+uuid: 431ed8af-306e-411c-9085-63359621bac1
+langcode: en
+status: true
+dependencies:
+  config:
+    - message.template.event_reminder
+id: message.event_reminder.uid
+field_name: uid
+entity_type: message
+bundle: event_reminder
+label: 'Created by'
+description: 'The user that created the message.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: 'Drupal\message\Entity\Message::getCurrentUserId'
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference

@@ -1,0 +1,8 @@
+uuid: 677ca225-af4f-4ea3-9136-c4f84d1b7d2f
+langcode: en
+status: true
+dependencies: {  }
+id: menu_content
+label: 'Menu Content'
+revision: 0
+description: 'Menu Content'

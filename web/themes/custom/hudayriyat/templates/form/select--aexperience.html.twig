@@ -1,0 +1,103 @@
+{#
+/**
+ * @file
+ * Theme override for a select element.
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the <select> tag.
+ * - options: The <option> element children.
+ *
+ * @see template_preprocess_select()
+ */
+#}
+{% apply spaceless %}
+<div class="col-md-6 col-xl-12 py-4">
+  <div class="dropdown amenities experiencefm">
+    <div class="filter search-dropdown">
+      <div class="select-wrapper">
+          <select{{ attributes.addClass('browser-default custom-select forminpt') }}>
+            {% for option in options %}
+              {% if option.value >= 0 %}
+                {% if option.value == 'All' %}
+                  <option value="{{ option.value }}"{{ option.selected ? ' selected="selected"' }} class="dropdown-item">{{ 'All Amenities' | t }}</option>
+                {% else %}
+                  <option value="{{ option.value }}"{{ option.selected ? ' selected="selected"' }} class="dropdown-item">{{ option.label }}</option>
+                {% endif %}
+              {% endif %}
+            {% endfor %}
+          </select>
+              <div class="dropdown-container filters filter-button-group">
+                <div class="aexperience dropdown-select entypo-down-open-big">
+                  <img src="/images/static/amenities.svg">{{ 'All Amenities' | t }}
+                </div>
+                  <ul class="aexperience dropdown-select-ul" data-role="edit-aexperience">
+                    {% for option in options %}
+                        {% if option.value == 'All' %}
+                          <li data-value="{{ option.value }}" data-filter="{{ option.value }}"><img src="/images/static/amenities.svg">{{ 'All Amenities' | t }}</li>
+                        {% else %}
+                          <li data-value="{{ option.value }}" data-filter="{{ option.value }}"><img src="{{ exp_icons[option.value] }}">{{ option.label }}</li>
+                        {% endif %}
+                    {% endfor %}
+                  </ul>
+              </div>   
+      </div>
+    </div>
+  </div>
+</div>
+{% endapply %}
+<style>
+body .ajax-progress-fullscreen {
+	display:none;
+}
+</style>
+<script>
+	jQuery(function(i) {
+		i(document).ready(function () {
+			var e = i(".dropdown-select"),
+				t = (i(".dropdown-select-ul"), i(".dropdown-select-ul li"));
+			i(".dropdown-select").on("click", function () {
+				i(this).parent(".dropdown-container").toggleClass("active");
+			}),
+			t.on("click", function () {
+			i('.dark-overlay').addClass("d-block");
+				var e = jQuery(this);
+				if (!e.hasClass("optgroup")) {
+					var t = e.parent("ul"),
+						o = t.siblings(".dropdown-select"),
+						s = e.html(),
+						n = e.attr("data-value"),
+						a = "select[id^='"+t.attr("data-role")+"']"; //"#" + t.attr("data-role");
+						if(t.attr("data-role")=='edit-aexperience' || t.attr("data-role")=='edit-sort-by') {
+						  jQuery(a).val(n);
+						  jQuery(a).change();
+						}
+					e.siblings("li").removeClass("selected"), e.siblings("li").children().attr("checked", !1), e.addClass("selected"), e.children().attr("checked", !0), jQuery(a).val(n), o.html(s);
+				}
+				e.parent("ul").parent().toggleClass("active");
+			});
+		});
+		
+		jQuery("label[for^='edit-sort-by']").hide();
+		
+		if(jQuery("select[id^='edit-aexperience'] option:selected").val()>0) {
+			var selval = jQuery("select[id^='edit-aexperience'] option:selected").val();
+			jQuery(".experiencefm .dropdown-select-ul li").each(function() {
+				if(jQuery(this).attr("data-value")==selval) {
+					jQuery(".experiencefm .dropdown-select").html(jQuery(this).html());
+				}				
+			});
+		}
+		if(jQuery("select[id^='edit-sort-by'] option:selected").val() != '') {
+			var selval = jQuery("select[id^='edit-sort-by'] option:selected").val();
+			jQuery(".sortbyfm .dropdown-select-ul li").each(function() {
+				if(jQuery(this).attr("data-value")==selval) {
+					jQuery(".sortbyfm .dropdown-select").html(jQuery(this).html());
+				}				
+			});
+		}
+		
+		jQuery('.offers .button').click(function() {
+			jQuery('.dark-overlay').addClass("d-block");
+		});
+	});
+</script>

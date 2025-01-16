@@ -1,0 +1,177 @@
+<?php
+
+use Drupal\Component\Utility\Html;
+use Drupal\file\Entity\File;
+use Drupal\image\Entity\ImageStyle;
+use Drupal\Core\Url;
+use Drupal\node\Entity\Node;
+
+/**
+ * Implements hook_theme().
+ */
+function marvista_api_theme($existing, $type, $theme, $path) {
+  return [
+    'marvista_api' => [
+      'variables' => ['content' => NULL],
+    ],
+  ];
+}
+
+if (!function_exists('fieldValueGet')) {
+  function fieldValueGet ($entity, $field, $type = 'string', $attributes = array())
+  {
+
+    switch ($type) {
+      case 'string':
+        if ($entity->get($field)->value) {
+          return $entity->get($field)->value;
+        } else {
+          return '';
+        }
+        break;
+
+      case 'integer':
+        if ($entity->get($field)->value) {
+          return intval($entity->get($field)->value);
+        } else {
+          return '';
+        }
+        break;
+
+      case 'file_info':
+        $arr = array();
+        if (count($entity->get($field)->getValue()) > 0) {
+          foreach ($entity->get($field)->getValue() as $item) {
+            $file = File::load($item['target_id']);
+            if ($file->id()) {
+              $tmp = new \stdClass();
+              $tmp->fid = $file->id();
+              $tmp->alt = $item['alt'];
+              $tmp->title = $item['title'];
+              $tmp->name = $file->getFileName();
+              $tmp->width = $item['width'];
+              $tmp->height = $item['height'];
+              $file_uri = $file->getFileUri();
+              $tmp->uri = $file_uri;
+              $tmp->url = $file->createFileUrl($file_uri);
+              $arr[] = $tmp;
+            }
+          }
+        } else {
+          return FALSE;
+        }
+
+        return $arr;
+
+        break;
+      case 'image_style_file_info':
+        $arr = array();
+        if (count($entity->get($field)->getValue()) > 0) {
+          foreach ($entity->get($field)->getValue() as $item) {
+            $file = File::load($item['target_id']);
+            if ($file->id()) {
+              $tmp = new \stdClass();
+              $tmp->fid = $file->id();
+              $tmp->alt = $item['alt'];
+              $tmp->title = $item['title'];
+              $tmp->name = $file->getFileName();
+              $tmp->width = $item['width'];
+              $tmp->height = $item['height'];
+              $file_uri = $file->getFileUri();
+              $tmp->uri = $file_uri;
+              $image_style = (!empty($attributes['image_style'])) ? $attributes['image_style'] : 'large';
+              $tmp->url = ImageStyle::load($image_style)->buildUrl($file_uri);
+              $arr[] = $tmp;
+            }
+          }
+        } else {
+          return FALSE;
+        }
+
+        return $arr;
+
+        break;
+      case 'file_url':
+        $arr = array();
+        if (count($entity->get($field)->getValue()) > 0) {
+          foreach ($entity->get($field)->getValue() as $item) {
+            $file = File::load($item['target_id']);
+            if ($file->id()) {
+              $file_uri = $file->getFileUri();
+              $url = $file->createFileUrl($file_uri);
+              $arr[] = $url;
+            }
+          }
+        } else {
+          return FALSE;
+        }
+
+        return $arr;
+
+        break;
+      case 'image_style_url':
+        $arr = array();
+        if (count($entity->get($field)->getValue()) > 0) {
+          foreach ($entity->get($field)->getValue() as $item) {
+            $file = File::load($item['target_id']);
+            if ($file->id()) {
+              $image_style = ($attributes['image_style']) ? $attributes['image_style'] : 'large';
+              $file_uri = $file->getFileUri();
+              $url = ImageStyle::load($image_style)->buildUrl($file_uri);
+              $arr[] = $url;
+            }
+          }
+        } else {
+          return FALSE;
+        }
+
+        return $arr;
+
+        break;
+      case 'node_reference':
+        if ($entity->get($field)->getValue()) {
+          return $entity->get($field)->getValue()[0]['target_id'];
+        } else {
+          return 0;
+        }
+        break;
+      case 'array_node_reference':
+        if ($entity->get($field)->getValue()) {
+          return $entity->get($field)->getValue();
+        } else {
+          return array();
+        }
+        break;
+      default:
+        if ($entity->get($field)->value) {
+          return $entity->get($field)->value;
+        } else {
+          return '';
+        }
+    }
+  }
+}
+
+
+function marvista_api_mail($key, &$message, $params)
+{
+  $message['headers']['Content-Type'] = 'text/html; charset=UTF-8; format=flowed; delsp=yes';
+  $message['subject'] = Html::escape($params['subject']);
+  $message['body'][] = $params['message'];
+}
+
+
+function marvista_api_form_node_amenities_details_edit_form_alter(&$form, $form_state) {
+  \Drupal\marvista_api\NodeForm\EventFormAlter::alterForm($form, $form_state);
+}
+
+function marvista_api_form_node_amenities_details_form_alter(&$form, $form_state) {
+  \Drupal\marvista_api\NodeForm\EventFormAlter::alterForm($form, $form_state);
+}
+
+function marvista_api_form_node_event_details_edit_form_alter(&$form, $form_state) {
+  \Drupal\marvista_api\NodeForm\EventFormAlter::alterForm($form, $form_state);
+}
+function marvista_api_form_node_event_details_form_alter(&$form, $form_state) {
+  \Drupal\marvista_api\NodeForm\EventFormAlter::alterForm($form, $form_state);
+}

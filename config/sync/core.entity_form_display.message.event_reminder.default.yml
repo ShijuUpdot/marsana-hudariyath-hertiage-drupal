@@ -1,0 +1,74 @@
+uuid: 4250bd63-35a9-43eb-9d3c-d085b2c6deea
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.message.event_reminder.field_action
+    - field.field.message.event_reminder.field_end_time
+    - field.field.message.event_reminder.field_node
+    - field.field.message.event_reminder.field_read
+    - field.field.message.event_reminder.field_start_time
+    - message.template.event_reminder
+id: message.event_reminder.default
+targetEntityType: message
+bundle: event_reminder
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_action:
+    weight: 15
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_end_time:
+    weight: 14
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_node:
+    weight: 12
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_read:
+    weight: 16
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_start_time:
+    weight: 13
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  uid:
+    type: entity_reference_autocomplete
+    weight: 5
+    '#group': advanced
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      match_limit: 10
+    region: content
+    third_party_settings: {  }
+hidden: {  }

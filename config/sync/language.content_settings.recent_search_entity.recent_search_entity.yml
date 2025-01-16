@@ -1,0 +1,11 @@
+uuid: c15c12b1-8bbc-4143-af3a-9f5c3ab2b7c6
+langcode: en
+status: true
+dependencies:
+  module:
+    - recent_search_log
+id: recent_search_entity.recent_search_entity
+target_entity_type_id: recent_search_entity
+target_bundle: recent_search_entity
+default_langcode: site_default
+language_alterable: false

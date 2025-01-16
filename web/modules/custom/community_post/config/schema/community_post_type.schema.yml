@@ -1,0 +1,12 @@
+community_post.community_post_type.*:
+  type: config_entity
+  label: 'Community post type config'
+  mapping:
+    id:
+      type: string
+      label: 'ID'
+    label:
+      type: label
+      label: 'Label'
+    uuid:
+      type: string

@@ -1,0 +1,19 @@
+uuid: 3f5dac26-1ace-4ef7-a2e6-dc0df0afcfff
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_link_url
+    - paragraphs.paragraphs_type.about_block
+id: paragraph.about_block.field_link_url
+field_name: field_link_url
+entity_type: paragraph
+bundle: about_block
+label: 'Link Url'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,81 @@
+max_piroject_key_facts: ''
+max_short_description: ''
+_core:
+  default_config_hash: PkYj9cGGyp8mJIOoIXhUy5_5AGr58Sz_bkVF3edtSTQ
+custom_configs_general_mail: info@hudayriyatisland.ae
+custom_configs_leasing_mail: info@hudayriyatisland.ae
+custom_configs_info_mail: info@hudayriyatisland.ae
+custom_configs_from_mail: info@hudayriyatisland.ae
+custom_configs_opening_hours_en: 'Opening Hours'
+custom_configs_opening_hours_ar: 'ساعات العمل'
+custom_configs_book_now_en: 'Book Now'
+custom_configs_book_now_ar: ''
+custom_configs_available_at_en: 'Available at:'
+custom_configs_available_at_ar: 'متوفرة في'
+custom_configs_available_sports_en: 'Available Sports'
+custom_configs_available_sports_ar: 'الرياضة المتاحة'
+custom_configs_other_sports_en: 'Other Sports:'
+custom_configs_other_sports_ar: 'رياضات اخرى'
+custom_configs_other_facilities_en: 'Other Facilities'
+custom_configs_other_facilities_ar: 'المرافق الاخرى'
+custom_configs_directions_title_en: 'Get Direction'
+custom_configs_directions_title_ar: الاتجاهات
+marital_status_single_en: Single
+marital_status_single_ar: أعزب
+marital_status_family_en: Family
+marital_status_family_ar: عائلة
+marital_status_kids_en: 'Family with kids'
+marital_status_kids_ar: 'عائلة مع أطفال'
+default_location_lat_en: '10.1'
+default_location_lat_ar: '10.1'
+default_location_lon_en: '9.1'
+default_location_lon_ar: '9.1'
+default_distance_nearby_en: '10'
+default_distance_nearby_ar: '10'
+help_message_title_en: 'Message sent successfully!'
+help_message_title_ar: 'تم ارسال الرسالة بنجاح!'
+help_message_sub_title_en: 'Message sent successfully!'
+help_message_sub_title_ar: 'تم ارسال الرسالة بنجاح!'
+report_message_title_en: 'Message sent successfully!'
+report_message_title_ar: 'تم ارسال الرسالة بنجاح!'
+report_message_sub_title_en: 'Message sent successfully!'
+report_message_sub_title_ar: 'تم ارسال الرسالة بنجاح!'
+custom_configs_subject_en: 'Thank you for contacting Hudayriyat Mar Vista.'
+custom_configs_subject_ar: 'شكرًا على تواصلكم بمنطقة الحديريات الترفيهية.'
+custom_configs_contact_name_en: 'Please fill the required field.'
+custom_configs_contact_name_ar: 'الرجاء تعبئة الحقل المطلوب'
+custom_configs_contact_email_en: 'Please fill the required field.'
+custom_configs_contact_email_ar: 'الرجاء تعبئة الحقل المطلوب'
+custom_configs_contact_contactNo_en: 'Please fill the required field.'
+custom_configs_contact_contactNo_ar: 'الرجاء تعبئة الحقل المطلوب'
+custom_configs_contact_message_en: 'Please fill the required field.'
+custom_configs_contact_message_ar: 'الرجاء تعبئة الحقل المطلوب'
+custom_configs_contact_invalidemail_en: 'Please fill the required field.'
+custom_configs_contact_invalidemail_ar: 'الرجاء تعبئة الحقل المطلوب'
+custom_configs_contact_last_name_en: 'Please fill the required field.'
+custom_configs_contact_last_name_ar: 'الرجاء تعبئة الحقل المطلوب'
+custom_configs_contact_success_en: 'Thank you for contacting us, we will get back to you shortly.'
+custom_configs_contact_success_ar: 'شكرا لتواصلكم معنا, سنعاود الاتصال بكم قريبا'
+custom_configs_email_username: info@hudayriyatisland.ae
+custom_configs_email_password: Fuq26091
+custom_configs_other_articles_en: 'Other Articles'
+custom_configs_other_articles_ar: 'مقالات أخرى'
+custom_configs_discover_events_en: 'Discover Event'
+custom_configs_discover_events_ar: 'اكتشف الحدث'
+custom_configs_events_listing_title_en: 'Enjoy our events'
+custom_configs_events_listing_title_ar: 'استمتع بأحداثنا'
+custom_configs_cookie_lifetime: ''
+custom_configs_email_host: smtp.office365.com
+custom_configs_email_port: '587'
+custom_configs_email_SMTPSecure: tls
+custom_configs_recommendation_en: "Sorry, we could not find any matches for '%%%'.\r\nPlease checkout our recommendations on the map."
+custom_configs_recommendation_ar: "تعذر العثور على بيانات تطابق البحث  '%%%'.\r\nشاهد اقتراحاتنا لوجهات أخرى على الخريطة.\r\n"
+title_social_media_en: 'Follow us on social media'
+title_social_media_ar: 'تابعونا على وسائل التواصل الاجتماعي'
+link_facebook: 'http://facebook.com/alhudayriyatisland'
+link_instagram: 'http://instagram.com/hudayriyat.island'
+link_twitter: 'http://twitter.com/alhudayriyatad'
+custom_configs_offers_listing_title_en: 'Enjoy Offers'
+custom_configs_offers_listing_title_ar: 'استمتع بالعروض'
+custom_configs_discover_offers_en: 'Discover Offer'
+custom_configs_discover_offers_ar: 'اكتشف العرض'

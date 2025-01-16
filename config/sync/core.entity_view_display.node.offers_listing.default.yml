@@ -1,0 +1,72 @@
+uuid: 27c6713d-c289-47fb-b96a-f1f94cdd7658
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.offers_listing.body
+    - field.field.node.offers_listing.field_hero_image
+    - field.field.node.offers_listing.field_hero_image_title
+    - field.field.node.offers_listing.field_news_listing_title
+    - field.field.node.offers_listing.field_search_keywords
+    - node.type.offers_listing
+  module:
+    - svg_image
+    - text
+    - user
+id: node.offers_listing.default
+targetEntityType: node
+bundle: offers_listing
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_hero_image:
+    weight: 102
+    label: above
+    settings:
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_hero_image_title:
+    weight: 103
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_news_listing_title:
+    weight: 104
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_search_keywords:
+    weight: 105
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  addtoany: true
+  langcode: true
+  search_api_excerpt: true

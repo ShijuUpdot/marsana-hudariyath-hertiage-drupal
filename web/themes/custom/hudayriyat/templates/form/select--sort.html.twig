@@ -1,0 +1,43 @@
+{#
+/**
+ * @file
+ * Theme override for a select element.
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the <select> tag.
+ * - options: The <option> element children.
+ *
+ * @see template_preprocess_select()
+ */
+#}
+{% apply spaceless %}
+<div class="col-md-6 col-xl-12 py-4">
+  <p class="filter-tag mx-2">{{ 'Sort by' |t }}</p>
+  <div class="dropdown date">
+    <div class="filter search-dropdown">
+      <div class="select-wrapper">
+          <select{{ attributes.addClass('browser-default custom-select forminpt') }}>
+            {% for option in options %}
+              {% if option.value != '' %}
+                  <option value="{{ option.value }}" {{ option.selected ? ' selected="selected"' }} class="dropdown-item">{{ option.label }}</option>
+              {% endif %}
+            {% endfor %}
+          </select>
+            <div class="sortbyfm dropdown-container filters filter-button-group">
+                <div class="dropdown-select entypo-down-open-big">
+                  <p> {{ 'Expiry Date' | t }} </p>
+                </div>
+                <ul class="dropdown-select-ul" data-role="edit-sort-by">
+                  {% for option in options %}
+                    {% if option.value != '' %}
+                        <li data-value="{{ option.value }}" {{ option.selected ? ' class="selected"' }} data-filter="{{ option.value }}">{{ option.label | t}}</li>
+                    {% endif %}
+                  {% endfor %}
+                </ul>
+            </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endapply %}
+ 

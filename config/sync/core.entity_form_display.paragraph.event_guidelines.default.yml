@@ -1,0 +1,38 @@
+uuid: 43567aee-8238-44f5-94b9-30a1e1b7462a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.event_guidelines.field_event_guidelines
+    - field.field.paragraph.event_guidelines.field_guidelines_title
+    - paragraphs.paragraphs_type.event_guidelines
+  module:
+    - paragraphs
+id: paragraph.event_guidelines.default
+targetEntityType: paragraph
+bundle: event_guidelines
+mode: default
+content:
+  field_event_guidelines:
+    type: entity_reference_paragraphs
+    weight: 1
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_guidelines_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true

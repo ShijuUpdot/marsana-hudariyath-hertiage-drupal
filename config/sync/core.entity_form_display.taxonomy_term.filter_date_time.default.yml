@@ -1,0 +1,83 @@
+uuid: e26b096c-6ede-41a4-9a9c-d065c45f2b9f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.filter_date_time.field_icon
+    - field.field.taxonomy_term.filter_date_time.field_start_time
+    - field.field.taxonomy_term.filter_date_time.field_time
+    - image.style.thumbnail
+    - taxonomy.vocabulary.filter_date_time
+  module:
+    - path
+    - svg_image
+    - text
+id: taxonomy_term.filter_date_time.default
+targetEntityType: taxonomy_term
+bundle: filter_date_time
+mode: default
+content:
+  description:
+    type: text_textarea
+    weight: 1
+    region: content
+    settings:
+      placeholder: ''
+      rows: 5
+    third_party_settings: {  }
+  field_icon:
+    weight: 5
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_start_time:
+    weight: 8
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_timestamp
+    region: content
+  field_time:
+    weight: 6
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 7
+    region: content
+    third_party_settings: {  }
+  translation:
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

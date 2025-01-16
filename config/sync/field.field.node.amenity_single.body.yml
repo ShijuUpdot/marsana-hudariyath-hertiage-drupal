@@ -1,0 +1,23 @@
+uuid: 3d35e3d7-1601-4829-b0e1-67b0fd18c392
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.amenity_single
+  module:
+    - text
+id: node.amenity_single.body
+field_name: body
+entity_type: node
+bundle: amenity_single
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

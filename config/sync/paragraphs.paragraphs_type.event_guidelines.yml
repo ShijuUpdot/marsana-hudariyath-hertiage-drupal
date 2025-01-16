@@ -1,0 +1,10 @@
+uuid: d9ed6ab4-af20-4461-afc2-927cafd77536
+langcode: en
+status: true
+dependencies: {  }
+id: event_guidelines
+label: 'Event Guidelines'
+icon_uuid: null
+icon_default: null
+description: 'Event Guidelines'
+behavior_plugins: {  }

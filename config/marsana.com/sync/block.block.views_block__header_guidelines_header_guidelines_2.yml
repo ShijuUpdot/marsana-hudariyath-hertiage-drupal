@@ -1,0 +1,41 @@
+uuid: 9819a568-bc1c-456e-96af-61ac07968a95
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.header_guidelines
+  module:
+    - block_visibility_groups
+    - node
+    - views
+  theme:
+    - marsana
+id: views_block__header_guidelines_header_guidelines_2
+theme: marsana
+region: content
+weight: -18
+provider: null
+plugin: 'views_block:header_guidelines-header_guidelines'
+settings:
+  id: 'views_block:header_guidelines-header_guidelines'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
+    context_mapping: {  }
+  node_type:
+    id: node_type
+    bundles:
+      eat_details: eat_details
+      experience_details: experience_details
+      home: home
+      static_pages: static_pages
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

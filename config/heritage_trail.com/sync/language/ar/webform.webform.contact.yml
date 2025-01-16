@@ -1,0 +1,3 @@
+elements: "name:\n  '#placeholder': 'الاسم الكامل*'\n  '#required_error': 'يرجى تقديم اسمك الكامل.'\nphone_number:\n  '#placeholder': 'رقم الاتصال*'\n  '#required_error': 'الرجاء تقديم رقم هاتف صالح.'\nemail:\n  '#placeholder': 'البريد الإلكتروني*'\n  '#required_error': 'يرجى تقديم عنوان بريد إلكتروني صالح.'\nmessage:\n  '#placeholder': 'الرسالة*'\n  '#required_error': 'يرجى تقديم رسالة.'\nactions:\n  '#submit__label': أرسل\n  '#reset__label': احذف\n"
+settings:
+  confirmation_message: 'أُرسلت رسالتك.'

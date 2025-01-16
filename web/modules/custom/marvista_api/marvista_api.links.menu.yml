@@ -1,0 +1,6 @@
+marvista_api.active_code_config_form:
+  title: 'Active code config'
+  route_name: marvista_api.active_code_config_form
+  description: 'Config active code'
+  parent: user.admin_index
+  weight: 99

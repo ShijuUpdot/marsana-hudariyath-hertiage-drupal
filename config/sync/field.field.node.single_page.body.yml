@@ -1,0 +1,23 @@
+uuid: 4827d157-0504-486d-8469-5de0352cfac3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.single_page
+  module:
+    - text
+id: node.single_page.body
+field_name: body
+entity_type: node
+bundle: single_page
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

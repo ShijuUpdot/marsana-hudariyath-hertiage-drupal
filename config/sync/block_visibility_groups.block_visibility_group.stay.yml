@@ -1,0 +1,9 @@
+uuid: 4315cfd0-72da-4e7f-bded-8a9dd86a2a7f
+langcode: en
+status: true
+dependencies: {  }
+id: stay
+label: Stay
+logic: and
+conditions: {  }
+allow_other_conditions: false

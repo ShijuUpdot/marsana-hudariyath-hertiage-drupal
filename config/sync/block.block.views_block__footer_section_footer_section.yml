@@ -1,0 +1,53 @@
+uuid: 140621d2-611c-4d60-bac2-8d6ee257327c
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.footer_section
+  module:
+    - block_visibility_groups
+    - node
+    - views
+  theme:
+    - hudayriyat
+id: views_block__footer_section_footer_section
+theme: hudayriyat
+region: content
+weight: -2
+provider: null
+plugin: 'views_block:footer_section-footer_section'
+settings:
+  id: 'views_block:footer_section-footer_section'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
+    context_mapping: {  }
+  node_type:
+    id: node_type
+    bundles:
+      about: about
+      amenities_details: amenities_details
+      amenity_single: amenity_single
+      contact: contact
+      discover: discover
+      eat: eat
+      enjoy: enjoy
+      event_details: event_details
+      landing_details: landing_details
+      news_details: news_details
+      news_listing: news_listing
+      offers_details: offers_details
+      offers_listing: offers_listing
+      search_page: search_page
+      static_pages: static_pages
+      stay: stay
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

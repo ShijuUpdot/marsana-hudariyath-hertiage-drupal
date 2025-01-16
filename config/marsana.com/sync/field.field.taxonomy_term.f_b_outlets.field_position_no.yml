@@ -1,0 +1,23 @@
+uuid: a490291c-43cb-45f4-a542-5dce535f2a82
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_position_no
+    - taxonomy.vocabulary.f_b_outlets
+id: taxonomy_term.f_b_outlets.field_position_no
+field_name: field_position_no
+entity_type: taxonomy_term
+bundle: f_b_outlets
+label: 'Position No'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

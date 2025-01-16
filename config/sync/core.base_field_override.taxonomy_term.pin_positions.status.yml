@@ -1,0 +1,22 @@
+uuid: 6d63f519-c473-494c-8753-2d8cceebe1f7
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.pin_positions
+id: taxonomy_term.pin_positions.status
+field_name: status
+entity_type: taxonomy_term
+bundle: pin_positions
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,0 +1,31 @@
+uuid: a22d22b3-b21d-4cb3-89b8-652789d6ad6e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_amenity_gallery
+    - node.type.amenities_details
+    - paragraphs.paragraphs_type.gallery_images
+  module:
+    - entity_reference_revisions
+id: node.amenities_details.field_amenity_gallery
+field_name: field_amenity_gallery
+entity_type: node
+bundle: amenities_details
+label: 'Amenity Gallery'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      gallery_images: gallery_images
+    target_bundles_drag_drop:
+      gallery_images:
+        enabled: true
+        weight: 2
+field_type: entity_reference_revisions

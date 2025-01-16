@@ -1,0 +1,39 @@
+uuid: c0dea638-89e4-496b-8e59-8a9c77b83932
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.contact
+    - views.view.contact_intro
+  module:
+    - block_visibility_groups
+    - node
+    - views
+  theme:
+    - hudayriyat
+id: views_block__contact_intro_contact_intro
+theme: hudayriyat
+region: other
+weight: -21
+provider: null
+plugin: 'views_block:contact_intro-contact_intro'
+settings:
+  id: 'views_block:contact_intro-contact_intro'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: contact
+    context_mapping: {  }
+  node_type:
+    id: node_type
+    bundles:
+      contact: contact
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

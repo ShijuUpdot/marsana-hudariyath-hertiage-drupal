@@ -1,0 +1,40 @@
+uuid: e2a7dcfa-d90f-498b-9ce2-3edcd08ec9cc
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.amenity_details
+    - views.view.amenities_hero_image_section
+  module:
+    - block_visibility_groups
+    - node
+    - views
+  theme:
+    - hudayriyat
+id: views_block__amenities_hero_image_section_block_1
+theme: hudayriyat
+region: content
+weight: -13
+provider: null
+plugin: 'views_block:amenities_hero_image_section-block_1'
+settings:
+  id: 'views_block:amenities_hero_image_section-block_1'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+  context_mapping: {  }
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: amenity_details
+    context_mapping: {  }
+  node_type:
+    id: node_type
+    bundles:
+      amenities_details: amenities_details
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

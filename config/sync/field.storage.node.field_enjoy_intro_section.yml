@@ -1,0 +1,21 @@
+uuid: 3de06aee-dc0d-497d-ac67-3ba315899099
+langcode: en
+status: true
+dependencies:
+  module:
+    - entity_reference_revisions
+    - node
+    - paragraphs
+id: node.field_enjoy_intro_section
+field_name: field_enjoy_intro_section
+entity_type: node
+type: entity_reference_revisions
+settings:
+  target_type: paragraph
+module: entity_reference_revisions
+locked: false
+cardinality: 2
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

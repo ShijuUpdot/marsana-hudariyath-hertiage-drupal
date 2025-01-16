@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="22px" height="21px" viewBox="0 0 22 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icon/Arrow/White/Right</title>
+    <defs>
+        <filter id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1.000000 0 0 0 0 1.000000 0 0 0 0 1.000000 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+        <path d="M10.2928932,1.04044011 L9.82710678,1.50622655 C9.43746301,1.89713697 9.43717981,2.52981378 9.82647346,2.92107287 L16.56,9.66666667 L16.56,9.66666667 L1.33333333,9.66666667 C0.781048584,9.66666667 0.333333333,10.1143819 0.333333333,10.6666667 L0.333333333,11.3333333 C0.333333333,11.8856181 0.781048584,12.3333333 1.33333333,12.3333333 L16.56,12.3333333 L16.56,12.3333333 L9.82647346,19.0789271 C9.43717981,19.4701862 9.43746301,20.102863 9.82710678,20.4937734 L10.2928932,20.9595599 C10.6834175,21.3500842 11.3165825,21.3500842 11.7071068,20.9595599 L21.6666667,11 L21.6666667,11 L11.7071068,1.04044011 C11.3165825,0.649915823 10.6834175,0.649915823 10.2928932,1.04044011 Z" id="path-2"></path>
+    </defs>
+    <g id="1.-Homepage" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="1,0-LP" transform="translate(-1705.000000, -673.000000)">
+            <g id="Group" transform="translate(176.000000, 661.000000)">
+                <g id="Group-2" transform="translate(1378.000000, 0.000000)">
+                    <g id="Icon/Arrow/White/Right" transform="translate(151.000000, 11.500000)" filter="url(#filter-1)">
+                        <g id="Atoms-/-icons-/-System-/-Arrow_bottom" transform="translate(11.000000, 11.000000) rotate(-90.000000) translate(-11.000000, -11.000000) ">
+                            <mask id="mask-3" fill="white">
+                                <use xlink:href="#path-2"></use>
+                            </mask>
+                            <use id="Mask" fill="#FFFFFF" transform="translate(11.000000, 11.000000) rotate(-270.000000) translate(-11.000000, -11.000000) " xlink:href="#path-2"></use>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

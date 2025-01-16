@@ -1,0 +1,10 @@
+uuid: 273de2a6-024e-430f-9edf-e50fed38cc78
+langcode: en
+status: true
+dependencies: {  }
+id: terms_content
+label: 'Terms Content'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

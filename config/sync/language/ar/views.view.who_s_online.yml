@@ -1,0 +1,21 @@
+display:
+  default:
+    display_title: Master
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Apply
+          reset_button_label: Reset
+          exposed_sorts_label: 'ترتيب حسب'
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+      filters:
+        access:
+          expose:
+            label: 'آخر وصول'
+            description: 'تحسب فترة وجود المستخدم عالخط منذ آخر عرض لصفحة.'
+      title: 'المتصلون الأن'
+  who_s_online_block:
+    display_title: 'المتصلون الأن'
+    display_options:
+      block_description: 'المتصلون الأن'

@@ -1,0 +1,19 @@
+uuid: 3c659632-32f0-4552-84e4-ad81b6680d7b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_section_small_title
+    - paragraphs.paragraphs_type.multi_opening_hours
+id: paragraph.multi_opening_hours.field_section_small_title
+field_name: field_section_small_title
+entity_type: paragraph
+bundle: multi_opening_hours
+label: 'Section Small Title'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

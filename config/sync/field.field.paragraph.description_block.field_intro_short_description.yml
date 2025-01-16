@@ -1,0 +1,21 @@
+uuid: a8d12099-ebae-4dea-bbd1-eeb4f861adce
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_intro_short_description
+    - paragraphs.paragraphs_type.description_block
+  module:
+    - text
+id: paragraph.description_block.field_intro_short_description
+field_name: field_intro_short_description
+entity_type: paragraph
+bundle: description_block
+label: 'Intro Short Description'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,13 @@
+uuid: bacc7f94-37ef-4494-b22b-c62f77a9f45c
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: jonvgt3CkUM2eMLTFwWfHileWWDC4YtXCuIlCahTk_I
+id: personal
+label: 'Personal contact form'
+recipients: {  }
+reply: ''
+weight: 0
+message: Thanks
+redirect: ''

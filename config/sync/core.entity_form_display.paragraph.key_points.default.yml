@@ -1,0 +1,38 @@
+uuid: 52e48e40-fc68-442a-b815-9b4ff8581ea3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.key_points.field_key_points
+    - field.field.paragraph.key_points.field_title
+    - paragraphs.paragraphs_type.key_points
+  module:
+    - paragraphs
+id: paragraph.key_points.default
+targetEntityType: paragraph
+bundle: key_points
+mode: default
+content:
+  field_key_points:
+    type: entity_reference_paragraphs
+    weight: 1
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true

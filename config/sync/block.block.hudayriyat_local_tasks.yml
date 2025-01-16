@@ -1,0 +1,22 @@
+uuid: cbb8aaa3-b440-4234-bcb9-dda73427ba22
+langcode: en
+status: true
+dependencies:
+  theme:
+    - hudayriyat
+_core:
+  default_config_hash: X9I1OB0W3WlWtrK-CNcg6hNWwa8wficanpH8pYnDZDE
+id: hudayriyat_local_tasks
+theme: hudayriyat
+region: other
+weight: -6
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

@@ -1,0 +1,19 @@
+uuid: 7b93eec5-f530-49cd-9909-58fb08be442f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_search_keywords
+    - node.type.landing_details
+id: node.landing_details.field_search_keywords
+field_name: field_search_keywords
+entity_type: node
+bundle: landing_details
+label: 'Search Keywords'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

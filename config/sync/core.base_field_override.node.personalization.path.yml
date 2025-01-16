@@ -1,0 +1,20 @@
+uuid: 22de25fe-2464-4f06-9267-e19e4d3e42d4
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.personalization
+  module:
+    - path
+id: node.personalization.path
+field_name: path
+entity_type: node
+bundle: personalization
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

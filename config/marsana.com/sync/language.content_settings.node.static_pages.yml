@@ -1,0 +1,18 @@
+uuid: fbd60226-1e4d-41ba-aa50-03bbdb52b3d7
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.static_pages
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: node.static_pages
+target_entity_type_id: node
+target_bundle: static_pages
+default_langcode: site_default
+language_alterable: true

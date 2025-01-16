@@ -1,0 +1,47 @@
+uuid: 2d518bf8-439e-4149-81a2-6efc49aabd9c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.amenities_tags.field_icon
+    - field.field.taxonomy_term.amenities_tags.field_name_translation
+    - taxonomy.vocabulary.amenities_tags
+  module:
+    - svg_image
+    - text
+id: taxonomy_term.amenities_tags.default
+targetEntityType: taxonomy_term
+bundle: amenities_tags
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_icon:
+    weight: 2
+    label: above
+    settings:
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_name_translation:
+    weight: 1
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

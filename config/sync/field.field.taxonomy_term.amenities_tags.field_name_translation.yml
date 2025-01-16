@@ -1,0 +1,19 @@
+uuid: 23bb17c0-c68a-42a3-a047-b154e2933553
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_name_translation
+    - taxonomy.vocabulary.amenities_tags
+id: taxonomy_term.amenities_tags.field_name_translation
+field_name: field_name_translation
+entity_type: taxonomy_term
+bundle: amenities_tags
+label: 'Name Translation'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

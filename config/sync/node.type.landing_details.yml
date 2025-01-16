@@ -1,0 +1,21 @@
+uuid: 9adbd4df-1db5-47bc-910d-730c8f86258f
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - node_type_class
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+  node_type_class:
+    classes: ''
+name: Play
+type: landing_details
+description: 'Content type of Experience Landing page lPlay'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

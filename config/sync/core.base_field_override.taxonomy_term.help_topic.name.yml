@@ -1,0 +1,18 @@
+uuid: c25ca23c-fc92-4048-aed4-e056cf528a4f
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.help_topic
+id: taxonomy_term.help_topic.name
+field_name: name
+entity_type: taxonomy_term
+bundle: help_topic
+label: Name
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

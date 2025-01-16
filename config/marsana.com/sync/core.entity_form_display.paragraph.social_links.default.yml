@@ -1,0 +1,40 @@
+uuid: 738ef34a-ed44-4f5f-95f2-1d97285e959a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.social_links.field_social_link
+    - field.field.paragraph.social_links.field_social_link_icon
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.social_links
+  module:
+    - svg_image
+id: paragraph.social_links.default
+targetEntityType: paragraph
+bundle: social_links
+mode: default
+content:
+  field_social_link:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_social_link_icon:
+    weight: 0
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  translation:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  status: true

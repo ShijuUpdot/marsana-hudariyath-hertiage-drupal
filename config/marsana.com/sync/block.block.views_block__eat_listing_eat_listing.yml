@@ -1,0 +1,36 @@
+uuid: aa603ec8-be62-467c-9a0a-c935382eb563
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.eat_listing
+  module:
+    - block_visibility_groups
+    - system
+    - views
+  theme:
+    - marsana
+id: views_block__eat_listing_eat_listing
+theme: marsana
+region: content
+weight: -13
+provider: null
+plugin: 'views_block:eat_listing-eat_listing'
+settings:
+  id: 'views_block:eat_listing-eat_listing'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
+    context_mapping: {  }
+  request_path:
+    id: request_path
+    pages: /eat
+    negate: false
+    context_mapping: {  }

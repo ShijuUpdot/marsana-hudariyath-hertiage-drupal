@@ -1,0 +1,43 @@
+uuid: 59e2d830-f4d0-4659-97f5-db3df24bd8b7
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.single_page.body
+    - field.field.node.single_page.field_content_for
+    - field.field.node.single_page.field_headline
+    - field.field.node.single_page.field_hero_image
+    - field.field.node.single_page.field_hero_image_title
+    - field.field.node.single_page.field_intro_title
+    - field.field.node.single_page.field_social_link
+    - node.type.single_page
+  module:
+    - text
+    - user
+id: node.single_page.teaser
+targetEntityType: node
+bundle: single_page
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_content_for: true
+  field_headline: true
+  field_hero_image: true
+  field_hero_image_title: true
+  field_intro_title: true
+  field_social_link: true
+  langcode: true

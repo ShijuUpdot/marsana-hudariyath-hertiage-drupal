@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Atoms / icons / System / Cancel</title>
+    <defs>
+        <path d="M22.9595599,1.97622655 L22.0237734,1.04044011 C21.6332492,0.649915823 21.0000842,0.649915823 20.6095599,1.04044011 L12,9.65 L12,9.65 L3.39044011,1.04044011 C2.99991582,0.649915823 2.36675084,0.649915823 1.97622655,1.04044011 L1.04044011,1.97622655 C0.649915823,2.36675084 0.649915823,2.99991582 1.04044011,3.39044011 L9.65,12 L9.65,12 L1.04044011,20.6095599 C0.649915823,21.0000842 0.649915823,21.6332492 1.04044011,22.0237734 L1.97622655,22.9595599 C2.36675084,23.3500842 2.99991582,23.3500842 3.39044011,22.9595599 L12,14.35 L12,14.35 L20.6095599,22.9595599 C21.0000842,23.3500842 21.6332492,23.3500842 22.0237734,22.9595599 L22.9595599,22.0237734 C23.3500842,21.6332492 23.3500842,21.0000842 22.9595599,20.6095599 L14.35,12 L14.35,12 L22.9595599,3.39044011 C23.3500842,2.99991582 23.3500842,2.36675084 22.9595599,1.97622655 Z" id="path-1"></path>
+    </defs>
+    <g id="1.-Homepage" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="1,2-HP/MusicPopover" transform="translate(-1344.000000, -531.000000)">
+            <g id="Sport/Pop-over" transform="translate(112.000000, 459.000000)">
+                <g id="Atoms-/-icons-/-System-/-Cancel" transform="translate(1232.000000, 72.000000)">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <use id="Mask" fill="#FFFFFF" xlink:href="#path-1"></use>
+                    <g id="Group" mask="url(#mask-2)">
+                        <g transform="translate(-8.000000, -8.000000)" id="↪🎨">
+                            <rect id="Atoms-/-Colors-/-Black" fill="#FFFFFF" x="0" y="0" width="40" height="40"></rect>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

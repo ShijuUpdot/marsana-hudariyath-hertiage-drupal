@@ -1,0 +1,20 @@
+uuid: 4a6caffa-0e68-455d-bd21-267ca4d2e366
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.enjoy
+  module:
+    - path
+id: node.enjoy.path
+field_name: path
+entity_type: node
+bundle: enjoy
+label: 'URL alias'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

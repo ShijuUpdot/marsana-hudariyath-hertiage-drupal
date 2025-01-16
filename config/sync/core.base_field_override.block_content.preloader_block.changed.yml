@@ -1,0 +1,18 @@
+uuid: d91fd950-ae50-49b7-8559-4cd9f9b5f5ae
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.preloader_block
+id: block_content.preloader_block.changed
+field_name: changed
+entity_type: block_content
+bundle: preloader_block
+label: Changed
+description: 'The time that the custom block was last edited.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

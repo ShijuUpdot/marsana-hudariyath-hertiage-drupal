@@ -1,0 +1,29 @@
+uuid: f8a36a37-7120-40d6-94a5-fc775807a392
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_landmark_position
+    - taxonomy.vocabulary.landmarks
+    - taxonomy.vocabulary.pin_positions
+id: taxonomy_term.landmarks.field_landmark_position
+field_name: field_landmark_position
+entity_type: taxonomy_term
+bundle: landmarks
+label: 'Landmark Position'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      pin_positions: pin_positions
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

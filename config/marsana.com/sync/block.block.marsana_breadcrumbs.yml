@@ -1,0 +1,22 @@
+uuid: 32abc530-3adf-412c-b5d2-6a43d57fa5b4
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - marsana
+_core:
+  default_config_hash: oXUb3JZR2WW5VOdw4HrhRicCsq51mCgLfRyvheG68ck
+id: marsana_breadcrumbs
+theme: marsana
+region: other
+weight: -11
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  provider: system
+  label_display: '0'
+visibility: {  }

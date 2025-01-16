@@ -1,0 +1,18 @@
+uuid: df486931-c490-47b6-8134-4fb6bea97d1f
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.social_feeds
+id: node.social_feeds.created
+field_name: created
+entity_type: node
+bundle: social_feeds
+label: 'Authored on'
+description: 'The time that the node was created.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

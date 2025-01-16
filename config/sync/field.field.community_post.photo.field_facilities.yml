@@ -1,0 +1,29 @@
+uuid: 69f6a748-16bb-4f65-b712-d171f7f4cef3
+langcode: en
+status: true
+dependencies:
+  config:
+    - community_post.community_post_type.photo
+    - field.storage.community_post.field_facilities
+    - taxonomy.vocabulary.facilities
+id: community_post.photo.field_facilities
+field_name: field_facilities
+entity_type: community_post
+bundle: photo
+label: Facilities
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      facilities: facilities
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: experience
+field_type: entity_reference

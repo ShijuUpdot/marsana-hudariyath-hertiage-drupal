@@ -1,0 +1,18 @@
+uuid: 393a2a9a-6429-4ed5-bbf2-f3ac92f30d19
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: 'Experience Details'
+type: experience_details
+description: 'Experience Details for Play, Shop, Relax,  Dock'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

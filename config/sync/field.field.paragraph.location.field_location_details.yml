@@ -1,0 +1,43 @@
+uuid: a0e4e7c0-eb59-493d-a621-532b08a797f2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_location_details
+    - paragraphs.paragraphs_type.location
+    - paragraphs.paragraphs_type.location_details
+  module:
+    - entity_reference_revisions
+id: paragraph.location.field_location_details
+field_name: field_location_details
+entity_type: paragraph
+bundle: location
+label: 'Location Details'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      location_details: location_details
+    target_bundles_drag_drop:
+      amenities_guidelines:
+        weight: 6
+        enabled: false
+      gallery_images:
+        weight: 7
+        enabled: false
+      guidelines:
+        weight: 8
+        enabled: false
+      location:
+        weight: 9
+        enabled: false
+      location_details:
+        enabled: true
+        weight: 10
+field_type: entity_reference_revisions

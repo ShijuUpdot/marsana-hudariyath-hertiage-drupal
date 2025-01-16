@@ -1,0 +1,36 @@
+uuid: 60ebd2a2-4dc0-42eb-b9b0-f5aa95f11691
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.dock_first_fold
+  module:
+    - block_visibility_groups
+    - system
+    - views
+  theme:
+    - marsana
+id: views_block__dock_first_fold_dock_first_fold
+theme: marsana
+region: content
+weight: -8
+provider: null
+plugin: 'views_block:dock_first_fold-dock_first_fold'
+settings:
+  id: 'views_block:dock_first_fold-dock_first_fold'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
+    context_mapping: {  }
+  request_path:
+    id: request_path
+    pages: /dock
+    negate: false
+    context_mapping: {  }

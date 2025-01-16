@@ -1,0 +1,71 @@
+# Schema file for the configuration files of the tweets module.
+marsana_custom_configs.settings:
+  type: config_object
+  label: 'Custom Configuration Settings'
+  mapping:
+    subject_en:
+      type: varchar
+      label: 'Mail Subject EN'
+    subject_ar:
+      type: varchar
+      label: 'Mail Subject AR'
+    contact_name_en:
+      type: varchar
+      label: 'Contact us Name validation EN'
+    contact_name_ar:
+      type: varchar
+      label: 'Contact us Name validation AR'
+    contact_email_en:
+      type: varchar
+      label: 'Contact us email validation EN'
+    contact_email_ar:
+      type: varchar
+      label: 'Contact us email validation AR'
+    contact_contactNo_en:
+      type: varchar
+      label: 'Contact us contactNo validation EN'
+    contact_contactNo_ar:
+      type: varchar
+      label: 'Contact us contactNo validation AR'
+    contact_message_en:
+      type: varchar
+      label: 'Contact us message validation EN'
+    contact_message_ar:
+      type: varchar
+      label: 'Contact us message validation AR'
+    contact_invalidemail_en:
+      type: varchar
+      label: 'Contact us Invalid email validation EN'
+    contact_invalidemail_ar:
+      type: varchar
+      label: 'Contact us Invalid email validation AR'
+    from_mail:
+      type: varchar
+      label: 'From Mail'
+    contact_success_en:
+      type: varchar
+      label: 'Contact us Success Message validation EN'
+    contact_success_ar:
+      type: varchar
+      label: 'Contact us Success Message validation AR'
+    email_username:
+      type: varchar
+      label: 'Mail configuration username'
+    email_password:
+      type: varchar
+      label: 'Mail configuration password'
+    email_host:
+      type: varchar
+      label: 'Mail configuration Host'
+    email_SMTPSecure:
+      type: varchar
+      label: 'Mail configuration SMTPSecure'
+    email_port:
+      type: varchar
+      label: 'Mail configuration SMTPSecure'
+    upload_menu_title_en:
+      type: varchar
+      label: 'upload_menu_title EN'
+    upload_menu_title_ar:
+      type: varchar
+      label: 'upload_menu_title AR'

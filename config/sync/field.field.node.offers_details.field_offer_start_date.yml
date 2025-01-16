@@ -1,0 +1,21 @@
+uuid: d22aafc8-7ee4-48ec-8b01-211984c4aa4b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_offer_start_date
+    - node.type.offers_details
+  module:
+    - datetime
+id: node.offers_details.field_offer_start_date
+field_name: field_offer_start_date
+entity_type: node
+bundle: offers_details
+label: 'Offer Start Date'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

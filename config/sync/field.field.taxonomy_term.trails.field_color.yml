@@ -1,0 +1,29 @@
+uuid: 95ba207d-2688-48cd-a3ad-01c135332cd4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_color
+    - taxonomy.vocabulary.trails
+    - taxonomy.vocabulary.trails_color
+id: taxonomy_term.trails.field_color
+field_name: field_color
+entity_type: taxonomy_term
+bundle: trails
+label: Color
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      trails_color: trails_color
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

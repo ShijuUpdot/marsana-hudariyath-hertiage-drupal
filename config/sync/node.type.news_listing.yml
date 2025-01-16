@@ -1,0 +1,21 @@
+uuid: ba1aa7fd-5690-49ed-8808-34890fe1b0d2
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - node_type_class
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+  node_type_class:
+    classes: ''
+name: 'News Listing'
+type: news_listing
+description: 'News Listing Details'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

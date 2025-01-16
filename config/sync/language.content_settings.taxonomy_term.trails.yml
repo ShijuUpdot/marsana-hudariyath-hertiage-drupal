@@ -1,0 +1,18 @@
+uuid: 6b74df2e-af09-47ba-b72c-81c0ad30b006
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.trails
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: taxonomy_term.trails
+target_entity_type_id: taxonomy_term
+target_bundle: trails
+default_langcode: site_default
+language_alterable: true

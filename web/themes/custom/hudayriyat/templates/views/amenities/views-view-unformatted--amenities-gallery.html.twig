@@ -1,0 +1,63 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a view of unformatted rows.
+ *
+ * Available variables:
+ * - title: The title of this group of rows. May be empty.
+ * - rows: A list of the view's row items.
+ *   - attributes: The row's HTML attributes.
+ *   - content: The row's content.
+ * - view: The view object.
+ * - default_row_class: A flag indicating whether default classes should be
+ *   used on rows.
+ *
+ * @see template_preprocess_views_view_unformatted()
+ *
+ * @ingroup themeable
+ */
+#}
+
+{% for row in rows %}
+    {% if row.content|render|striptags|trim|length %}
+    {% set gallery = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_amenity_images }}']|striptags|trim|split(',') %}
+    {% set galleryThumb = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_amenity_images }}']|striptags|trim|split(',') %}
+    {% set images_title = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_amenity_images_title }}'] | striptags | trim %}
+    {% set title = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_hero_image_title }}'] | striptags | trim %}
+
+    {% if images_title is not empty %}
+        <div class="row">
+          <div class="col">
+            <p class="detailed-txt opacity-text bold">{{ images_title }}</p>
+          </div>
+        </div>
+    {% endif %}
+    {% if gallery[0] %}
+      <div class="swiper-gallery">
+          <div class="swiper-container gallery-top">
+            <div class="swiper-wrapper">
+            {% for gkey, item in gallery %}
+              <div class="swiper-slide">
+                <div class="slide-img-wrapper">
+                  <img src="{{ gallery[gkey] }}" alt="{{ title }}">
+                </div>
+              </div>
+            {% endfor %}
+            </div>
+          </div>
+
+          <div class="swiper-container gallery-thumbs">
+            <div class="swiper-wrapper">
+            {% for jkey, item in galleryThumb %}
+              <div class="swiper-slide">
+                <div class="slide-img-wrapper">
+                  <img src="{{ galleryThumb[jkey] }}" alt="{{ title }}">
+                </div>
+              </div>
+            {% endfor %}
+            </div>
+          </div>
+    </div>
+    {% endif %}
+    {% endif %}
+{% endfor %}

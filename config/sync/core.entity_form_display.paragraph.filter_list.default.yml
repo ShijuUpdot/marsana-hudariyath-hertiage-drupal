@@ -1,0 +1,76 @@
+uuid: edb0c3c5-198e-4c29-a8b4-1d4cbaebe510
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.filter_list.field_data
+    - field.field.paragraph.filter_list.field_icon
+    - field.field.paragraph.filter_list.field_key
+    - field.field.paragraph.filter_list.field_name
+    - field.field.paragraph.filter_list.field_type
+    - field.field.paragraph.filter_list.field_unit
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.filter_list
+  module:
+    - paragraphs
+    - svg_image
+id: paragraph.filter_list.default
+targetEntityType: paragraph
+bundle: filter_list
+mode: default
+content:
+  field_data:
+    type: entity_reference_paragraphs
+    weight: 0
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_icon:
+    weight: 1
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_key:
+    weight: 5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_name:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_type:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_unit:
+    weight: 4
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true

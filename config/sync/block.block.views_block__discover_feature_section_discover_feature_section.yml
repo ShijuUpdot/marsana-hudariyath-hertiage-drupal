@@ -1,0 +1,37 @@
+uuid: bcebf2b7-de08-4bfb-83f1-39640f231eda
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.discover
+    - views.view.discover_feature_section
+  module:
+    - block_visibility_groups
+    - system
+    - views
+  theme:
+    - hudayriyat
+id: views_block__discover_feature_section_discover_feature_section
+theme: hudayriyat
+region: content
+weight: -9
+provider: null
+plugin: 'views_block:discover_feature_section-discover_feature_section'
+settings:
+  id: 'views_block:discover_feature_section-discover_feature_section'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: discover
+    context_mapping: {  }
+  request_path:
+    id: request_path
+    pages: /discover
+    negate: false
+    context_mapping: {  }

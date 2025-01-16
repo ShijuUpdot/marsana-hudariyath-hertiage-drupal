@@ -1,0 +1,8 @@
+uuid: 47da1a39-ef1b-45dd-8714-10724e195da8
+langcode: en
+status: true
+dependencies: {  }
+id: hudayriyatisland
+label: Hudayriyatisland
+threshold: 0.1
+challenge: default

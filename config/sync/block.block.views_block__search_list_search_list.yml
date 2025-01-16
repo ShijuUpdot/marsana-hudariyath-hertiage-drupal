@@ -1,0 +1,39 @@
+uuid: 86c82d16-34b8-4f2c-bade-3fe40338b5d0
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.search
+    - views.view.search_list
+  module:
+    - block_visibility_groups
+    - node
+    - views
+  theme:
+    - hudayriyat
+id: views_block__search_list_search_list
+theme: hudayriyat
+region: content
+weight: -8
+provider: null
+plugin: 'views_block:search_list-search_list'
+settings:
+  id: 'views_block:search_list-search_list'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: search
+    context_mapping: {  }
+  node_type:
+    id: node_type
+    bundles:
+      search_page: search_page
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

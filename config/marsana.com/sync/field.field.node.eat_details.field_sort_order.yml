@@ -1,0 +1,23 @@
+uuid: 77f4ac91-bbd8-4092-b05b-745429af9468
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sort_order
+    - node.type.eat_details
+  module:
+    - options
+id: node.eat_details.field_sort_order
+field_name: field_sort_order
+entity_type: node
+bundle: eat_details
+label: 'Sort Order'
+description: ''
+required: true
+translatable: true
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings: {  }
+field_type: list_integer

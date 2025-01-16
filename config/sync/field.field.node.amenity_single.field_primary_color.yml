@@ -1,0 +1,21 @@
+uuid: 2873bc48-2a0c-4303-91db-221a94d5685d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_primary_color
+    - node.type.amenity_single
+  module:
+    - options
+id: node.amenity_single.field_primary_color
+field_name: field_primary_color
+entity_type: node
+bundle: amenity_single
+label: 'Primary color'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

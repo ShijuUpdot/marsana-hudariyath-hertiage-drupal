@@ -1,0 +1,10 @@
+uuid: 6b23c175-558b-4adc-99a8-63b73bd294b5
+langcode: en
+status: true
+dependencies: {  }
+id: stay_featured_block
+label: 'Stay Featured Block'
+icon_uuid: null
+icon_default: null
+description: 'Stay Featured Block'
+behavior_plugins: {  }

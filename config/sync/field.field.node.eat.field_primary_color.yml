@@ -1,0 +1,21 @@
+uuid: 5cdf2b5e-3db2-4784-a478-13733a1e2466
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_primary_color
+    - node.type.eat
+  module:
+    - options
+id: node.eat.field_primary_color
+field_name: field_primary_color
+entity_type: node
+bundle: eat
+label: 'Primary color'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,8 @@
+uuid: 4c3fccc0-0651-479d-b21e-99fb0b2f3651
+langcode: en
+status: true
+dependencies: {  }
+name: 'Trails Color'
+vid: trails_color
+description: 'Trails Color'
+weight: 0

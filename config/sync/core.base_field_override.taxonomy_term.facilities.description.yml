@@ -1,0 +1,20 @@
+uuid: ccb7d0e7-9977-4dea-ad59-8e79e7b47302
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.facilities
+  module:
+    - text
+id: taxonomy_term.facilities.description
+field_name: description
+entity_type: taxonomy_term
+bundle: facilities
+label: Description
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

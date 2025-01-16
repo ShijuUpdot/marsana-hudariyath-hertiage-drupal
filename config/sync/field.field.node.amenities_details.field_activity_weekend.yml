@@ -1,0 +1,29 @@
+uuid: cf56a7df-a345-4dc9-a311-6809cea313c3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_activity_weekend
+    - node.type.amenities_details
+    - taxonomy.vocabulary.activity_weekend
+id: node.amenities_details.field_activity_weekend
+field_name: field_activity_weekend
+entity_type: node
+bundle: amenities_details
+label: 'Activity Weekend'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      activity_weekend: activity_weekend
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

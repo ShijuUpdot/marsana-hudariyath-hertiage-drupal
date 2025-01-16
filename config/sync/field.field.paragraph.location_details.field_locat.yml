@@ -1,0 +1,21 @@
+uuid: e591a439-9fbf-4057-9d75-9d57c5b00df8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_locat
+    - paragraphs.paragraphs_type.location_details
+  module:
+    - text
+id: paragraph.location_details.field_locat
+field_name: field_locat
+entity_type: paragraph
+bundle: location_details
+label: 'Location Address'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

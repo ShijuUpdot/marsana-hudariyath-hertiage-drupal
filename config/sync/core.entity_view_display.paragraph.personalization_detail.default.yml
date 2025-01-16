@@ -1,0 +1,32 @@
+uuid: 23528d86-c07a-4a35-a084-2263896f5eac
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.personalization_detail.field_intro_description
+    - field.field.paragraph.personalization_detail.field_title
+    - paragraphs.paragraphs_type.personalization_detail
+  module:
+    - text
+id: paragraph.personalization_detail.default
+targetEntityType: paragraph
+bundle: personalization_detail
+mode: default
+content:
+  field_intro_description:
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_title:
+    weight: 0
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  search_api_excerpt: true

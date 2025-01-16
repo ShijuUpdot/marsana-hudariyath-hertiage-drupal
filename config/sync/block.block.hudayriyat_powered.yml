@@ -1,0 +1,22 @@
+uuid: 1bc3ea31-c545-4ca9-ada8-33ba2791c73e
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - hudayriyat
+_core:
+  default_config_hash: jQQUUWN2Uxr5qZtc9zcJKBCxpKY8orN1u2HPqYYRQDI
+id: hudayriyat_powered
+theme: hudayriyat
+region: other
+weight: -8
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  provider: system
+  label_display: '0'
+visibility: {  }

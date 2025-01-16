@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="10px" viewBox="0 0 16 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Mask</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="2,0-InteractiveMap" transform="translate(-1486.000000, -1020.000000)" fill="#FFFFFF">
+            <g id="Search" transform="translate(0.000000, 970.000000)">
+                <g id="Dropdown/Square" transform="translate(1272.000000, 0.000000)">
+                    <path d="M218.195727,47.7071068 L217.706336,48.1964979 C217.316113,48.5867211 217.315768,49.2192914 217.705565,49.6099399 L223.180837,55.097166 L223.180837,55.097166 L217.705565,60.584392 C217.315768,60.9750405 217.316113,61.6076109 217.706336,61.9978341 L218.195727,62.4872252 C218.586252,62.8777495 219.219416,62.8777495 219.609941,62.4872252 L227,55.097166 L227,55.097166 L219.609941,47.7071068 C219.219416,47.3165825 218.586252,47.3165825 218.195727,47.7071068 Z" id="Mask" transform="translate(222.000000, 55.097166) scale(1, -1) rotate(90.000000) translate(-222.000000, -55.097166) "></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

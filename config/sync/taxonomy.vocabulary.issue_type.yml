@@ -1,0 +1,8 @@
+uuid: 3ab6dba9-efcb-4dfd-9cf7-54f86532967e
+langcode: en
+status: true
+dependencies: {  }
+name: 'Issue type'
+vid: issue_type
+description: ''
+weight: 0

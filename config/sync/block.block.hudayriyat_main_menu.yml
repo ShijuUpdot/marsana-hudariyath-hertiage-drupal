@@ -1,0 +1,63 @@
+uuid: c7590ee5-be94-489f-a2d6-d79ba4eaa276
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - block_visibility_groups
+    - node
+    - system
+  theme:
+    - hudayriyat
+_core:
+  default_config_hash: ChCx7DYNUrPTt5uiRdQAPDKJQMc-_SyAQTrZh8H0o-c
+id: hudayriyat_main_menu
+theme: hudayriyat
+region: content
+weight: -15
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main navigation'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 1
+  expand_all_items: false
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
+    context_mapping: {  }
+  node_type:
+    id: node_type
+    bundles:
+      about: about
+      amenities_details: amenities_details
+      amenity_single: amenity_single
+      contact: contact
+      discover: discover
+      eat: eat
+      enjoy: enjoy
+      event_details: event_details
+      interactive_map: interactive_map
+      landing_details: landing_details
+      news_details: news_details
+      news_listing: news_listing
+      offers_details: offers_details
+      offers_listing: offers_listing
+      search_page: search_page
+      single_page: single_page
+      static_pages: static_pages
+      stay: stay
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+  request_path:
+    id: request_path
+    pages: '*'
+    negate: false
+    context_mapping: {  }

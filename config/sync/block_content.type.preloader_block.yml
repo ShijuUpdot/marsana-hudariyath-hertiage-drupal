@@ -1,0 +1,8 @@
+uuid: b894472f-482c-4641-888d-ea6b067dc09a
+langcode: en
+status: true
+dependencies: {  }
+id: preloader_block
+label: 'Preloader Block'
+revision: 0
+description: 'Preload block which shows onload'

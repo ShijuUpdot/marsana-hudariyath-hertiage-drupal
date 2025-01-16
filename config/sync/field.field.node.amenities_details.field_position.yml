@@ -1,0 +1,29 @@
+uuid: 135ba3a7-9798-4600-926d-c759d5d04909
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_position
+    - node.type.amenities_details
+    - taxonomy.vocabulary.pin_positions
+id: node.amenities_details.field_position
+field_name: field_position
+entity_type: node
+bundle: amenities_details
+label: Position
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      pin_positions: pin_positions
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

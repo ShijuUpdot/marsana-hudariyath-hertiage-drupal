@@ -1,0 +1,23 @@
+# Schema file for the configuration files of the tweets module.
+social_feeds.settings:
+  type: config_object
+  label: 'Social Feeds Settings'
+  mapping:    
+    instagram_client_id:
+      type: string
+      label: 'Instagram Client Id'
+    instagram_client_secret:
+      type: string
+      label: 'Instagram Client Secret'
+    instagram_access_token:
+      type: string
+      label: 'Instagram Access Token'
+    instagram_hashtag:
+      type: string
+      label: 'Instagram Hashtag'
+    instagram_limit:
+      type: integer
+      label: 'Instagram Media Count'
+    content_modaration_enable_status:
+      type: string
+      label: 'Enable Content Moderation Status'

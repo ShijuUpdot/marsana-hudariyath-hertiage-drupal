@@ -1,0 +1,5 @@
+name: 'Schedule Item'
+type: module
+description: 'Schedule item module'
+core_version_requirement: ^8.0 || ^9.0
+package: 'Custom'

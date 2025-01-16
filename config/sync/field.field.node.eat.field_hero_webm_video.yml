@@ -1,0 +1,27 @@
+uuid: e0671bc0-adce-46f8-b71d-af406dc4a472
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hero_webm_video
+    - node.type.eat
+  module:
+    - file
+id: node.eat.field_hero_webm_video
+field_name: field_hero_webm_video
+entity_type: node
+bundle: eat
+label: 'Hero Webm Video'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: webm
+  max_filesize: ''
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

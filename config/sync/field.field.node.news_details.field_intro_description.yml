@@ -1,0 +1,21 @@
+uuid: 691b17c5-d7e0-42fc-a8ab-2c585d3a8e32
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_intro_description
+    - node.type.news_details
+  module:
+    - text
+id: node.news_details.field_intro_description
+field_name: field_intro_description
+entity_type: node
+bundle: news_details
+label: 'Intro Description'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

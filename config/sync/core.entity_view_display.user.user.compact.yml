@@ -1,0 +1,57 @@
+uuid: b7797098-27eb-4edf-a79a-08f314408a60
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.user.compact
+    - field.field.user.user.field_action
+    - field.field.user.user.field_day_of_birth
+    - field.field.user.user.field_deactive_reason
+    - field.field.user.user.field_dial_code
+    - field.field.user.user.field_first_name
+    - field.field.user.user.field_full_name
+    - field.field.user.user.field_has_fill_personalization
+    - field.field.user.user.field_last_name
+    - field.field.user.user.field_marital_status
+    - field.field.user.user.field_notification_setting
+    - field.field.user.user.field_phone_number
+    - field.field.user.user.field_social_id
+    - field.field.user.user.field_type_registration
+    - field.field.user.user.user_picture
+    - image.style.thumbnail
+  module:
+    - svg_image
+    - user
+_core:
+  default_config_hash: '-cLsS3M3JycipXQt9rEb81_HxKneReoGuRh8ijcOPXs'
+id: user.user.compact
+targetEntityType: user
+bundle: user
+mode: compact
+content:
+  user_picture:
+    type: image
+    weight: 0
+    region: content
+    settings:
+      image_style: thumbnail
+      image_link: content
+    third_party_settings: {  }
+    label: hidden
+hidden:
+  field_action: true
+  field_day_of_birth: true
+  field_deactive_reason: true
+  field_dial_code: true
+  field_first_name: true
+  field_full_name: true
+  field_has_fill_personalization: true
+  field_last_name: true
+  field_marital_status: true
+  field_notification_setting: true
+  field_phone_number: true
+  field_social_id: true
+  field_type_registration: true
+  langcode: true
+  member_for: true
+  search_api_excerpt: true

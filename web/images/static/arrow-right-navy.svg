@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="44px" height="44px" viewBox="0 0 44 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group 8</title>
+    <defs>
+        <path d="M8.29289322,0.979834054 L8.16892496,1.10380231 C7.77928119,1.49471273 7.77899799,2.12738953 8.16829164,2.51864863 L13.5490909,7.90909091 L13.5490909,7.90909091 L1.27272727,7.90909091 C0.720442523,7.90909091 0.272727273,8.35680616 0.272727273,8.90909091 L0.272727273,9.09090909 C0.272727273,9.64319384 0.720442523,10.0909091 1.27272727,10.0909091 L13.5490909,10.0909091 L13.5490909,10.0909091 L8.16829164,15.4813514 C7.77899799,15.8726105 7.77928119,16.5052873 8.16892496,16.8961977 L8.29289322,17.0201659 C8.68341751,17.4106902 9.31658249,17.4106902 9.70710678,17.0201659 L17.7272727,9 L17.7272727,9 L9.70710678,0.979834054 C9.31658249,0.589309762 8.68341751,0.589309762 8.29289322,0.979834054 Z" id="path-1"></path>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icon/Arrow/Circle/White-Copy" transform="translate(1.000000, 1.000000)">
+            <g id="Group-8">
+                <g id="Icon/Arrow/White" transform="translate(22.000000, 22.000000) rotate(-90.000000) translate(-22.000000, -22.000000) translate(13.000000, 13.000000)">
+                    <g id="Atoms-/-icons-/-System-/-Arrow_bottom">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <use id="Mask" fill="#212237" transform="translate(9.000000, 9.000000) rotate(-270.000000) translate(-9.000000, -9.000000) " xlink:href="#path-1"></use>
+                    </g>
+                </g>
+                <circle id="Oval" stroke="#212237" stroke-width="2" cx="21" cy="21" r="21"></circle>
+            </g>
+        </g>
+    </g>
+</svg>

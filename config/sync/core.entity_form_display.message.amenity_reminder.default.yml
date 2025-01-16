@@ -1,0 +1,49 @@
+uuid: 51d023b5-6e69-47bb-aaba-2760949bd96c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.message.amenity_reminder.field_action
+    - field.field.message.amenity_reminder.field_node
+    - message.template.amenity_reminder
+id: message.amenity_reminder.default
+targetEntityType: message
+bundle: amenity_reminder
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_action:
+    weight: 13
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_node:
+    weight: 12
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  uid:
+    type: entity_reference_autocomplete
+    weight: 5
+    '#group': advanced
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      match_limit: 10
+    region: content
+    third_party_settings: {  }
+hidden: {  }

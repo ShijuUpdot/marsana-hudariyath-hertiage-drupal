@@ -1,0 +1,19 @@
+uuid: 4a7e6299-f95d-43f0-8c0a-404801390431
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_headline
+    - node.type.offers_details
+id: node.offers_details.field_headline
+field_name: field_headline
+entity_type: node
+bundle: offers_details
+label: 'Offers Listing Headline'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

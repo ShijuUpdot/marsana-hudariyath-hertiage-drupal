@@ -1,0 +1,38 @@
+uuid: d56d0f24-96ec-4eb4-9207-980d52452f71
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.amenities_guidelines.field_amenities_guidelines
+    - field.field.paragraph.amenities_guidelines.field_guidelines_title
+    - paragraphs.paragraphs_type.amenities_guidelines
+  module:
+    - paragraphs
+id: paragraph.amenities_guidelines.default
+targetEntityType: paragraph
+bundle: amenities_guidelines
+mode: default
+content:
+  field_amenities_guidelines:
+    type: entity_reference_paragraphs
+    weight: 1
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_guidelines_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true

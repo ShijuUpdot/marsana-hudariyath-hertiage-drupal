@@ -1,0 +1,30 @@
+uuid: 14cb8b79-d6b9-4426-9fd2-31a3b234a57c
+langcode: en
+status: true
+dependencies:
+  module:
+    - community_post
+    - options
+id: community_post.field_approval_state
+field_name: field_approval_state
+entity_type: community_post
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: draft
+      label: Draft
+    -
+      value: approved
+      label: Approved
+    -
+      value: rejected
+      label: Rejected
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

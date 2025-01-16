@@ -1,0 +1,36 @@
+uuid: a5f8f7ff-f06b-411a-8b5d-8da18e82807e
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.about_block
+  module:
+    - block_visibility_groups
+    - system
+    - views
+  theme:
+    - heritage
+id: views_block__about_block_about
+theme: heritage
+region: content
+weight: -5
+provider: null
+plugin: 'views_block:about_block-about'
+settings:
+  id: 'views_block:about_block-about'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
+    context_mapping: {  }
+  request_path:
+    id: request_path
+    pages: /home
+    negate: false
+    context_mapping: {  }

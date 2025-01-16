@@ -1,0 +1,42 @@
+uuid: bb956c4a-3896-4659-aac3-a86473147b78
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.multi_opening_hours.field_section_small_title
+    - field.field.paragraph.multi_opening_hours.field_section_timings
+    - field.field.paragraph.multi_opening_hours.field_section_title
+    - paragraphs.paragraphs_type.multi_opening_hours
+  module:
+    - entity_reference_revisions
+id: paragraph.multi_opening_hours.default
+targetEntityType: paragraph
+bundle: multi_opening_hours
+mode: default
+content:
+  field_section_small_title:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_section_timings:
+    type: entity_reference_revisions_entity_view
+    weight: 2
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_section_title:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

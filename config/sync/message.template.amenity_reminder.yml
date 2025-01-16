@@ -1,0 +1,19 @@
+uuid: 3e2c02c5-2fe2-4391-88f9-35b7ec603383
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.basic_html
+template: amenity_reminder
+label: 'Amenity reminder'
+description: 'Notification to user about new amenity'
+text:
+  -
+    value: 'New amenity has been created'
+    format: basic_html
+settings:
+  'token options':
+    clear: true
+    'token replace': true
+  purge_override: false
+  purge_methods: {  }

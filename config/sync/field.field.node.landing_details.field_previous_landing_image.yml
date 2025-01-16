@@ -1,0 +1,45 @@
+uuid: a497d077-7f02-4f9b-8420-1c8ca33ebfaf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_previous_landing_image
+    - node.type.landing_details
+  module:
+    - content_translation
+    - image
+third_party_settings:
+  content_translation:
+    translation_sync:
+      alt: alt
+      title: title
+      file: '0'
+id: node.landing_details.field_previous_landing_image
+field_name: field_previous_landing_image
+entity_type: node
+bundle: landing_details
+label: 'Previous Landing Image'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'png gif jpg jpeg svg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: true
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: image

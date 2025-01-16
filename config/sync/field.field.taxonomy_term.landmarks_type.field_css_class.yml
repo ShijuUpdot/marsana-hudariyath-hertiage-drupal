@@ -1,0 +1,19 @@
+uuid: ec8e1ba9-1971-4545-b2d7-b1d451605b75
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_css_class
+    - taxonomy.vocabulary.landmarks_type
+id: taxonomy_term.landmarks_type.field_css_class
+field_name: field_css_class
+entity_type: taxonomy_term
+bundle: landmarks_type
+label: 'Css Class'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

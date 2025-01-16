@@ -1,0 +1,10 @@
+marsana_custom_configs.admin_config:
+  route_name: marsana_custom_configs.admin_config
+  parent: system.admin_config
+  title: Custom Configuration Settings
+  description: 'Manage Marsana custom config settings.'
+marsana_custom_configs.admin_settings:
+  title: 'Custom Configurations'
+  parent: marsana_custom_configs.admin_config
+  description: 'Configure Custom Settings.'
+  route_name: marsana_custom_configs.admin_settings

@@ -1,0 +1,10 @@
+uuid: 063d2697-3f93-4561-9b38-5fd1383fb2ae
+langcode: en
+status: true
+dependencies: {  }
+id: schedule_details
+label: 'Schedule Details'
+icon_uuid: null
+icon_default: null
+description: 'Schedule Details'
+behavior_plugins: {  }

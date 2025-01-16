@@ -1,0 +1,19 @@
+uuid: 7ca9cec3-0f79-485b-b6fe-3d4f5e12b210
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_section_timings_time
+    - paragraphs.paragraphs_type.multi_opening_hours_timings
+id: paragraph.multi_opening_hours_timings.field_section_timings_time
+field_name: field_section_timings_time
+entity_type: paragraph
+bundle: multi_opening_hours_timings
+label: 'section timings time'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

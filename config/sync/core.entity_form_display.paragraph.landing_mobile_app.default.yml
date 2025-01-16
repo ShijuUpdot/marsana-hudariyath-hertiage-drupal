@@ -1,0 +1,45 @@
+uuid: 83cfa292-d34d-49a5-a78b-dbb61f4ec614
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.landing_mobile_app.field_icon
+    - field.field.paragraph.landing_mobile_app.field_intro_description
+    - field.field.paragraph.landing_mobile_app.field_title
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.landing_mobile_app
+  module:
+    - svg_image
+    - text
+id: paragraph.landing_mobile_app.default
+targetEntityType: paragraph
+bundle: landing_mobile_app
+mode: default
+content:
+  field_icon:
+    weight: 2
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_intro_description:
+    weight: 1
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true

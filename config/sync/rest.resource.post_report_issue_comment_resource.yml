@@ -1,0 +1,17 @@
+uuid: c590c24a-1331-4d30-9523-a768ca09f13a
+langcode: en
+status: true
+dependencies:
+  module:
+    - report_issue_and_help
+    - serialization
+    - user
+id: post_report_issue_comment_resource
+plugin_id: post_report_issue_comment_resource
+granularity: method
+configuration:
+  POST:
+    supported_formats:
+      - json
+    supported_auth:
+      - cookie

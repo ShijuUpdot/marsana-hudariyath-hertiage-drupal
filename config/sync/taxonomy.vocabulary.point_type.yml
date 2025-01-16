@@ -1,0 +1,8 @@
+uuid: b6d64772-e2a6-4ab8-bd77-11ac8f6c4bf6
+langcode: en
+status: true
+dependencies: {  }
+name: 'Point Type'
+vid: point_type
+description: 'Point Type'
+weight: 0

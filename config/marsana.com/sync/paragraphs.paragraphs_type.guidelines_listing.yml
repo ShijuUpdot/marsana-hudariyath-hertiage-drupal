@@ -1,0 +1,10 @@
+uuid: 5ae1c3c1-4624-4452-bf5d-9294e695591c
+langcode: en
+status: true
+dependencies: {  }
+id: guidelines_listing
+label: 'Guidelines Listing'
+icon_uuid: null
+icon_default: null
+description: 'Guidelines Listing'
+behavior_plugins: {  }

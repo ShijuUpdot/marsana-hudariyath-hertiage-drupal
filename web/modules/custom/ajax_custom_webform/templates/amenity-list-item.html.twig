@@ -1,0 +1,48 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a view of unformatted rows.
+ *
+ * Available variables:
+ * - title: The title of this group of rows. May be empty.
+ * - rows: A list of the view's row items.
+ *   - attributes: The row's HTML attributes.
+ *   - content: The row's content.
+ * - view: The view object.
+ * - default_row_class: A flag indicating whether default classes should be
+ *   used on rows.
+ *
+ *
+ * @ingroup themeable
+ */
+#}
+{% for key, item in data %}
+  <div class="col-md-6 col-lg-4 mb-5">
+    <div class="card-basic">
+      <div class="card-basic-header">
+        <div class="card-basic-image">
+          {% if item['image'] %}
+            <img class="card-img-top" src="{{ file_url(item['image']) }}" alt="{{ item['title'] }}">
+          {% else %}
+            <img class="card-img-top" src="/images/static/amenity-default.png" alt="Amenity">
+          {% endif %}
+        </div>
+        {% if item['icon'] %}
+          <!--div class="card-basic-wrapper {{ item['icon_color'] }}">
+            <img class="card-tag-img" src="{{ file_url(item['icon']) }}" alt="{{ item['title'] }}">
+          </div-->
+        {% endif %}
+      </div>
+      <div class="card-basic-information">
+        {% if item['aminitesType'] == 'Restaurants' or item['aminitesType'] == 'Food Trucks' or item['aminitesType'] == 'مطاعم' or item['aminitesType'] == 'شاحنات الغذاء' %}
+          <a href="javascript:;" data-toggle="modal" data-target="#{{ item['title']|trim|replace({" ":"-", ".":"-", '&#039;':"-", '&' : '-', ' &amp; ' : '-'})|lower }}">
+            <h3 class="card-title">{{ item['title'] }}</h3>
+          </a>
+        {% else %}
+          <a href="{{ item['link'] }}"><h3 class="card-title">{{ item['title'] }}</h3></a>
+        {% endif %}
+        <div class="detailed-txt">{{ item['headline'] | striptags | raw }}</div>
+      </div>
+    </div>
+  </div>
+  {% endfor %}

@@ -1,0 +1,19 @@
+uuid: 8a4db4ed-1d9c-45b9-9445-c4398636c67a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_title
+    - taxonomy.vocabulary.f_b_outlets
+id: taxonomy_term.f_b_outlets.field_title
+field_name: field_title
+entity_type: taxonomy_term
+bundle: f_b_outlets
+label: Title
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

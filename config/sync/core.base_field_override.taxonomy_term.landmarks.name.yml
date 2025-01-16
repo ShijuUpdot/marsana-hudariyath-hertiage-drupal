@@ -1,0 +1,18 @@
+uuid: 3750fa83-ebfe-44b9-ad21-7156803f0480
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.landmarks
+id: taxonomy_term.landmarks.name
+field_name: name
+entity_type: taxonomy_term
+bundle: landmarks
+label: Name
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

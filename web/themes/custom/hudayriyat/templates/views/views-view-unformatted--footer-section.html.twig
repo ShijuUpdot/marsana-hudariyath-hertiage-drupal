@@ -1,0 +1,55 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a view of unformatted rows.
+ *
+ * Available variables:
+ * - title: The title of this group of rows. May be empty.
+ * - rows: A list of the view's row items.
+ *   - attributes: The row's HTML attributes.
+ *   - content: The row's content.
+ * - view: The view object.
+ * - default_row_class: A flag indicating whether default classes should be
+ *   used on rows.
+ *
+ * @see template_preprocess_views_view_unformatted()
+ *
+ * @ingroup themeable
+ */
+#}
+{% for row in rows %}
+<footer class="p-section dark-grey-bg">
+    {% set logo = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_logo }}'] | striptags | trim %}
+    <div class="container">
+      <div class="row justify-content-between">
+        <div class="col-lg-5 my-auto">
+          <ul class="discovery">
+             {%  for key, menu in menu_links %}
+              {% if menu['title'] != 'Home' %}
+                <li><a href="{{ menu['url'] }}">{{ menu['title'] }}</a></li>
+              {% endif %}
+             {% endfor %}
+          </ul>
+        </div>
+        <div class="col-lg-2 text-center my-auto">
+          <a href="/"><img src="/themes/custom/hudayriyat/logo-en-b.svg" alt="Logo"></a>
+        </div>
+        <div class="col-lg-5 my-auto">
+          {{ drupal_menu('footer-top-right') }}
+        </div>
+      </div>
+      <div class="row justify-content-end">
+        <div class="col-md-6 col-lg-4 my-auto text-center">
+          <ul class="terms">
+            {{ row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_footer_static_links }}'] }}
+          </ul>
+        </div>
+        <div class="col-md-6 col-lg-4 my-auto">
+          <ul class="social">
+            {{ row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_footer_social_block }}'] }}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+{% endfor %}

@@ -1,0 +1,28 @@
+uuid: d9a04e05-c2bd-4e23-9cc9-e58bae86cac8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_about_content
+    - node.type.about
+    - node.type.about_us
+id: node.about.field_about_content
+field_name: field_about_content
+entity_type: node
+bundle: about
+label: 'About Content'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      about_us: about_us
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

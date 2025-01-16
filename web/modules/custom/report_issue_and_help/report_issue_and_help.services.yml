@@ -1,0 +1,6 @@
+services:
+  report_issue_and_help.normalizer.issue_type:
+    class: Drupal\report_issue_and_help\Normalizer\TermIssueTypeNormalizer
+    arguments: ['@entity_type.manager', '@entity_type.repository', '@entity_field.manager']
+    tags:
+      - { name: normalizer, priority: 10 }

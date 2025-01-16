@@ -1,0 +1,40 @@
+uuid: 17c949c9-4212-4e60-a274-7fe5e51aa93d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.notification_setting.field_name
+    - field.field.paragraph.notification_setting.field_status
+    - field.field.paragraph.notification_setting.field_type
+    - paragraphs.paragraphs_type.notification_setting
+id: paragraph.notification_setting.default
+targetEntityType: paragraph
+bundle: notification_setting
+mode: default
+content:
+  field_name:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_status:
+    weight: 2
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_type:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true

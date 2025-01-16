@@ -1,0 +1,6 @@
+administer instagram settings:
+  title: 'Hudayriyat Island Instagram Feed Fetch API Settings'
+  restrict access: true
+'execute instagram api':
+  title: 'Hudayriyat Island Instagram Feed Fetch'
+  description: 'Hudayriyat Island Instagram Feed fetching access (API Execute)'

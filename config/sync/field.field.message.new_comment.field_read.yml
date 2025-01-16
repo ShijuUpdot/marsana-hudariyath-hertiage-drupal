@@ -1,0 +1,21 @@
+uuid: bfe3e08a-08ce-4bd2-8c2b-757f7b1cb44c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.message.field_read
+    - message.template.new_comment
+  module:
+    - options
+id: message.new_comment.field_read
+field_name: field_read
+entity_type: message
+bundle: new_comment
+label: Read
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,87 @@
+uuid: 7beca4f8-fa66-4616-b8d3-cfb033977297
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.location_details.field_city
+    - field.field.paragraph.location_details.field_coordinate
+    - field.field.paragraph.location_details.field_facilities
+    - field.field.paragraph.location_details.field_icon
+    - field.field.paragraph.location_details.field_locat
+    - field.field.paragraph.location_details.field_location_at
+    - field.field.paragraph.location_details.field_location_iframe_url
+    - field.field.paragraph.location_details.field_location_latitude
+    - field.field.paragraph.location_details.field_location_longitude
+    - field.field.paragraph.location_details.field_street
+    - paragraphs.paragraphs_type.location_details
+  module:
+    - svg_image
+    - text
+id: paragraph.location_details.default
+targetEntityType: paragraph
+bundle: location_details
+mode: default
+content:
+  field_icon:
+    weight: 0
+    label: above
+    settings:
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_locat:
+    weight: 2
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_location_at:
+    weight: 1
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_location_iframe_url:
+    weight: 3
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_location_latitude:
+    weight: 5
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 7
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+  field_location_longitude:
+    weight: 4
+    label: above
+    settings:
+      thousand_separator: .
+      decimal_separator: .
+      scale: 7
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+hidden:
+  field_city: true
+  field_coordinate: true
+  field_facilities: true
+  field_street: true
+  search_api_excerpt: true

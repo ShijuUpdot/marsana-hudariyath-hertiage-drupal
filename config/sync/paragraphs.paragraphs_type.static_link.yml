@@ -1,0 +1,10 @@
+uuid: fa4a6c07-ced1-45dd-9e4e-f07d68e875f1
+langcode: en
+status: true
+dependencies: {  }
+id: static_link
+label: 'Static Link'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

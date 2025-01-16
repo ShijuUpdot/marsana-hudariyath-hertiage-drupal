@@ -1,0 +1,17 @@
+uuid: 00147520-cb4f-459c-b7d4-b7bdbc3b7a37
+langcode: en
+status: true
+dependencies:
+  module:
+    - community_post
+    - serialization
+    - user
+id: search_with_group_resource
+plugin_id: search_with_group_resource
+granularity: method
+configuration:
+  GET:
+    supported_formats:
+      - json
+    supported_auth:
+      - cookie

@@ -1,0 +1,28 @@
+{{ form.form_build_id }}
+{{ form.form_token }}
+{{ form.form_id }}
+<div class="form-row">
+    {{ form.field_name }}
+    <div class="invalid-feedback">Please provide your Full Name.</div>
+    <div class="valid-feedback">Looks good!</div>
+</div>
+<div class="form-row">
+    {{ form.field_phone_no }}
+    <div class="invalid-feedback">Please provide a valid phone number.</div>
+    <div class="valid-feedback">Looks good!</div>
+</div>
+<div class="form-row">
+    {{ form.field_email }}
+    <div class="invalid-feedback">Please provide a valid Email.</div>
+    <div class="valid-feedback">Looks good!</div>
+</div>
+<div class="form-row">
+    {{ form.field_message }}
+    <div class="invalid-feedback">Please provide a Message.</div>
+    <div class="valid-feedback">Looks good!</div>
+</div>
+
+<div class="buttons-wrapper">
+    <button class="btn blank" type="reset">{{ 'Reset' | t }}</button>
+    {{ form.actions.submit }}
+</div>

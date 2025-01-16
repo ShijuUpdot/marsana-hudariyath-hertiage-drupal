@@ -1,0 +1,23 @@
+uuid: 96483696-cfef-4937-a8d5-7c144ac7b160
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_is_single
+    - node.type.categories
+id: node.categories.field_is_single
+field_name: field_is_single
+entity_type: node
+bundle: categories
+label: 'Is Single'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,0 +1,19 @@
+diff --git a/vendor/guzzlehttp/guzzle/src/Cookie/CookieJar.php b/vendor/guzzlehttp/guzzle/src/Cookie/CookieJar.php
+index 394df3a7c..44acac9b3 100644
+--- a/vendor/guzzlehttp/guzzle/src/Cookie/CookieJar.php
++++ b/vendor/guzzlehttp/guzzle/src/Cookie/CookieJar.php
+@@ -216,12 +216,12 @@ public function setCookie(SetCookie $cookie)
+ 
+         return true;
+     }
+-
++    #[\ReturnTypeWillChange]
+     public function count()
+     {
+         return count($this->cookies);
+     }
+-
++    #[\ReturnTypeWillChange]
+     public function getIterator()
+     {
+         return new \ArrayIterator(array_values($this->cookies));

@@ -1,0 +1,105 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a view of unformatted rows.
+ *
+ * Available variables:
+ * - title: The title of this group of rows. May be empty.
+ * - rows: A list of the view's row items.
+ *   - attributes: The row's HTML attributes.
+ *   - content: The row's content.
+ * - view: The view object.
+ * - default_row_class: A flag indicating whether default classes should be
+ *   used on rows.
+ *
+ * @see template_preprocess_views_view_unformatted()
+ *
+ * @ingroup themeable
+ */
+#}
+<div class="container inside-wrapper">
+<div class="row mb-4">
+  <div class="col">
+    <div class="tabs-listing">
+      <ul class="nav nav-pill mb-5 w-100 nav-fill" id="pill-tab" role="tablist">
+        {% set j = 1 %}
+        <li class="nav-item">
+          <a class="nav-link active" id="pill-1-tab" data-toggle="pill" href="#pill-1" role="tab" aria-controls="pill-1" aria-selected="true"><h3>{{ 'All'|t }}</h3></a>
+        </li>
+        {% for key,item in assetsTyp %}
+            <li class="nav-item">
+              <a class="nav-link" id="pill-{{ j+1 }}-tab" data-toggle="pill" href="#pill-{{ j+1 }}" role="tab" aria-controls="pill-{{ j+1 }}" aria-selected="true"><h3>{{ item }}</h3></a>
+            </li>
+          {% set j = j + 1 %}
+       {% endfor %}
+      </ul>
+      {% set cnt = 1 %}
+        <div class="tab-content" id="pill-tabContent">
+            {% for key, assets_items in assets_data %}
+                {% set active = '' %}
+                {% if cnt == 1 %}
+                {% set active = 'show active' %}
+                {% endif %}
+                <div class="tab-pane fade show {{ active }}" id="pill-{{ cnt }}" role="tabpanel" aria-labelledby="pill-{{ cnt }}-tab">
+                  <div class="row">
+                      {% for ikey, frow in assets_items %}
+                        {% set fkey = frow.0 %}
+                        {% set row = frow.1 %}
+                        {% set logo   = row.content['#view'].style_plugin.render_tokens[ fkey ]['{{ field_amenity_icon }}'] | striptags | trim %}
+                        {% set title   = row.content['#view'].style_plugin.render_tokens[ fkey ]['{{ field_hero_image_title }}'] | striptags | trim %}
+                        {% set assetType = row.content['#view'].style_plugin.render_tokens[ fkey ]['{{ field_amenity_type }}'] | striptags | trim %}
+                        {% set assetSubType = row.content['#view'].style_plugin.render_tokens[ fkey ]['{{ field_amenity_tags }}'] | striptags | trim %}
+
+                        <div class="col-6 col-lg-4 card-holder" data-tag="{{ assetSubType|lower|replace({' ': ''}) }}">
+                            <div class="card-wrapper">
+                              <div class="card resto">
+                                <div class="card-logo-wrapper">
+                                  <img class="card-logo-top" src="{{ logo }}" alt="{{ title }}">
+                                </div>
+                                <div class="card-body">
+                                  <a href="javascript:;" data-toggle="modal" data-target="#{{ title|raw|replace({" ":"-", ".":"-", '&#039;':"-",  '&amp;' : '-'})|lower }}">
+                                    <h3 class="card-title">{{ title|raw }} </h3>
+                                    <img src="/images/static/arrow-right-navy.svg" alt="">
+                                  </a>
+                                </div>
+                              </div>
+                            </div>
+                       </div>
+                      {% endfor %}
+                      <div class="row">
+                        <div class="col">
+                        <h3 class="msg d-none">{{ 'No available elements matching your filter' | t }}</h3>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+
+                {% set cnt = cnt + 1 %}
+
+            {% endfor %}
+        </div>
+    </div>
+    <div class="filter">
+      <div class="select-wrapper">
+        <select name="characters" class="custom-select" tabindex="-1" id="select-name">
+          <option value="All" selected="">{{ 'All' | t}}</option>
+          {% for key,tags in amenityTags %}
+            <option value="{{ tags|lower|replace({' ': ''}) }}">{{ tags }}</option>
+          {% endfor %}
+        </select>
+        <div class="dropdown-container filters filter-button-group">
+          <div class="dropdown-select entypo-down-open-big"></div>
+          <ul class="dropdown-select-ul" data-role="select-name">
+            <li class=" selected" data-value="All" data-filter="all"><input type="radio" class="" checked="">{{ 'All' | t }}</li>
+            {% for key,tags in amenityTags %}
+              {% if tags %}
+                <li data-value="{{ tags|lower|replace({' ': ''}) }}" data-filter="{{ tags|lower|replace({' ': ''}) }}"><input type="radio" class=" ">{{ tags }}</li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

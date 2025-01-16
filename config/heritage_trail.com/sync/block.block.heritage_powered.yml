@@ -1,0 +1,22 @@
+uuid: db899d1b-cd18-42f7-aaa0-4ca89f1253be
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - heritage
+_core:
+  default_config_hash: jQQUUWN2Uxr5qZtc9zcJKBCxpKY8orN1u2HPqYYRQDI
+id: heritage_powered
+theme: heritage
+region: other
+weight: -6
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  provider: system
+  label_display: '0'
+visibility: {  }

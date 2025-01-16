@@ -1,0 +1,23 @@
+uuid: 59287bcc-2ba2-41aa-85d9-f80059290b18
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.parallax_wrapper_image.field_parallax_image
+    - paragraphs.paragraphs_type.parallax_wrapper_image
+  module:
+    - image
+id: paragraph.parallax_wrapper_image.default
+targetEntityType: paragraph
+bundle: parallax_wrapper_image
+mode: default
+content:
+  field_parallax_image:
+    weight: 0
+    label: above
+    settings:
+      image_style: ''
+    third_party_settings: {  }
+    type: image_url
+    region: content
+hidden: {  }

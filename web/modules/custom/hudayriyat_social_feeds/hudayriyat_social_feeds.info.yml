@@ -1,0 +1,6 @@
+name: Hudayriyat Social Feeds
+type: module
+description: To fetch Hudayriyat Island Social Feeds data based on HashTags
+package: Hudayriyat Island
+core_version_requirement: ^8 || ^9
+core: 8.x

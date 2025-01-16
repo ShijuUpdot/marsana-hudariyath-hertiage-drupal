@@ -1,0 +1,19 @@
+uuid: 9e318e51-1aae-4a7a-936a-7a3f556a4847
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.message.field_action
+    - message.template.community_post_rejected_notific
+id: message.community_post_rejected_notific.field_action
+field_name: field_action
+entity_type: message
+bundle: community_post_rejected_notific
+label: Action
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

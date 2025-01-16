@@ -1,0 +1,52 @@
+uuid: a2d092ce-13ea-4124-9e46-fb2f9bc0878b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.booking_type.field_headline
+    - field.field.paragraph.booking_type.field_listing
+    - field.field.paragraph.booking_type.field_section_no
+    - paragraphs.paragraphs_type.booking_type
+  module:
+    - paragraphs
+id: paragraph.booking_type.default
+targetEntityType: paragraph
+bundle: booking_type
+mode: default
+content:
+  field_headline:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_listing:
+    type: entity_reference_paragraphs
+    weight: 2
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_section_no:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  translation:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  status: true

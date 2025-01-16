@@ -1,0 +1,20 @@
+uuid: 2370216c-de24-4ac8-9bda-8d596a33ec12
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.amenity_single
+  module:
+    - path
+id: node.amenity_single.path
+field_name: path
+entity_type: node
+bundle: amenity_single
+label: 'URL alias'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

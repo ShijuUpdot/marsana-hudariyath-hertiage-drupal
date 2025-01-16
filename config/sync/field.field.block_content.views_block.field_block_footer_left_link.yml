@@ -1,0 +1,23 @@
+uuid: 51b2bf7c-48d2-4f52-bcab-9cd1e3278ea9
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.views_block
+    - field.storage.block_content.field_block_footer_left_link
+  module:
+    - link
+id: block_content.views_block.field_block_footer_left_link
+field_name: field_block_footer_left_link
+entity_type: block_content
+bundle: views_block
+label: 'Block Footer Left Link'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

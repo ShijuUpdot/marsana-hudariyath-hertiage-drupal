@@ -1,0 +1,8 @@
+uuid: eeab303b-31ff-4bd7-ae66-31af04b5ae0b
+langcode: en
+status: true
+dependencies: {  }
+id: footer_block
+label: 'Footer Block'
+revision: 0
+description: 'Footer Block'

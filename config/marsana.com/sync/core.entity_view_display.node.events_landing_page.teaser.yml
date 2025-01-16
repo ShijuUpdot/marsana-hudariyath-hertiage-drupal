@@ -1,0 +1,33 @@
+uuid: 9c861b92-6f17-4b6b-8de8-d8e6d0c36648
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.events_landing_page.body
+    - field.field.node.events_landing_page.field_home_background_image
+    - node.type.events_landing_page
+  module:
+    - text
+    - user
+id: node.events_landing_page.teaser
+targetEntityType: node
+bundle: events_landing_page
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_home_background_image: true
+  langcode: true

@@ -1,0 +1,38 @@
+uuid: c5156694-b838-46f1-9bb0-d49b4703f7df
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.message.amenity_reminder.field_action
+    - field.field.message.amenity_reminder.field_node
+    - message.template.amenity_reminder
+  module:
+    - user
+id: message.amenity_reminder.default
+targetEntityType: message
+bundle: amenity_reminder
+mode: default
+content:
+  field_action:
+    weight: 2
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_node:
+    weight: 1
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  partial_0:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  search_api_excerpt: true

@@ -1,0 +1,104 @@
+<?php
+
+/**
+ * @file
+ * Contains community_post.module.
+ */
+
+use Drupal\community_post\Entity\CommunityPost;
+use Drupal\Core\Database\Database;
+use Drupal\Core\Database\Query\AlterableInterface;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\message\MessageInterface;
+
+/**
+ * Implements hook_help().
+ */
+function community_post_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the community_post module.
+    case 'help.page.community_post':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Provide Community Post entity and API') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function community_post_theme() {
+  $theme = [];
+  $theme['community_post'] = [
+    'render element' => 'elements',
+    'file' => 'community_post.page.inc',
+    'template' => 'community_post',
+  ];
+  $theme['community_post_content_add_list'] = [
+    'render element' => 'content',
+    'variables' => ['content' => NULL],
+    'file' => 'community_post.page.inc',
+  ];
+  return $theme;
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK().
+ */
+function community_post_theme_suggestions_community_post(array $variables) {
+  $suggestions = [];
+  $entity = $variables['elements']['#community_post'];
+  $sanitized_view_mode = strtr($variables['elements']['#view_mode'], '.', '_');
+
+  $suggestions[] = 'community_post__' . $sanitized_view_mode;
+  $suggestions[] = 'community_post__' . $entity->bundle();
+  $suggestions[] = 'community_post__' . $entity->bundle() . '__' . $sanitized_view_mode;
+  $suggestions[] = 'community_post__' . $entity->id();
+  $suggestions[] = 'community_post__' . $entity->id() . '__' . $sanitized_view_mode;
+  return $suggestions;
+}
+
+function community_post_views_pre_view(\Drupal\views\ViewExecutable $view, $display_id, array &$args) {
+  $exposed_input = $view->getExposedInput();
+  if (isset($exposed_input['experience']) && $exposed_input['experience'] == 0) {
+    unset($exposed_input['experience']);
+    $view->setExposedInput($exposed_input);
+  }
+}
+
+function community_post_before_save_message(EntityInterface $entity, MessageInterface $message, array $form = NULL, FormStateInterface $formState = NULL) {
+  if ($entity->getEntityTypeId() == 'community_post' && $formState != NULL) {
+    $state = $formState->getValue(CommunityPost::FIELD_APPROVAL_STATE);
+    $message->set('field_action', $state);
+  }
+}
+
+function community_post_node_presave(\Drupal\node\NodeInterface $entity) {
+  //\Drupal::logger('community_post')->debug('aaaa');
+  $field = 'field_location_details';
+  if ($entity->bundle() == 'event_details') {
+    $field = 'field_event_location';
+  }
+  if( !empty($entity->hasField($field)) ) {
+    $locations = $entity->get($field)->referencedEntities();
+    $paragraph_facilities = [];
+    foreach ($locations as $location) {
+      $location_details = $location->get('field_location_details')
+        ->referencedEntities();
+      foreach ($location_details as $location_detail) {
+        if (!empty($location_detail->get('field_facilities')->target_id)) {
+          $paragraph_facilities[] = $location_detail->get('field_facilities')->target_id;
+        }
+      }
+    }
+    if (!empty($paragraph_facilities)) {
+      $paragraph_facilities = array_unique($paragraph_facilities);
+      $entity->set('field_facilities', $paragraph_facilities);
+    }
+  }
+}

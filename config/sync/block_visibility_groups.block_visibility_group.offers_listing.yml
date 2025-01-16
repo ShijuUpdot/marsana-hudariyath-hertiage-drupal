@@ -1,0 +1,9 @@
+uuid: 83e668ab-ec02-4d86-a7b2-d13d60d93fee
+langcode: en
+status: true
+dependencies: {  }
+id: offers_listing
+label: 'offers Listing'
+logic: and
+conditions: {  }
+allow_other_conditions: false

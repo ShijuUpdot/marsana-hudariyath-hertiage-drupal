@@ -1,0 +1,27 @@
+uuid: 64e46ac2-775f-4f14-a635-1633337957b6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hero_ogg_video
+    - node.type.enjoy
+  module:
+    - file
+id: node.enjoy.field_hero_ogg_video
+field_name: field_hero_ogg_video
+entity_type: node
+bundle: enjoy
+label: 'Hero Ogg Video'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: ogg
+  max_filesize: ''
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

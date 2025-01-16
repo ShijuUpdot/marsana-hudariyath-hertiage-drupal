@@ -1,0 +1,37 @@
+uuid: bbb22d8c-95dc-4a94-9a63-a62c35323a15
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.stay
+    - views.view.stay_single_banner
+  module:
+    - block_visibility_groups
+    - system
+    - views
+  theme:
+    - hudayriyat
+id: views_block__stay_single_banner_stay_single_banner
+theme: hudayriyat
+region: content
+weight: -8
+provider: null
+plugin: 'views_block:stay_single_banner-stay_single_banner'
+settings:
+  id: 'views_block:stay_single_banner-stay_single_banner'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: stay
+    context_mapping: {  }
+  request_path:
+    id: request_path
+    pages: /stay
+    negate: false
+    context_mapping: {  }

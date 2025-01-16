@@ -1,0 +1,25 @@
+uuid: e5821a17-898c-4f57-8506-df27ae6b476d
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - heritage
+_core:
+  default_config_hash: NDwadleLD3YVSbDUaakxyYZyINYtkFtOVGShfq4kWy8
+id: heritage_branding
+theme: heritage
+region: other
+weight: -2
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  provider: system
+  label_display: '0'
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: true
+visibility: {  }

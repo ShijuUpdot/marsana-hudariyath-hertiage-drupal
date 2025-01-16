@@ -1,0 +1,128 @@
+{#
+/**
+ * @file
+ * Theme override to display all the fields in a row.
+ *
+ * Available variables:
+ * - view: The view in use.
+ * - fields: A list of fields, each one contains:
+ *   - content: The output of the field.
+ *   - raw: The raw data for the field, if it exists. This is NOT output safe.
+ *   - class: The safe class ID to use.
+ *   - handler: The Views field handler controlling this field.
+ *   - inline: Whether or not the field should be inline.
+ *   - wrapper_element: An HTML element for a wrapper.
+ *   - wrapper_attributes: List of attributes for wrapper element.
+ *   - separator: An optional separator that may appear before a field.
+ *   - label: The field's label text.
+ *   - label_element: An HTML element for a label wrapper.
+ *   - label_attributes: List of attributes for label wrapper.
+ *   - label_suffix: Colon after the label.
+ *   - element_type: An HTML element for the field content.
+ *   - element_attributes: List of attributes for HTML element for field content.
+ *   - has_label_colon: A boolean indicating whether to display a colon after
+ *     the label.
+ *   - element_type: An HTML element for the field content.
+ *   - element_attributes: List of attributes for HTML element for field content.
+ * - row: The raw result from the query, with all data it fetched.
+ *
+ * @see template_preprocess_views_view_fields()
+ */
+#}
+
+{% if langcode == 'en' %}
+  {% set float = 'float-left' %}
+  {% set margin = 'ml-30' %}
+    {% set text_align = '' %}
+{% elseif langcode == 'ar' %}
+  {% set float = 'float-right' %}
+  {% set margin = 'mr-30' %}
+  {% set text_align = 'text-right' %}
+{% endif %}
+<div class="row">
+    <div class="col-md-6 mb-5">
+      <div>
+        <img class="{{float}} top-icons" src="/images/static/location.svg"/>
+        <div class="b-bordered-box {{margin}}">
+          <p>Location</p>
+          <p class="detailed-box-info">{{ fields.field_event_place.content }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 mb-5">
+      <div>
+        <img class="{{float}} top-icons" src="/images/static/range-date.svg"/>
+        <div class="b-bordered-box {{margin}}">
+          <p>{{ fields.field_opening_hours_title.content }}</p>
+          <p class="detailed-box-info">{{ fields.field_schedule_headline.content }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-5 event-content-info">
+    <div class="col-md-12">
+      <h2 >{{ fields.field_hero_image_title.content }}</h2>
+      <p class="event-detailed-text">{{ fields.field_intro_sub_headlines.content }}</p>
+    </div>
+  </div>
+
+  {% if fields.event_images %}
+  <div class="row slider-arrow-fix">
+    <div class="col-md-12">
+      <p class="detailed-txt opacity-text bold {{ text_align }}">Gallery</p>
+        <div class="slideshow-container pb-4">
+          {% for image in fields.event_images %}
+          <div class="mySlides ">
+            <img src="{{image}}" style="width:100%;max-height:427px;">
+          </div>
+          {% endfor %}
+          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <br>
+        {# <div style="text-align:center">
+          <span class="dot" onclick="currentSlide(1)"></span> 
+          <span class="dot" onclick="currentSlide(2)"></span> 
+          <span class="dot" onclick="currentSlide(3)"></span> 
+        </div> #}
+    </div>
+  </div>
+  {% endif %}
+
+  <div class="row content-info-blocks mt-3">
+    <div class="col-md-4 mb-3">
+      <div>
+        <div class="detailed-box {{margin}}">
+          <p class="heading" >Time</p>
+          <p class="detailed-txt opacity-text bold" >{{ fields.map_time }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 mb-3">
+      <div>
+        <div class="detailed-box {{margin}}">
+          <p class="heading">Location</p>
+          <p class="detailed-txt opacity-text bold">{{ fields.map_place }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 mb-3">
+      <div>
+        <div class="detailed-box {{margin}}">
+          <p class="heading">Learn More</p>
+          <p class="detailed-txt opacity-text bold"><a style="color:rgba(36, 38, 85, 0.5);" target="_blank" href="{{ fields.learn_more }}">{{ fields.learn_more_text }}</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% if fields.iframe_url %}
+    <div class="row">
+      <div class="col-md-12">
+        <div class="map-img">
+          <iframe src="{{ fields.iframe_url }}" width="100%" height="400" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>            
+        </div>
+      </div>
+    </div>
+  {% endif %}

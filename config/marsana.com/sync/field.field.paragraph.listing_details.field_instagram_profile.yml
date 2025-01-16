@@ -1,0 +1,23 @@
+uuid: e549e4cb-247c-4196-b818-9d683dbe39a0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_instagram_profile
+    - paragraphs.paragraphs_type.listing_details
+  module:
+    - link
+id: paragraph.listing_details.field_instagram_profile
+field_name: field_instagram_profile
+entity_type: paragraph
+bundle: listing_details
+label: 'Instagram Profile'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

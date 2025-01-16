@@ -1,0 +1,10 @@
+uuid: 9ada623e-6326-4b4a-ade5-076af3904f73
+langcode: en
+status: true
+dependencies: {  }
+id: key_points
+label: 'key Points'
+icon_uuid: null
+icon_default: null
+description: 'key Points'
+behavior_plugins: {  }

@@ -1,0 +1,18 @@
+uuid: 8fdbe3a8-7127-4c80-8c6d-a66fe028f561
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.static_pages
+id: node.static_pages.changed
+field_name: changed
+entity_type: node
+bundle: static_pages
+label: Changed
+description: 'The time that the node was last edited.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

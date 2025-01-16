@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="10px" viewBox="0 0 16 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Mask</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" fill-opacity="0.5">
+        <g id="Search" transform="translate(-312.000000, -593.000000)" fill="#212237">
+            <g id="Amenities" transform="translate(128.000000, 586.000000)">
+                <path d="M188.292893,4.60994079 L187.803502,5.09933192 C187.413279,5.48955511 187.412934,6.12212546 187.802731,6.51277396 L193.278003,12 L193.278003,12 L187.802731,17.487226 C187.412934,17.8778745 187.413279,18.5104449 187.803502,18.9006681 L188.292893,19.3900592 C188.683418,19.7805835 189.316582,19.7805835 189.707107,19.3900592 L197.097166,12 L197.097166,12 L189.707107,4.60994079 C189.316582,4.2194165 188.683418,4.2194165 188.292893,4.60994079 Z" id="Mask" transform="translate(192.097166, 12.000000) rotate(90.000000) translate(-192.097166, -12.000000) "></path>
+            </g>
+        </g>
+    </g>
+</svg>

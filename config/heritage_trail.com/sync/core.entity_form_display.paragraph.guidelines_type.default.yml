@@ -1,0 +1,57 @@
+uuid: 12731e77-373f-4e1e-8198-3454bf5c3d76
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.guidelines_type.field_description
+    - field.field.paragraph.guidelines_type.field_guidelines_listing
+    - field.field.paragraph.guidelines_type.field_short_description
+    - field.field.paragraph.guidelines_type.field_title
+    - paragraphs.paragraphs_type.guidelines_type
+  module:
+    - paragraphs
+    - text
+id: paragraph.guidelines_type.default
+targetEntityType: paragraph
+bundle: guidelines_type
+mode: default
+content:
+  field_description:
+    weight: 2
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_guidelines_listing:
+    type: entity_reference_paragraphs
+    weight: 3
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_short_description:
+    weight: 1
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true

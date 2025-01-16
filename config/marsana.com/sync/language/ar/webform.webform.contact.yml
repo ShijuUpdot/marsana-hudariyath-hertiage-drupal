@@ -1,0 +1,4 @@
+title: اتصل
+elements: "name:\n  '#placeholder': 'الاسم الكامل*'\n  '#required_error': 'هذا الحقل إلزامي.'\nphone_number:\n  '#placeholder': 'رقم الهاتف*'\n  '#required_error': 'هذا الحقل إلزامي'\nemail:\n  '#placeholder': 'البريد الإلكتروني*'\n  '#required_error': 'هذا الحقل إلزامي'\nmessage:\n  '#placeholder': 'الرسالة*'\n  '#required_error': 'هذا الحقل إلزامي'\nactions:\n  '#reset__label': 'إعادة تعيين'\n  '#submit__label': إرسال\n"
+settings:
+  confirmation_message: 'أُرسلت رسالتك.'

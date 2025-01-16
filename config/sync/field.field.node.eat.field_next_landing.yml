@@ -1,0 +1,23 @@
+uuid: a3d877a1-4390-47f0-a093-9814eba6326c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_next_landing
+    - node.type.eat
+  module:
+    - link
+id: node.eat.field_next_landing
+field_name: field_next_landing
+entity_type: node
+bundle: eat
+label: 'Next Landing'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

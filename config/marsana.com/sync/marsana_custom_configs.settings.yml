@@ -1,0 +1,22 @@
+custom_configs_subject_en: 'Thank you for contacting Marsana.'
+custom_configs_subject_ar: 'شكرا على اتصالك بمرسانا.'
+custom_configs_contact_name_en: 'You must enter Name.'
+custom_configs_contact_name_ar: 'يجب إدخال الاسم الأول.'
+custom_configs_contact_email_en: 'You must enter a valid e-mail address.'
+custom_configs_contact_email_ar: 'ينبغي إدخال بريد الكتروني صالح.'
+custom_configs_contact_contactNo_en: 'You must enter Phone Number.'
+custom_configs_contact_contactNo_ar: 'يجب عليك إدخال رقم الهاتف.'
+custom_configs_contact_message_en: 'You must enter Message.'
+custom_configs_contact_message_ar: 'يجب عليك إدخال الرسالة.'
+custom_configs_contact_invalidemail_en: 'You must enter a valid e-mail address.'
+custom_configs_contact_invalidemail_ar: 'ينبغي إدخال بريد الكتروني صالح.'
+custom_configs_from_mail: info@marsana.ae
+custom_configs_contact_success_en: 'Thank you for contacting us, we will get back to you shortly.'
+custom_configs_contact_success_ar: 'شكرا لتواصلكم معنا, سنعاود الاتصال بكم قريبا'
+custom_configs_email_username: info@marsana.ae
+custom_configs_email_password: Modon@123$%^
+custom_configs_email_host: smtp.office365.com
+custom_configs_email_port: '587'
+custom_configs_email_SMTPSecure: tls
+custom_configs_upload_menu_title_en: 'View Menu'
+custom_configs_upload_menu_title_ar: 'عرض القائمة'

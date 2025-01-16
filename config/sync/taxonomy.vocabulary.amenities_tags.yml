@@ -1,0 +1,8 @@
+uuid: 8b3ab0a2-7d1c-4fad-aa6a-ed20eb2e0fa3
+langcode: en
+status: true
+dependencies: {  }
+name: 'Amenities Tags'
+vid: amenities_tags
+description: 'Amenities Tags'
+weight: -4

@@ -1,0 +1,17 @@
+uuid: 8c16e5c9-e0d9-489a-8a85-a92aab4be1a6
+langcode: en
+status: true
+dependencies:
+  module:
+    - community_post
+    - serialization
+    - user
+id: amenities_node_resource
+plugin_id: amenities_node_resource
+granularity: method
+configuration:
+  GET:
+    supported_formats:
+      - json
+    supported_auth:
+      - cookie

@@ -1,0 +1,43 @@
+uuid: a5415e4f-df6b-4550-8985-0cccb3c9348f
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.contact_social_block
+    - field.field.block_content.contact_social_block.body
+    - field.field.block_content.contact_social_block.field_footer_social_block_title
+    - field.field.block_content.contact_social_block.field_social_links
+  module:
+    - entity_reference_revisions
+    - text
+id: block_content.contact_social_block.default
+targetEntityType: block_content
+bundle: contact_social_block
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_footer_social_block_title:
+    weight: 1
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_social_links:
+    type: entity_reference_revisions_entity_view
+    weight: 2
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true

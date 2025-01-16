@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="12px" height="22px" viewBox="0 0 12 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>facebook-letter-logo</title>
+    <g id="1.-Homepage" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="0-Menu" transform="translate(-174.000000, -564.000000)" fill="#FFFFFF" fill-rule="nonzero">
+            <g id="Group" transform="translate(130.000000, 564.000000)">
+                <g id="facebook-letter-logo" transform="translate(44.961240, -0.000000)">
+                    <path d="M2.19914422,4.15572953 L2.19914422,7.11003914 L0.034722542,7.11003914 L0.034722542,10.7225804 L2.19914422,10.7225804 L2.19914422,21.4577826 L6.64532581,21.4577826 L6.64532581,10.7228797 L9.6289201,10.7228797 C9.6289201,10.7228797 9.90834676,8.99069384 10.0437946,7.09671886 L6.66213831,7.09671886 L6.66213831,4.62667895 C6.66213831,4.25750249 7.1469069,3.76091028 7.62603807,3.76091028 L10.0484842,3.76091028 L10.0484842,4.98887098e-05 L6.75478164,4.98887098e-05 C2.08923939,-0.000199554839 2.19914422,3.61593369 2.19914422,4.15572953 Z" id="Facebook"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

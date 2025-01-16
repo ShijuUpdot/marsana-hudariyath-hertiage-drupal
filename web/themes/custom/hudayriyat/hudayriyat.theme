@@ -1,0 +1,623 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the Hudayriyat theme.
+ */
+/**
+ * Implements hook_preprocess_page() for page.html.twig.
+ */
+
+ use Drupal\taxonomy\Entity\Term;
+ use Drupal\Core\Menu\MenuTreeParameters;
+use Drupal\paragraphs\Entity\Paragraph;
+use Drupal\node\Entity\Node;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+
+function hudayriyat_preprocess_block(array &$variables) {
+  $variables['langcode'] = \Drupal::languageManager()->getCurrentLanguage()->getId();
+}
+
+function hudayriyat_preprocess_menu__main(&$variables) {
+  $site_config = \Drupal::config('system.site');
+  // logo needs to be placed within specified folder
+
+  $variables['menuactive'] = '';
+  $node = \Drupal::routeMatch()->getParameter('node');
+
+  $variables['homepath'] = (get_language_class()=='ar')?'/ar':'/';
+  $variables['logopath'] = \Drupal::service('file_url_generator')->generateString(theme_get_setting('logo.url'));
+
+  $lang_codes = get_lang_codes();
+  $variables['langcode'] = $lang_codes['langcode'];
+  $variables['langlink'] = $lang_codes['langlink'];
+  $variables['langclass'] = get_language_class();
+}
+
+function hudayriyat_preprocess_block__headerleft(array &$variables) {
+    $lang_codes = get_lang_codes();
+    $variables['langcode'] = $lang_codes['langcode'];
+    $variables['langlink'] = $lang_codes['langlink'];
+}
+
+function hudayriyat_preprocess_page(&$variables) {
+  try {
+    if(\Drupal::service('path.matcher')->isFrontPage()) {
+      unset($variables['page']['content']['hudayriyat_content']);
+    }
+  } catch (Exception $e) {
+    $variables['is_front'] = FALSE;
+  }
+}
+
+function hudayriyat_preprocess_html(array &$variables) {
+  $variables['langclass'] = get_language_class();
+}
+
+function hudayriyat_preprocess_html__front(array &$variables) {
+  $variables['langclass'] = get_language_class();
+}
+
+function hudayriyat_preprocess_links(array &$variables) {
+  $variables['langclass'] = get_language_class();
+}
+
+function get_language_class() {
+  $langclass = '';
+  $language_manager = \Drupal::languageManager();
+  if($language_manager->getCurrentLanguage()->getId() == 'ar') {
+    $langclass = 'ar';
+  } else {
+    $langclass = 'en';
+  }
+  return $langclass;
+}
+
+function get_lang_codes() {
+    $lang_variables = array();
+    $language_manager = \Drupal::languageManager();
+    $lang_variables['langcode'] = $language_manager->getLanguageName('ar');
+    $language_manager->getCurrentLanguage()->getId();
+    if($language_manager->getCurrentLanguage()->getId() == 'ar') {
+      $lang_variables['langcode'] = 'English'; //$language_manager->getLanguageName('en');
+      $lang_variables['langlink'] = '/en';
+    } else  {
+      $lang_variables['langcode'] = 'عربي'; //$language_manager->getLanguageName('ar');
+      $lang_variables['langlink'] = '/ar';
+    }
+    return $lang_variables;
+}
+
+function hudayriyat_preprocess_node(array &$variables) {
+
+   $node = \Drupal::routeMatch()->getParameter('node');
+   $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+   $node->hasTranslation($language);
+   if (!$node->hasTranslation($language)) {
+      //throw new \Symfony\Component\HttpKernel\Exception\NotFoundHttpException();
+   }
+
+  $rootnode = $variables['node'];
+
+  $currlanguage = \Drupal::languageManager()->getCurrentLanguage()->getId();
+  $variables['langcode'] = $currlanguage;
+
+  $tree = \Drupal::menuTree()->load('main', new \Drupal\Core\Menu\MenuTreeParameters());
+  foreach ($tree as $item) {
+    $weight = $item->link->getWeight();
+    $title = $item->link->getTitle();
+    $url = $item->link->getUrlObject()->toString();
+
+    $variables['menu_links'][$weight] = array('title'=>$title,'url'=>$url);
+  }
+  ksort($variables['menu_links']);
+}
+
+function hudayriyat_preprocess_field(&$variables) {
+    $language = \Drupal::languageManager()->getCurrentLanguage();
+    $variables['langclass'] = $language->getId();
+}
+
+function hudayriyat_preprocess_views_view_fields(&$variables) {
+
+  $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+  $variables['langcode'] = $language;
+  if($variables['view']->id() == 'events_listing' || $variables['view']->id() == 'promotions_listing'){
+    $variables['fields']['node_alias'] = $variables['fields']['view_node']->content;
+    $variables['#attached']['library'][] =  'hudayriyat/events-page';
+    $multidates = explode(',', $variables['fields']['field_event_multi_dates']->content);
+    $start_date = $variables['fields']['field_event_multi_dates']->content;
+    $end_date = $variables['fields']['field_event_multi_dates']->content;
+    if(count($multidates) > 1){
+      $start_date = $multidates[0];
+      $end_date = $multidates[count($multidates)-1];
+    }
+    
+    $time = explode(' ', $start_date)[1];
+
+    $timestamp = strtotime($end_date);
+    $current_time = time();
+    if($timestamp < $current_time){
+      $variables['fields']['outdated'] =  true;
+    }
+    $variables['fields']['start_time'] =  $time;
+  }
+
+  if($variables['view']->id() == 'events_intro'){
+    $variables['#attached']['library'][] =  'hudayriyat/events-page';
+    if($variables['fields']['field_event_multi_dates']->content != ''){
+      $multidates = explode(',', $variables['fields']['field_event_multi_dates']->content);
+      $start_date = $variables['fields']['field_event_multi_dates']->content;
+      if(count($multidates) > 1){
+        $start_date = $multidates[0];
+      }
+      $time = explode(' ', $start_date)[1];
+      $variables['fields']['map_time'] = $time;
+    }
+    $node = Node::load($variables['row']->nid);
+    if($node->field_event_info_block->target_id != ''){
+      $info_block = Paragraph::load($node->field_event_info_block->target_id);
+      $variables['fields']['learn_more'] = $info_block->field_link->getValue()[0]['uri'];
+      $variables['fields']['learn_more_text'] = $info_block->field_link->getValue()[0]['title'];
+    }
+
+    if($variables['fields']['field_event_slider_images']->content != ''){
+      $variables['fields']['event_images'] = explode(',', $variables['fields']['field_event_slider_images']->content);
+    }
+
+    if($node->field_event_location->target_id != ''){
+      $event_location = Paragraph::load($node->field_event_location->target_id);
+      if($event_location->field_location_details->target_id != ''){
+        $location_details = Paragraph::load($event_location->field_location_details->target_id);
+        $variables['fields']['iframe_url'] = $location_details->field_location_iframe_url->value;
+        $variables['fields']['map_place'] = $location_details->field_location_at->value;
+      }
+    }
+
+  }
+
+}
+
+function hudayriyat_preprocess_views_view_field(&$variables) {
+    $menu_links = [];
+    $language = \Drupal::languageManager()->getCurrentLanguage();
+    $variables['langclass'] = $language->getId();
+}
+
+function hudayriyat_preprocess_views_view(&$variables) {
+  
+  $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+  $variables['langcode'] = $language;
+
+}
+
+function hudayriyat_preprocess_views_view_unformatted(&$variables) {
+  $view = $variables['view'];
+  $rows = $variables['rows'];
+  $file_url_generator = \Drupal::service('file_url_generator');
+  $language = $currlanguage = \Drupal::languageManager()->getCurrentLanguage()->getId();
+  $variables['langcode'] = $language;
+  $variables['langclass'] = get_language_class();
+  global $base_url;
+  $variables['base_url'] = $base_url;
+
+ if($view->id() === 'amenities_listing') {
+    $amenityType = '';
+    foreach ($rows as $id => $row) {
+      if (!$row['content']['#row']->_entity->field_amenity_type->target_id) continue;
+	  $amenityDefType = Term::load($row['content']['#row']->_entity->field_amenity_type->target_id)->name->value;
+      if(Term::load($row['content']['#row']->_entity->field_amenity_type->target_id)->hasTranslation($language)) {
+        $amenityType = Term::load($row['content']['#row']->_entity->field_amenity_type->target_id)->getTranslation($language)->name->value;
+      } else {
+        $amenityType = Term::load($row['content']['#row']->_entity->field_amenity_type->target_id)->name->value;
+      }
+      $variables['amenityType'][] = $amenityType;
+      $variables['aminities_data'][$amenityDefType][] = array($id, $row);
+    }
+	asort($variables['aminities_data']);
+    $variables['amenitiesType'] = array_keys($variables['aminities_data']);
+ } elseif($view->id() === 'restaurant_listing' ) {
+   $assetType = '';
+   foreach ($rows as $id => $row) {
+    if (!$row['content']['#row']->_entity->field_amenity_type->target_id) continue;
+     if(Term::load($row['content']['#row']->_entity->field_amenity_type->target_id)->hasTranslation($language)) {
+        $assetType = Term::load($row['content']['#row']->_entity->field_amenity_type->target_id)->getTranslation($language)->name->value;
+      } else {
+        $assetType = Term::load($row['content']['#row']->_entity->field_amenity_type->target_id)->name->value;
+      }
+      if ($row['content']['#row']->_entity->field_amenity_tags->target_id) {
+        if(Term::load($row['content']['#row']->_entity->field_amenity_tags->target_id) && Term::load($row['content']['#row']->_entity->field_amenity_tags->target_id)->hasTranslation($language)) {
+          $amenityTags = Term::load($row['content']['#row']->_entity->field_amenity_tags->target_id)->getTranslation($language)->name->value;
+        } else {
+          $amenityTags = Term::load($row['content']['#row']->_entity->field_amenity_tags->target_id)->name->value;
+        }
+      }
+      $variables['assetTyp'][] = $assetType;
+      $variables['amenityTags'][] = $amenityTags;
+      $variables['assets_data']['All'][] =  array($id, $row);
+      $variables['assets_data'][$assetType][] = array($id, $row);
+
+   }
+    $variables['assetsTyp'] = array_unique($variables['assetTyp']);
+    $variables['amenityTags'] = array_unique($variables['amenityTags']);
+ } elseif($view->id() === 'events_listing' ) {
+   $assetType = '';
+   foreach ($rows as $id => $row) {
+      if($row['content']['#row']->_entity->hasTranslation($language)){
+        $variables['events_data'][$id]['title'] = $row['content']['#row']->_entity->getTranslation($language)->field_hero_image_title->value;
+        if($row['content']['#row']->_entity->field_hero_image->entity) {
+          $variables['events_data'][$id]['image'] = $file_url_generator->generateAbsoluteString($row['content']['#row']->_entity->getTranslation($language)->field_hero_image->entity->getFileUri());
+        }
+        if($row['content']['#row']->_entity->field_event_logo->entity) {
+          $variables['events_data'][$id]['logo'] = $file_url_generator->generateAbsoluteString($row['content']['#row']->_entity->getTranslation($language)->field_event_logo->entity->getFileUri());
+        }
+        $variables['events_data'][$id]['opening_hours'] = date('H:i', strtotime($row['content']['#row']->_entity->getTranslation($language)->field_event_date->value.' +4 hours'));
+
+		if(date('dMy',strtotime($row['content']['#row']->_entity->field_event_date->value)) != date('dMy',strtotime($row['content']['#row']->_entity->field_event_end_date->value))) {
+          $sday = date('d', strtotime($row['content']['#row']->_entity->getTranslation($language)->field_event_date->value));
+          $smon = t(date('M', strtotime($row['content']['#row']->_entity->getTranslation($language)->field_event_date->value)));
+          $eday = date('d', strtotime($row['content']['#row']->_entity->getTranslation($language)->field_event_end_date->value));
+          $emon = t(date('M', strtotime($row['content']['#row']->_entity->getTranslation($language)->field_event_end_date->value)));
+		  if($smon != $emon) 
+			$variables['events_data'][$id]['date'] = $smon.' - '.$emon.'#'.$sday.' - '.$eday;
+				else
+			$variables['events_data'][$id]['date'] = $smon.'#'.$sday.' - '.$eday;
+        } else {
+		      $sday = date('d', strtotime($row['content']['#row']->_entity->getTranslation($language)->field_event_date->value));
+			    $smon = t(date('M', strtotime($row['content']['#row']->_entity->getTranslation($language)->field_event_date->value)));
+          $variables['events_data'][$id]['date'] = $smon.'#'.$sday;
+        }		
+        $variables['events_data'][$id]['url'] = $row['content']['#row']->_entity->getTranslation($language)->url();
+        $variables['events_data'][$id]['location'] = $row['content']['#row']->_entity->getTranslation($language)->field_event_place->value;
+      } else {
+        $variables['events_data'][$id]['title'] = $row['content']['#row']->_entity->field_hero_image_title->value;
+        if($row['content']['#row']->_entity->field_hero_image->entity) {
+          $variables['events_data'][$id]['image'] = $file_url_generator->generateAbsoluteString($row['content']['#row']->_entity->field_hero_image->entity->getFileUri());
+        }
+        if($row['content']['#row']->_entity->field_event_logo->entity) {
+          $variables['events_data'][$id]['logo'] = $file_url_generator->generateAbsoluteString($row['content']['#row']->_entity->field_event_logo->entity->getFileUri());
+        }
+        $variables['events_data'][$id]['opening_hours'] = date('H:i', strtotime($row['content']['#row']->_entity->field_event_date->value.' +4 hours'));        
+
+        if(date('dMy',strtotime($row['content']['#row']->_entity->field_event_date->value)) != date('dMy',strtotime($row['content']['#row']->_entity->field_event_end_date->value))) {
+          $sday = date('d', strtotime($row['content']['#row']->_entity->field_event_date->value));
+          $smon = t(date('M', strtotime($row['content']['#row']->_entity->field_event_date->value)));
+          $eday = date('d', strtotime($row['content']['#row']->_entity->field_event_end_date->value));
+          $emon = t(date('M', strtotime($row['content']['#row']->_entity->field_event_end_date->value)));
+		  
+          if($smon != $emon) 
+			$variables['events_data'][$id]['date'] = $smon.' - '.$emon.'#'.$sday.' - '.$eday;
+				else
+			$variables['events_data'][$id]['date'] = $smon.'#'.$sday.' - '.$eday;
+        } else {
+          $sday = date('d', strtotime($row['content']['#row']->_entity->field_event_date->value));
+          $smon = t(date('M', strtotime($row['content']['#row']->_entity->field_event_date->value)));			
+          $variables['events_data'][$id]['date'] = $smon.'#'.$sday;
+        }
+
+
+        $variables['events_data'][$id]['url'] = $row['content']['#row']->_entity->url();
+        $variables['events_data'][$id]['location'] = $row['content']['#row']->_entity->getTranslation($language)->field_event_place->value;
+      }
+      foreach($row['content']['#row']->_entity->field_event_multi_dates as $i=>$dateval) {
+        $multidates[$i][]=($dateval->value);
+      }
+        $row['content']['#row']->_entity->field_event_multi_dates[0]=$row['content']['#row']->_entity->field_event_multi_dates[1];
+        $rows[$id]=$row;
+   } 
+    //$variables['rows']=$rows;
+    $variables['assetsTyp'] = array_unique($variables['assetTyp']);
+    $variables['amenityTags'] = array_unique($variables['amenityTags']);
+ } elseif($view->id() === 'footer_section') {
+    $tree = \Drupal::menuTree()->load('main', new \Drupal\Core\Menu\MenuTreeParameters());
+    foreach ($tree as $item) {
+      $weight = $item->link->getWeight();
+      $title = $item->link->getTitle();
+      $url = $item->link->getUrlObject()->toString();
+
+      $variables['menu_links'][$weight] = array('title'=>$title,'url'=>$url);
+    }
+	ksort($variables['menu_links']);
+ } elseif($view->id() === 'about_content_details') {
+    $about_content_title = [];
+    foreach ($rows as $id => $row) {
+      if($row['content']['#row']->_entity->hasTranslation($language)){
+        $about_content_title[] = $row['content']['#row']->_entity->getTranslation($language)->field_hero_image_title->value;
+      } else {
+        $about_content_title[] = $row['content']['#row']->_entity->field_hero_image_title->value;
+      }
+    }
+    $variables['about_content_title'] = $about_content_title;
+ } elseif($view->id() === 'available_amenity_items') {
+   $type = '';
+   foreach ($rows as $id => $row) {
+    if (!$row['content']['#row']->_entity->field_amenity_type->target_id) continue;
+      if (Term::load($row['content']['#row']->_entity->field_amenity_type->target_id)->hasTranslation($language)) {
+        $amenityType = Term::load($row['content']['#row']->_entity->field_amenity_type->target_id)->getTranslation($language)->name->value;
+      } else {
+        $amenityType = Term::load($row['content']['#row']->_entity->field_amenity_type->target_id)->name->value;
+      }
+   }
+   $variables['type'] = $amenityType;
+ } elseif($view->id() === 'other_amenity_items') {
+   $type = '';
+   foreach ($rows as $id => $row) {
+    if (!$row['content']['#row']->_entity->field_amenity_type->target_id) continue;
+      if(Term::load($row['content']['#row']->_entity->field_amenity_type->target_id)->hasTranslation($language)) {
+        $amenityType = Term::load($row['content']['#row']->_entity->field_amenity_type->target_id)->getTranslation($language)->name->value;
+      } else {
+        $amenityType = Term::load($row['content']['#row']->_entity->field_amenity_type->target_id)->name->value;
+      }
+   }
+   $variables['type'] = $amenityType;
+ } elseif($view->id() === 'search_list') {
+    $amenityType = '';
+      foreach ($rows as $id => $row) {
+        if ($row['content']['#row']->_entity->field_amenity_type->target_id) {
+          $amenityDefType = Term::load($row['content']['#row']->_entity->field_amenity_type->target_id)->name->value;
+        
+          $variables['aminities_data'][$amenityDefType][] = array($id, $row);
+        }
+        
+      }
+      asort($variables['aminities_data']);
+ } elseif($view->id() === 'preloader_block') {
+   if (!isset($_COOKIE["seen-hudayriyat"])){
+     setcookie( "seen-hudayriyat", "yes", strtotime( '+30 days' ) ); 
+     $variables['cookie'] = $_COOKIE['seen-hudayriyat'];
+     \Drupal::logger('hudayriyat')->notice('Cookie set '.$_COOKIE['seen-hudayriyat']);
+   } else {
+     \Drupal::logger('hudayriyat')->notice('Cookie is not set');
+   }
+ } elseif($view->id() === 'interactivemap_list') {
+    $vid = 'landmarks';
+    $terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree($vid);
+    foreach ($terms as $term) {
+      $term_obj = Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($term->tid);
+      $landmark_translated_term = \Drupal::service('entity.repository')->getTranslationFromContext($term_obj, $language);
+
+      $landmarkPosition = '';
+      if($term_obj->get('field_landmark_position')->target_id) {
+        $term_ref_obj = Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($term_obj->get('field_landmark_position')->target_id);
+        $landmarkPosition = $term_ref_obj->get('field_position')->value;
+      }
+
+      if($term_obj->get('field_landmark_type')->target_id) {
+        $term_landmark_type = Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($term_obj->get('field_landmark_type')->target_id);
+        $landmarkType = $term_landmark_type->get('name')->value;
+        $cssClass = $term_landmark_type->get('field_css_class')->value;
+      }
+
+      $lmurl='/images/static/amenity-default.png';
+      if($term_obj->get('field_landmark_image')->entity) {
+        $uri = $term_obj->get('field_landmark_image')->entity->getFileUri();
+        $lmurl = $file_url_generator->generateAbsoluteString($uri);
+      }
+      $landmarks_data[] = [
+        'tid' => $term->tid,
+        'tname' => $term->name,
+        'landmarkNo' => $term_obj->get('field_number')->value,
+        'landmarkUrl' => $term_obj->get('field_landmark_link')->value,
+        'landmarkImage' => $lmurl,
+        'landmarkName' => $landmark_translated_term->get('field_name')->value,
+        'landmarkPosition' => $landmarkPosition,
+        'landmarkType' => $landmarkType,
+        'cssClass' => $cssClass
+      ];
+      $landmarks_title[] = $landmark_translated_term->get('field_name')->value;
+    }
+    $variables['landmarks'] =  $landmarks_data;
+
+    $trails_id = 'trails';
+    $trailTerms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree($trails_id);
+    foreach ($trailTerms as $trailTerm) {
+      $trailTerm_obj = Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($trailTerm->tid);
+      $trailTerm_translated_term = \Drupal::service('entity.repository')->getTranslationFromContext($trailTerm_obj, $language);
+
+      $trailColor = '';
+      if($trailTerm_obj->get('field_color')->target_id) {
+        $trails_ref_obj = Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($trailTerm_obj->get('field_color')->target_id);
+        $trailColor = $trails_ref_obj->get('field_trail_color_class')->value;
+      }
+      $url = "";
+      if(isset($trailTerm_obj->get('field_trails_image')->entity)){
+        $url = $file_url_generator->generateAbsoluteString($trailTerm_obj->get('field_trails_image')->entity->getFileUri());
+      }
+
+      $trails_data[] = [
+        'trailsId' => $trailTerm->tid,
+        'trailsName' => $trailTerm->name,
+        'trailsTitle' => $trailTerm_translated_term->get('field_trails_name')->value,
+        'image_url' => $url,
+        'color' =>  $trailColor,
+      ];
+    }
+    
+    $variables['trails'] =  $trails_data;
+    
+    $expSuggest = array();
+    foreach ($rows as $id => $row) {
+      if (!$row['content']['#row']->_entity->field_position->target_id) {
+        continue;
+      }
+      $position = Term::load($row['content']['#row']->_entity->field_position->target_id)->name->value;
+      
+      if($position != '') {
+        if($row['content']['#row']->_entity->hasTranslation($language)){
+          $auto = $row['content']['#row']->_entity->getTranslation($language)->field_autosuggestion_keywords->value;
+          $autosuggest = explode(",",$auto);
+          $expSuggest = array_merge($expSuggest, $autosuggest);
+          $title[] = $row['content']['#row']->_entity->getTranslation($language)->field_hero_image_title->value;
+        } else {
+          $auto = $row['content']['#row']->_entity->field_autosuggestion_keywords->value;
+          $autosuggest = explode(",",$auto);
+          $expSuggest = array_merge($expSuggest, $autosuggest);
+          $title[] = $row['content']['#row']->_entity->field_hero_image_title->value;
+        }
+        
+        if ($row['content']['#row']->_entity->field_amenity_type->target_id) {
+          if(
+            Term::load($row['content']['#row']->_entity->field_amenity_type->target_id)->hasTranslation($language)
+            ) {
+            $amenityType[] = Term::load($row['content']['#row']->_entity->field_amenity_type->target_id)->getTranslation($language)->name->value;
+          } else {
+            $amenityType[] = Term::load($row['content']['#row']->_entity->field_amenity_type->target_id)->name->value;
+          }
+        }
+        
+        if ($row['content']['#row']->_entity->field_amenity_tags->target_id) {
+          if(Term::load($row['content']['#row']->_entity->field_amenity_tags->target_id) && Term::load($row['content']['#row']->_entity->field_amenity_tags->target_id)->hasTranslation($language)) {
+            $amenityTag[] = Term::load($row['content']['#row']->_entity->field_amenity_tags->target_id)->getTranslation($language)->name->value;
+          } else {
+            $amenityTag[] = Term::load($row['content']['#row']->_entity->field_amenity_tags->target_id)->name->value;
+          }
+        }
+        
+    }
+
+    }
+    $suggestions = array_merge($title,$expSuggest);
+    $aSuggestions = array_merge($suggestions,$landmarks_title);
+
+    $aSuggestions = array_map('trim',$aSuggestions);
+    $aSuggestions = array_map('strtolower',$aSuggestions);
+
+    $variables['autosuggest'] = array_unique($aSuggestions);
+
+    //$suggestions = array_merge($title,$expSuggest);
+    //$aSuggestions = array_merge($suggestions,$landmarks_title);
+    //$variables['autosuggest'] = array_unique($aSuggestions);
+
+    $amenities =array_merge($amenityType,$amenityTag);
+    $variables['amenityType'] = array_unique($amenities);
+ }
+}
+
+function getDefaultTranslation($entity, $language) {
+  $deflangcode = \Drupal::languageManager()->getDefaultLanguage()->getId();
+  if(!$entity->hasTranslation($language)) {
+    $language = $deflangcode;
+  }
+  return $language;
+}
+
+function hudayriyat_preprocess_paragraph(&$variables) {
+      $variables['#attached']['library'][] =  'hudayriyat/events-page';
+  $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+  $variables['langcode'] = $language;
+}
+
+function hudayriyat_theme_suggestions_views_view_grid_alter(array &$suggestions, array $variables) {
+  if($variables['view']->id() == 'events_listing'){
+    $suggestions[] = 'views_view_grid__'.$variables['view']->id(); 
+  }
+}
+
+function hudayriyat_theme_suggestions_alter(array &$suggestions, array $variables, $hook) {
+  if($hook == 'views_view_unformatted'){
+    if($variables['view']->id() == 'promotion_paragraphs'){
+      $suggestions[] = $hook . '__' . $variables['view']->id();
+    }
+  }
+}
+
+function hudayriyat_theme_suggestions_views_view_fields_alter(array &$suggestions, array $variables) {
+  if($variables['view']->id() == 'events_listing'){
+    $suggestions[] = 'views_view_fields__'.$variables['view']->id(); 
+  }
+}
+
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function hudayriyat_theme_suggestions_paragraph_alter(&$suggestions, $variables) {
+  $paragraph = $variables['elements']['#paragraph'];
+  $parent = $paragraph->getParentEntity();
+  if ($parent) {
+    $suggestions[] = 'paragraph__' . $parent->bundle() . '__' .  $paragraph->bundle();
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_select_alter().
+ */
+function hudayriyat_theme_suggestions_select_alter(array &$suggestions, array $variables) {
+  $routeObject = \Drupal::routeMatch()->getRouteObject();
+  $view_id = $routeObject->getDefault('view_id');
+  $display_id = $routeObject->getDefault('display_id');
+  $element = $variables['element'];
+  if ($element['#name'] && $element['#name']=='experience') {
+    $suggestions[] = 'select__experience';
+  }
+  if ($element['#name'] && $element['#name']=='aexperience') {
+    $suggestions[] = 'select__aexperience';
+  }
+  if ($element['#name'] && $element['#name']=='sort_by') {
+    $suggestions[] = 'select__sort';
+  }
+  if ($element['#name'] && $element['#name']=='locations') {
+    $suggestions[] = 'select__locations';
+  }
+  if ($element['#name'] && strpos($element['#name'], 'amenities[')) {
+    $suggestions[] = 'form_element__amenities';
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_select_alter().
+ */
+function hudayriyat_theme_suggestions_form_element_alter(array &$suggestions, array $variables) {
+  $routeObject = \Drupal::routeMatch()->getRouteObject();
+  $view_id = $routeObject->getDefault('view_id');
+  $display_id = $routeObject->getDefault('display_id');
+  $element = $variables['element'];
+  if (isset($element['#name']) && ($element['#attributes']['class'][0] == 'amenities')) {
+    $suggestions[] = 'form_element__amenities';
+  }
+  if (isset($element['#name']) && ($element['#attributes']['class'][0] == 'amenity-tags')) {
+    $suggestions[] = 'form_element__amenity_tags';
+  }
+}
+
+
+/**
+ * Implements hook_theme_suggestions_select_alter().
+ */
+function hudayriyat_preprocess_select(&$variables) {
+  $file_url_generator = \Drupal::service('file_url_generator');
+  $element = $variables['element'];
+  if ($element['#name'] && $element['#name']=='experience') {
+    $vid = 'experience';
+    $terms =\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree($vid);
+    foreach ($terms as $term) {
+      $term_obj = Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($term->tid);
+      $url = "";
+      if(isset($term_obj->get('field_experience_type_image')->entity)){
+        $url = $file_url_generator->generateAbsoluteString($term_obj->get('field_experience_type_image')->entity->getFileUri());
+      }
+      $variables['exp_icons'][$term->tid]=$url;
+    }
+  }elseif ($element['#name'] && $element['#name']=='aexperience') {
+    $vid = 'experience';
+    $terms =\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree($vid);
+    foreach ($terms as $term) {
+      $term_obj = Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($term->tid);
+      $url = "";
+      if(isset($term_obj->get('field_experience_type_image')->entity)){
+        $url = $file_url_generator->generateAbsoluteString($term_obj->get('field_experience_type_image')->entity->getFileUri());
+      }
+      $variables['exp_icons'][$term->tid]=$url;
+    }
+  }
+}
+
+function hudayriyat_form_views_exposed_form_alter(&$form, &$form_state, $form_id) {
+  
+    if($form['#id'] == 'views-exposed-form-events-listing-event-listing-block') {
+      //$form['field_hero_image_title_value']['#field_prefix']='<img src ="/images/static/range-date.svg" alt="range" />';
+    } elseif($form['#id'] == 'views-exposed-form-all-news-list-default') {
+      //$form['field_news_listing_title_value']['#field_prefix']='<img src ="/images/static/range-date.svg" alt="range" />';
+    }
+    
+}

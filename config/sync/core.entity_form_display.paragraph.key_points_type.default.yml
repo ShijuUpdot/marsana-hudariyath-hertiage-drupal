@@ -1,0 +1,45 @@
+uuid: d279ac94-9dac-496f-baa2-967cfa6121e6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.key_points_type.field_headline
+    - field.field.paragraph.key_points_type.field_headline_short_description
+    - field.field.paragraph.key_points_type.field_icon
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.key_points_type
+  module:
+    - svg_image
+    - text
+id: paragraph.key_points_type.default
+targetEntityType: paragraph
+bundle: key_points_type
+mode: default
+content:
+  field_headline:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_headline_short_description:
+    weight: 2
+    settings:
+      size: 100
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+    region: content
+  field_icon:
+    weight: 0
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+hidden:
+  created: true
+  status: true

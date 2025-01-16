@@ -1,0 +1,8 @@
+uuid: aaadbfbb-9e29-45da-ac8b-408729caff18
+langcode: en
+status: true
+dependencies: {  }
+id: heritage_trail_recaptcha
+label: 'Heritage Trail Recaptcha'
+threshold: 0.1
+challenge: ''

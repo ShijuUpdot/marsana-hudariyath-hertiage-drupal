@@ -1,0 +1,23 @@
+uuid: fd68d11d-1af4-4b4d-a649-a18fdaecbb17
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.enjoy
+  module:
+    - text
+id: node.enjoy.body
+field_name: body
+entity_type: node
+bundle: enjoy
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

@@ -1,0 +1,21 @@
+uuid: 45d1ab7c-3e3b-4463-ad65-fc1e22938bdc
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.header_guidelines
+    - field.storage.block_content.field_guidelines_description
+  module:
+    - text
+id: block_content.header_guidelines.field_guidelines_description
+field_name: field_guidelines_description
+entity_type: block_content
+bundle: header_guidelines
+label: 'Guidelines Description'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

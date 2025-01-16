@@ -1,0 +1,23 @@
+uuid: cbd97ad1-945f-4e32-96bb-70868198a000
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.personalization
+  module:
+    - text
+id: node.personalization.body
+field_name: body
+entity_type: node
+bundle: personalization
+label: Body
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

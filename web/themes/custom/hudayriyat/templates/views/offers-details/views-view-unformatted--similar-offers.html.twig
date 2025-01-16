@@ -1,0 +1,54 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a view of unformatted rows.
+ *
+ * Available variables:
+ * - title: The title of this group of rows. May be empty.
+ * - rows: A list of the view's row items.
+ *   - attributes: The row's HTML attributes.
+ *   - content: The row's content.
+ * - view: The view object.
+ * - default_row_class: A flag indicating whether default classes should be
+ *   used on rows.
+ *
+ * @see template_preprocess_views_view_unformatted()
+ *
+ * @ingroup themeable
+ */
+#}
+
+ <section class="p-section related-content no-border">
+    <div class="container similar-cards square">
+    <div class="row">
+        <div class="col-md-6">
+        <h2>{{ 'Similar offers' | t }}</h2>
+        </div>
+    </div>
+
+    <div class="row">
+    {% for row in rows %}
+    {% set title = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_hero_image_title }}'] | striptags | trim %}
+    {% set image = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_hero_image }}'] | striptags | trim  %}
+    {% set link = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ view_node }}'] | striptags | trim  %}
+    {% set icon = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_event_logo }}'] | striptags | trim  %}
+        <div class="col-md-6">
+            <div class="card-wrapper">
+                <div class="card sports percent-40">
+                <div class="card-img-wrapper">
+                    <a href="{{ link }}"></a>
+                    <img class="card-img-top" src="{{ image }}" alt="{{ title }}">
+                </div>
+                <div class="card-body">
+                    <a href="{{ link }}">
+                    <h3 class="card-title">{{ title }}</h3>
+                    </a>
+                </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+
+    </div>
+</section>

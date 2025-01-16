@@ -1,0 +1,17 @@
+uuid: d5cd2043-e5d7-40f6-99bf-8cc6341f4d6a
+langcode: en
+status: true
+dependencies:
+  module:
+    - marvista_api
+    - serialization
+    - user
+id: notification_list_resource
+plugin_id: notification_list_resource
+granularity: method
+configuration:
+  GET:
+    supported_formats:
+      - json
+    supported_auth:
+      - cookie

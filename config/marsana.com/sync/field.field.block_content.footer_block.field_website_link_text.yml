@@ -1,0 +1,19 @@
+uuid: 38c5da6b-e503-4aa8-83be-47a39db41a55
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.footer_block
+    - field.storage.block_content.field_website_link_text
+id: block_content.footer_block.field_website_link_text
+field_name: field_website_link_text
+entity_type: block_content
+bundle: footer_block
+label: 'Website Link Text'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

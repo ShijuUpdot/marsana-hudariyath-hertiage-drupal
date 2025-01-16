@@ -1,0 +1,18 @@
+uuid: 3a062457-5fdf-403f-ad7e-3f1e4471851c
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.static_pages
+id: node.static_pages.created
+field_name: created
+entity_type: node
+bundle: static_pages
+label: 'Authored on'
+description: 'The time that the node was created.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

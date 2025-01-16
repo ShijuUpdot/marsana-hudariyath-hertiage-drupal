@@ -1,0 +1,21 @@
+uuid: 47021d5e-0ccb-4ef6-bcc2-729a1cf5b3b1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_intro_description
+    - paragraphs.paragraphs_type.news_details_content
+  module:
+    - text
+id: paragraph.news_details_content.field_intro_description
+field_name: field_intro_description
+entity_type: paragraph
+bundle: news_details_content
+label: 'Info Description'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

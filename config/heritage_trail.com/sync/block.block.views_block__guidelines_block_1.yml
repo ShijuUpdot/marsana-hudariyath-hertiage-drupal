@@ -1,0 +1,36 @@
+uuid: 9b88453a-3ac4-45c7-9572-ca52b5c27156
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.guidelines
+  module:
+    - block_visibility_groups
+    - system
+    - views
+  theme:
+    - heritage
+id: views_block__guidelines_block_1
+theme: heritage
+region: content
+weight: -3
+provider: null
+plugin: 'views_block:guidelines-block_1'
+settings:
+  id: 'views_block:guidelines-block_1'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: '1'
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
+    context_mapping: {  }
+  request_path:
+    id: request_path
+    pages: /home
+    negate: false
+    context_mapping: {  }

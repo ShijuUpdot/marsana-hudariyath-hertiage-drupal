@@ -1,0 +1,18 @@
+uuid: bb6bd7bc-74d8-4f50-8be7-d71bca1f7cce
+langcode: en
+status: true
+dependencies:
+  config:
+    - message.template.new_comment
+id: message.new_comment.metatag
+field_name: metatag
+entity_type: message
+bundle: new_comment
+label: 'Metatags (Hidden field for JSON support)'
+description: 'The meta tags for the entity.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: map

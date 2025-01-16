@@ -1,0 +1,20 @@
+uuid: 0608fedc-5d28-4ea0-8ae1-1fbccc504e6c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_dial_code
+  module:
+    - user
+id: user.user.field_dial_code
+field_name: field_dial_code
+entity_type: user
+bundle: user
+label: 'Dial Code'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

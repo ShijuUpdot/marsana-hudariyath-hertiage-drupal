@@ -1,0 +1,21 @@
+uuid: a0c184d4-e2b8-492f-9af8-0e6b50362e8d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_intro_short_description
+    - node.type.amenity_single
+  module:
+    - text
+id: node.amenity_single.field_intro_short_description
+field_name: field_intro_short_description
+entity_type: node
+bundle: amenity_single
+label: 'Amenity Short Description'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

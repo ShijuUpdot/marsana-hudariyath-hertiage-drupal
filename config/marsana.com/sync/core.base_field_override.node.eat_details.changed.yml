@@ -1,0 +1,18 @@
+uuid: f180fae6-686b-4abc-937a-2ae2089d8c93
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.eat_details
+id: node.eat_details.changed
+field_name: changed
+entity_type: node
+bundle: eat_details
+label: Changed
+description: 'The time that the node was last edited.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

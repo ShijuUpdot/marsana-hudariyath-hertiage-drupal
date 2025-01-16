@@ -1,0 +1,37 @@
+uuid: bcbc9b45-45e0-4bbf-a245-2d0b4bc95411
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.eat
+    - views.view.eat_single_banner_section
+  module:
+    - block_visibility_groups
+    - system
+    - views
+  theme:
+    - hudayriyat
+id: views_block__eat_single_banner_section_eat_single_banner_section
+theme: hudayriyat
+region: content
+weight: -7
+provider: null
+plugin: 'views_block:eat_single_banner_section-eat_single_banner_section'
+settings:
+  id: 'views_block:eat_single_banner_section-eat_single_banner_section'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: eat
+    context_mapping: {  }
+  request_path:
+    id: request_path
+    pages: /eat
+    negate: false
+    context_mapping: {  }

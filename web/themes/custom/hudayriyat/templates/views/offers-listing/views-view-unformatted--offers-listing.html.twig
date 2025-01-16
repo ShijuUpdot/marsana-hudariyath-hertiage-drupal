@@ -1,0 +1,58 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a view of unformatted rows.
+ *
+ * Available variables:
+ * - title: The title of this group of rows. May be empty.
+ * - rows: A list of the view's row items.
+ *   - attributes: The row's HTML attributes.
+ *   - content: The row's content.
+ * - view: The view object.
+ * - default_row_class: A flag indicating whether default classes should be
+ *   used on rows.
+ *
+ * @see template_preprocess_views_view_unformatted()
+ *
+ * @ingroup themeable
+ */
+#}
+{% if langcode == 'en' %}
+    {% set linkTitle = drupal_config('hudayriyat_custom_configs.settings', 'custom_configs_discover_offers_en')  %}
+  {% else %}
+    {% set linkTitle = drupal_config('hudayriyat_custom_configs.settings', 'custom_configs_discover_offers_ar') %}
+  {% endif %}
+{% for row in rows %}
+    {% set image = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_hero_image }}'] | striptags | trim %}
+    {% set title = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_hero_image_title }}'] | striptags | trim  %}
+    {% set headline = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_headline }}'] | striptags | trim %}
+    {% set link = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ view_node }}'] | striptags | trim  %}
+<div class="row">
+    <div class="col">
+        <div class="card-wrapper">
+            <div class="card event card-horizontal">
+            <div class="row">
+                <div class="col-md-7">
+                <div class="card-img-wrapper">
+                    <a href="{{ link }}">
+                    </a>
+                    <img class="card-img-top" src="{{ image }}" alt="Card image cap">
+                </div>
+                </div>
+                <div class="col-md-5">
+                <div class="card-body">
+                    <a href="{{ link }}">
+                    <h3 class="card-title">{{ title | raw }}</h3>
+                    </a>
+                    <p class="mb-5 navy">{{ headline | raw }} </p>
+                    <ul class="event-external">
+                    <li><a href="{{ link }}" class="btn external-btn">{{ linkTitle }}</a></li>
+                    </ul>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+</div>
+{% endfor %}

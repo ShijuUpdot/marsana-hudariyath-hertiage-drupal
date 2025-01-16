@@ -1,0 +1,21 @@
+uuid: 1dedaf22-a247-4d81-9ebb-c3eb4e64baf9
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+    - entity_reference_revisions
+    - paragraphs
+id: block_content.field_guidelines_listing
+field_name: field_guidelines_listing
+entity_type: block_content
+type: entity_reference_revisions
+settings:
+  target_type: paragraph
+module: entity_reference_revisions
+locked: false
+cardinality: 10
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

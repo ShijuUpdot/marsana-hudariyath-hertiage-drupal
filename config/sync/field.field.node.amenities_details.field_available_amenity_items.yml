@@ -1,0 +1,27 @@
+uuid: 2c3d4125-0db6-46cc-8042-d879e76c46a3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_available_amenity_items
+    - node.type.amenities_details
+id: node.amenities_details.field_available_amenity_items
+field_name: field_available_amenity_items
+entity_type: node
+bundle: amenities_details
+label: 'Available Amenity Items'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      amenities_details: amenities_details
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,4 @@
+text:
+  -
+    value: 'New amenity has been created'
+    format: basic_html

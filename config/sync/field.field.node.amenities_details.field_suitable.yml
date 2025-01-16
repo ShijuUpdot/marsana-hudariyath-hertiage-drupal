@@ -1,0 +1,29 @@
+uuid: b7e7128c-2cfd-41a0-87dc-063315a19041
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_suitable
+    - node.type.amenities_details
+    - taxonomy.vocabulary.suitable
+id: node.amenities_details.field_suitable
+field_name: field_suitable
+entity_type: node
+bundle: amenities_details
+label: Suitable
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      suitable: suitable
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

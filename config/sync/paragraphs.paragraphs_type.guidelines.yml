@@ -1,0 +1,10 @@
+uuid: 824b2002-bbe8-4e37-94e1-9b55cb5eb947
+langcode: en
+status: true
+dependencies: {  }
+id: guidelines
+label: Guidelines
+icon_uuid: null
+icon_default: null
+description: 'Guidelines like COVID-19'
+behavior_plugins: {  }

@@ -1,0 +1,72 @@
+{#
+/**
+ * @file
+ * Theme override to display all the fields in a row.
+ *
+ * Available variables:
+ * - view: The view in use.
+ * - fields: A list of fields, each one contains:
+ *   - content: The output of the field.
+ *   - raw: The raw data for the field, if it exists. This is NOT output safe.
+ *   - class: The safe class ID to use.
+ *   - handler: The Views field handler controlling this field.
+ *   - inline: Whether or not the field should be inline.
+ *   - wrapper_element: An HTML element for a wrapper.
+ *   - wrapper_attributes: List of attributes for wrapper element.
+ *   - separator: An optional separator that may appear before a field.
+ *   - label: The field's label text.
+ *   - label_element: An HTML element for a label wrapper.
+ *   - label_attributes: List of attributes for label wrapper.
+ *   - label_suffix: Colon after the label.
+ *   - element_type: An HTML element for the field content.
+ *   - element_attributes: List of attributes for HTML element for field content.
+ *   - has_label_colon: A boolean indicating whether to display a colon after
+ *     the label.
+ *   - element_type: An HTML element for the field content.
+ *   - element_attributes: List of attributes for HTML element for field content.
+ * - row: The raw result from the query, with all data it fetched.
+ *
+ * @see template_preprocess_views_view_fields()
+ */
+#}
+
+{% set grey = '' %}
+{% if fields.outdated == true %}
+  {% set grey = 'event-outdated' %}
+{% endif %}
+
+<div class="p-2">
+  <div class="event-box  mb-3 shadow {{ grey }}">
+    <div id="box-header" class="p-2 d-flex justify-content-end">
+      <span class="float-right">{{ fields.field_event_header_text.content }}</span>
+    </div>
+    <div id="box-banner">
+      <img src="{{ fields.field_hero_image.content }}" class="img-fluid"/>
+    </div>
+    <div id="box-content" class="">
+        <div class="py-4">
+          {# {% if fields.outdated == true %}
+             <a href="#" class="event-outdated"><h6 class="mb-2">{{ fields.field_hero_image_title.content }}</h6></a>
+          {% else %} #}
+            <a href="{{ fields.node_alias }}"><h6 class="mb-2">{{ fields.field_hero_image_title.content }}</h6></a>
+          {# {% endif %} #}
+          <p>{{ fields.field_intro_sub_headlines.content }}</p>
+        </div>
+    </div>
+    <div id="box-info" class="pb-4">
+      <div class="row px-4">
+        <div class="col-md-8 col-8 time-loc">
+          <img src="/images/static/location.svg"/> <span class="ml-2 pr-2 text-left">{{ fields.field_event_place.content }}</span>
+        </div>
+        <div class="col-md-4 col-4 time-loc">
+          <img src="/images/static/time.svg" /> <span class="ml-2">{{ fields.start_time }}</span>
+        </div>
+        {# {% if fields.outdated == true %}
+            <a href="#" class="event-outdated">Discover Event</a>
+        {% else %} #}
+          <a href="{{ fields.node_alias }}">Discover Event</a>
+        {# {% endif %} #}
+      </div>
+    </div>
+  </div>
+</div>

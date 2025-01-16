@@ -1,0 +1,28 @@
+uuid: f30c1842-764b-4440-93e0-21917a929556
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.message.field_ref_user
+    - message.template.new_comment
+id: message.new_comment.field_ref_user
+field_name: field_ref_user
+entity_type: message
+bundle: new_comment
+label: 'Ref User'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    include_anonymous: true
+    filter:
+      type: _none
+    target_bundles: null
+    sort:
+      field: _none
+    auto_create: false
+field_type: entity_reference

@@ -1,0 +1,5 @@
+hudayriyat_social_feeds.admin_settings:
+  title: 'Instagram Feed Fetch'
+  parent: hudayriyat_social_feeds.admin_config
+  description: 'Configure Instagram Feed API Settings.'
+  route_name: hudayriyat_social_feeds.admin_settings

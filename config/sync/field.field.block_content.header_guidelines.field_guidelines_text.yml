@@ -1,0 +1,21 @@
+uuid: 8c234525-c1fd-4031-ab5b-6f3648b7ebd4
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.header_guidelines
+    - field.storage.block_content.field_guidelines_text
+  module:
+    - text
+id: block_content.header_guidelines.field_guidelines_text
+field_name: field_guidelines_text
+entity_type: block_content
+bundle: header_guidelines
+label: 'Guidelines Text'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

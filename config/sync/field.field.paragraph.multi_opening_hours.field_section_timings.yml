@@ -1,0 +1,145 @@
+uuid: db40595e-8181-441b-86ea-548b3a44d384
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_section_timings
+    - paragraphs.paragraphs_type.multi_opening_hours
+    - paragraphs.paragraphs_type.multi_opening_hours_timings
+  module:
+    - entity_reference_revisions
+id: paragraph.multi_opening_hours.field_section_timings
+field_name: field_section_timings
+entity_type: paragraph
+bundle: multi_opening_hours
+label: 'Section Timings'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      multi_opening_hours_timings: multi_opening_hours_timings
+    target_bundles_drag_drop:
+      about_contact_details:
+        weight: 40
+        enabled: false
+      about_intro_section:
+        weight: 41
+        enabled: false
+      amenities_guidelines:
+        weight: 42
+        enabled: false
+      banner_block:
+        weight: 43
+        enabled: false
+      booking_listing:
+        weight: 44
+        enabled: false
+      booking_type:
+        weight: 45
+        enabled: false
+      description_block:
+        weight: 46
+        enabled: false
+      discover_key_features:
+        weight: 47
+        enabled: false
+      discover_listing:
+        weight: 48
+        enabled: false
+      event_guidelines:
+        weight: 49
+        enabled: false
+      features_block:
+        weight: 50
+        enabled: false
+      footer_social_links:
+        weight: 51
+        enabled: false
+      gallery_images:
+        weight: 52
+        enabled: false
+      guidelines:
+        weight: 53
+        enabled: false
+      info_block:
+        weight: 54
+        enabled: false
+      info_type:
+        weight: 55
+        enabled: false
+      intro_block:
+        weight: 56
+        enabled: false
+      key_points:
+        weight: 57
+        enabled: false
+      key_points_type:
+        weight: 58
+        enabled: false
+      landing_links:
+        weight: 59
+        enabled: false
+      link_type:
+        weight: 61
+        enabled: false
+      links_block:
+        weight: 60
+        enabled: false
+      listings:
+        weight: 62
+        enabled: false
+      location:
+        weight: 63
+        enabled: false
+      location_details:
+        weight: 64
+        enabled: false
+      multi_opening_hours:
+        weight: 65
+        enabled: false
+      multi_opening_hours_timings:
+        enabled: true
+        weight: 66
+      news_details_content:
+        weight: 67
+        enabled: false
+      opening_hours:
+        weight: 68
+        enabled: false
+      opening_hours_block:
+        weight: 69
+        enabled: false
+      opening_hours_section:
+        weight: 70
+        enabled: false
+      schedule_details:
+        weight: 71
+        enabled: false
+      single_banner:
+        weight: 72
+        enabled: false
+      slider_images:
+        weight: 73
+        enabled: false
+      static_link:
+        weight: 74
+        enabled: false
+      stats_listing:
+        weight: 75
+        enabled: false
+      stay_featured_block:
+        weight: 76
+        enabled: false
+      stay_stats_type:
+        weight: 77
+        enabled: false
+      terms_content:
+        weight: 78
+        enabled: false
+field_type: entity_reference_revisions

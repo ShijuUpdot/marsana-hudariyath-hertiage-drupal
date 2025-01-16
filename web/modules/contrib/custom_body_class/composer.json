@@ -1,0 +1,35 @@
+{
+  "name": "drupal/custom_body_class",
+  "description": "It is a simple module for Drupal 8 users to add custom CSS class to the <body> tag of the specific node page and to a specific content type.",
+  "type": "drupal-module",
+  "keywords": [
+    "Drupal"
+  ],
+  "homepage": "https://www.drupal.org/project/custom_body_class",
+  "license": "GPL-2.0-or-later",
+  "authors": [
+    {
+      "name": "Jitendra verma (jitendra-verma)",
+      "homepage": "https://www.drupal.org/u/jitendra-verma",
+      "role": "Maintainer"
+    },
+    {
+      "name": "Harshita Saini (harshita29)",
+      "homepage": "https://www.drupal.org/u/harshita29",
+      "role": "Maintainer"
+    },
+    {
+      "name": "Miguel Guerreiro (gueguerreiro)",
+      "homepage": "https://www.drupal.org/u/gueguerreiro",
+      "role": "Maintainer"
+    }
+
+  ],
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/email_octopus",
+    "source": "http://cgit.drupalcode.org/email_octopus"
+  },
+  "require": {
+    "drupal/core": "^8.8 || ^9 || ^10"
+  }
+}

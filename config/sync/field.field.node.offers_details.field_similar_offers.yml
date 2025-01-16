@@ -1,0 +1,27 @@
+uuid: 29f7b39c-5c32-4e1d-9dda-1dcbc94baaba
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_similar_offers
+    - node.type.offers_details
+id: node.offers_details.field_similar_offers
+field_name: field_similar_offers
+entity_type: node
+bundle: offers_details
+label: 'Similar offers'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      offers_details: offers_details
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

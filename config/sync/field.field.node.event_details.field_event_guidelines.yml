@@ -1,0 +1,46 @@
+uuid: b4048f9d-3e38-4e91-8e88-89d46066e061
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_event_guidelines
+    - node.type.event_details
+    - paragraphs.paragraphs_type.event_guidelines
+  module:
+    - entity_reference_revisions
+id: node.event_details.field_event_guidelines
+field_name: field_event_guidelines
+entity_type: node
+bundle: event_details
+label: 'Event Guidelines'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      event_guidelines: event_guidelines
+    target_bundles_drag_drop:
+      amenities_guidelines:
+        weight: 7
+        enabled: false
+      event_guidelines:
+        enabled: true
+        weight: 8
+      gallery_images:
+        weight: 9
+        enabled: false
+      guidelines:
+        weight: 10
+        enabled: false
+      location:
+        weight: 11
+        enabled: false
+      location_details:
+        weight: 12
+        enabled: false
+field_type: entity_reference_revisions

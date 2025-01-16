@@ -1,0 +1,20 @@
+uuid: cb53111f-3403-4822-85be-06d43a26cb3e
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.pin_positions
+  module:
+    - text
+id: taxonomy_term.pin_positions.description
+field_name: description
+entity_type: taxonomy_term
+bundle: pin_positions
+label: Description
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

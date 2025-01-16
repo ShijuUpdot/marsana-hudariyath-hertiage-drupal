@@ -1,0 +1,10 @@
+uuid: c0513d0b-9a5b-4c46-9058-6093649276b0
+langcode: en
+status: true
+dependencies: {  }
+id: footer_social_block
+label: 'Footer Social Block'
+icon_uuid: null
+icon_default: null
+description: 'Footer Social Block'
+behavior_plugins: {  }

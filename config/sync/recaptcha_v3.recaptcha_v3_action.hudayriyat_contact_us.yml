@@ -1,0 +1,8 @@
+uuid: be5f7f44-5b5a-4a58-9443-c36bb3d6c785
+langcode: en
+status: true
+dependencies: {  }
+id: hudayriyat_contact_us
+label: 'Hudayriyat Contact Us'
+threshold: 0.1
+challenge: ''

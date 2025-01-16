@@ -1,0 +1,23 @@
+uuid: f7c93832-141f-478a-a7f1-4a7274b105d5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_previous_landing
+    - node.type.landing_details
+  module:
+    - link
+id: node.landing_details.field_previous_landing
+field_name: field_previous_landing
+entity_type: node
+bundle: landing_details
+label: 'Previous Landing'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

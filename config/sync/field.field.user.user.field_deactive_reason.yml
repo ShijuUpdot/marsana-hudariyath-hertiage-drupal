@@ -1,0 +1,20 @@
+uuid: c4258d35-4e99-49c1-8247-9ce954d4825e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_deactive_reason
+  module:
+    - user
+id: user.user.field_deactive_reason
+field_name: field_deactive_reason
+entity_type: user
+bundle: user
+label: 'Deactive reason'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

@@ -1,0 +1,18 @@
+uuid: 1df169f6-faff-4f03-9bcc-a6fd1cfd066a
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.booking_listing
+id: paragraph.booking_listing.created
+field_name: created
+entity_type: paragraph
+bundle: booking_listing
+label: 'Authored on'
+description: 'The time that the Paragraph was created.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

@@ -1,0 +1,63 @@
+uuid: c94ba43f-a4af-486d-a273-4da860c8ee74
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.home.body
+    - field.field.node.home.field_about_section
+    - field.field.node.home.field_background_image2
+    - field.field.node.home.field_contact_block_title
+    - field.field.node.home.field_contact_social_links
+    - field.field.node.home.field_guidelines_icon
+    - field.field.node.home.field_guidelines_section
+    - field.field.node.home.field_header_block
+    - field.field.node.home.field_header_guidelines_text
+    - field.field.node.home.field_header_guidelines_title
+    - field.field.node.home.field_hero_image
+    - field.field.node.home.field_hero_image_title
+    - field.field.node.home.field_image
+    - field.field.node.home.field_indicators
+    - field.field.node.home.field_intro_description
+    - field.field.node.home.field_metatag
+    - field.field.node.home.field_upload_map
+    - node.type.home
+  module:
+    - text
+    - user
+id: node.home.teaser
+targetEntityType: node
+bundle: home
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_about_section: true
+  field_background_image2: true
+  field_contact_block_title: true
+  field_contact_social_links: true
+  field_guidelines_icon: true
+  field_guidelines_section: true
+  field_header_block: true
+  field_header_guidelines_text: true
+  field_header_guidelines_title: true
+  field_hero_image: true
+  field_hero_image_title: true
+  field_image: true
+  field_indicators: true
+  field_intro_description: true
+  field_metatag: true
+  field_upload_map: true
+  langcode: true

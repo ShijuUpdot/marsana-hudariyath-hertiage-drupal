@@ -1,0 +1,52 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a view of unformatted rows.
+ *
+ * Available variables:
+ * - title: The title of this group of rows. May be empty.
+ * - rows: A list of the view's row items.
+ *   - attributes: The row's HTML attributes.
+ *   - content: The row's content.
+ * - view: The view object.
+ * - default_row_class: A flag indicating whether default classes should be
+ *   used on rows.
+ *
+ * @see template_preprocess_views_view_unformatted()
+ *
+ * @ingroup themeable
+ */
+#}
+{% for row in rows %}
+{% set hero_image = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_hero_image }}'] %}
+{% set hero_title = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_hero_image_title }}'] %}
+{% set sub_title = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_sub_title }}'] %}
+{% set description = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_intro_description }}'] %}
+{% set parallax_image = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_parallax_wrapper }}'] |striptags|trim|split(',') %}
+
+<div class="first-fold">
+    <div class="shape-wrapper">
+        <div class="circles-shape" style="background-image: url({{ hero_image | striptags | trim }});"></div>
+    </div>
+    <div class="first-fold-info">
+      <div class="container">
+        <h1 data-scroll-speed="6">{{ hero_title | striptags | trim | raw}}</h1>
+      </div>
+      <div class="info-bottom" data-scroll-speed="4">
+        <div class="container">
+          <h3 >{{ sub_title | striptags | trim | raw}}</h3>
+          <p class="body-text fade-in-elements">{{ description | striptags | trim }}</p>
+          <div class="scroll-more fade-out-elements"  data-scroll-speed="-5">scroll for more</div>
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="parallax-wrapper top-wrapper">
+  {% if parallax_image[0] %}
+    <div class="parallax-shapes-top-left" data-scroll-speed="1"><img src="{{ parallax_image[0] }}" alt=""></div>
+  {% endif %}
+  {% if parallax_image[2] %} 
+    <div class="parallax-shapes-top-right" data-scroll-speed="-4"><img src="{{ parallax_image[2] }}" alt=""></div>
+  {% endif %}
+</div>
+{% endfor %}

@@ -1,0 +1,17 @@
+uuid: 41d611f2-d57a-4305-b5f1-6ef4332536db
+langcode: en
+status: true
+dependencies:
+  module:
+    - report_issue_and_help
+    - serialization
+    - user
+id: post_help_resource
+plugin_id: post_help_resource
+granularity: method
+configuration:
+  POST:
+    supported_formats:
+      - json
+    supported_auth:
+      - cookie

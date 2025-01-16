@@ -1,0 +1,164 @@
+uuid: 01a9e98f-49d3-4c6b-93f6-c0130f833aa8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.experience_details.body
+    - field.field.node.experience_details.field_big_image_section
+    - field.field.node.experience_details.field_experience_metatag
+    - field.field.node.experience_details.field_experience_type
+    - field.field.node.experience_details.field_hero_image
+    - field.field.node.experience_details.field_hero_image_class
+    - field.field.node.experience_details.field_hero_image_title
+    - field.field.node.experience_details.field_intro_description
+    - field.field.node.experience_details.field_listing
+    - field.field.node.experience_details.field_listing_details
+    - field.field.node.experience_details.field_parallax_wrapper
+    - field.field.node.experience_details.field_parallax_wrapper_bottom
+    - field.field.node.experience_details.field_sort_order
+    - field.field.node.experience_details.field_sub_title
+    - node.type.experience_details
+  module:
+    - entity_reference_revisions
+    - metatag
+    - options
+    - svg_image
+    - text
+    - user
+id: node.experience_details.default
+targetEntityType: node
+bundle: experience_details
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_big_image_section:
+    type: entity_reference_revisions_entity_view
+    weight: 109
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_experience_metatag:
+    weight: 119
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_empty_formatter
+    region: content
+  field_experience_type:
+    weight: 112
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_hero_image:
+    weight: 102
+    label: above
+    settings:
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_hero_image_class:
+    weight: 118
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_hero_image_title:
+    weight: 103
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_intro_description:
+    weight: 106
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_listing:
+    type: entity_reference_revisions_entity_view
+    weight: 116
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_listing_details:
+    type: entity_reference_revisions_entity_view
+    weight: 111
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_parallax_wrapper:
+    weight: 113
+    label: above
+    settings:
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_parallax_wrapper_bottom:
+    weight: 114
+    label: above
+    settings:
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_sort_order:
+    weight: 117
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_sub_title:
+    weight: 105
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true

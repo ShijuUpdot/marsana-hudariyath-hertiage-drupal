@@ -1,0 +1,18 @@
+uuid: 0787dfd9-ae3c-4fbe-bc9b-2c7f584f1e8a
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.facilities
+id: taxonomy_term.facilities.changed
+field_name: changed
+entity_type: taxonomy_term
+bundle: facilities
+label: Changed
+description: 'The time that the term was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

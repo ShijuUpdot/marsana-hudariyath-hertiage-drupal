@@ -1,0 +1,25 @@
+uuid: ec71fe70-f553-42d6-810d-484c4d7f71a7
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - hudayriyat
+_core:
+  default_config_hash: NDwadleLD3YVSbDUaakxyYZyINYtkFtOVGShfq4kWy8
+id: hudayriyat_branding
+theme: hudayriyat
+region: other
+weight: -12
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  provider: system
+  label_display: '0'
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: true
+visibility: {  }

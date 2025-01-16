@@ -1,0 +1,21 @@
+uuid: b36774d2-c7b1-446c-b02b-b3099a016958
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_highlighted_news_title
+field_name: field_highlighted_news_title
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

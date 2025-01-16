@@ -1,0 +1,77 @@
+uuid: ef63b7e9-ce4d-44c1-9127-de95348a49cf
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.amenity_single.body
+    - field.field.node.amenity_single.field_amenity_experience
+    - field.field.node.amenity_single.field_amenity_icon
+    - field.field.node.amenity_single.field_amenity_icon_color
+    - field.field.node.amenity_single.field_amenity_images
+    - field.field.node.amenity_single.field_amenity_images_title
+    - field.field.node.amenity_single.field_amenity_tags
+    - field.field.node.amenity_single.field_amenity_type
+    - field.field.node.amenity_single.field_available_amenity_items
+    - field.field.node.amenity_single.field_headline
+    - field.field.node.amenity_single.field_hero_image
+    - field.field.node.amenity_single.field_hero_image_title
+    - field.field.node.amenity_single.field_hero_video
+    - field.field.node.amenity_single.field_info_block
+    - field.field.node.amenity_single.field_intro_description
+    - field.field.node.amenity_single.field_intro_short_description
+    - field.field.node.amenity_single.field_key_features
+    - field.field.node.amenity_single.field_location_details
+    - field.field.node.amenity_single.field_other_amenity_item
+    - field.field.node.amenity_single.field_primary_color
+    - field.field.node.amenity_single.field_secondary_color
+    - field.field.node.amenity_single.field_slider_images
+    - field.field.node.amenity_single.field_upload
+    - node.type.amenity_single
+  module:
+    - text
+    - user
+id: node.amenity_single.teaser
+targetEntityType: node
+bundle: amenity_single
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  addtoany: true
+  field_amenity_experience: true
+  field_amenity_icon: true
+  field_amenity_icon_color: true
+  field_amenity_images: true
+  field_amenity_images_title: true
+  field_amenity_tags: true
+  field_amenity_type: true
+  field_available_amenity_items: true
+  field_headline: true
+  field_hero_image: true
+  field_hero_image_title: true
+  field_hero_video: true
+  field_info_block: true
+  field_intro_description: true
+  field_intro_short_description: true
+  field_key_features: true
+  field_location_details: true
+  field_other_amenity_item: true
+  field_primary_color: true
+  field_secondary_color: true
+  field_slider_images: true
+  field_upload: true
+  langcode: true
+  search_api_excerpt: true

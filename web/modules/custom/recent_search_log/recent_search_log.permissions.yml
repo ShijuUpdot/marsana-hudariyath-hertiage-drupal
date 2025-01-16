@@ -1,0 +1,20 @@
+add recent search entity entities:
+  title: 'Create new Recent search entity entities'
+
+administer recent search entity entities:
+  title: 'Administer Recent search entity entities'
+  description: 'Allow to access the administration form to configure Recent search entity entities.'
+  restrict access: true
+
+delete recent search entity entities:
+  title: 'Delete Recent search entity entities'
+
+edit recent search entity entities:
+  title: 'Edit Recent search entity entities'
+
+view published recent search entity entities:
+  title: 'View published Recent search entity entities'
+
+view unpublished recent search entity entities:
+  title: 'View unpublished Recent search entity entities'
+

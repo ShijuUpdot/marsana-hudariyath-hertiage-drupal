@@ -1,0 +1,20 @@
+uuid: 49f3cb29-61e0-43d3-9848-da95619812ef
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_action
+  module:
+    - user
+id: user.user.field_action
+field_name: field_action
+entity_type: user
+bundle: user
+label: Action
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

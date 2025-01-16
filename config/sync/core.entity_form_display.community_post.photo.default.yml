@@ -1,0 +1,100 @@
+uuid: 10a6ae2a-a803-4386-b417-1a7d34f9538a
+langcode: en
+status: true
+dependencies:
+  config:
+    - community_post.community_post_type.photo
+    - field.field.community_post.photo.field_approval_state
+    - field.field.community_post.photo.field_caption
+    - field.field.community_post.photo.field_comment
+    - field.field.community_post.photo.field_experience
+    - field.field.community_post.photo.field_facilities
+    - field.field.community_post.photo.field_image
+    - field.field.community_post.photo.field_place
+    - image.style.thumbnail
+  module:
+    - svg_image
+id: community_post.photo.default
+targetEntityType: community_post
+bundle: photo
+mode: default
+content:
+  field_approval_state:
+    weight: 6
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_caption:
+    weight: 4
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_experience:
+    weight: 5
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_facilities:
+    weight: 27
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_image:
+    weight: 3
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_place:
+    weight: 26
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  langcode:
+    type: language_select
+    weight: 1
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  user_id:
+    type: entity_reference_autocomplete
+    weight: 2
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      match_limit: 10
+    region: content
+    third_party_settings: {  }
+hidden:
+  field_comment: true

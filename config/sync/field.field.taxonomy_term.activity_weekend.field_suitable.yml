@@ -1,0 +1,29 @@
+uuid: 63ea77a3-9bbc-4ac7-af3b-e0b5ee9a5a35
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_suitable
+    - taxonomy.vocabulary.activity_weekend
+    - taxonomy.vocabulary.suitable_for_event
+id: taxonomy_term.activity_weekend.field_suitable
+field_name: field_suitable
+entity_type: taxonomy_term
+bundle: activity_weekend
+label: Suitable
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      suitable_for_event: suitable_for_event
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

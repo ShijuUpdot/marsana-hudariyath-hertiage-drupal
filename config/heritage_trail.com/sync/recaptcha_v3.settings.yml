@@ -1,0 +1,8 @@
+site_key: 6LdeaeQZAAAAAOvhrRHGFX4w1yTsVgGTeqSMSLIu
+secret_key: 6LdeaeQZAAAAAFn2Br-plta6p9iNh6C3I58jRChk
+verify_hostname: true
+default_challenge: ''
+error_message: 'Antibot verification failed.'
+cacheable: false
+_core:
+  default_config_hash: jv0PKCJEOq2bOwY9RspuPZCf67ifVJ4tfTk-BfZMw8k

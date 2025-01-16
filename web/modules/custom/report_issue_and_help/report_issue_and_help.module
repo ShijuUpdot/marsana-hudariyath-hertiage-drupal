@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains report_issue_and_help.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function report_issue_and_help_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the report_issue_and_help module.
+    case 'help.page.report_issue_and_help':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Report issue and help') . '</p>';
+      return $output;
+
+    default:
+  }
+}

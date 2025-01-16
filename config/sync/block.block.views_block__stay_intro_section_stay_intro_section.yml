@@ -1,0 +1,36 @@
+uuid: d068f702-8f01-4924-8f3e-59d3c6484c95
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.stay_intro_section
+  module:
+    - block_visibility_groups
+    - system
+    - views
+  theme:
+    - hudayriyat
+id: views_block__stay_intro_section_stay_intro_section
+theme: hudayriyat
+region: other
+weight: 3
+provider: null
+plugin: 'views_block:stay_intro_section-stay_intro_section'
+settings:
+  id: 'views_block:stay_intro_section-stay_intro_section'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
+    context_mapping: {  }
+  request_path:
+    id: request_path
+    pages: /stay
+    negate: false
+    context_mapping: {  }

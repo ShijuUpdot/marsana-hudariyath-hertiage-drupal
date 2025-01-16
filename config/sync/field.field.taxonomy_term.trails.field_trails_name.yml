@@ -1,0 +1,19 @@
+uuid: 05232e99-81af-4517-879c-26e29dcc22b6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_trails_name
+    - taxonomy.vocabulary.trails
+id: taxonomy_term.trails.field_trails_name
+field_name: field_trails_name
+entity_type: taxonomy_term
+bundle: trails
+label: 'Trails Name'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

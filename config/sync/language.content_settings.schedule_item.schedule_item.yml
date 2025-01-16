@@ -1,0 +1,11 @@
+uuid: c9681b3d-ceab-46e6-ac6c-eefb12f8bf36
+langcode: en
+status: true
+dependencies:
+  module:
+    - schedule_item
+id: schedule_item.schedule_item
+target_entity_type_id: schedule_item
+target_bundle: schedule_item
+default_langcode: site_default
+language_alterable: false

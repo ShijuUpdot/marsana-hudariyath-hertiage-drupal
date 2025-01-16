@@ -1,0 +1,29 @@
+uuid: 6706dc5c-c2bd-4298-a0b6-7639ea11140b
+langcode: en
+status: true
+dependencies:
+  config:
+    - community_post.community_post_type.review
+    - field.storage.community_post.field_experience
+    - taxonomy.vocabulary.experience
+id: community_post.review.field_experience
+field_name: field_experience
+entity_type: community_post
+bundle: review
+label: Experience
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      experience: experience
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

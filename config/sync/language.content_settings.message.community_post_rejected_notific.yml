@@ -1,0 +1,18 @@
+uuid: d125f828-0981-4be2-83b9-fdbc78e081a4
+langcode: en
+status: true
+dependencies:
+  config:
+    - message.template.community_post_rejected_notific
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: message.community_post_rejected_notific
+target_entity_type_id: message
+target_bundle: community_post_rejected_notific
+default_langcode: site_default
+language_alterable: false

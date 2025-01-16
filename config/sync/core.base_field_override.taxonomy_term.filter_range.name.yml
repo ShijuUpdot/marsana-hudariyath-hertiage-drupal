@@ -1,0 +1,18 @@
+uuid: 79503000-d7d5-4a5d-b5a0-d8960866bcaa
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.filter_range
+id: taxonomy_term.filter_range.name
+field_name: name
+entity_type: taxonomy_term
+bundle: filter_range
+label: Name
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

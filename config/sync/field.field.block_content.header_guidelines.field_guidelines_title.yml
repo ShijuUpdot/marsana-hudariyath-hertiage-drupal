@@ -1,0 +1,21 @@
+uuid: a05f790d-2b2b-453c-81a0-1209cfd85cd1
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.header_guidelines
+    - field.storage.block_content.field_guidelines_title
+  module:
+    - text
+id: block_content.header_guidelines.field_guidelines_title
+field_name: field_guidelines_title
+entity_type: block_content
+bundle: header_guidelines
+label: 'Guidelines Title'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

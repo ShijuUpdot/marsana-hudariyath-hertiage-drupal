@@ -1,0 +1,22 @@
+uuid: 2361b4a1-a327-4699-8639-7683df9c47c5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.flagging.node_favorite.field_experience
+    - flag.flag.node_favorite
+id: flagging.node_favorite.default
+targetEntityType: flagging
+bundle: node_favorite
+mode: default
+content:
+  field_experience:
+    weight: 0
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+hidden:
+  search_api_excerpt: true

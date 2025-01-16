@@ -1,0 +1,14 @@
+
+# Schedule item menu items definition
+entity.schedule_item.collection:
+  title: 'Schedule item list'
+  route_name: entity.schedule_item.collection
+  description: 'List Schedule item entities'
+  parent: system.admin_structure
+  weight: 100
+
+schedule_item.admin.structure.settings:
+  title: 'Schedule item settings'
+  description: 'Configure Schedule item entities'
+  route_name: schedule_item.settings
+  parent: system.admin_structure

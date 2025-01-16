@@ -1,0 +1,34 @@
+uuid: 9e602433-1b17-45a4-ae36-3f4672d14f2c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.opening_hours_section.field_opening_hours
+    - paragraphs.paragraphs_type.opening_hours_section
+  module:
+    - paragraphs
+id: paragraph.opening_hours_section.default
+targetEntityType: paragraph
+bundle: opening_hours_section
+mode: default
+content:
+  field_opening_hours:
+    type: entity_reference_paragraphs
+    weight: 0
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  translation:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  status: true

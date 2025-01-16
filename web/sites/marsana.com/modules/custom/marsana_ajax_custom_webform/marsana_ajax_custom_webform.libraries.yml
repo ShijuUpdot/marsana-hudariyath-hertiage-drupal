@@ -1,0 +1,3 @@
+marsana_ajax_custom_webform:
+  js:
+    js/ajax_custom_webform.js: {}

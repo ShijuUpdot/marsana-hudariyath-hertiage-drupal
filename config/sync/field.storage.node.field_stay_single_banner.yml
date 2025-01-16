@@ -1,0 +1,21 @@
+uuid: ecea22b9-7918-48ba-a085-aa5a36e7e7a3
+langcode: en
+status: true
+dependencies:
+  module:
+    - entity_reference_revisions
+    - node
+    - paragraphs
+id: node.field_stay_single_banner
+field_name: field_stay_single_banner
+entity_type: node
+type: entity_reference_revisions
+settings:
+  target_type: paragraph
+module: entity_reference_revisions
+locked: false
+cardinality: 2
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,18 @@
+uuid: a351286c-b057-483a-a2aa-05381aec34fd
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.intro_block
+id: paragraph.intro_block.created
+field_name: created
+entity_type: paragraph
+bundle: intro_block
+label: 'Authored on'
+description: 'The time that the Paragraph was created.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

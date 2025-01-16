@@ -1,0 +1,24 @@
+uuid: 28d4df01-5654-44de-ae95-016e764af218
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.listing_block.field_listing_block
+    - paragraphs.paragraphs_type.listing_block
+  module:
+    - entity_reference_revisions
+id: paragraph.listing_block.default
+targetEntityType: paragraph
+bundle: listing_block
+mode: default
+content:
+  field_listing_block:
+    type: entity_reference_revisions_entity_view
+    weight: 0
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+hidden: {  }

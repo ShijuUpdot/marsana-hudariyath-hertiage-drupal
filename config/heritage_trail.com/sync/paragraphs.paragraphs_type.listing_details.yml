@@ -1,0 +1,10 @@
+uuid: 278ec3fb-9f16-443a-81e0-15ba235920ee
+langcode: en
+status: true
+dependencies: {  }
+id: listing_details
+label: 'Listing Details'
+icon_uuid: null
+icon_default: null
+description: 'Guidelines listings'
+behavior_plugins: {  }

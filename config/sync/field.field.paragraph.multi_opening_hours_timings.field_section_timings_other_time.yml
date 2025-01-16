@@ -1,0 +1,19 @@
+uuid: d1880e0f-4b9d-47c8-a028-8992cac27af3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_section_timings_other_time
+    - paragraphs.paragraphs_type.multi_opening_hours_timings
+id: paragraph.multi_opening_hours_timings.field_section_timings_other_time
+field_name: field_section_timings_other_time
+entity_type: paragraph
+bundle: multi_opening_hours_timings
+label: 'section timings other time'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,83 @@
+uuid: 9a120f3c-5f67-4575-a3c3-158381a50ef1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.landmarks.field_landmark_image
+    - field.field.taxonomy_term.landmarks.field_landmark_link
+    - field.field.taxonomy_term.landmarks.field_landmark_position
+    - field.field.taxonomy_term.landmarks.field_landmark_type
+    - field.field.taxonomy_term.landmarks.field_name
+    - field.field.taxonomy_term.landmarks.field_number
+    - taxonomy.vocabulary.landmarks
+  module:
+    - svg_image
+    - text
+id: taxonomy_term.landmarks.default
+targetEntityType: taxonomy_term
+bundle: landmarks
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_landmark_image:
+    weight: 4
+    label: above
+    settings:
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_landmark_link:
+    weight: 5
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_landmark_position:
+    weight: 3
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_landmark_type:
+    weight: 6
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_name:
+    weight: 2
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_number:
+    weight: 1
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

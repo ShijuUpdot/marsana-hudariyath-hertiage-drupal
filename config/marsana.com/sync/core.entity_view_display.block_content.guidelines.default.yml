@@ -1,0 +1,59 @@
+uuid: c2631cd1-4861-4079-834c-a2f354396fce
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.guidelines
+    - field.field.block_content.guidelines.body
+    - field.field.block_content.guidelines.field_description
+    - field.field.block_content.guidelines.field_guidelines_listing
+    - field.field.block_content.guidelines.field_short_description
+    - field.field.block_content.guidelines.field_title
+  module:
+    - entity_reference_revisions
+    - text
+id: block_content.guidelines.default
+targetEntityType: block_content
+bundle: guidelines
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_description:
+    weight: 3
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_guidelines_listing:
+    type: entity_reference_revisions_entity_view
+    weight: 4
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_short_description:
+    weight: 2
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_title:
+    weight: 1
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  langcode: true

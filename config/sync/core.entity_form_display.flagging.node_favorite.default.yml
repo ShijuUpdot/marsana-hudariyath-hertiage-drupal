@@ -1,0 +1,23 @@
+uuid: 500b5d46-dc94-4395-a698-e7333ce65484
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.flagging.node_favorite.field_experience
+    - flag.flag.node_favorite
+id: flagging.node_favorite.default
+targetEntityType: flagging
+bundle: node_favorite
+mode: default
+content:
+  field_experience:
+    weight: 0
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+hidden: {  }

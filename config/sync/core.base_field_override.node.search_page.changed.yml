@@ -1,0 +1,18 @@
+uuid: 53db184a-5990-4a06-8698-b0a9856d9db1
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.search_page
+id: node.search_page.changed
+field_name: changed
+entity_type: node
+bundle: search_page
+label: Changed
+description: 'The time that the node was last edited.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

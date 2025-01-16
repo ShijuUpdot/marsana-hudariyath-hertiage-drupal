@@ -1,0 +1,20 @@
+uuid: 87167fee-16fd-4530-a08b-bf1d3558c220
+langcode: en
+status: true
+dependencies:
+  config:
+    - community_post.community_post_type.review
+id: community_post.review.user_id
+field_name: user_id
+entity_type: community_post
+bundle: review
+label: 'Authored by'
+description: 'The user ID of author of the Community post entity.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference

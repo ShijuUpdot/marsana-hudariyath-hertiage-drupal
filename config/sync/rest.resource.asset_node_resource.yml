@@ -1,0 +1,17 @@
+uuid: a6034971-28d9-4614-8dd9-916b88688038
+langcode: en
+status: true
+dependencies:
+  module:
+    - community_post
+    - serialization
+    - user
+id: asset_node_resource
+plugin_id: asset_node_resource
+granularity: method
+configuration:
+  GET:
+    supported_formats:
+      - json
+    supported_auth:
+      - cookie

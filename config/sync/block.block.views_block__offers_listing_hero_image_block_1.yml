@@ -1,0 +1,39 @@
+uuid: 496eed55-e7ca-4f2d-9b2a-42be9c1137ce
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.offers_listing
+    - views.view.offers_listing_hero_image
+  module:
+    - block_visibility_groups
+    - node
+    - views
+  theme:
+    - hudayriyat
+id: views_block__offers_listing_hero_image_block_1
+theme: hudayriyat
+region: content
+weight: -9
+provider: null
+plugin: 'views_block:offers_listing_hero_image-block_1'
+settings:
+  id: 'views_block:offers_listing_hero_image-block_1'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: offers_listing
+    context_mapping: {  }
+  node_type:
+    id: node_type
+    bundles:
+      offers_listing: offers_listing
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

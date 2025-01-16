@@ -1,0 +1,21 @@
+uuid: 9321141e-479c-4506-8dfd-1de4dd1ec07a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_secondary_color
+    - node.type.discover
+  module:
+    - options
+id: node.discover.field_secondary_color
+field_name: field_secondary_color
+entity_type: node
+bundle: discover
+label: 'Secondary Color'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

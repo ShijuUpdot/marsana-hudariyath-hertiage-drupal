@@ -1,0 +1,37 @@
+services:
+  community_post.normalizer.message:
+    class: Drupal\marvista_api\Normalizer\MessageNormalizer
+    tags:
+      - { name: normalizer, priority: 99 }
+    arguments: ['@entity_type.manager', '@entity_type.repository', '@entity_field.manager']
+  marvista_api.utilities_services:
+    class: Drupal\marvista_api\MarvistaApiUtitlitiesServices
+    arguments: []
+  #form_alter.event_add_node_form:
+   # class: Drupal\marvista_api\NodeForm\EventFormAlter
+    #arguments:
+     # - 'node_event_details_form'
+   # tags:
+    #  - name: form_alter
+     #   priority: 4
+  #form_alter.event_edit_node_form:
+  #  class: Drupal\marvista_api\NodeForm\EventFormAlter
+  #  arguments:
+  #    - 'node_event_details_edit_form'
+  #  tags:
+  #    - name: form_alter
+  #      priority: 4
+  #form_alter.amenity_add_node_form:
+  #  class: Drupal\marvista_api\NodeForm\EventFormAlter
+  #  arguments:
+  #    - 'node_amenities_details_form'
+  #  tags:
+  #    - name: form_alter
+  #      priority: 4
+  #form_alter.amenity_edit_node_form:
+  #  class: Drupal\marvista_api\NodeForm\EventFormAlter
+  #  arguments:
+  #    - 'node_amenities_details_edit_form'
+  #  tags:
+  #    - name: form_alter
+  #      priority: 4

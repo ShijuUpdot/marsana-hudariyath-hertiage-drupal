@@ -1,0 +1,10 @@
+uuid: cbbfe3be-2754-45cd-b6ef-73f5cb43636f
+langcode: en
+status: true
+dependencies: {  }
+id: big_image_block
+label: 'Big Image Block'
+icon_uuid: null
+icon_default: null
+description: 'Big Image Block'
+behavior_plugins: {  }

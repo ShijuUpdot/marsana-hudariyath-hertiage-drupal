@@ -1,0 +1,23 @@
+uuid: 2ddec6b7-228a-49ab-ab48-49c845d7e9e1
+langcode: en
+status: true
+dependencies:
+  module:
+    - file
+    - node
+id: node.field_upload_map
+field_name: field_upload_map
+entity_type: node
+type: file
+settings:
+  display_field: false
+  display_default: false
+  uri_scheme: azblob
+  target_type: file
+module: file
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

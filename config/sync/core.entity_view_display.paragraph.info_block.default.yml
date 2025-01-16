@@ -1,0 +1,63 @@
+uuid: 4f7e806a-6386-4fe2-9e00-15c61d6f34bc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.info_block.field_information
+    - field.field.paragraph.info_block.field_link
+    - field.field.paragraph.info_block.field_link_icon
+    - field.field.paragraph.info_block.field_multi_opening_hours
+    - paragraphs.paragraphs_type.info_block
+  module:
+    - entity_reference_revisions
+    - link
+    - svg_image
+id: paragraph.info_block.default
+targetEntityType: paragraph
+bundle: info_block
+mode: default
+content:
+  field_information:
+    type: entity_reference_revisions_entity_view
+    weight: 0
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_link:
+    weight: 1
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_link_icon:
+    weight: 2
+    label: above
+    settings:
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_multi_opening_hours:
+    type: entity_reference_revisions_entity_view
+    weight: 3
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+hidden: {  }

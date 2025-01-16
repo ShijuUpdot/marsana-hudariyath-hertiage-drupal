@@ -1,0 +1,56 @@
+uuid: 5cfc2443-52f8-4c5b-8903-fc00ec4e9e0b
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: btW6TFHajhy7Eo6YUvdFiPh4TcPggo8GBXYctjV6zag
+id: authenticated
+label: 'Authenticated user'
+weight: 1
+is_admin: false
+permissions:
+  - 'access comments'
+  - 'access content'
+  - 'access entity type clone'
+  - 'access shortcuts'
+  - 'access site-wide contact form'
+  - 'administer addtoany'
+  - 'create paragraph content multi_opening_hours'
+  - 'create paragraph content multi_opening_hours_timings'
+  - 'create paragraph content opening_hours'
+  - 'create paragraph content opening_hours_block'
+  - 'create paragraph content opening_hours_section'
+  - 'delete paragraph content multi_opening_hours'
+  - 'delete paragraph content multi_opening_hours_timings'
+  - 'delete paragraph content opening_hours_section'
+  - 'post comments'
+  - 'restful delete delete_notification_message'
+  - 'restful get amenities_node_resource'
+  - 'restful get asset_node_resource'
+  - 'restful get community_post_resource'
+  - 'restful get get_comment_of_a_community'
+  - 'restful get get_community_post_resource'
+  - 'restful get get_help_topic_resource'
+  - 'restful get get_issue_type_resource'
+  - 'restful get get_my_community_post_resource'
+  - 'restful get notification_list_resource'
+  - 'restful get search_with_group_resource'
+  - 'restful post community_post_comment_reply_resource'
+  - 'restful post community_post_comment_resource'
+  - 'restful post community_post_favorite_resource'
+  - 'restful post community_post_resource'
+  - 'restful post delete_notification_message'
+  - 'restful post flag_like_resource'
+  - 'restful post flag_remove_post_resource'
+  - 'restful post flag_turn_off_post_resource'
+  - 'restful post post_help_resource'
+  - 'restful post post_report_issue_comment_resource'
+  - 'search content'
+  - 'skip comment approval'
+  - 'update paragraph content multi_opening_hours'
+  - 'update paragraph content multi_opening_hours_timings'
+  - 'update paragraph content opening_hours_section'
+  - 'use text format basic_html'
+  - 'view paragraph content multi_opening_hours'
+  - 'view paragraph content multi_opening_hours_timings'
+  - 'view paragraph content opening_hours_section'

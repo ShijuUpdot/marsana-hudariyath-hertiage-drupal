@@ -1,0 +1,10 @@
+uuid: 65e14cbb-2dcd-43f4-9f8a-caa771b2ecc6
+langcode: en
+status: true
+dependencies: {  }
+id: info_block
+label: 'Info Block'
+icon_uuid: null
+icon_default: null
+description: 'Info Block for Location, Opening hours and Contact us Details'
+behavior_plugins: {  }

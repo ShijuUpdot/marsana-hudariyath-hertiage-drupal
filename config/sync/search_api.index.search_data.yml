@@ -1,0 +1,175 @@
+uuid: 3ed0a96c-97a8-45de-82aa-b0427b773045
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.community_post.field_caption
+    - field.storage.node.field_title_translation
+    - field.storage.node.field_amenity_experience
+    - field.storage.community_post.field_experience
+    - search_api.server.default_server
+  module:
+    - community_post
+    - node
+    - taxonomy
+    - search_api
+id: search_data
+name: 'Search data'
+description: ''
+read_only: false
+field_settings:
+  field_caption:
+    label: Caption
+    datasource_id: 'entity:community_post'
+    property_path: field_caption
+    type: text
+    dependencies:
+      config:
+        - field.storage.community_post.field_caption
+  field_title_translation:
+    label: 'Title Translation'
+    datasource_id: 'entity:node'
+    property_path: field_title_translation
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_title_translation
+  id:
+    label: ID
+    datasource_id: 'entity:community_post'
+    property_path: id
+    type: integer
+    dependencies:
+      module:
+        - community_post
+  nid:
+    label: ID
+    datasource_id: 'entity:node'
+    property_path: nid
+    type: integer
+    dependencies:
+      module:
+        - node
+  node_experience_id:
+    label: 'Amenity Experience » Taxonomy term » Term ID'
+    datasource_id: 'entity:node'
+    property_path: 'field_amenity_experience:entity:tid'
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_amenity_experience
+      module:
+        - taxonomy
+  node_langcode:
+    label: Language
+    datasource_id: 'entity:node'
+    property_path: langcode
+    type: string
+    dependencies:
+      module:
+        - node
+  node_type:
+    label: 'Content type'
+    datasource_id: 'entity:node'
+    property_path: type
+    type: string
+    dependencies:
+      module:
+        - node
+  post_experience_id:
+    label: 'Experience » Taxonomy term » Term ID'
+    datasource_id: 'entity:community_post'
+    property_path: 'field_experience:entity:tid'
+    type: integer
+    dependencies:
+      config:
+        - field.storage.community_post.field_experience
+      module:
+        - taxonomy
+  post_langcode:
+    label: Language
+    datasource_id: 'entity:community_post'
+    property_path: langcode
+    type: string
+    dependencies:
+      module:
+        - community_post
+  post_type:
+    label: 'Community post type'
+    datasource_id: 'entity:community_post'
+    property_path: type
+    type: string
+    dependencies:
+      module:
+        - community_post
+  title:
+    label: Title
+    datasource_id: 'entity:node'
+    property_path: title
+    type: text
+    dependencies:
+      module:
+        - node
+datasource_settings:
+  'entity:community_post':
+    bundles:
+      default: false
+      selected:
+        - photo
+        - review
+    languages:
+      default: true
+      selected: {  }
+  'entity:node':
+    bundles:
+      default: false
+      selected:
+        - amenities_details
+        - event_details
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  add_url: {  }
+  aggregated_field: {  }
+  custom_entity_status: {  }
+  ignorecase:
+    all_fields: false
+    fields:
+      - field_caption
+      - field_title_translation
+      - title
+    weights:
+      preprocess_index: -20
+      preprocess_query: -20
+  language_with_fallback: {  }
+  rendered_item: {  }
+  tokenizer:
+    all_fields: false
+    fields:
+      - field_caption
+      - field_title_translation
+      - title
+    ignored: ._-
+    spaces: ''
+    overlap_cjk: 1
+    minimum_word_size: '2'
+    weights:
+      preprocess_index: -6
+      preprocess_query: -6
+  transliteration:
+    all_fields: false
+    fields:
+      - field_caption
+      - field_title_translation
+      - title
+    weights:
+      preprocess_index: -20
+      preprocess_query: -20
+tracker_settings:
+  default:
+    indexing_order: fifo
+options:
+  index_directly: true
+  cron_limit: 50
+server: default_server

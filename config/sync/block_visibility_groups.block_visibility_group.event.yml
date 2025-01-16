@@ -1,0 +1,9 @@
+uuid: fb5e3f90-3f7d-4593-bf22-7e36795bb9fd
+langcode: en
+status: true
+dependencies: {  }
+id: event
+label: Event
+logic: and
+conditions: {  }
+allow_other_conditions: false

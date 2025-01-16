@@ -1,0 +1,8 @@
+uuid: 8c34744b-d530-468e-bae9-6b4d766709ac
+langcode: en
+status: true
+dependencies: {  }
+id: views_block
+label: 'Views block'
+revision: 0
+description: 'Views block'

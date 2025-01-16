@@ -1,0 +1,19 @@
+uuid: b67129af-dd8f-47de-9041-2ea91d722dce
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_headline
+    - paragraphs.paragraphs_type.links_block
+id: paragraph.links_block.field_headline
+field_name: field_headline
+entity_type: paragraph
+bundle: links_block
+label: 'Link Headline'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

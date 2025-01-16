@@ -1,0 +1,18 @@
+uuid: 3845ecb6-11c6-479c-9eee-8c25ca7454ca
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.amenities
+id: taxonomy_term.amenities.name
+field_name: name
+entity_type: taxonomy_term
+bundle: amenities
+label: Name
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

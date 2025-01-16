@@ -1,0 +1,18 @@
+uuid: 3d367c0e-6b94-4110-bb68-0a20a81dea11
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.trails
+id: taxonomy_term.trails.changed
+field_name: changed
+entity_type: taxonomy_term
+bundle: trails
+label: Changed
+description: 'The time that the term was last edited.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

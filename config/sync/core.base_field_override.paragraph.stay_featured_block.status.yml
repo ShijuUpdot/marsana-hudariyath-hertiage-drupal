@@ -1,0 +1,22 @@
+uuid: afbd71ea-f07a-4cb6-8850-f239642e73ce
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.stay_featured_block
+id: paragraph.stay_featured_block.status
+field_name: status
+entity_type: paragraph
+bundle: stay_featured_block
+label: Published
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

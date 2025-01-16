@@ -1,0 +1,41 @@
+uuid: fae3c802-f989-4152-b5b3-da0e074e939e
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.offers_listing.body
+    - field.field.node.offers_listing.field_hero_image
+    - field.field.node.offers_listing.field_hero_image_title
+    - field.field.node.offers_listing.field_news_listing_title
+    - field.field.node.offers_listing.field_search_keywords
+    - node.type.offers_listing
+  module:
+    - text
+    - user
+id: node.offers_listing.teaser
+targetEntityType: node
+bundle: offers_listing
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  addtoany: true
+  field_hero_image: true
+  field_hero_image_title: true
+  field_news_listing_title: true
+  field_search_keywords: true
+  langcode: true
+  search_api_excerpt: true

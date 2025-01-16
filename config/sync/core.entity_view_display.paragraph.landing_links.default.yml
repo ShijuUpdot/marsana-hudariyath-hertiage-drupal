@@ -1,0 +1,86 @@
+uuid: 48f525ad-6dcf-4b04-9924-86253b30c0fe
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.landing_links.field_landing_link
+    - field.field.paragraph.landing_links.field_link_image
+    - field.field.paragraph.landing_links.field_next_landing_color
+    - field.field.paragraph.landing_links.field_previous_landing_color
+    - field.field.paragraph.landing_links.field_previous_landing_link
+    - field.field.paragraph.landing_links.field_previous_link_image
+    - paragraphs.paragraphs_type.landing_links
+  module:
+    - link
+    - options
+    - svg_image
+id: paragraph.landing_links.default
+targetEntityType: paragraph
+bundle: landing_links
+mode: default
+content:
+  field_landing_link:
+    weight: 1
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_link_image:
+    weight: 0
+    label: above
+    settings:
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_next_landing_color:
+    weight: 5
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_previous_landing_color:
+    weight: 6
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_previous_landing_link:
+    weight: 4
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_previous_link_image:
+    weight: 3
+    label: above
+    settings:
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+hidden: {  }

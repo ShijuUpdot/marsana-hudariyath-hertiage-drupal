@@ -1,0 +1,32 @@
+uuid: 045cb97e-ad4d-4d56-a288-98e5e3a4370c
+langcode: en
+status: true
+dependencies:
+  config:
+    - community_post.community_post_type.default
+    - community_post.community_post_type.photo
+    - community_post.community_post_type.review
+    - field.storage.message.field_post
+    - message.template.new_comment
+id: message.new_comment.field_post
+field_name: field_post
+entity_type: message
+bundle: new_comment
+label: Post
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:community_post'
+  handler_settings:
+    target_bundles:
+      default: default
+      photo: photo
+      review: review
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: default
+field_type: entity_reference

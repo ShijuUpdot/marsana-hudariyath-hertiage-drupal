@@ -1,0 +1,29 @@
+{% block paragraph %}
+  {% block content %}
+      <div class="interactive-listing-wrapper">
+      <div class="container">
+        <div class="interactive-listing-links">
+            <ul>
+            {% for key, item in content.field_eat_listing_details  %}
+            {% if key|first != '#' %}
+            {% set title = content.field_eat_listing_details[key]['#paragraph'].field_listing_title[0].value|raw|striptags %}
+                <li data-img="{{ file_url(content.field_eat_listing_details[key]['#paragraph'].field_listing_image[0].entity.uri.value) }}" id="{{ title|lower|replace({" ":"-"}) }}">
+                    <a href="javascript:;" >{{ title }}</a>
+                    <div class="dynamic-content">
+                        <div class="img-rest-mobile "><div class="img-circle"><img src="{{ file_url(content.field_eat_listing_details[key]['#paragraph'].field_listing_image[0].entity.uri.value) }}" alt=""></div></div>
+                        <div class="logo-holder"><a href="javascript:;"><img src="{{ file_url(content.field_eat_listing_details[key]['#paragraph'].field_icon[0].entity.uri.value) }}" alt=""></a></div>
+                        <a href="javascript:;" class="body-text big summary">{{ content.field_eat_listing_details[key]['#paragraph'].field_eat_description[0].value|raw|striptags }} </a>
+                    </div>
+                </li>
+            {% endif %}
+            {% endfor %}
+            </ul>
+        </div>
+        <div class="interactive-image img-circle bg-sunshine-100">
+            <img src="{{ file_url(content.field_eat_bottom_image['#items'][0].entity.uri.value) }}" alt="{{ title }}">
+        </div>
+      </div>
+      
+  </div>
+  {% endblock %}
+{% endblock paragraph %}

@@ -1,0 +1,18 @@
+uuid: eb366b74-29a2-44dd-9c04-173f130f9710
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.filter_range
+id: taxonomy_term.filter_range.changed
+field_name: changed
+entity_type: taxonomy_term
+bundle: filter_range
+label: Changed
+description: 'The time that the term was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

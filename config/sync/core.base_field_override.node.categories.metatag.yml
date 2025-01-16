@@ -1,0 +1,18 @@
+uuid: 30d7925b-e51d-4005-859e-c3f79dabbcc1
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.categories
+id: node.categories.metatag
+field_name: metatag
+entity_type: node
+bundle: categories
+label: 'Metatags (Hidden field for JSON support)'
+description: 'The meta tags for the entity.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: map

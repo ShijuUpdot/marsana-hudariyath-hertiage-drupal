@@ -1,0 +1,21 @@
+uuid: 21c2131a-cca8-4b82-8020-6772d58b52e7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_primary_color
+    - node.type.landing_details
+  module:
+    - options
+id: node.landing_details.field_primary_color
+field_name: field_primary_color
+entity_type: node
+bundle: landing_details
+label: 'Primary color'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

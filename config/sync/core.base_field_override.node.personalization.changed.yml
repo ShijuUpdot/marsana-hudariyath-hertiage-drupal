@@ -1,0 +1,18 @@
+uuid: c7b26054-7293-4ea3-9468-8441784841d0
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.personalization
+id: node.personalization.changed
+field_name: changed
+entity_type: node
+bundle: personalization
+label: Changed
+description: 'The time that the node was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

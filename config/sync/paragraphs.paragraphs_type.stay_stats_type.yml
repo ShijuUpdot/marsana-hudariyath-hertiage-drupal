@@ -1,0 +1,10 @@
+uuid: 2a9a1b8a-cbd8-4e51-84c2-fe0772ab560b
+langcode: en
+status: true
+dependencies: {  }
+id: stay_stats_type
+label: 'Stay Stats Type'
+icon_uuid: null
+icon_default: null
+description: 'Stay Stats Type'
+behavior_plugins: {  }

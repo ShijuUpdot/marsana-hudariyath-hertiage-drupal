@@ -1,0 +1,21 @@
+uuid: b7baab6f-9f67-4592-bb17-4748332fd6cb
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - node_type_class
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+  node_type_class:
+    classes: ''
+name: 'Static Pages'
+type: static_pages
+description: 'Content type for creating Terms and Conditions and Privacy Policy'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

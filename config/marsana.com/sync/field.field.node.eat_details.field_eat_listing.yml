@@ -1,0 +1,55 @@
+uuid: 383f039e-dd59-4f16-a362-a17597e5896a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_eat_listing
+    - node.type.eat_details
+    - paragraphs.paragraphs_type.listing_details
+  module:
+    - entity_reference_revisions
+id: node.eat_details.field_eat_listing
+field_name: field_eat_listing
+entity_type: node
+bundle: eat_details
+label: 'Eat Listing'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      listing_details: listing_details
+    target_bundles_drag_drop:
+      big_image_block:
+        weight: 10
+        enabled: false
+      eat_listing_block:
+        weight: 11
+        enabled: false
+      eat_listing_details:
+        weight: 12
+        enabled: false
+      guidelines_listing:
+        weight: 13
+        enabled: false
+      listing_block:
+        weight: 14
+        enabled: false
+      listing_details:
+        enabled: true
+        weight: 15
+      parallax_wrapper_bottom_image:
+        weight: 16
+        enabled: false
+      parallax_wrapper_image:
+        weight: 17
+        enabled: false
+      social_links:
+        weight: 18
+        enabled: false
+field_type: entity_reference_revisions

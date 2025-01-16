@@ -1,0 +1,48 @@
+uuid: 8fc81dc5-f943-49d4-821e-7c2e5fba6287
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_secondary_color
+field_name: field_secondary_color
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: '#FBBC43'
+      label: Supernova
+    -
+      value: '#212237'
+      label: Jaguar
+    -
+      value: '#419C9B'
+      label: 'Blue Chill'
+    -
+      value: '#E75D52'
+      label: Flamingo
+    -
+      value: '#7DB2E1'
+      label: 'Jordy Blue'
+    -
+      value: '#DA7112'
+      label: Chocolate
+    -
+      value: '#185D30'
+      label: Crusoe
+    -
+      value: '#7D9731'
+      label: Sushi
+    -
+      value: '#242655'
+      label: 'Lucky Point'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

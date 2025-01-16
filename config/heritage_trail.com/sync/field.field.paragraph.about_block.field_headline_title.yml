@@ -1,0 +1,19 @@
+uuid: 179bfd78-ffde-406c-9a95-dd4c4345f763
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_headline_title
+    - paragraphs.paragraphs_type.about_block
+id: paragraph.about_block.field_headline_title
+field_name: field_headline_title
+entity_type: paragraph
+bundle: about_block
+label: 'Headline Title'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

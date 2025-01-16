@@ -1,0 +1,10 @@
+uuid: 463cf53d-326c-4258-ab7e-70dfcc23b608
+langcode: en
+status: true
+dependencies: {  }
+id: amenities_guidelines
+label: 'Amenities Guidelines'
+icon_uuid: null
+icon_default: null
+description: 'Amenities Guidelines'
+behavior_plugins: {  }

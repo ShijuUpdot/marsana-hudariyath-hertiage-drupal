@@ -1,0 +1,17 @@
+uuid: c27b5494-20c1-4741-91cf-c2bdddda4c0e
+langcode: en
+status: true
+dependencies:
+  module:
+    - community_post
+    - serialization
+    - user
+id: community_post_comment_reply_resource
+plugin_id: community_post_comment_reply_resource
+granularity: method
+configuration:
+  POST:
+    supported_formats:
+      - json
+    supported_auth:
+      - cookie

@@ -1,0 +1,240 @@
+  {#
+/**
+ * @file
+ * Default theme implementation to display a view of unformatted rows.
+ *
+ * Available variables:
+ * - title: The title of this group of rows. May be empty.
+ * - rows: A list of the view's row items.
+ *   - attributes: The row's HTML attributes.
+ *   - content: The row's content.
+ * - view: The view object.
+ * - default_row_class: A flag indicating whether default classes should be
+ *   used on rows.
+ *
+ * @see template_preprocess_views_view_unformatted()
+ *
+ * @ingroup themeable
+ */
+#}
+{% for row in rows %}
+{% set logo = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_header_logo }}'] | striptags | trim %}
+{% set contact_icon = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_contact_us_icon }}'] | striptags | trim %}
+{% set contact_text = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_contact_us_text }}'] | striptags | trim %}
+{% set email_title = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_email_text }}'] | striptags | trim %}
+{% set email_link = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_email }}'] | striptags | trim %}
+{% set email_link_title = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_email_1 }}'] | striptags | trim %}
+{% set website_link_text = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_website_link_text }}'] | striptags | trim %}
+{% set website_link = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_website_link }}'] | striptags | trim %}
+{% set website_link_title = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_website_link_1 }}'] | striptags | trim %}
+{% set address_title = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_address_title }}'] | striptags | trim %}
+{% set address = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_address }}'] | striptags | trim %}
+{% set description = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_description }}'] | striptags | trim %}
+{% set contact_form_title = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_contact_form_title }}'] | striptags | trim %}
+{% set social_title = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_social_links_title }}'] | striptags | trim %}
+
+  <div class="header">
+    <div class="container">
+      <div class="row justify-content-between align-items-center">
+        <div class="col">
+          <div class="logo"><a href="{{ url('<front>') }}"><img src="{{ logo }}" alt="marsana"></a></div>
+        </div>
+        <div class="col text-right">
+          <ul class="header-right">
+            <li id="lng-selector">{{ drupal_entity('block', 'languageswitcher') }}</li>
+            <li id="contact-icon"><img src="{{ contact_icon }}" alt="contact"><span class="tooltip"><span>{{ contact_text | raw }}</span></span></li>
+            <li id="map-icon"><img src="/images/static/icon-map.svg" alt=""><span class="tooltip"><span>{{ 'interactive map'| t }}</span></span></li>
+            <li id="burger-icon"><span></span><span></span><span></span><span></span></li>
+            <li id="scroll-burger-icon" class="open d-none"><span></span><span></span><span></span><span></span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="menu-wrapper vertical-center">
+    <div class="container">
+      <div class="row justify-content-between">
+          <div class="col-12 col-md-4">
+              <div class="about-menu">
+                  <div class="body-text mb-4">{{ description }}</div>
+              </div>
+          </div>
+          <div class="col-12 col-md-7">
+              <div class="menu-links">
+                  <div class="row">
+                      <div class="col-12 col-md-6">
+                        {{ drupal_view('eat_menu_listing')|render }}
+                        {{ drupal_view('shop_menu_listing')|render }}
+                        {{ drupal_view('dock_menu_listing')|render }}
+                      </div>
+                      <div class="col-12 col-md-6">
+                          {{ drupal_view('menu_listing')|render }}
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+        <hr class="my-4">
+        <div class="row footer-menu-infos justify-content-between">
+            <div class="col-12 col-md-auto">
+                <div class="row">
+                    <div class="col-auto body-text small bold">{{ address_title }}</div>
+                    <div class="col body-text small"><a style="color:#ffffff;" href="mailto:leasing@marsana.ae">{{ address }}</a></div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-auto">
+              <div class="row">
+                  <div class="col-auto body-text small bold">{{ email_title }}</div>
+                  <div class="col body-text small"><a href="{{ email_link }}" class=" body-text small mb-4">{{ email_link_title }}</a></div>
+              </div>
+            </div>
+            <div class="col-12 col-md-auto">
+                <div class="row">
+                    <div class="col-auto body-text small bold">{{ website_link_text }}</div>
+                    <div class="col body-text small"><a href="{{ website_link }}" target="_blank" class=" body-text small mb-4">{{ website_link_title }}</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  <!-- ************************* CONTACT POPUP ************************* -->
+  <div class="contact-wrapper">
+    <div class="popup-logo">{{ contact_form_title }}</div>
+    <a class="close-btn" href="javascript:;"><span></span><span></span><span></span></a>
+    <div class="container">
+      <div class="row justify-content-center align-items-center">
+        <div class="col-md-7 col-12">
+          {{ drupal_entity('webform', 'contact') }}
+          <br><br>
+		      <div class="alert text-capitalize alert-dismissible fade show form-alert contact-success" role="alert">
+            <span class="form-alert-msg"></span>
+            <button type="button" class="contact-close close" data-dismiss="alert-1" aria-label="Close-1"></button>
+          </div>
+          <div class="contact-footer mt-2 mt-md-5">
+            <div class="body-text l-spacing-2 mb-1">{{ social_title }}</div>
+            {%  for key, row in social_links %}
+                <a href="{{ row.social_link | trim }}" class="mx-2" target="_blank"><img src="{{ row.icon | striptags | trim }}" alt="icon"></a>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+
+<!-- ************************* MAP PLACEHOLDER ************************* -->
+  <div class="zoom-wrapper">
+   <div class="map-wrapper selectedZoomTarget zoomNotClickable">
+      <div class="map-points zoomContainer selectedZoomTarget zoomNotClickable">
+          <div id="animation_container" class="map-canvas">
+              <canvas id="canvas"></canvas>
+              <img src="/images/dynamic/map/map-static-bg.png" alt="" class="map-static-bg">
+              <img src="/images/dynamic/map/map-static-bg-marsana-en.png" alt="" class="map-lang-marina lang-en">
+              <img src="/images/dynamic/map/map-static-bg-marsana-ar.png" alt="" class="map-lang-marina lang-ar">
+              <div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:100%; height:100%; position: absolute; left: 0px; top: 0px; display: block;"></div>
+              <img src="/images/dynamic/map/mapA2.png" alt="" class="map-elements-img">
+              <div class="map-points-container">
+                  <div class="numbered-points">
+                    {% for nkey,nitem in numbered_points %}
+                        <div class="zoomTarget" data-targetsize="0.1" style="{{ nitem['position'] }}" data-target="{{ nitem['positionTitle']|raw|replace({" ":"-",".":"-", '&#039;':"-", '&amp;' : '-'})|lower }}"><span class="tooltip"><a href="javascript:;" class="anchorInside" data-toggle="modal" data-target="{{ nitem['modalTitle']|raw|replace({" ":"-",".":"-", '&#039;':"-", '&amp;' : '-'})|lower }}-modal"><span>{{ nitem['positionTitle'] | trim }}</span></a></span><p>{{ nkey+1 }}</p></div>
+                    {% endfor %}
+                    {% for key,item in activities %}
+                        <!-- <div class="zoomTarget activities-points" data-targetsize="0.1" style="{{ item['activitiesPosition'] }}" data-target="{{ item['activitiesPositionTitle']|raw|replace({" ":"-",".":"-", '&#039;':"-", '&amp;' : '-'})|lower }}"><p>{{ item['activitiesPositionTitle']|trim }}</p></div> -->
+                        <div class="zoomTarget activities-points" data-targetsize="0.1" style="{{ item['activitiesPosition'] }}" data-target="{{ item['activitiesPositionTitle']|raw|replace({" ":"-",".":"-", '&#039;':"-", '&amp;' : '-'})|lower }}"><span class="tooltip"><a href="javascript:;" class="anchorInside" data-toggle="modal" data-target="{{ item['modalTitle']|raw|replace({" ":"-",".":"-", '&#039;':"-", '&amp;' : '-'})|lower }}-modal"><span>{{ item['activitiesPositionTitle'] | trim }}</span></a></span></div>
+                    {% endfor %}
+                  </div>
+              </div>
+          </div>
+      </div> 
+      <a class="map-legend" href="javascript:;">
+          <img src="/images/static/icon-map-legend.svg" alt="map icon legend">
+          <p class="body-text bold text-uppercase color-white">{{ 'Legend'|t }}</p>
+      </a>
+      <a class="zoom-reset" href="javascript:;">
+          <p class="body-text bold text-uppercase color-white">{{ 'Reset'|t }}</p>
+      </a>
+      <div class="map-links">
+          <div class="upper-part">
+              <img src="/images/dynamic/legend-bg-upper.png" alt="" class="legend-bg">
+              <div class="container pt-4 pb-2">
+                  <div class="row">
+                      <div class="col">
+                          <h3>{{ activities_label }}</h3>
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-6">
+                          {% for akey1,aitem1 in activities_data1%}
+                            <a href="javascript:;" class="body-text small bold text-uppercase" data-target="{{ aitem1['activitiesPositionTitle']|raw|replace({" ":"-",".":"-", '&#039;':"-", '&amp;' : '-'})|lower }}">{{ aitem1['activitiesPositionTitle']|raw|trim }}</a>
+                          {% endfor %}
+                      </div>
+                      <div class="col-6">
+                          {% for akey2,aitem2 in activities_data2%}
+                            <a href="javascript:;" class="body-text small bold text-uppercase" data-target="{{ aitem2['activitiesPositionTitle']|raw|replace({" ":"-",".":"-", '&#039;':"-", '&amp;' : '-'})|lower }}">{{ aitem2['activitiesPositionTitle']|raw|trim }}</a>
+                          {% endfor %}
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col">
+                          <h3>{{ f_b_outlets_label }}</h3>
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-6">
+                         {% for bkey1,fbItem1 in f_b_outlets_chunk1%}
+                            <a href="javascript:;" class="body-text small bold text-uppercase" data-target="{{ fbItem1['positionTitle']|raw|replace({" ":"-",".":"-", '&#039;':"-", '&amp;' : '-'})|lower }}"><p class="number"><span>{{ bkey1+1 }}</span></p><p class="w-80">{{ fbItem1['positionTitle']|raw|trim }}</p></a>
+                          {% endfor %}
+                      </div>
+                      <div class="col-6">
+			                   {% set fVal = f_b_outlets_chunk1_count|trim %}
+                         {% for bkey2,fbItem2 in f_b_outlets_chunk2%}
+			                      {% set fVal = fVal + 1 %}
+                            <a href="javascript:;" class="body-text small bold text-uppercase" data-target="{{ fbItem2['positionTitle']|raw|replace({" ":"-",".":"-", '&#039;':"-", '&amp;' : '-'})|lower }}"><p class="number"><span>{{ fVal|trim }}</span></p><p class="w-80">{{ fbItem2['positionTitle']|raw|trim }}</p></a>
+                          {% endfor %}
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col">
+                          <h3>{{ food_trucks_label }}</h3>
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-6">
+			                    {% set cVal = f_b_outlets_chunk2_count_total|trim %}
+                          {% for ckey1,ftItem1 in food_trucks_chunk1%}
+			                      {% set cVal = cVal + 1 %}
+                            <a href="javascript:;" class="body-text small bold text-uppercase" data-target="{{ ftItem1['positionTitle']|raw|replace({" ":"-",".":"-", '&#039;':"-", '&amp;' : '-'})|lower }}"><p class="number"><span>{{ cVal|trim }}</span></p><p class="w-80">{{ ftItem1['positionTitle']|raw|trim }}</p></a>
+                          {% endfor %}
+                      </div>
+                      <div class="col-6">
+			                    {% set dVal = food_trucks_count_total|trim %}
+                          {% for ckey2,ftItem2 in food_trucks_chunk2%}
+			                      {% set dVal = dVal + 1 %}
+                            <a href="javascript:;" class="body-text small bold text-uppercase" data-target="{{ ftItem2['positionTitle']|raw|replace({" ":"-",".":"-", '&#039;':"-", '&amp;' : '-'})|lower }}"><p class="number"><span>{{ dVal|trim }}</span></p><p class="w-80">{{ ftItem2['positionTitle']|raw|trim }}</p></a>
+                          {% endfor %}
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="lower-part">
+              <img src="/images/dynamic/legend-bg-lower.png" alt="" class="legend-bg">
+              <div class="container py-2">
+                  <div class="row justify-content-between">
+                      <div class="col">
+                          <img src="/images/dynamic/legend-trail-1.png" alt=""><p class="body-text small bold text-uppercase color-white">{{ 'WALKWAY' | t }}</p>
+                      </div>
+                      <div class="col">
+                          <img src="/images/dynamic/legend-trail-2.png" alt=""><p class="body-text small bold text-uppercase color-white">{{ 'DRIVEWAY' | t }}</p>
+                      </div>
+                      <div class="col">
+                          <img src="/images/dynamic/legend-trail-3.png" alt=""><p class="body-text small bold text-uppercase color-white">{{ 'SHADED SOUK WALKWAY' | t }}</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+   </div>
+  </div>
+
+    {{ drupal_view('home_eat_pop_up_content') }}

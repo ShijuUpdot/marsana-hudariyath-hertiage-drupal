@@ -1,0 +1,22 @@
+uuid: d1a1a76b-eaaf-4904-bcdc-04b1a66510a6
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.eat_details
+id: node.eat_details.promote
+field_name: promote
+entity_type: node
+bundle: eat_details
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

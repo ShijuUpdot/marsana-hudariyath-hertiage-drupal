@@ -1,0 +1,21 @@
+uuid: 0a0ed3ef-6509-4645-b595-484aaad2a1fe
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_intro_description
+    - node.type.about_us
+  module:
+    - text
+id: node.about_us.field_intro_description
+field_name: field_intro_description
+entity_type: node
+bundle: about_us
+label: 'Intro Description'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,44 @@
+uuid: f701e01b-a65f-4386-b13f-541272d55230
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.covid19_guidelines
+  module:
+    - block_visibility_groups
+    - system
+    - user
+    - views
+  theme:
+    - hudayriyat
+id: views_block__covid19_guidelines_covid19_guidelines_2
+theme: hudayriyat
+region: content
+weight: -17
+provider: null
+plugin: 'views_block:covid19_guidelines-covid19_guidelines'
+settings:
+  id: 'views_block:covid19_guidelines-covid19_guidelines'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
+    context_mapping: {  }
+  request_path:
+    id: request_path
+    pages: "/user/login\r\n/en/interactive-map\r\n/ar/interactive-map\r\n/interactive-map"
+    negate: true
+    context_mapping: {  }
+  user_role:
+    id: user_role
+    roles:
+      anonymous: anonymous
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'

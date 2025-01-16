@@ -1,0 +1,9 @@
+uuid: cabf1d34-825b-419a-a95f-02df3e6b8e56
+langcode: en
+status: true
+dependencies: {  }
+id: amenity_single
+label: 'Amenity Single'
+logic: and
+conditions: {  }
+allow_other_conditions: false

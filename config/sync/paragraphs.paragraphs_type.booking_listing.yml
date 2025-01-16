@@ -1,0 +1,10 @@
+uuid: 834c71fc-a46c-4060-96bd-dd56bbf0075c
+langcode: en
+status: true
+dependencies: {  }
+id: booking_listing
+label: 'Booking Listing'
+icon_uuid: null
+icon_default: null
+description: 'Booking Listing'
+behavior_plugins: {  }

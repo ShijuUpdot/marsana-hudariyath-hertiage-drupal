@@ -1,0 +1,8 @@
+uuid: ff56e11c-9bb1-412a-b4e0-06cfc8f9481e
+langcode: en
+status: true
+dependencies: {  }
+name: 'Suitable for Event'
+vid: suitable_for_event
+description: 'Suitable for Event'
+weight: -9

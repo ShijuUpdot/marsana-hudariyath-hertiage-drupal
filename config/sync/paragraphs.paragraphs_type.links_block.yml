@@ -1,0 +1,10 @@
+uuid: b43abe62-d1c5-4193-bf09-20f50b02acc4
+langcode: en
+status: true
+dependencies: {  }
+id: links_block
+label: 'Links Block'
+icon_uuid: null
+icon_default: null
+description: 'Links Block'
+behavior_plugins: {  }

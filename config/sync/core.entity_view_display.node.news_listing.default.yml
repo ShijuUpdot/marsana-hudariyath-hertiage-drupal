@@ -1,0 +1,104 @@
+uuid: 55642bc4-0c23-423f-92ef-3555a908d70b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.news_listing.body
+    - field.field.node.news_listing.field_hero_image
+    - field.field.node.news_listing.field_hero_image_title
+    - field.field.node.news_listing.field_highlighted_news
+    - field.field.node.news_listing.field_highlighted_news_list_no
+    - field.field.node.news_listing.field_highlighted_news_title
+    - field.field.node.news_listing.field_news_listing_no
+    - field.field.node.news_listing.field_news_listing_title
+    - node.type.news_listing
+  module:
+    - svg_image
+    - text
+    - user
+id: node.news_listing.default
+targetEntityType: node
+bundle: news_listing
+mode: default
+content:
+  addtoany:
+    weight: 9
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  body:
+    label: hidden
+    type: text_default
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_hero_image:
+    weight: 2
+    label: above
+    settings:
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_hero_image_title:
+    weight: 3
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_highlighted_news:
+    weight: 5
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_highlighted_news_list_no:
+    weight: 6
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_highlighted_news_title:
+    weight: 4
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_news_listing_no:
+    weight: 7
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_news_listing_title:
+    weight: 8
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true
+  search_api_excerpt: true

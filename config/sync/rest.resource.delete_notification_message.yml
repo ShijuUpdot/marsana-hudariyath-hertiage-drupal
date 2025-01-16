@@ -1,0 +1,17 @@
+uuid: ae209ecb-c146-4d3e-88f0-54cbe5e10979
+langcode: en
+status: true
+dependencies:
+  module:
+    - marvista_api
+    - serialization
+    - user
+id: delete_notification_message
+plugin_id: delete_notification_message
+granularity: method
+configuration:
+  DELETE:
+    supported_formats:
+      - json
+    supported_auth:
+      - cookie

@@ -1,0 +1,18 @@
+uuid: 2ebbaaf3-400c-4f67-bcce-403354deed14
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.stay_featured_block
+id: paragraph.stay_featured_block.created
+field_name: created
+entity_type: paragraph
+bundle: stay_featured_block
+label: 'Authored on'
+description: 'The time that the Paragraph was created.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

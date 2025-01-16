@@ -1,0 +1,10 @@
+uuid: 9da13313-258f-42be-8c61-04eff94f8477
+langcode: en
+status: true
+dependencies: {  }
+id: opening_hours
+label: 'Opening Hours'
+icon_uuid: null
+icon_default: null
+description: 'Event Opening Hours'
+behavior_plugins: {  }

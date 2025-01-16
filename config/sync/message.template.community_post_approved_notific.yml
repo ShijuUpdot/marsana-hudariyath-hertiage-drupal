@@ -1,0 +1,19 @@
+uuid: 47a5abaa-7f2f-4991-92f3-728c4aef355d
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.basic_html
+template: community_post_approved_notific
+label: '[Community Post] Approved Notification'
+description: '[Community Post] Approved Notification'
+text:
+  -
+    value: "<p>Your post has been approved.</p>\r\n"
+    format: basic_html
+settings:
+  'token options':
+    clear: false
+    'token replace': true
+  purge_override: false
+  purge_methods: {  }

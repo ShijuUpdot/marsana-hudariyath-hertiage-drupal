@@ -1,0 +1,18 @@
+uuid: 773030b5-82c5-4827-b737-85745335ada2
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.discover
+id: node.discover.created
+field_name: created
+entity_type: node
+bundle: discover
+label: 'Authored on'
+description: 'The time that the node was created.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

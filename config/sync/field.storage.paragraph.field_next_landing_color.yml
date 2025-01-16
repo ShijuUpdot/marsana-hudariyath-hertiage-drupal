@@ -1,0 +1,48 @@
+uuid: 0b533e01-ec0b-49b6-bf31-d5c5c785b53e
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_next_landing_color
+field_name: field_next_landing_color
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: blue-bg
+      label: blue-bg
+    -
+      value: green-bg
+      label: green-bg
+    -
+      value: red-bg
+      label: red-bg
+    -
+      value: yellow-bg
+      label: yellow-bg
+    -
+      value: red-d-bg
+      label: red-d-bg
+    -
+      value: orange-bg
+      label: orange-bg
+    -
+      value: white-bg
+      label: white-bg
+    -
+      value: navy-bg
+      label: navy-bg
+    -
+      value: grey-bg
+      label: grey-bg
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,19 @@
+<?php
+
+/**
+ * @file
+ * Social Feeds module for Instagram.
+ */
+
+/**
+ * Implements hook_cron().
+ */
+function hudayriyat_social_feeds_cron() {
+  if (\Drupal::config('hudayriyat_social_feeds.settings')->get('social_insta_cron')) {
+    \Drupal::service('hudayriyat_social_feeds.insta_handler')->instagramContent();
+  }
+
+  if (\Drupal::config('hudayriyat_social_feeds.settings')->get('social_insta_delete')) {
+    \Drupal::service('hudayriyat_social_feeds.insta_handler')->instagramContentDelete();
+  }
+}

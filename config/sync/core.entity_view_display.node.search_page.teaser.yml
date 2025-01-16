@@ -1,0 +1,37 @@
+uuid: 9f346b1e-fcf7-4d44-8c2f-1bea0e2bcc16
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.search_page.body
+    - field.field.node.search_page.field_hero_image
+    - field.field.node.search_page.field_hero_image_title
+    - node.type.search_page
+  module:
+    - text
+    - user
+id: node.search_page.teaser
+targetEntityType: node
+bundle: search_page
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  addtoany: true
+  field_hero_image: true
+  field_hero_image_title: true
+  langcode: true
+  search_api_excerpt: true

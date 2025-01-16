@@ -1,0 +1,55 @@
+uuid: 5d277d5b-ec2f-418f-a33f-71220937b1df
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_header_block
+    - node.type.home
+    - paragraphs.paragraphs_type.header_links
+  module:
+    - entity_reference_revisions
+id: node.home.field_header_block
+field_name: field_header_block
+entity_type: node
+bundle: home
+label: 'Header Block'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      header_links: header_links
+    target_bundles_drag_drop:
+      about_block:
+        weight: 10
+        enabled: false
+      about_section:
+        weight: 11
+        enabled: false
+      footer_social_block:
+        weight: 12
+        enabled: false
+      footer_social_links:
+        weight: 13
+        enabled: false
+      guidelines_type:
+        weight: 14
+        enabled: false
+      header_links:
+        enabled: true
+        weight: 15
+      indicators_type:
+        weight: 16
+        enabled: false
+      intro_description:
+        weight: 17
+        enabled: false
+      listing_details:
+        weight: 18
+        enabled: false
+field_type: entity_reference_revisions

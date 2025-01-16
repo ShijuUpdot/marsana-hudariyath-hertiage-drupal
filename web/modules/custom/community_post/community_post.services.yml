@@ -1,0 +1,73 @@
+services:
+  community_post.normalizer.community_post_entity:
+    class: Drupal\community_post\Normalizer\CommunityPostNormalizer
+    tags:
+      - { name: normalizer, priority: 99 }
+    arguments: ['@entity_type.manager', '@entity_type.repository', '@entity_field.manager']
+
+  community_post.normalizer.comment_entity:
+    class: Drupal\community_post\Normalizer\CommentNormalizer
+    tags:
+      - { name: normalizer, priority: 99 }
+    arguments: ['@entity_type.manager', '@entity_type.repository', '@entity_field.manager']
+
+  community_post.normalizer.asset_details_node_entity:
+    class: Drupal\community_post\Normalizer\node\AssetDetailsNodeNormalizer
+    arguments: ['@entity_type.manager', '@entity_type.repository', '@entity_field.manager']
+    tags:
+      - { name: normalizer, priority: 9 }
+
+  community_post.normalizer.amenities_details_node_entity:
+    class: Drupal\community_post\Normalizer\node\AmenitiesNodeNormalizer
+    arguments: ['@entity_type.manager', '@entity_type.repository', '@entity_field.manager']
+    tags:
+      - { name: normalizer, priority: 9 }
+
+  community_post.normalizer.event_details_node_entity:
+    class: Drupal\community_post\Normalizer\node\EventNormalizer
+    arguments: ['@entity_type.manager', '@entity_type.repository', '@entity_field.manager']
+    tags:
+      - { name: normalizer, priority: 9 }
+
+#  community_post.normalizer.event_list_node_entity:
+#    class: Drupal\community_post\Normalizer\node\EventListNormalizer
+#    arguments: [ '@entity_type.manager' ]
+#    tags:
+#      - { name: normalizer, priority: 9 }
+
+  community_post.normalizer.asset_details_category_taxonomy_term:
+    class: Drupal\community_post\Normalizer\CategoryNormalizer
+    arguments: ['@entity_type.manager', '@entity_type.repository', '@entity_field.manager']
+    tags:
+      - { name: normalizer, priority: 9 }
+
+  community_post.normalizer.location_detail_paragraph:
+    class: Drupal\community_post\Normalizer\paragraph\LocationDetailsParagraphNormalizer
+    arguments: ['@entity_type.manager', '@entity_type.repository', '@entity_field.manager']
+    tags:
+      - { name: normalizer, priority: 9 }
+
+  community_post.normalizer.location_paragraph:
+    class: Drupal\community_post\Normalizer\paragraph\LocationParagraphNormalizer
+    arguments: ['@entity_type.manager', '@entity_type.repository', '@entity_field.manager']
+    tags:
+      - { name: normalizer, priority: 9 }
+
+  community_post.normalizer.asset_gallery_paragraph:
+    class: Drupal\community_post\Normalizer\paragraph\AssetGalleryParagraphNormalizer
+    arguments: ['@entity_type.manager', '@entity_type.repository', '@entity_field.manager']
+    tags:
+      - { name: normalizer, priority: 9 }
+
+  community_post.normalizer.opening_hours_paragraph:
+    class: Drupal\community_post\Normalizer\OpeningHoursParagraphNormalizer
+    arguments: ['@entity_type.manager', '@entity_type.repository', '@entity_field.manager']
+    tags:
+      - { name: normalizer, priority: 9 }
+
+  community_post.normalizer.flagging:
+    class: Drupal\community_post\Normalizer\FlaggingNormalizer
+    arguments: ['@entity_type.manager', '@entity_type.repository', '@entity_field.manager']
+    tags:
+      - { name: normalizer, priority: 9 }
+

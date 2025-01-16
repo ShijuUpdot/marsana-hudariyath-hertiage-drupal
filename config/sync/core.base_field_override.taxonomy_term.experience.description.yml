@@ -1,0 +1,20 @@
+uuid: c3ed8e67-893d-441d-b054-a407ceaf2eab
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.experience
+  module:
+    - text
+id: taxonomy_term.experience.description
+field_name: description
+entity_type: taxonomy_term
+bundle: experience
+label: Description
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

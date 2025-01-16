@@ -1,0 +1,18 @@
+uuid: 22814cbc-7f8a-4841-9888-caaaa84c0b45
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.trails_color
+id: taxonomy_term.trails_color.changed
+field_name: changed
+entity_type: taxonomy_term
+bundle: trails_color
+label: Changed
+description: 'The time that the term was last edited.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

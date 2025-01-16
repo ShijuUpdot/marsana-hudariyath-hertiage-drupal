@@ -1,0 +1,19 @@
+uuid: 5e6e36ba-d936-4bfd-8f0f-7b0a8dd3df0e
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+    - text
+id: block_content.field_address
+field_name: field_address
+entity_type: block_content
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

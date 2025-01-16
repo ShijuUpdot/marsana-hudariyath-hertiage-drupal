@@ -1,0 +1,19 @@
+uuid: 6e86e1b7-4c86-4f2b-a7d5-16ecee9dc247
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hero_image_title
+    - node.type.eat_details
+id: node.eat_details.field_hero_image_title
+field_name: field_hero_image_title
+entity_type: node
+bundle: eat_details
+label: 'Hero Image Title'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

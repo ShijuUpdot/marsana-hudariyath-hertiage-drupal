@@ -1,0 +1,8 @@
+uuid: a583c02a-fafa-4afb-94bd-1fdd1a7e7210
+langcode: en
+status: true
+dependencies: {  }
+name: Experience
+vid: experience
+description: 'Experiences like eat, play, stay etc.,'
+weight: -3

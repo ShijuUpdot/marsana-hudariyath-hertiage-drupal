@@ -1,0 +1,29 @@
+hudayriyat_social_feeds.fetch:
+ path: '/fetchinstagramfeed'
+ defaults:
+   _controller: '\Drupal\hudayriyat_social_feeds\Controller\FetchSocialFeedController::instagramContent'
+   _title: 'Fetch Social Feed'
+ requirements:
+   _permission: 'execute instagram api'
+hudayriyat_social_feeds.delete:
+ path: '/deleteinstagramfeed'
+ defaults:
+   _controller: '\Drupal\hudayriyat_social_feeds\Controller\FetchSocialFeedController::instagramContentDelete'
+   _title: 'Delete Social Feed'
+ requirements:
+   _permission: 'execute instagram api'
+hudayriyat_social_feeds.admin_config:
+  path: '/admin/config/hudayriyatapisettings'
+  defaults:
+    _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
+    _title: 'Hudayriyat API Settings'
+    _description: 'Manage Hudayriyat API Settings.'
+  requirements:
+    _permission: 'administer site configuration'   
+hudayriyat_social_feeds.admin_settings:
+  path: '/admin/config/social_media_settings'
+  defaults:
+    _form: '\Drupal\hudayriyat_social_feeds\Form\SocialFeedSettingsForm'
+    _title: 'Social Feeds Settings'
+  requirements:
+    _permission: 'administer instagram settings'    

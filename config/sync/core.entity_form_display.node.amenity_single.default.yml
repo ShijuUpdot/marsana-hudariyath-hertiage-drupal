@@ -1,0 +1,191 @@
+uuid: 47b64563-c42a-4f2c-ac6e-fa6a10344bf1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.amenity_single.body
+    - field.field.node.amenity_single.field_amenity_experience
+    - field.field.node.amenity_single.field_amenity_icon
+    - field.field.node.amenity_single.field_amenity_icon_color
+    - field.field.node.amenity_single.field_amenity_images
+    - field.field.node.amenity_single.field_amenity_images_title
+    - field.field.node.amenity_single.field_amenity_tags
+    - field.field.node.amenity_single.field_amenity_type
+    - field.field.node.amenity_single.field_available_amenity_items
+    - field.field.node.amenity_single.field_headline
+    - field.field.node.amenity_single.field_hero_image
+    - field.field.node.amenity_single.field_hero_image_title
+    - field.field.node.amenity_single.field_hero_video
+    - field.field.node.amenity_single.field_info_block
+    - field.field.node.amenity_single.field_intro_description
+    - field.field.node.amenity_single.field_intro_short_description
+    - field.field.node.amenity_single.field_key_features
+    - field.field.node.amenity_single.field_location_details
+    - field.field.node.amenity_single.field_other_amenity_item
+    - field.field.node.amenity_single.field_primary_color
+    - field.field.node.amenity_single.field_secondary_color
+    - field.field.node.amenity_single.field_slider_images
+    - field.field.node.amenity_single.field_upload
+    - image.style.thumbnail
+    - node.type.amenity_single
+  module:
+    - file
+    - paragraphs
+    - path
+    - svg_image
+id: node.amenity_single.default
+targetEntityType: node
+bundle: amenity_single
+mode: default
+content:
+  body_class:
+    type: string_textfield
+    weight: 7
+    region: content
+    settings:
+      size: 60
+      placeholder: blue-bg
+    third_party_settings: {  }
+  created:
+    type: datetime_timestamp
+    weight: 9
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_hero_image:
+    weight: 1
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_hero_image_title:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_hero_video:
+    weight: 3
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
+  field_info_block:
+    type: entity_reference_paragraphs
+    weight: 4
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_location_details:
+    type: entity_reference_paragraphs
+    weight: 5
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_slider_images:
+    type: image_image
+    weight: 6
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 15
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 13
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 11
+    region: content
+    third_party_settings: {  }
+  specific_node_class:
+    type: boolean_checkbox
+    weight: 8
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 14
+    region: content
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 12
+    region: content
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  translation:
+    weight: 29
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 10
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      match_limit: 10
+    region: content
+    third_party_settings: {  }
+hidden:
+  body: true
+  field_amenity_experience: true
+  field_amenity_icon: true
+  field_amenity_icon_color: true
+  field_amenity_images: true
+  field_amenity_images_title: true
+  field_amenity_tags: true
+  field_amenity_type: true
+  field_available_amenity_items: true
+  field_headline: true
+  field_intro_description: true
+  field_intro_short_description: true
+  field_key_features: true
+  field_other_amenity_item: true
+  field_primary_color: true
+  field_secondary_color: true
+  field_upload: true

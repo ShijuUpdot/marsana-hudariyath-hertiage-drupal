@@ -1,0 +1,33 @@
+uuid: 2634048f-edd3-4824-8cde-cc390afa6293
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_amenities
+    - paragraphs.paragraphs_type.listing_details
+    - taxonomy.vocabulary.activities
+    - taxonomy.vocabulary.f_b_outlets
+    - taxonomy.vocabulary.food_trucks
+id: paragraph.listing_details.field_amenities
+field_name: field_amenities
+entity_type: paragraph
+bundle: listing_details
+label: Amenities
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      f_b_outlets: f_b_outlets
+      food_trucks: food_trucks
+      activities: activities
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: f_b_outlets
+field_type: entity_reference

@@ -1,0 +1,18 @@
+uuid: 67ec027a-1130-4672-bdcd-f6c4bcef4e59
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.static_pages
+id: node.static_pages.metatag
+field_name: metatag
+entity_type: node
+bundle: static_pages
+label: 'Metatags (Hidden field for JSON support)'
+description: 'The meta tags for the entity.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: map

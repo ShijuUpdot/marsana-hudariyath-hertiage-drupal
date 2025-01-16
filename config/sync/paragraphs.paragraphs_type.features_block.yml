@@ -1,0 +1,10 @@
+uuid: 0d145ab9-6dc2-4752-8e30-18d60192d844
+langcode: en
+status: true
+dependencies: {  }
+id: features_block
+label: 'Features Block'
+icon_uuid: null
+icon_default: null
+description: 'Features Block'
+behavior_plugins: {  }

@@ -1,0 +1,76 @@
+label: التعليقات
+display:
+  default:
+    display_title: Master
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Apply
+          reset_button_label: Reset
+          exposed_sorts_label: 'Sort by'
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+      pager:
+        options:
+          tags:
+            previous: '‹ السابقة'
+            next: 'التالية ›'
+            first: '« الأولى'
+            last: 'الأخيرة »'
+          expose:
+            items_per_page_options_all_label: '- All -'
+      fields:
+        comment_bulk_form:
+          action_title: Action
+        subject:
+          label: الموضوع
+        name:
+          label: المؤلف
+        entity_id:
+          label: 'نُشِر في'
+        changed:
+          label: التحديث
+        operations:
+          label: Operations
+      filters:
+        subject:
+          expose:
+            label: الموضوع
+        langcode:
+          expose:
+            label: Language
+      title: التعليقات
+      empty:
+        area_text_custom:
+          content: 'لا تعليقات.'
+      use_more_text: المزيد
+  page_published:
+    display_title: 'تعليقات منشورة'
+    display_options:
+      menu:
+        title: التعليقات
+  page_unapproved:
+    display_title: 'التعليقات الغير موافق عليها'
+    display_options:
+      menu:
+        title: 'التعليقات الغير موافق عليها'
+      filters:
+        subject:
+          expose:
+            label: الموضوع
+        langcode:
+          expose:
+            label: Language
+      fields:
+        comment_bulk_form:
+          action_title: Action
+        subject:
+          label: الموضوع
+        name:
+          label: المؤلف
+        entity_id:
+          label: 'نُشِر في'
+        changed:
+          label: التحديث
+        operations:
+          label: Operations

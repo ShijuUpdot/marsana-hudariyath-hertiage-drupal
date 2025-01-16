@@ -1,0 +1,5 @@
+name: Marsana Ajax Custom Webform
+description: Marsana Ajax Custom Webform
+package: custom
+type: module
+core_version_requirement: ^10

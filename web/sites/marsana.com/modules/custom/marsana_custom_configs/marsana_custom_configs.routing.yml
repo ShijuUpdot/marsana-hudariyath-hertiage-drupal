@@ -1,0 +1,15 @@
+marsana_custom_configs.admin_config:
+  path: '/admin/config/marsana_configs_settings'
+  defaults:
+    _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
+    _title: 'Marsana custom config Settings'
+    _description: 'Manage Marsana custom config Settings.'
+  requirements:
+    _permission: 'administer site configuration'   
+marsana_custom_configs.admin_settings:
+  path: '/admin/config/marsana_custom_configs_settings'
+  defaults:
+    _form: '\Drupal\marsana_custom_configs\Form\CustomConfigsSettingsForm'
+    _title: 'Custom Configuration Settings'
+  requirements:
+    _permission: 'administer custom configuration settings'    

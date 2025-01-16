@@ -1,0 +1,21 @@
+uuid: 6dc0e29e-fe63-4c70-b5d4-3e1dbdf40c8b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_eatmetatag
+    - node.type.eat
+  module:
+    - metatag
+id: node.eat.field_eatmetatag
+field_name: field_eatmetatag
+entity_type: node
+bundle: eat
+label: metatag
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: metatag

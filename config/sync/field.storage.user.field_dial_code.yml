@@ -1,0 +1,21 @@
+uuid: fd97eba2-8e1d-469a-8e16-65230c40f06d
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+id: user.field_dial_code
+field_name: field_dial_code
+entity_type: user
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

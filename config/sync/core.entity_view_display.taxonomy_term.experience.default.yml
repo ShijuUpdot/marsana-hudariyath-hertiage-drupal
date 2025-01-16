@@ -1,0 +1,54 @@
+uuid: bd51d394-a0b1-41d8-bc7e-ba4d7e4286b6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.experience.field_experience_type_
+    - field.field.taxonomy_term.experience.field_experience_type_descriptio
+    - field.field.taxonomy_term.experience.field_experience_type_image
+    - taxonomy.vocabulary.experience
+  module:
+    - options
+    - svg_image
+    - text
+id: taxonomy_term.experience.default
+targetEntityType: taxonomy_term
+bundle: experience
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_experience_type_:
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_experience_type_descriptio:
+    weight: 2
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_experience_type_image:
+    weight: 3
+    label: above
+    settings:
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+hidden:
+  langcode: true

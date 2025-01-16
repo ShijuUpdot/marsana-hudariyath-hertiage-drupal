@@ -1,0 +1,19 @@
+uuid: 24391628-6670-4679-b459-c3a59cd25dc2
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.basic_html
+template: community_post_rejected_notific
+label: '[Community Post] Rejected notification'
+description: '[Community Post] Rejected notification'
+text:
+  -
+    value: "<p>Your post has been rejected</p>\r\n"
+    format: basic_html
+settings:
+  'token options':
+    clear: false
+    'token replace': true
+  purge_override: false
+  purge_methods: {  }

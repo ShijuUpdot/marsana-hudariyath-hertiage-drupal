@@ -1,0 +1,21 @@
+uuid: dfc73ef7-860b-42e7-b92c-4803bcde3889
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.header_block
+    - field.storage.block_content.field_address
+  module:
+    - text
+id: block_content.header_block.field_address
+field_name: field_address
+entity_type: block_content
+bundle: header_block
+label: Address
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

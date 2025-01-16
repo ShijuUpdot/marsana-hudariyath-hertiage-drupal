@@ -1,0 +1,21 @@
+uuid: ca6a7c42-211d-4357-805a-9ff277ca0c41
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_experience_type_
+    - taxonomy.vocabulary.experience
+  module:
+    - options
+id: taxonomy_term.experience.field_experience_type_
+field_name: field_experience_type_
+entity_type: taxonomy_term
+bundle: experience
+label: 'Experience Type Color'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

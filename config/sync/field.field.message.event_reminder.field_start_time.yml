@@ -1,0 +1,19 @@
+uuid: e53c261d-86e1-4e7e-be5e-1f6a0f16b776
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.message.field_start_time
+    - message.template.event_reminder
+id: message.event_reminder.field_start_time
+field_name: field_start_time
+entity_type: message
+bundle: event_reminder
+label: 'Start time'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

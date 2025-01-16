@@ -1,0 +1,1 @@
+window.drupalTranslations = {"strings":{"":{"Image":"\u0627\u0644\u0635\u0648\u0631\u0629","Apply":"Apply","Title":"\u0627\u0644\u0639\u0646\u0648\u0627\u0646"}}};

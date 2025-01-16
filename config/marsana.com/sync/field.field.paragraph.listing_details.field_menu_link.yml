@@ -1,0 +1,23 @@
+uuid: e29ea53a-a29d-43c5-9347-34ca8ba50827
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_menu_link
+    - paragraphs.paragraphs_type.listing_details
+  module:
+    - link
+id: paragraph.listing_details.field_menu_link
+field_name: field_menu_link
+entity_type: paragraph
+bundle: listing_details
+label: 'Menu Link'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

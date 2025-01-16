@@ -1,0 +1,22 @@
+uuid: 450889c5-f48e-4b98-ac78-17d8122d2641
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.help_topic
+id: taxonomy_term.help_topic.status
+field_name: status
+entity_type: taxonomy_term
+bundle: help_topic
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

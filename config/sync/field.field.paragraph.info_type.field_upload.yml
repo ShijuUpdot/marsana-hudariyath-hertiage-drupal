@@ -1,0 +1,27 @@
+uuid: 054c9083-167d-4e7b-9777-44e53a098d05
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_upload
+    - paragraphs.paragraphs_type.info_type
+  module:
+    - file
+id: paragraph.info_type.field_upload
+field_name: field_upload
+entity_type: paragraph
+bundle: info_type
+label: Upload
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'txt pdf'
+  max_filesize: ''
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

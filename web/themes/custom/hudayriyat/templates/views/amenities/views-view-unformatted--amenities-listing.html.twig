@@ -1,0 +1,86 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a view of unformatted rows.
+ *
+ * Available variables:
+ * - title: The title of this group of rows. May be empty.
+ * - rows: A list of the view's row items.
+ *   - attributes: The row's HTML attributes.
+ *   - content: The row's content.
+ * - view: The view object.
+ * - default_row_class: A flag indicating whether default classes should be
+ *   used on rows.
+ *
+ * @see template_preprocess_views_view_unformatted()
+ *
+ * @ingroup themeable
+ */
+#}
+<div class="row">
+ <div class="col">
+    <div class="tabs-listing w-100">
+        <ul class="nav nav-pills mb-5 w-100 nav-fill" id="pills-tab" role="tablist">
+            {% set count = 1%}
+            {% for key,item in amenitiesType %}
+            {% set isactive = '' %}
+            {% if key == 0 %}
+                {% set isactive = 'active' %}
+            {% endif %}
+            <li class="nav-item">
+                <a class="nav-link {{ isactive }}" id="pills-{{ count }}-tab" data-toggle="pill" href="#pills-{{ count }}" role="tab" aria-controls="pills-{{ key+1 }}" aria-selected="false"><h3>{{ 'By' | t }} {{ item | t }}</h3></a>
+            </li>
+            {% set count = count + 1%}
+            {% endfor %}
+        </ul>
+        {% set cnt = 1 %}
+            <div class="tab-content" id="pills-tabContent">                
+                {% for key, aminities_items in aminities_data %}
+                {% set active = '' %}
+                {% if cnt == 1 %}
+                {% set active = 'show active' %}
+                {% endif %}
+                <div class="tab-pane fade {{ active }}" id="pills-{{ cnt }}" role="tabpanel" aria-labelledby="pills-{{ cnt }}-tab">
+                <div class="row">
+                    {% for ikey, frow in aminities_items %}
+                        {% set fkey = frow.0 %}
+                        {% set row = frow.1 %}
+
+                        {% set image   = row.content['#view'].style_plugin.render_tokens[ fkey ]['{{ field_hero_image }}'] | striptags | trim %}
+                        {% set title   = row.content['#view'].style_plugin.render_tokens[ fkey ]['{{ field_hero_image_title }}'] | striptags | trim %}
+                        {% set amenityType = row.content['#view'].style_plugin.render_tokens[ fkey ]['{{ field_amenity_type }}'] | striptags | trim %}
+                        {% set headline = row.content['#view'].style_plugin.render_tokens[ fkey ]['{{ field_headline }}'] | striptags | trim %}
+                        {% set link = row.content['#view'].style_plugin.render_tokens[ fkey ]['{{ view_node }}'] | striptags | trim %}
+                        {% set icon   = row.content['#view'].style_plugin.render_tokens[ fkey ]['{{ field_amenity_icon }}'] | striptags | trim %}
+                        {% set icon_color   = row.content['#view'].style_plugin.render_tokens[ fkey ]['{{ field_amenity_icon_color }}'] | striptags | trim %}
+						{% if not icon_color %} {% set icon_color = 'red-bg'  %} {% endif %}
+
+                            <div class="col-md-6 col-lg-4 mb-5">
+                                <div class="card-basic">
+                                    <div class="card-basic-header">
+                                        <div class="card-basic-image">
+										{% if image %}
+                                            <img class="card-img-top" src="{{ image }}" alt="{{ title|raw}}">
+										{% endif %}
+                                        </div>
+                                        {% if amenityType == 'Activities' or amenityType == 'النشاطات' %}
+                                        <div class="card-basic-wrapper {{ icon_color }}">
+                                            <img class="card-tag-img" src="{{ icon }}" alt="{{ title|raw }}">
+                                        </div>
+                                        {% endif %}
+                                    </div>
+                                    <div class="card-basic-information">
+                                        <a href="{{ link }}"><h3 class="card-title">{{ title |raw }}</h3></a>
+                                        <div class="detailed-txt">{{ headline | raw }}</div>
+                                    </div>
+                                </div>
+                            </div>
+                    {% endfor %}
+
+                {% set cnt = cnt + 1 %}
+                </div>
+                </div>
+               {% endfor %}
+            </div>
+            </div>
+              </div>

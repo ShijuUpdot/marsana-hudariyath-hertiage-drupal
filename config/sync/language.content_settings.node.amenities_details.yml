@@ -1,0 +1,18 @@
+uuid: 5a2d8688-e962-49ae-bab8-67cbb40afc59
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.amenities_details
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: node.amenities_details
+target_entity_type_id: node
+target_bundle: amenities_details
+default_langcode: site_default
+language_alterable: true

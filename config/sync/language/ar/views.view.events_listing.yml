@@ -1,0 +1,7 @@
+display:
+  default:
+    display_options:
+      filters:
+        field_hero_image_title_value:
+          expose:
+            label: 'تصفية حسب التاريخ'

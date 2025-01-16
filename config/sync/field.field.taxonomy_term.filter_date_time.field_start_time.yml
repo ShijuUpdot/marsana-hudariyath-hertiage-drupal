@@ -1,0 +1,21 @@
+uuid: 4d5a4818-8440-4ff6-bd92-32e8f3be7397
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_start_time
+    - taxonomy.vocabulary.filter_date_time
+id: taxonomy_term.filter_date_time.field_start_time
+field_name: field_start_time
+entity_type: taxonomy_term
+bundle: filter_date_time
+label: 'Start Time'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1616122800
+default_value_callback: ''
+settings: {  }
+field_type: timestamp

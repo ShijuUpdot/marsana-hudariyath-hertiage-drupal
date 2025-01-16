@@ -1,0 +1,18 @@
+uuid: c3d2fcfe-3f10-4507-b154-21e687f0de26
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.landmarks
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: taxonomy_term.landmarks
+target_entity_type_id: taxonomy_term
+target_bundle: landmarks
+default_langcode: site_default
+language_alterable: true

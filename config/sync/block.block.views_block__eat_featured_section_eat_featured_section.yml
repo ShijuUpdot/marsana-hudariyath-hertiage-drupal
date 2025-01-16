@@ -1,0 +1,37 @@
+uuid: 8eb4c9fe-fb48-4ee0-8777-d72e99ffab9c
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.eat
+    - views.view.eat_featured_section
+  module:
+    - block_visibility_groups
+    - system
+    - views
+  theme:
+    - hudayriyat
+id: views_block__eat_featured_section_eat_featured_section
+theme: hudayriyat
+region: content
+weight: -9
+provider: null
+plugin: 'views_block:eat_featured_section-eat_featured_section'
+settings:
+  id: 'views_block:eat_featured_section-eat_featured_section'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: eat
+    context_mapping: {  }
+  request_path:
+    id: request_path
+    pages: /eat
+    negate: false
+    context_mapping: {  }

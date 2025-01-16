@@ -1,0 +1,22 @@
+uuid: 01593422-042c-4200-83fc-7b3763bc932e
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - marsana
+_core:
+  default_config_hash: jQQUUWN2Uxr5qZtc9zcJKBCxpKY8orN1u2HPqYYRQDI
+id: marsana_powered
+theme: marsana
+region: other
+weight: -3
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  provider: system
+  label_display: '0'
+visibility: {  }

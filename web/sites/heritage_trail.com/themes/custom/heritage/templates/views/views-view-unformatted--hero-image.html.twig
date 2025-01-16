@@ -1,0 +1,25 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a view of unformatted rows.
+ *
+ * Available variables:
+ * - title: The title of this group of rows. May be empty.
+ * - rows: A list of the view's row items.
+ *   - attributes: The row's HTML attributes.
+ *   - content: The row's content.
+ * - view: The view object.
+ * - default_row_class: A flag indicating whether default classes should be
+ *   used on rows.
+ *
+ * @see template_preprocess_views_view_unformatted()
+ *
+ * @ingroup themeable
+ */
+#}
+{% for row in rows %}
+{% set image1 = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_hero_image }}'] %}
+<div class="full-screen-img position-relative">
+    <img src="{{ image1 | striptags | trim }}" alt="">
+</div>
+{% endfor %}

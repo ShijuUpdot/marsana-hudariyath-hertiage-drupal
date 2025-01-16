@@ -1,0 +1,18 @@
+uuid: 4a81b05e-ea12-46f2-a39b-e87e9cf944e0
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.experience
+id: taxonomy_term.experience.changed
+field_name: changed
+entity_type: taxonomy_term
+bundle: experience
+label: Changed
+description: 'The time that the term was last edited.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

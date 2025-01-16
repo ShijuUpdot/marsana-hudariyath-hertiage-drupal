@@ -1,0 +1,19 @@
+uuid: e6520e18-06ae-49c5-a790-e2401048a18a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_sub_headline
+    - paragraphs.paragraphs_type.guidelines_listing
+id: paragraph.guidelines_listing.field_sub_headline
+field_name: field_sub_headline
+entity_type: paragraph
+bundle: guidelines_listing
+label: 'Sub Headline'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

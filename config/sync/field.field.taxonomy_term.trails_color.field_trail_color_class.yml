@@ -1,0 +1,19 @@
+uuid: 04650fcb-34c3-49e1-8113-7a1d592d7247
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_trail_color_class
+    - taxonomy.vocabulary.trails_color
+id: taxonomy_term.trails_color.field_trail_color_class
+field_name: field_trail_color_class
+entity_type: taxonomy_term
+bundle: trails_color
+label: 'Trail color class'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

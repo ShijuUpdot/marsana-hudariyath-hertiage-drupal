@@ -1,0 +1,28 @@
+uuid: fa00248c-3596-449c-8798-004e1a403d27
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.message.mail_subject
+    - field.field.message.new_comment.field_action
+    - field.field.message.new_comment.field_post
+    - field.field.message.new_comment.field_read
+    - field.field.message.new_comment.field_ref_user
+    - message.template.new_comment
+  module:
+    - user
+id: message.new_comment.mail_subject
+targetEntityType: message
+bundle: new_comment
+mode: mail_subject
+content:
+  partial_0:
+    weight: 0
+    region: content
+hidden:
+  field_action: true
+  field_post: true
+  field_read: true
+  field_ref_user: true
+  partial_1: true
+  search_api_excerpt: true

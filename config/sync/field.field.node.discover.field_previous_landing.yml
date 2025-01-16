@@ -1,0 +1,23 @@
+uuid: 8fe5e351-7dd2-4c01-92e0-c83da698e20d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_previous_landing
+    - node.type.discover
+  module:
+    - link
+id: node.discover.field_previous_landing
+field_name: field_previous_landing
+entity_type: node
+bundle: discover
+label: 'Previous Landing'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

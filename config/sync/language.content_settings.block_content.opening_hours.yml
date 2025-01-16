@@ -1,0 +1,18 @@
+uuid: bff3a8c6-1220-4708-bca3-f96ceef758e9
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.opening_hours
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: block_content.opening_hours
+target_entity_type_id: block_content
+target_bundle: opening_hours
+default_langcode: site_default
+language_alterable: true

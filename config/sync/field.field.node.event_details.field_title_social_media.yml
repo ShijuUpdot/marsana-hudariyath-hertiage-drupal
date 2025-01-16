@@ -1,0 +1,19 @@
+uuid: eb7a0c63-c397-425c-ae2f-54fc793cdc7e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_title_social_media
+    - node.type.event_details
+id: node.event_details.field_title_social_media
+field_name: field_title_social_media
+entity_type: node
+bundle: event_details
+label: 'Title Social Media'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

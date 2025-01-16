@@ -1,0 +1,7 @@
+name: 'Report issue and help'
+type: module
+description: 'Report issue and help'
+core_version_requirement: ^8.0 || ^9.0
+package: 'Custom'
+dependencies:
+  - webform

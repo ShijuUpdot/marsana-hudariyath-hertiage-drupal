@@ -1,0 +1,45 @@
+uuid: 5e621e9f-9346-4fa7-8b18-f251142907d9
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.discover
+    - views.view.discover_key_points
+  module:
+    - block_visibility_groups
+    - node
+    - system
+    - views
+  theme:
+    - hudayriyat
+id: views_block__discover_key_points_discover_key_points
+theme: hudayriyat
+region: content
+weight: -7
+provider: null
+plugin: 'views_block:discover_key_points-discover_key_points'
+settings:
+  id: 'views_block:discover_key_points-discover_key_points'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: discover
+    context_mapping: {  }
+  node_type:
+    id: node_type
+    bundles:
+      discover: discover
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+  request_path:
+    id: request_path
+    pages: /discover
+    negate: false
+    context_mapping: {  }

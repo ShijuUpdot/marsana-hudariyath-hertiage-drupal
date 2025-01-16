@@ -1,0 +1,40 @@
+uuid: 25d27062-8a59-4550-88a6-b89c7e7f5d93
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.offers_details
+    - views.view.offers_info_section
+  module:
+    - block_visibility_groups
+    - node
+    - views
+  theme:
+    - hudayriyat
+id: views_block__offers_info_section_block_1
+theme: hudayriyat
+region: content
+weight: -11
+provider: null
+plugin: 'views_block:offers_info_section-block_1'
+settings:
+  id: 'views_block:offers_info_section-block_1'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+  context_mapping: {  }
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: offers_details
+    context_mapping: {  }
+  node_type:
+    id: node_type
+    bundles:
+      offers_details: offers_details
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

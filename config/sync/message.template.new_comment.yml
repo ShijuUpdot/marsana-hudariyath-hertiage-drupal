@@ -1,0 +1,19 @@
+uuid: 14367f41-3920-4899-8180-7adfd747892b
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.basic_html
+template: new_comment
+label: 'New comment'
+description: 'New comment'
+text:
+  -
+    value: "<p>[message:field_ref_user:entity:display-name] add new comment on your post</p>\r\n"
+    format: basic_html
+settings:
+  'token options':
+    clear: false
+    'token replace': true
+  purge_override: false
+  purge_methods: {  }

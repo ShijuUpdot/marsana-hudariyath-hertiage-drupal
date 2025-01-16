@@ -1,0 +1,36 @@
+uuid: 21281530-feef-4755-812e-04fcdf8f5504
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.dock_big_image_section
+  module:
+    - block_visibility_groups
+    - system
+    - views
+  theme:
+    - marsana
+id: views_block__dock_big_image_section_dock_big_image_section
+theme: marsana
+region: content
+weight: -7
+provider: null
+plugin: 'views_block:dock_big_image_section-dock_big_image_section'
+settings:
+  id: 'views_block:dock_big_image_section-dock_big_image_section'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
+    context_mapping: {  }
+  request_path:
+    id: request_path
+    pages: /dock
+    negate: false
+    context_mapping: {  }

@@ -1,0 +1,18 @@
+uuid: 5d5bb3b0-2052-4334-afee-6f49d0dbe1dc
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.stay_stats_type
+id: paragraph.stay_stats_type.created
+field_name: created
+entity_type: paragraph
+bundle: stay_stats_type
+label: 'Authored on'
+description: 'The time that the Paragraph was created.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

@@ -1,0 +1,22 @@
+uuid: 52429edb-bf4b-450b-b537-cb8885aa3a05
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.footer_social_links
+id: paragraph.footer_social_links.status
+field_name: status
+entity_type: paragraph
+bundle: footer_social_links
+label: Published
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

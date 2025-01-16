@@ -1,0 +1,18 @@
+uuid: 022e9b67-0e08-469a-9ddd-15d4ccac0631
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.social_feeds
+id: node.social_feeds.changed
+field_name: changed
+entity_type: node
+bundle: social_feeds
+label: Changed
+description: 'The time that the node was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

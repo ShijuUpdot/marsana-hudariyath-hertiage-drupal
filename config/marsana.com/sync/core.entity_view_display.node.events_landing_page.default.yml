@@ -1,0 +1,44 @@
+uuid: 352a640c-47df-476b-aba6-68b0837a3f55
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.events_landing_page.body
+    - field.field.node.events_landing_page.field_home_background_image
+    - node.type.events_landing_page
+  module:
+    - svg_image
+    - text
+    - user
+id: node.events_landing_page.default
+targetEntityType: node
+bundle: events_landing_page
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_home_background_image:
+    weight: 102
+    label: hidden
+    settings:
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true

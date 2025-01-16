@@ -1,0 +1,29 @@
+uuid: 8840a24e-9a52-4607-b7df-53e9265ba682
+langcode: en
+status: true
+dependencies:
+  config:
+    - community_post.community_post_type.review
+    - field.storage.community_post.field_facilities
+    - taxonomy.vocabulary.facilities
+id: community_post.review.field_facilities
+field_name: field_facilities
+entity_type: community_post
+bundle: review
+label: Facilities
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      facilities: facilities
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

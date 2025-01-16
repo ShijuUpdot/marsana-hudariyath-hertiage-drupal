@@ -1,0 +1,55 @@
+uuid: 80cd2ef8-8760-43d4-97ef-73d3ca778ed2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.about_block.field_headline_description
+    - field.field.paragraph.about_block.field_headline_title
+    - field.field.paragraph.about_block.field_link_url
+    - field.field.paragraph.about_block.field_logo
+    - paragraphs.paragraphs_type.about_block
+  module:
+    - svg_image
+    - text
+id: paragraph.about_block.default
+targetEntityType: paragraph
+bundle: about_block
+mode: default
+content:
+  field_headline_description:
+    weight: 3
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_headline_title:
+    weight: 2
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_link_url:
+    weight: 4
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_logo:
+    weight: 1
+    label: above
+    settings:
+      image_style: ''
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+hidden: {  }

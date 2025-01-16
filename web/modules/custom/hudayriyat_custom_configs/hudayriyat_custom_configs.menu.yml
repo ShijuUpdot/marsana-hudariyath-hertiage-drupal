@@ -1,0 +1,5 @@
+hudayriyat_custom_configs.admin_settings:
+  title: 'Custom Configurations'
+  parent: hudayriyat_custom_configs.admin_config
+  description: 'Configure Custom Settings.'
+  route_name: hudayriyat_custom_configs.admin_settings

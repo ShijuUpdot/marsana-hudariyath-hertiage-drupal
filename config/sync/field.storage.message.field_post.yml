@@ -1,0 +1,20 @@
+uuid: 83dc1803-dda1-4a61-9992-29380500fe90
+langcode: en
+status: true
+dependencies:
+  module:
+    - community_post
+    - message
+id: message.field_post
+field_name: field_post
+entity_type: message
+type: entity_reference
+settings:
+  target_type: community_post
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

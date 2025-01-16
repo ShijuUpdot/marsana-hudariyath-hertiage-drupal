@@ -1,0 +1,71 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a view of unformatted rows.
+ *
+ * Available variables:
+ * - title: The title of this group of rows. May be empty.
+ * - rows: A list of the view's row items.
+ *   - attributes: The row's HTML attributes.
+ *   - content: The row's content.
+ * - view: The view object.
+ * - default_row_class: A flag indicating whether default classes should be
+ *   used on rows.
+ *
+ * @see template_preprocess_views_view_unformatted()
+ *
+ * @ingroup themeable
+ */
+#}
+
+
+    <div class="row">
+        <div class="col-6 col-lg-4">
+            <ul class="news-feed">
+            {% for key, row in rows %}
+                {% set img = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_image_url }}'] | striptags | trim %}
+                {% if key == 0 %}
+                    <li class="w-100 instaimg img-height img-rect-h"><div class="img-height-wrapper"><a href="{{ row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_post_url }}'] |striptags|trim }}"  target="_blank" class="insta{{ key }}"><img src="{{ img | raw }}" alt="News Feed 1" class="w-100"></a></div></li>
+                {% endif %}
+                {% if key == 1 %}
+                    <li class="w-100 instaimg img-height img-rect-v"><div class="img-height-wrapper"><a href="{{ row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_post_url }}'] |striptags|trim }}"  target="_blank" class="insta{{ key }}"><img src="{{ img | raw }}" alt="News Feed 1" class="w-100"></a></div></li>
+                {% endif %}
+                {% if key == 2 %}
+                    <li class="w-100 instaimg img-height img-square"><div class="img-height-wrapper"><a href="{{ row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_post_url }}'] |striptags|trim }}"  target="_blank" class="insta{{ key }}"><img src="{{ img | raw }}" alt="News Feed 1" class="w-100"></a></div></li>
+                {% endif %}
+            {% endfor %}
+            </ul>
+        </div>
+        <div class="col-6 col-lg-4">
+        <ul class="news-feed">
+            {% for key, row in rows %}
+                {% set img = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_image_url }}'] | striptags | trim %}
+                {% if key == 3 %}
+                    <li class="w-100 instaimg img-height img-square"><div class="img-height-wrapper"><a href="{{ row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_post_url }}'] |striptags|trim }}"  target="_blank" class="insta{{ key }}"><img src="{{ img | raw }}" alt="News Feed 1" class="w-100"></a></div></li>
+                {% endif %}
+                {% if key == 4 %}
+                    <li class="w-100 instaimg img-height img-rect-v"><div class="img-height-wrapper"><a href="{{ row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_post_url }}'] |striptags|trim }}"  target="_blank" class="insta{{ key }}"><img src="{{ img | raw }}" alt="News Feed 1" class="w-100"></a></div></li>
+                {% endif %}
+                {% if key == 5 %}
+                    <li class="w-100 instaimg img-height img-rect-h"><div class="img-height-wrapper"><a href="{{ row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_post_url }}'] |striptags|trim }}"  target="_blank" class="insta{{ key }}"><img src="{{ img | raw }}" alt="News Feed 1" class="w-100"></a></div></li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+        </div>
+        <div class="col-lg-4">
+        <ul class="news-feed">
+            {% for key, row in rows %}
+                {% set img = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_image_url }}'] | striptags | trim %}
+                {% if key == 6 %}
+                    <li class="w-100 instaimg img-height img-rect-h"><div class="img-height-wrapper"><a href="{{ row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_post_url }}'] |striptags|trim }}"  target="_blank" class="insta{{ key }}"><img src="{{ img | raw }}" alt="News Feed 1" class="w-100"></a></div></li>
+                {% endif %}
+                {% if key == 7 %}
+                    <li class="w-100 instaimg img-height img-rect-v"><div class="img-height-wrapper"><a href="{{ row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_post_url }}'] |striptags|trim }}"  target="_blank" class="insta{{ key }}"><img src="{{ img | raw }}" alt="News Feed 1" class="w-100"></a></div></li>
+                {% endif %}
+                {% if key == 8 %}
+                    <li class="w-100 instaimg img-height img-square"><div class="img-height-wrapper"><a href="{{ row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_post_url }}'] |striptags|trim }}"  target="_blank" class="insta{{ key }}"><img src="{{ img | raw }}" alt="News Feed 1" class="w-100"></a></div></li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+        </div>
+    </div>

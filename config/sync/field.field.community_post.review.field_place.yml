@@ -1,0 +1,30 @@
+uuid: 2476be4d-5c58-4b7a-b6ca-048aa862e7e5
+langcode: en
+status: true
+dependencies:
+  config:
+    - community_post.community_post_type.review
+    - field.storage.community_post.field_place
+    - node.type.amenities_details
+    - node.type.event_details
+id: community_post.review.field_place
+field_name: field_place
+entity_type: community_post
+bundle: review
+label: Place
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      amenities_details: amenities_details
+      event_details: event_details
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: amenities_details
+field_type: entity_reference

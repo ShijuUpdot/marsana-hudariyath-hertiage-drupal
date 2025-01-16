@@ -1,0 +1,19 @@
+uuid: 49b07d45-4857-4924-bb5e-f96da028e730
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_title_translation
+    - node.type.categories
+id: node.categories.field_title_translation
+field_name: field_title_translation
+entity_type: node
+bundle: categories
+label: 'Title Translation'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

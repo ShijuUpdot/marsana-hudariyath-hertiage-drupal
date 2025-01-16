@@ -1,0 +1,19 @@
+uuid: 5915caeb-930e-41b3-90fc-0a2bf20af971
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_timings
+    - paragraphs.paragraphs_type.opening_hours
+id: paragraph.opening_hours.field_timings
+field_name: field_timings
+entity_type: paragraph
+bundle: opening_hours
+label: Timings
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

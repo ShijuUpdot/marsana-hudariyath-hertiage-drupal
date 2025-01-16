@@ -1,0 +1,10 @@
+uuid: 0296f57d-f1da-4da0-be6f-11b7d17f483f
+langcode: en
+status: true
+dependencies: {  }
+id: personalization_detail
+label: 'Personalization Detail'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

@@ -1,0 +1,58 @@
+uuid: 16af2b74-0bbc-4b5f-a5c3-d0c34f8a0eb5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_slider_content
+    - node.type.home
+    - paragraphs.paragraphs_type.home_slider_content
+  module:
+    - entity_reference_revisions
+id: node.home.field_slider_content
+field_name: field_slider_content
+entity_type: node
+bundle: home
+label: 'Slider Content'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      home_slider_content: home_slider_content
+    target_bundles_drag_drop:
+      big_image_block:
+        weight: 11
+        enabled: false
+      eat_listing_block:
+        weight: 12
+        enabled: false
+      eat_listing_details:
+        weight: 13
+        enabled: false
+      guidelines_listing:
+        weight: 14
+        enabled: false
+      home_slider_content:
+        enabled: true
+        weight: 15
+      listing_block:
+        weight: 16
+        enabled: false
+      listing_details:
+        weight: 17
+        enabled: false
+      parallax_wrapper_bottom_image:
+        weight: 18
+        enabled: false
+      parallax_wrapper_image:
+        weight: 19
+        enabled: false
+      social_links:
+        weight: 20
+        enabled: false
+field_type: entity_reference_revisions

@@ -1,0 +1,36 @@
+uuid: 60989df2-7b8c-40f8-b335-4fc72a61b39c
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.play_first_fold
+  module:
+    - block_visibility_groups
+    - system
+    - views
+  theme:
+    - marsana
+id: views_block__play_first_fold_play_first_fold
+theme: marsana
+region: other
+weight: -2
+provider: null
+plugin: 'views_block:play_first_fold-play_first_fold'
+settings:
+  id: 'views_block:play_first_fold-play_first_fold'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
+    context_mapping: {  }
+  request_path:
+    id: request_path
+    pages: /play
+    negate: false
+    context_mapping: {  }

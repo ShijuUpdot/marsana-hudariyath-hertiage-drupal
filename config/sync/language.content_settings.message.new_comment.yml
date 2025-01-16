@@ -1,0 +1,18 @@
+uuid: 31dbf411-1324-49c4-844d-38a24210181d
+langcode: en
+status: true
+dependencies:
+  config:
+    - message.template.new_comment
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: message.new_comment
+target_entity_type_id: message
+target_bundle: new_comment
+default_langcode: site_default
+language_alterable: false

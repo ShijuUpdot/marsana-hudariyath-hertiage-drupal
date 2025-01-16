@@ -1,0 +1,18 @@
+uuid: a1364701-a90b-48d2-a499-d08dbdc03ec2
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.eat_details
+id: node.eat_details.created
+field_name: created
+entity_type: node
+bundle: eat_details
+label: 'Authored on'
+description: 'The time that the node was created.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

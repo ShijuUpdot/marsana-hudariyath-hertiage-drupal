@@ -1,0 +1,22 @@
+uuid: 8d19833b-e4dc-4cfb-bfe8-df817d744f20
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.amenities_details
+id: node.amenities_details.sticky
+field_name: sticky
+entity_type: node
+bundle: amenities_details
+label: 'Sticky at top of lists'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,0 +1,69 @@
+uuid: c79a2dd2-f200-4947-bb2e-4c1581d6f14f
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.stay.body
+    - field.field.node.stay.field_experience_headline
+    - field.field.node.stay.field_hero_image
+    - field.field.node.stay.field_hero_image_title
+    - field.field.node.stay.field_hero_ogg_video
+    - field.field.node.stay.field_hero_video
+    - field.field.node.stay.field_hero_webm_video
+    - field.field.node.stay.field_intro_block
+    - field.field.node.stay.field_next_landing
+    - field.field.node.stay.field_next_landing_image
+    - field.field.node.stay.field_previous_landing
+    - field.field.node.stay.field_previous_landing_image
+    - field.field.node.stay.field_primary_color
+    - field.field.node.stay.field_search_keywords
+    - field.field.node.stay.field_secondary_color
+    - field.field.node.stay.field_stay_featured_section
+    - field.field.node.stay.field_stay_single_banner
+    - field.field.node.stay.field_stay_sticky_landing_links
+    - field.field.node.stay.field_staymetatag
+    - node.type.stay
+  module:
+    - text
+    - user
+id: node.stay.teaser
+targetEntityType: node
+bundle: stay
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  addtoany: true
+  field_experience_headline: true
+  field_hero_image: true
+  field_hero_image_title: true
+  field_hero_ogg_video: true
+  field_hero_video: true
+  field_hero_webm_video: true
+  field_intro_block: true
+  field_next_landing: true
+  field_next_landing_image: true
+  field_previous_landing: true
+  field_previous_landing_image: true
+  field_primary_color: true
+  field_search_keywords: true
+  field_secondary_color: true
+  field_stay_featured_section: true
+  field_stay_single_banner: true
+  field_stay_sticky_landing_links: true
+  field_staymetatag: true
+  langcode: true
+  search_api_excerpt: true

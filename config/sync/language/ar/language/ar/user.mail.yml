@@ -1,0 +1,5 @@
+register_admin_created:
+  subject: 'أنشأ مدير حساب لك في [site:name]'
+status_activated:
+  body: "[user:display-name],<br/><br/>\r\n\r\nتم تفعيل حسابكم لدى جزيرة الحديريات<br/><br/>\r\n\r\nأطيب الأمنيات،\r\nمنطقة الحديريات الترفيهية\r\n"
+  subject: ' تفاصيل الحساب للبريد الإلكتروني  [user:display-name]لدى جزيرة الحديريات (موافقة)'

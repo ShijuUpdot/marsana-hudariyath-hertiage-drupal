@@ -1,0 +1,39 @@
+uuid: ac39379b-b09b-4fe8-a5bf-cd6f18b6c09b
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.static_pages.body
+    - field.field.node.static_pages.field_content
+    - field.field.node.static_pages.field_hero_image
+    - field.field.node.static_pages.field_hero_image_title
+    - node.type.static_pages
+  module:
+    - text
+    - user
+id: node.static_pages.teaser
+targetEntityType: node
+bundle: static_pages
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  addtoany: true
+  field_content: true
+  field_hero_image: true
+  field_hero_image_title: true
+  langcode: true
+  search_api_excerpt: true

@@ -1,0 +1,21 @@
+uuid: a9549a9e-2fc6-444d-9bb6-8fb84997650c
+langcode: en
+status: true
+dependencies:
+  config:
+    - community_post.community_post_type.review
+    - field.storage.community_post.field_approval_state
+  module:
+    - options
+id: community_post.review.field_approval_state
+field_name: field_approval_state
+entity_type: community_post
+bundle: review
+label: 'Approval state'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

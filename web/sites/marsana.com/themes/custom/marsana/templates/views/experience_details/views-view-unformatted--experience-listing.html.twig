@@ -1,0 +1,62 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a view of unformatted rows.
+ *
+ * Available variables:
+ * - title: The title of this group of rows. May be empty.
+ * - rows: A list of the view's row items.
+ *   - attributes: The row's HTML attributes.
+ *   - content: The row's content.
+ * - view: The view object.
+ * - default_row_class: A flag indicating whether default classes should be
+ *   used on rows.
+ *
+ * @see template_preprocess_views_view_unformatted()
+ *
+ * @ingroup themeable
+ */
+#}
+<div class="listing-fold mb-5 pb-5">
+    <div class="container">
+{% for key, row in listing %}
+{% set align = cycle(['odd', 'even'], loop.index0) %}
+{% if listing|length == 1 and experienceType == 'Dock' %}
+  {% set align = 'even' %}
+{% endif %}
+    {% if align == 'even' %}
+    <div class="row align-items-center justify-content-md-center list-margin" id="{{ row.title|replace({" ":"-"})|lower }}">
+        <div class="col-12 col-md-4" >
+          <h3 class="mb-4">{{ row.title|striptags|trim|raw }}</h3>
+          <div class="body-text">{{ row.description|striptags|trim|raw }} </div>
+        </div>
+        <div class="col-md-1"></div>
+        <div class="col-12 col-md-7 img-resp-top">
+          <div class="img-rounded"><img src="{{ row.bg_image }}" alt="{{ row.title|striptags|trim }}"></div>
+        </div>
+    </div>
+    {% elseif align == 'odd' %}
+      <div class="row align-items-center justify-content-md-center list-margin" id="{{ row.title|replace({" ":"-"})|lower }}">
+        <div class="col-12 col-md-7 img-resp-top">
+          <div class="img-rounded"><img src="{{ row.bg_image }}" alt="{{ row.title|striptags|trim }}"></div>
+        </div>
+        <div class="col-md-1"></div>
+        <div class="col-12 col-md-4" >
+          <h3 class="mb-4">{{ row.title|striptags|trim }}</h3>
+          <div class="body-text">{{ row.description|striptags|trim }} </div>
+        </div>
+      </div>
+    {% endif %}
+{% endfor %}
+    </div>
+</div>
+{% for row in rows %}
+
+{% set parallax_image = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_parallax_wrapper_bottom }}'] |striptags|trim|split(',') %}
+     {{ row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_listing_details }}'] }} 
+{% if parallax_image[0] is not empty %}
+<div class="parallax-wrapper bottom-wrapper">
+    <div class="parallax-shapes-bottom-right" data-scroll-speed="3"><img src="{{ parallax_image[0] }}" alt="parallax-wrapper bottom-wrapper"></div>
+</div>
+{% endif %}
+{% endfor %}

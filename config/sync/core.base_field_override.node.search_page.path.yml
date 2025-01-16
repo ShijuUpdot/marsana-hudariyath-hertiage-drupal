@@ -1,0 +1,20 @@
+uuid: 4ecd870d-1e7f-4dc7-8467-df828ee22de6
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.search_page
+  module:
+    - path
+id: node.search_page.path
+field_name: path
+entity_type: node
+bundle: search_page
+label: 'URL alias'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

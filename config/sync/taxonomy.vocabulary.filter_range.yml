@@ -1,0 +1,8 @@
+uuid: f6292789-076f-48b5-b4f9-e09a7e95460d
+langcode: en
+status: true
+dependencies: {  }
+name: 'Filter Range'
+vid: filter_range
+description: 'Filter Range'
+weight: -7

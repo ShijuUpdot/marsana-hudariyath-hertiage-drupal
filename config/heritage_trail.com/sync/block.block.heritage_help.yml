@@ -1,0 +1,22 @@
+uuid: 1ed81c79-256d-4228-977d-f5e4b17d0c45
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - heritage
+_core:
+  default_config_hash: 8I8iACSa0sKO3k3jlvUG1ge52rfcKX7USJAQYnzuBgg
+id: heritage_help
+theme: heritage
+region: other
+weight: -9
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  provider: help
+  label_display: '0'
+visibility: {  }

@@ -1,0 +1,8 @@
+settings:
+  allowed_values:
+    -
+      label: 'Draft AR'
+    -
+      label: 'Approved AR'
+    -
+      label: 'Rejected AR'

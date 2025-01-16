@@ -1,0 +1,18 @@
+uuid: 624350bc-e1ce-4ac6-9469-6a5ed6d9e019
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.header_block
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: block_content.header_block
+target_entity_type_id: block_content
+target_bundle: header_block
+default_langcode: current_interface
+language_alterable: true

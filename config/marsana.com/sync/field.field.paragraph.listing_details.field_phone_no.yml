@@ -1,0 +1,23 @@
+uuid: 729955e0-4e3a-433f-b872-fe21af78d438
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_phone_no
+    - paragraphs.paragraphs_type.listing_details
+  module:
+    - link
+id: paragraph.listing_details.field_phone_no
+field_name: field_phone_no
+entity_type: paragraph
+bundle: listing_details
+label: 'Phone No'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

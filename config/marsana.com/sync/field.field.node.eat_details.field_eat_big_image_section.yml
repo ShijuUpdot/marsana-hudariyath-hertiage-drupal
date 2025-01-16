@@ -1,0 +1,49 @@
+uuid: 7c7cd30e-ca2f-416c-a07d-08df556eabd1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_eat_big_image_section
+    - node.type.eat_details
+    - paragraphs.paragraphs_type.big_image_block
+  module:
+    - entity_reference_revisions
+id: node.eat_details.field_eat_big_image_section
+field_name: field_eat_big_image_section
+entity_type: node
+bundle: eat_details
+label: 'Eat Big Image Section'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      big_image_block: big_image_block
+    target_bundles_drag_drop:
+      big_image_block:
+        enabled: true
+        weight: 8
+      guidelines_listing:
+        weight: 9
+        enabled: false
+      listing_block:
+        weight: 10
+        enabled: false
+      listing_details:
+        weight: 11
+        enabled: false
+      parallax_wrapper_bottom_image:
+        weight: 12
+        enabled: false
+      parallax_wrapper_image:
+        weight: 13
+        enabled: false
+      social_links:
+        weight: 14
+        enabled: false
+field_type: entity_reference_revisions

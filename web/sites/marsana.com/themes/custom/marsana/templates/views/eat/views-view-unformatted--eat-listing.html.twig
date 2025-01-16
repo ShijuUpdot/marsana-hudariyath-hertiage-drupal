@@ -1,0 +1,149 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a view of unformatted rows.
+ *
+ * Available variables:
+ * - title: The title of this group of rows. May be empty.
+ * - rows: A list of the view's row items.
+ *   - attributes: The row's HTML attributes.
+ *   - content: The row's content.
+ * - view: The view object.
+ * - default_row_class: A flag indicating whether default classes should be
+ *   used on rows.
+ *
+ * @see template_preprocess_views_view_unformatted()
+ *
+ * @ingroup themeable
+ */
+#}
+{% if (langcode|lower == 'ar') %}
+    {% set menuTitle = drupal_config('marsana_custom_configs.settings', 'custom_configs_upload_menu_title_ar') %}
+{% else %}
+    {% set menuTitle = drupal_config('marsana_custom_configs.settings', 'custom_configs_upload_menu_title_en') %}
+{% endif %}
+<div class="interactive-listing-wrapper">
+    <div class="container">
+        <div class="filter mb-5">
+            <label for="" class="body-text">{{ 'Sort by' |t }}</label>
+            <ul class="nav nav-tabs mb-5" id="myTab" role="tablist"> 
+                {% set isResto = 'restaurants' %}
+                {% set isTruck = 'food-trucks' %}
+                {% for atkey,amenityType in amenities %}
+                {% set isActive = '' %}
+                {% set is_aria_selected = 'false' %}
+                {% if atkey == 0 %}
+                    {% set isActive = 'active' %}
+                    {% set is_aria_selected = 'true' %}
+                    {% set isResto = amenityType %}
+                {% else %}
+                    {% set isTruck = amenityType %}
+                {% endif %}
+                    <li class="nav-item">
+                        <a class="nav-link body-text bold text-uppercase {{ isActive }}" id="{{ amenityType|lower|trim|replace({' ': '-'}) }}-tab" data-toggle="tab" href="#{{ amenityType|lower|trim|replace({' ': '-'}) }}" role="tab" aria-controls="{{ amenityType|lower|trim|replace({' ': '-'}) }}" aria-selected="{{ is_aria_selected }}">{{ amenityType | trim }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="{{ isResto|lower|trim|replace({' ': '-'}) }}" role="tabpanel" aria-labelledby="{{ isResto|lower|trim|replace({' ': '-'}) }}-tab">
+                    <div class="interactive-listing-links">
+                        <ul>
+                            {% for key, row in listing %}
+                             {% if row.amenityType == 'Restaurants' or row.amenityType == 'مطاعم' %}
+                                {% set isActive = '' %}
+                                {% if loop.index0 == 0 %}
+                                    {% set isActive = 'active' %}
+                                {% endif %}
+                                {% set ftVal = ftVal+1 %}
+                                <li data-img="{{ row.bg_image }}" id="{{ 'eat-' ~ loop.index }}" class="{{ isActive|trim }}">
+                                    <a href="javascript:;" >{{ row.title|striptags|trim }}</a>
+                                    <div class="dynamic-content">
+                                        <div class="img-rest-mobile "><div class="img-circle"><img src="{{ row.bg_image }}" alt="{{ row.title|striptags|trim }}"></div></div>
+                                        <div class="logo-holder"><a href="javascript:;"><img src="{{ row.logo }}" alt=""></a></div>
+                                        <a href="javascript:;" class="body-text big summary">{{ row.description|striptags|trim }} </a>
+                                        <div class="dynamic-links mt-4">
+                                            <div class="row align-items-center">
+                                                <div class="col">
+                                                    {% if row.phone_url|trim %}
+                                                        <a href="{{ row.phone_url|trim }}" target="_blank" class="body-text small text-uppercase align-middle"><img src="/images/static/icon-phone-white.svg" class="align-middle" alt=""> {{ row.phone_title | trim }}</a>
+                                                    {% endif %}
+                                                    {% if row.menu_pdf|trim %}
+                                                        <a href="{{ row.menu_pdf | trim }}" target="_blank" class="align-middle body-text small text-uppercase"><img src="/images/static/icon-menu.svg" class="align-middle" alt=""> {{ menuTitle|raw|trim }}</a>
+                                                    {% elseif row.menu_link_url|trim %}
+                                                        <a href="{{ row.menu_link_url|trim }}" target="_blank" class="align-middle body-text small text-uppercase"><img src="/images/static/icon-menu.svg" class="align-middle" alt=""> {{ row.menu_link_title|trim }}</a>
+                                                    {% endif %}
+                                                    {% if row.insta_url|trim %}
+                                                        <a href="{{ row.insta_url|trim }}" target="_blank" class="align-middle body-text small text-uppercase"><img src="/images/static/insta-white.svg" class="align-middle" alt=""> {{ row.insta_title|trim }} </a>
+                                                    {% endif %}
+                                                    {% if row.website_link_url|trim %}
+                                                        <a href="{{ row.website_link_url|trim }}" target="_blank" class="body-text small text-uppercase align-middle web-link">{{ row.website_link_title|trim }} <img src="/images/static/arrow-right.svg" alt="" class="align-middle"></a>
+                                                    {% endif %}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                             {% endif %}
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="{{ isTruck|lower|trim|replace({' ': '-'}) }}" role="tabpanel" aria-labelledby="{{ isTruck|lower|trim|replace({' ': '-'}) }}-tab">
+                    <div class="interactive-listing-links">
+                        <ul>
+                            {% set ftVal = 0 %}
+                            {% for key, row in listing %}
+                             {% if row.amenityType == 'Food Trucks' or row.amenityType == 'شاحنات الغذاء' %}
+                                {% set isActive = '' %}
+                                {% if ftVal == 0 %}
+                                    {% set isActive = 'active' %}
+                                {% endif %}
+                                {% set ftVal = ftVal+1 %}
+                                <li data-img="{{ row.bg_image }}" id="{{ 'eat-' ~ loop.index }}" class="{{ isActive }}">
+                                    <a href="javascript:;" >{{ row.title|striptags|trim }}</a>
+                                    <div class="dynamic-content">
+                                        <div class="img-rest-mobile "><div class="img-circle"><img src="{{ row.bg_image }}" alt="{{ row.title|striptags|trim }}"></div></div>
+                                        <div class="logo-holder"><a href="javascript:;"><img src="{{ row.logo }}" alt=""></a></div>
+                                        <a href="javascript:;" class="body-text big summary">{{ row.description|striptags|trim }} </a>
+                                        <div class="dynamic-links mt-4">
+                                            <div class="row align-items-center">
+                                                <div class="col">
+                                                    {% if row.phone_url|trim %}
+                                                        <a href="{{ row.phone_url|trim }}" target="_blank" class="body-text small text-uppercase align-middle"><img src="/images/static/icon-phone-white.svg" class="align-middle" alt=""> {{ row.phone_title | trim }}</a>
+                                                    {% endif %}
+                                                    {% if row.menu_pdf|trim %}
+                                                        <a href="{{ row.menu_pdf | trim }}" target="_blank" class="align-middle body-text small text-uppercase"><img src="/images/static/icon-menu.svg" class="align-middle" alt=""> {{ menuTitle|raw|trim }}</a>
+                                                    {% elseif row.menu_link_url|trim %}
+                                                        <a href="{{ row.menu_link_url|trim }}" target="_blank" class="align-middle body-text small text-uppercase"><img src="/images/static/icon-menu.svg" class="align-middle" alt=""> {{ row.menu_link_title|trim }}</a>
+                                                    {% endif %}
+                                                    {% if row.insta_url|trim %}
+                                                        <a href="{{ row.insta_url|trim }}" target="_blank" class="align-middle body-text small text-uppercase"><img src="/images/static/insta-white.svg" class="align-middle" alt=""> {{ row.insta_title|trim }} </a>
+                                                    {% endif %}
+                                                    {% if row.website_link_url|trim %}
+                                                        <a href="{{ row.website_link_url|trim }}" target="_blank" class="body-text small text-uppercase align-middle web-link">{{ row.website_link_title|trim }} <img src="/images/static/arrow-right.svg" alt="" class="align-middle"></a>
+                                                    {% endif %}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                             {% endif %}
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="interactive-image img-circle bg-sunshine-100">
+            <img src="/images/dynamic/eat-buttom.jpg" alt="">
+        </div>
+    </div>
+</div>
+{% for row in rows %}
+{% set parallax_image = row.content['#view'].style_plugin.render_tokens[ loop.index0 ]['{{ field_parallax_wrapper_bottom }}'] |striptags|trim|split(',') %}
+{% if parallax_image[0] is not empty %}
+<div class="parallax-wrapper bottom-wrapper">
+    <div class="parallax-shapes-bottom-right" data-scroll-speed="3"><img src="{{ parallax_image[0] }}" alt="parallax-wrapper bottom-wrapper"></div>
+</div>
+{% endif %}
+{% endfor %}

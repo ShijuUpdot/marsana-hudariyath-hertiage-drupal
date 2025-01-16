@@ -1,0 +1,15 @@
+uuid: 5c86b22f-1d98-4a66-85f7-855465b7b0c8
+langcode: en
+status: true
+dependencies:
+  config:
+    - flag.flag.community_post_favorite
+  module:
+    - flag
+id: flag_action.community_post_favorite_unflag
+label: 'Unflag this item'
+type: community_post
+plugin: 'flag_action:community_post_favorite_unflag'
+configuration:
+  flag_id: community_post_favorite
+  flag_action: unflag

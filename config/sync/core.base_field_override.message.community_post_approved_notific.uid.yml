@@ -1,0 +1,20 @@
+uuid: f17d0a41-b05a-41d8-bece-c96afe3693cb
+langcode: en
+status: true
+dependencies:
+  config:
+    - message.template.community_post_approved_notific
+id: message.community_post_approved_notific.uid
+field_name: uid
+entity_type: message
+bundle: community_post_approved_notific
+label: 'Created by'
+description: 'The user that created the message.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: 'Drupal\message\Entity\Message::getCurrentUserId'
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference

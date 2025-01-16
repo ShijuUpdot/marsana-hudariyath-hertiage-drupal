@@ -1,0 +1,55 @@
+uuid: d140a83e-785a-4ccc-8165-0360712c2812
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_indicators
+    - node.type.home
+    - paragraphs.paragraphs_type.indicators_type
+  module:
+    - entity_reference_revisions
+id: node.home.field_indicators
+field_name: field_indicators
+entity_type: node
+bundle: home
+label: Indicators
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      indicators_type: indicators_type
+    target_bundles_drag_drop:
+      about_block:
+        weight: 9
+        enabled: false
+      about_section:
+        weight: 10
+        enabled: false
+      footer_social_block:
+        weight: 11
+        enabled: false
+      footer_social_links:
+        weight: 12
+        enabled: false
+      guidelines_type:
+        weight: 13
+        enabled: false
+      header_links:
+        weight: 15
+        enabled: false
+      indicators_type:
+        enabled: true
+        weight: 14
+      intro_description:
+        weight: 15
+        enabled: false
+      listing_details:
+        weight: 16
+        enabled: false
+field_type: entity_reference_revisions

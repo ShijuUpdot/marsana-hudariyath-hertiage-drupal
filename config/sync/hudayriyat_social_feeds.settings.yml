@@ -1,0 +1,10 @@
+instagram_client_id: ''
+instagram_client_secret: ''
+instagram_access_token: IGQVJWbVBxRXBQNzRoN3BZAekphSi1kZAVdyT2EtR2E3czA1OHQzbGVqSlBwTkJhY2RnOGxuanBqcXVMTzVTZAl96dGJhdHRyVE5ZAOGszR2t0clR1SkRWeS1HZA3dhWFlTdUZA1VUJrcmFvdGNHdXN6bzZAmZAgZDZD
+instagram_hashtag: hudayriyat.marvista
+instagram_limit: '9'
+_core:
+  default_config_hash: 0ncKBjKzxVy6qytBO-pz7ZPRlJXnOtPD17nk-QhA6J8
+content_modaration_enable_status: 1
+social_insta_cron: 1
+social_insta_delete: 0

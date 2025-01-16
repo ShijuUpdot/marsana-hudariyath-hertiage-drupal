@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="52px" height="52px" viewBox="0 0 52 52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icon/BurgerMenu/Header</title>
+    <g id="1.-Homepage" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="0-Menu" transform="translate(-129.000000, -74.000000)">
+            <g id="Icon/BurgerMenu/Header" transform="translate(130.000000, 75.000000)">
+                <path d="M14.7714833,19.3965517 L35.4611385,19.3965517 M14.7714833,25 L35.4611385,25 M14.7714833,31.0344828 L35.4611385,31.0344828" id="Combined-Shape" opacity="0"></path>
+                <circle id="Combined-Shape" stroke="#FFFFFF" fill="#212236" cx="25" cy="25" r="25"></circle>
+                <g id="Group" transform="translate(25.879310, 25.465517) rotate(-315.000000) translate(-25.879310, -25.465517) translate(16.379310, 24.965517)" stroke="#FFFFFF" stroke-linecap="round" stroke-width="2">
+                    <line x1="0.362068966" y1="0.465517241" x2="17.7413793" y2="0.465517241" id="Line-4-Copy"></line>
+                </g>
+                <g id="Group" transform="translate(25.879310, 25.465517) scale(-1, 1) rotate(-315.000000) translate(-25.879310, -25.465517) translate(16.379310, 24.965517)" stroke="#FFFFFF" stroke-linecap="round" stroke-width="2">
+                    <line x1="0.362068966" y1="0.465517241" x2="17.7413793" y2="0.465517241" id="Line-4-Copy"></line>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

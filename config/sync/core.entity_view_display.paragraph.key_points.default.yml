@@ -1,0 +1,33 @@
+uuid: 3da0ff59-0a33-43e3-ad27-fb36f8aca016
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.key_points.field_key_points
+    - field.field.paragraph.key_points.field_title
+    - paragraphs.paragraphs_type.key_points
+  module:
+    - entity_reference_revisions
+id: paragraph.key_points.default
+targetEntityType: paragraph
+bundle: key_points
+mode: default
+content:
+  field_key_points:
+    type: entity_reference_revisions_entity_view
+    weight: 1
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_title:
+    weight: 0
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

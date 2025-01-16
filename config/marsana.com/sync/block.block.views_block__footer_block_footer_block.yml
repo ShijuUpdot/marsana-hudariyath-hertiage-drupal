@@ -1,0 +1,39 @@
+uuid: b599848b-fb06-42fb-adff-485ef038520c
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.footer_block
+  module:
+    - block_visibility_groups
+    - node
+    - views
+  theme:
+    - marsana
+id: views_block__footer_block_footer_block
+theme: marsana
+region: content
+weight: -4
+provider: null
+plugin: 'views_block:footer_block-footer_block'
+settings:
+  id: 'views_block:footer_block-footer_block'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
+    context_mapping: {  }
+  node_type:
+    id: node_type
+    bundles:
+      eat_details: eat_details
+      experience_details: experience_details
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

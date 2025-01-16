@@ -1,0 +1,23 @@
+uuid: 3d1888d8-d5ab-4bdc-b253-5f85c4e0e08e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_is_recommended
+    - node.type.amenities_details
+id: node.amenities_details.field_is_recommended
+field_name: field_is_recommended
+entity_type: node
+bundle: amenities_details
+label: 'Is Recommended'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

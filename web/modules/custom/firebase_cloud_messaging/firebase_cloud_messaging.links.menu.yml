@@ -1,0 +1,6 @@
+firebase_cloud_messaging.firebase_cloud_messaging_config_form:
+  title: 'Firebase Cloud Messaging Config'
+  route_name: firebase_cloud_messaging.firebase_cloud_messaging_config_form
+  description: 'Firebase Cloud Messaging Config'
+  parent: system.admin_config_system
+  weight: 99

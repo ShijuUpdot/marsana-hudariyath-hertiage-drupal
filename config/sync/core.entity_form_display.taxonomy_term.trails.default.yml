@@ -1,0 +1,69 @@
+uuid: 470f756a-a539-4638-8e94-9ff6b99de579
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.trails.field_color
+    - field.field.taxonomy_term.trails.field_trails_image
+    - field.field.taxonomy_term.trails.field_trails_name
+    - image.style.thumbnail
+    - taxonomy.vocabulary.trails
+  module:
+    - svg_image
+id: taxonomy_term.trails.default
+targetEntityType: taxonomy_term
+bundle: trails
+mode: default
+content:
+  field_color:
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_trails_image:
+    weight: 2
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_trails_name:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  langcode:
+    type: language_select
+    weight: 4
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 5
+    region: content
+    third_party_settings: {  }
+  translation:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  description: true
+  path: true

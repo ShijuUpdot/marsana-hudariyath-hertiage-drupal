@@ -1,0 +1,39 @@
+uuid: 857fcaa4-0ffd-4c86-9f53-4d3e09c62b23
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.enjoy
+    - views.view.events_listing
+  module:
+    - block_visibility_groups
+    - node
+    - views
+  theme:
+    - hudayriyat
+id: views_block__events_listing_event_listing_block
+theme: hudayriyat
+region: content
+weight: -7
+provider: null
+plugin: 'views_block:events_listing-event_listing_block'
+settings:
+  id: 'views_block:events_listing-event_listing_block'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: enjoy
+    context_mapping: {  }
+  node_type:
+    id: node_type
+    bundles:
+      enjoy: enjoy
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

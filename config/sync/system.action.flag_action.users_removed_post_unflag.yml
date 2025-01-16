@@ -1,0 +1,15 @@
+uuid: 5f53cd23-410b-44cb-a731-6f17c3360b47
+langcode: en
+status: true
+dependencies:
+  config:
+    - flag.flag.users_removed_post
+  module:
+    - flag
+id: flag_action.users_removed_post_unflag
+label: 'Unflag this item'
+type: community_post
+plugin: 'flag_action:users_removed_post_unflag'
+configuration:
+  flag_id: users_removed_post
+  flag_action: unflag

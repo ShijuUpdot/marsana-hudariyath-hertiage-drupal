@@ -1,0 +1,18 @@
+uuid: e0a07c70-1749-403e-9472-ee591b5a894d
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.booking_listing
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: paragraph.booking_listing
+target_entity_type_id: paragraph
+target_bundle: booking_listing
+default_langcode: site_default
+language_alterable: true

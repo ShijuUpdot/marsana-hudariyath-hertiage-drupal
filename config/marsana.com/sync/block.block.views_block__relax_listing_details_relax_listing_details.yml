@@ -1,0 +1,36 @@
+uuid: 6f5deb47-30ce-4de4-9c5d-cfec96bda86d
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.relax_listing_details
+  module:
+    - block_visibility_groups
+    - system
+    - views
+  theme:
+    - marsana
+id: views_block__relax_listing_details_relax_listing_details
+theme: marsana
+region: other
+weight: 2
+provider: null
+plugin: 'views_block:relax_listing_details-relax_listing_details'
+settings:
+  id: 'views_block:relax_listing_details-relax_listing_details'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
+    context_mapping: {  }
+  request_path:
+    id: request_path
+    pages: /relax
+    negate: false
+    context_mapping: {  }

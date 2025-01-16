@@ -1,0 +1,39 @@
+uuid: b2dfbbd6-5666-44fa-8e7d-889e082e083e
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.experience_details_first_fold
+  module:
+    - block_visibility_groups
+    - node
+    - views
+  theme:
+    - marsana
+id: views_block__experience_details_first_fold_experience_first_fold
+theme: marsana
+region: content
+weight: -11
+provider: null
+plugin: 'views_block:experience_details_first_fold-experience_first_fold'
+settings:
+  id: 'views_block:experience_details_first_fold-experience_first_fold'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+  context_mapping: {  }
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
+    context_mapping: {  }
+  node_type:
+    id: node_type
+    bundles:
+      experience_details: experience_details
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

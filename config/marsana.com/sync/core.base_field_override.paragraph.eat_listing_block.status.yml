@@ -1,0 +1,22 @@
+uuid: 6df789dd-80d1-4936-9ad4-b58c818d1472
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.eat_listing_block
+id: paragraph.eat_listing_block.status
+field_name: status
+entity_type: paragraph
+bundle: eat_listing_block
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

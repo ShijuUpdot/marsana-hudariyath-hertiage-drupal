@@ -1,0 +1,23 @@
+uuid: fed157e7-e355-4c22-9e9f-7c6f94834874
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_link
+    - paragraphs.paragraphs_type.stay_stats_type
+  module:
+    - link
+id: paragraph.stay_stats_type.field_link
+field_name: field_link
+entity_type: paragraph
+bundle: stay_stats_type
+label: Link
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

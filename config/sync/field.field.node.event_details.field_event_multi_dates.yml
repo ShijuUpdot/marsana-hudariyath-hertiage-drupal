@@ -1,0 +1,21 @@
+uuid: c6c5ed02-371b-4dd3-8c8a-825573d2d4b0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_event_multi_dates
+    - node.type.event_details
+  module:
+    - datetime
+id: node.event_details.field_event_multi_dates
+field_name: field_event_multi_dates
+entity_type: node
+bundle: event_details
+label: 'Event Multi Dates'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

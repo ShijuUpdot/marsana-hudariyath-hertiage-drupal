@@ -1,0 +1,15 @@
+uuid: 4961e09c-355c-4164-b19c-35cab975f0ff
+langcode: en
+status: true
+dependencies:
+  config:
+    - flag.flag.node_favorite
+  module:
+    - flag
+id: flag_action.node_favorite_unflag
+label: 'Unflag this item'
+type: node
+plugin: 'flag_action:node_favorite_unflag'
+configuration:
+  flag_id: node_favorite
+  flag_action: unflag

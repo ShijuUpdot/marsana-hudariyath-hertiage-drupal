@@ -1,0 +1,18 @@
+uuid: 48988a45-3056-45db-b1d7-4b27dc680a4a
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.discover_listing
+id: paragraph.discover_listing.created
+field_name: created
+entity_type: paragraph
+bundle: discover_listing
+label: 'Authored on'
+description: 'The time that the Paragraph was created.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

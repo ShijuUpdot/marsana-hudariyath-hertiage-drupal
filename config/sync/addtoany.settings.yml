@@ -1,0 +1,30 @@
+buttons_size: 32
+additional_html: ''
+additional_css: share
+additional_js: 'a2a_config.exclude_services = ["myspace", "linkedin", "email","amazon_wish_list","aol_mail","balatarin","bibsonomy","bitty_browser"];'
+universal_button: custom
+custom_universal_button: 'http://hudayriyatisland.ae/images/static/share.svg'
+universal_button_placement: before
+no_3p: false
+entities:
+  media: 1
+  node: 1
+  comment: 0
+  block_content: 0
+  contact_message: 0
+  file: 0
+  menu_link_content: 0
+  path_alias: 0
+  shortcut: 0
+  taxonomy_term: 0
+  user: 0
+  webform_submission: 0
+  paragraph: 0
+  community_post: 0
+  flagging: 0
+  message: 0
+  recent_search_entity: 0
+  schedule_item: 0
+  search_api_task: 0
+_core:
+  default_config_hash: '-oeXHVXl-m1HE6XR_-FXfNgJOgPuHcOCWSkymfOR7Sc'

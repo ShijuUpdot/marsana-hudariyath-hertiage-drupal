@@ -1,0 +1,8 @@
+uuid: f77ecce6-ca99-4f0f-b0b4-4723f9ddec87
+langcode: en
+status: true
+dependencies: {  }
+name: 'Filter Date Time'
+vid: filter_date_time
+description: ''
+weight: 0

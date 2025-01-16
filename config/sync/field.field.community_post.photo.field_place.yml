@@ -1,0 +1,30 @@
+uuid: 8164cd8e-0cf1-416c-acc7-532b4712c369
+langcode: en
+status: true
+dependencies:
+  config:
+    - community_post.community_post_type.photo
+    - field.storage.community_post.field_place
+    - node.type.amenities_details
+    - node.type.event_details
+id: community_post.photo.field_place
+field_name: field_place
+entity_type: community_post
+bundle: photo
+label: Place
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      amenities_details: amenities_details
+      event_details: event_details
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: amenities_details
+field_type: entity_reference

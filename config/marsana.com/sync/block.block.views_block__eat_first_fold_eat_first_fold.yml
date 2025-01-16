@@ -1,0 +1,36 @@
+uuid: 6af4d7f2-b64d-4d57-9410-4ab2da320bda
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.eat_first_fold
+  module:
+    - block_visibility_groups
+    - system
+    - views
+  theme:
+    - marsana
+id: views_block__eat_first_fold_eat_first_fold
+theme: marsana
+region: content
+weight: -14
+provider: null
+plugin: 'views_block:eat_first_fold-eat_first_fold'
+settings:
+  id: 'views_block:eat_first_fold-eat_first_fold'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
+    context_mapping: {  }
+  request_path:
+    id: request_path
+    pages: /eat
+    negate: false
+    context_mapping: {  }

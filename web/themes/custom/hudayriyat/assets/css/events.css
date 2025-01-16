@@ -1,0 +1,325 @@
+/* event listing page */
+
+.event-box{
+  border-radius: 15px;
+  border: 0.5px solid #000000;
+  box-sizing: border-box;
+  direction: ltr;
+  width: 285px;
+}
+
+.event-box #box-header{
+  height: 40px;
+}
+
+.event-box #box-banner{
+  background-color: grey;
+    height: 180px;
+}
+
+.event-box #box-content h6{
+  font-weight: 600;
+  font-size: 16px;
+  text-align: center;
+  font-family: 'PublicoBannerRoman';
+}
+
+.event-box #box-content p{
+  color: #737B7D;
+  font-size: 13px;
+}
+
+.event-box #box-content{
+  display: flex;
+  justify-content: center;
+  height: 165px;
+}
+
+#box-content div{
+  /* width: 215px; */
+  padding: 30px;
+}
+
+#box-content a{
+  color: #212236;
+}
+
+/* .event-box #box-content p{
+  text-align: justify;
+  word-spacing: -0.5px;
+
+  word-break: break-all;
+} */
+
+.event-box #box-content p {
+  word-break: break-all;
+}
+
+#box-info{
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  height: 100px;
+}
+
+#box-info div{
+  /* width: 215px; */
+  width: 100%;
+  display: flex;
+  /* justify-content: center; */
+}
+
+#box-info a{
+  background-color: #212236;
+  color: white;
+  border-radius: 23px;
+  text-decoration: none;
+  width: 230px;
+  display: block;
+  padding: 5px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+#box-info img{
+  width: 15px;
+}
+
+#box-info .time-loc{
+  color: #7C7C7C;
+  font-size: 12px;
+  padding: 0px;
+  display: flex;
+  align-items: center;
+  height: 35px;
+}
+
+#box-banner img{
+  height: 180px;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.event-outdated{
+  opacity: 0.6;
+  /* cursor: not-allowed;
+  pointer-events: none; */
+}
+
+/* detailed page */
+
+.ml-30{
+  margin-left: 30px;
+}
+
+.b-bordered-box{
+  width: fit-content;
+  padding-bottom: 15px;
+  border-bottom: 3px solid #FBBC43;
+}
+.detailed-box{
+  width: fit-content;
+  padding-bottom: 15px;
+}
+.event-content-info .event-detailed-text{
+  color: #212237;
+    line-height: 130%;
+    font-size: 1.125rem;
+    font-family: 'GraphikRegular';
+}
+.event-content-info h2{
+  font-family: 'PublicoBannerMedium';
+  color: #212237;
+  line-height: 120%;
+  margin-bottom: 40px;
+  font-size: 1.5rem;
+}
+
+.map-img iframe{
+  height: 310px;
+}
+.b-bordered-box p{
+  color: #212237;
+  line-height: 26px;
+  font-family: 'PublicoBannerBlack';
+}
+
+.b-bordered-box .detailed-box-info {
+  font-family: 'GraphikRegular';
+  font-size: 18px;
+  color: #212237;
+  line-height: 130%;
+}
+
+.top-icons{
+  width: 18px;
+  margin-top: 5px;
+}
+
+.slider-arrow-fix{
+  direction: ltr;
+    text-align: left;
+}
+
+.content-info-blocks .heading{
+  font-family: 'GraphikRegular';
+  font-size: 1.125rem;
+  color: #212237;
+  line-height: 130%;
+  font-weight: bold;
+}
+
+.slideshow-container{
+  border-bottom: 1px solid black;
+}
+.event-content-info ul, .event-content-info ol{
+  list-style: unset;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.event-content-info ol{
+  list-style-type: decimal;
+}
+.event-content-info ul li{
+  display: block;
+}
+.x-center{
+  display: flex;
+  justify-content: center;
+}
+.mr-30{
+  margin-right: 30px;
+}
+
+/* Slideshow container */
+.slider-arrow-fix .slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.slider-arrow-fix .prev, .slider-arrow-fix .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.slider-arrow-fix .next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.slider-arrow-fix .prev:hover, .slider-arrow-fix .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+/* slideshow end */
+
+/* 
+promotion
+ */
+
+.mr-unset{
+  margin-right: unset;
+}
+
+.pro-para-height {
+  /* max-height: 325px;
+  max-width: 618px; */
+  /* margin-bottom: 30px; */
+}
+.promotion-content-images{
+  width: 100%;
+  /* max-width: 618px; */
+  border-radius: 30px;
+  max-height: 500px;
+  min-height: 180px;
+  object-fit: cover;
+}
+
+.para-row:nth-child(even) > .even-hide {
+  display: none;
+}
+
+.para-row:nth-child(odd) > .odd-hide {
+  display: none;
+}
+.text-vcenter{
+  display: flex;
+  align-items: center;
+}
+.margin-tb{
+  margin-top: 70px;
+  margin-bottom: 70px;
+}
+.promotion-block-img-desktop{
+  display: block;
+}
+.promotion-hr{
+  margin-bottom: 25px;
+  height: 1px;
+  background-color: #212236;
+}
+.promotion-fit-content{
+  width: fit-content;
+}
+
+@media only screen and (min-width: 1440px) {
+  #promotion-paragrah-details .container{
+    max-width: 1300px;
+  }
+}
+
+@media only screen and (min-width: 1800px) {
+  #promotion-paragrah-details .container{
+    max-width: 1800px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .promotion-block-img-mobile{
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+
+  .pro-para-height p{
+    margin-bottom: 20px;
+  }
+
+  .margin-tb{
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+
+  .para-row:nth-child(odd) > .promotion-block-img-mobile {
+    display: block;
+    
+  }
+  .para-row:nth-child(odd) > .mob-hide{
+    display: none;
+  }
+  
+  .promotion-block-img-desktop{
+    display: none;
+  }
+}

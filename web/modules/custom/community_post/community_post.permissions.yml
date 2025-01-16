@@ -1,0 +1,33 @@
+add community post entities:
+  title: 'Create new Community post entities'
+
+administer community post entities:
+  title: 'Administer Community post entities'
+  description: 'Allow to access the administration form to configure Community post entities.'
+  restrict access: true
+
+delete community post entities:
+  title: 'Delete Community post entities'
+
+edit community post entities:
+  title: 'Edit Community post entities'
+
+view published community post entities:
+  title: 'View published Community post entities'
+
+view unpublished community post entities:
+  title: 'View unpublished Community post entities'
+
+view all community post revisions:
+  title: 'View all Community post revisions'
+
+revert all community post revisions:
+  title: 'Revert all Community post revisions'
+  description: 'Role requires permission <em>view Community post revisions</em> and <em>edit rights</em> for community post entities in question or <em>administer community post entities</em>.'
+
+delete all community post revisions:
+  title: 'Delete all revisions'
+  description: 'Role requires permission to <em>view Community post revisions</em> and <em>delete rights</em> for community post entities in question or <em>administer community post entities</em>.'
+
+permission_callbacks:
+  - \Drupal\community_post\CommunityPostPermissions::generatePermissions

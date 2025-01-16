@@ -1,0 +1,22 @@
+uuid: 190da32f-7258-4717-a980-9284a4a08cb1
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.personalization
+id: node.personalization.status
+field_name: status
+entity_type: node
+bundle: personalization
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

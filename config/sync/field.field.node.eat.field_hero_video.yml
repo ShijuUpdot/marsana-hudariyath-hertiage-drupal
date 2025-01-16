@@ -1,0 +1,27 @@
+uuid: 30750ace-18de-4c6c-8c3d-2b1dd2a63e76
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hero_video
+    - node.type.eat
+  module:
+    - file
+id: node.eat.field_hero_video
+field_name: field_hero_video
+entity_type: node
+bundle: eat
+label: 'Hero Video'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'mpeg mp4'
+  max_filesize: ''
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

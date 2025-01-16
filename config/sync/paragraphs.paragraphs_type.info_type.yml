@@ -1,0 +1,10 @@
+uuid: d4643afb-5034-4853-ac46-81552c0cdedd
+langcode: en
+status: true
+dependencies: {  }
+id: info_type
+label: 'Info Type'
+icon_uuid: null
+icon_default: null
+description: 'Information about Location and opening hours'
+behavior_plugins: {  }

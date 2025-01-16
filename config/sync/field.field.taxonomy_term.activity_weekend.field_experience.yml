@@ -1,0 +1,29 @@
+uuid: 69921b78-3e15-4f20-9f84-72bb3bb0fc1c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_experience
+    - taxonomy.vocabulary.activity_weekend
+    - taxonomy.vocabulary.experience
+id: taxonomy_term.activity_weekend.field_experience
+field_name: field_experience
+entity_type: taxonomy_term
+bundle: activity_weekend
+label: Experience
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      experience: experience
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

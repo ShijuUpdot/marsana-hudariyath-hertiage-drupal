@@ -1,0 +1,22 @@
+uuid: 24f3f5d8-d28f-46af-9cd6-4098d4a3f979
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.amenities_guidelines
+id: paragraph.amenities_guidelines.status
+field_name: status
+entity_type: paragraph
+bundle: amenities_guidelines
+label: Published
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

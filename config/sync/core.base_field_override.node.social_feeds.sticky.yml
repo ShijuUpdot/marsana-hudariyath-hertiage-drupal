@@ -1,0 +1,22 @@
+uuid: 6f683402-4122-4191-aab8-8e339284d020
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.social_feeds
+id: node.social_feeds.sticky
+field_name: sticky
+entity_type: node
+bundle: social_feeds
+label: 'Sticky at top of lists'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

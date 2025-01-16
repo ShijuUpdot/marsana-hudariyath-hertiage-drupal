@@ -1,0 +1,23 @@
+uuid: fc40fd4d-a771-4ab6-b344-c7632e67dd2a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_header_link
+    - paragraphs.paragraphs_type.opening_hours_block
+  module:
+    - link
+id: paragraph.opening_hours_block.field_header_link
+field_name: field_header_link
+entity_type: paragraph
+bundle: opening_hours_block
+label: 'Header Link'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

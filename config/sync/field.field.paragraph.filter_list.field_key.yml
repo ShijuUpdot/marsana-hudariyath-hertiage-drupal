@@ -1,0 +1,19 @@
+uuid: f7cc07ea-c4c7-4cdb-b22f-ddf5fe7eb98c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_key
+    - paragraphs.paragraphs_type.filter_list
+id: paragraph.filter_list.field_key
+field_name: field_key
+entity_type: paragraph
+bundle: filter_list
+label: Key
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

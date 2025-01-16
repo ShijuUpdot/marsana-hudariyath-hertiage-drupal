@@ -1,0 +1,28 @@
+uuid: 314a52af-ef32-42a0-bfbc-381cf03c89fb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.parallax_wrapper_bottom_image.field_parallax_bottom_image
+    - paragraphs.paragraphs_type.parallax_wrapper_bottom_image
+  module:
+    - svg_image
+id: paragraph.parallax_wrapper_bottom_image.default
+targetEntityType: paragraph
+bundle: parallax_wrapper_bottom_image
+mode: default
+content:
+  field_parallax_bottom_image:
+    weight: 0
+    label: above
+    settings:
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+hidden: {  }

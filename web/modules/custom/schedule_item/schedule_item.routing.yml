@@ -1,0 +1,11 @@
+schedule_item.execute_form:
+  path: '/admin/schedule_item/{schedule_item}/form/execute'
+  defaults:
+    _form: '\Drupal\schedule_item\Form\ExecuteForm'
+    _title: 'Execute'
+  requirements:
+    _permission: 'administer site configuration'
+  options:
+    parameters:
+      schedule_item:
+        type: entity:schedule_item

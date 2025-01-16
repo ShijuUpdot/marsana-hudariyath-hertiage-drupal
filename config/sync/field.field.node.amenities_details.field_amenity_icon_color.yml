@@ -1,0 +1,23 @@
+uuid: 84771eb3-ba17-4bda-8546-ec78312662e2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_amenity_icon_color
+    - node.type.amenities_details
+  module:
+    - options
+id: node.amenities_details.field_amenity_icon_color
+field_name: field_amenity_icon_color
+entity_type: node
+bundle: amenities_details
+label: 'Amenity Icon Color'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: red-d-bg
+default_value_callback: ''
+settings: {  }
+field_type: list_string

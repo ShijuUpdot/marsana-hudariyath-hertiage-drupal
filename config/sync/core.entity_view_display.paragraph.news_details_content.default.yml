@@ -1,0 +1,79 @@
+uuid: 4d7d1edd-7605-4f4d-b49e-af5b0822e1ad
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.news_details_content.field_gallery_image
+    - field.field.paragraph.news_details_content.field_intro_description
+    - field.field.paragraph.news_details_content.field_news_content_video
+    - field.field.paragraph.news_details_content.field_news_video_youtube_url
+    - field.field.paragraph.news_details_content.field_title
+    - field.field.paragraph.news_details_content.field_video_thumbnail
+    - paragraphs.paragraphs_type.news_details_content
+  module:
+    - file
+    - svg_image
+    - text
+id: paragraph.news_details_content.default
+targetEntityType: paragraph
+bundle: news_details_content
+mode: default
+content:
+  field_gallery_image:
+    weight: 2
+    label: hidden
+    settings:
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_intro_description:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_news_content_video:
+    weight: 3
+    label: hidden
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    type: file_default
+    region: content
+  field_news_video_youtube_url:
+    weight: 5
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_title:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_video_thumbnail:
+    weight: 4
+    label: hidden
+    settings:
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+hidden: {  }

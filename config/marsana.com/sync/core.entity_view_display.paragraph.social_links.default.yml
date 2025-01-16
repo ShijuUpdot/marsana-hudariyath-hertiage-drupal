@@ -1,0 +1,37 @@
+uuid: a88902e5-9d67-4a1c-9e58-f95dcedd428f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.social_links.field_social_link
+    - field.field.paragraph.social_links.field_social_link_icon
+    - paragraphs.paragraphs_type.social_links
+  module:
+    - svg_image
+id: paragraph.social_links.default
+targetEntityType: paragraph
+bundle: social_links
+mode: default
+content:
+  field_social_link:
+    weight: 1
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_social_link_icon:
+    weight: 0
+    label: above
+    settings:
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+hidden: {  }

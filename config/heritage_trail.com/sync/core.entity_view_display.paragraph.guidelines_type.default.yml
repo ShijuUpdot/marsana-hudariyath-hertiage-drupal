@@ -1,0 +1,50 @@
+uuid: 0670f202-0590-456b-9484-84fb4ae70701
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.guidelines_type.field_description
+    - field.field.paragraph.guidelines_type.field_guidelines_listing
+    - field.field.paragraph.guidelines_type.field_short_description
+    - field.field.paragraph.guidelines_type.field_title
+    - paragraphs.paragraphs_type.guidelines_type
+  module:
+    - entity_reference_revisions
+    - text
+id: paragraph.guidelines_type.default
+targetEntityType: paragraph
+bundle: guidelines_type
+mode: default
+content:
+  field_description:
+    weight: 2
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_guidelines_listing:
+    type: entity_reference_revisions_entity_view
+    weight: 4
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_short_description:
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_title:
+    weight: 3
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

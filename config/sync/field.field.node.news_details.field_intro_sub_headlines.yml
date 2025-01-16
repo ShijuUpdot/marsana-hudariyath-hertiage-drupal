@@ -1,0 +1,21 @@
+uuid: 2092edac-ec7e-45fd-9baf-75bf8b4721d0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_intro_sub_headlines
+    - node.type.news_details
+  module:
+    - text
+id: node.news_details.field_intro_sub_headlines
+field_name: field_intro_sub_headlines
+entity_type: node
+bundle: news_details
+label: 'Intro Sub Headline'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

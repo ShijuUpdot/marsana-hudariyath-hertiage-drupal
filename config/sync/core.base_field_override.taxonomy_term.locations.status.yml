@@ -1,0 +1,22 @@
+uuid: 83d0ae6c-f58d-431a-93f2-5daef6c94103
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.locations
+id: taxonomy_term.locations.status
+field_name: status
+entity_type: taxonomy_term
+bundle: locations
+label: Published
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,0 +1,67 @@
+uuid: e8188665-01cd-430c-a356-da7e9426747b
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.offers_details.body
+    - field.field.node.offers_details.field_amenity_experience
+    - field.field.node.offers_details.field_autosuggestion_keywords
+    - field.field.node.offers_details.field_headline
+    - field.field.node.offers_details.field_hero_image
+    - field.field.node.offers_details.field_hero_image_title
+    - field.field.node.offers_details.field_intro_description
+    - field.field.node.offers_details.field_intro_title
+    - field.field.node.offers_details.field_offer_end_date
+    - field.field.node.offers_details.field_offer_start_date
+    - field.field.node.offers_details.field_offers_gallery
+    - field.field.node.offers_details.field_offers_info
+    - field.field.node.offers_details.field_offers_location
+    - field.field.node.offers_details.field_offers_schedule
+    - field.field.node.offers_details.field_opening_hours_title
+    - field.field.node.offers_details.field_schedule_headline
+    - field.field.node.offers_details.field_search_keywords
+    - field.field.node.offers_details.field_similar_offers
+    - node.type.offers_details
+  module:
+    - text
+    - user
+id: node.offers_details.teaser
+targetEntityType: node
+bundle: offers_details
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  addtoany: true
+  field_amenity_experience: true
+  field_autosuggestion_keywords: true
+  field_headline: true
+  field_hero_image: true
+  field_hero_image_title: true
+  field_intro_description: true
+  field_intro_title: true
+  field_offer_end_date: true
+  field_offer_start_date: true
+  field_offers_gallery: true
+  field_offers_info: true
+  field_offers_location: true
+  field_offers_schedule: true
+  field_opening_hours_title: true
+  field_schedule_headline: true
+  field_search_keywords: true
+  field_similar_offers: true
+  langcode: true
+  search_api_excerpt: true

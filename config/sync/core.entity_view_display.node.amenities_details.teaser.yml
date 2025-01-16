@@ -1,0 +1,134 @@
+uuid: 97b2eabb-ba8f-4760-ad1f-5ca3c86a4c63
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.amenities_details.body
+    - field.field.node.amenities_details.field_activity_weekend
+    - field.field.node.amenities_details.field_amenity_experience
+    - field.field.node.amenities_details.field_amenity_gallery
+    - field.field.node.amenities_details.field_amenity_icon
+    - field.field.node.amenities_details.field_amenity_icon_color
+    - field.field.node.amenities_details.field_amenity_images
+    - field.field.node.amenities_details.field_amenity_images_title
+    - field.field.node.amenities_details.field_amenity_location
+    - field.field.node.amenities_details.field_amenity_tags
+    - field.field.node.amenities_details.field_amenity_type
+    - field.field.node.amenities_details.field_autosuggestion_keywords
+    - field.field.node.amenities_details.field_available_amenity_items
+    - field.field.node.amenities_details.field_direct_url
+    - field.field.node.amenities_details.field_facilities
+    - field.field.node.amenities_details.field_headline
+    - field.field.node.amenities_details.field_hero_image
+    - field.field.node.amenities_details.field_hero_image_logo
+    - field.field.node.amenities_details.field_hero_image_title
+    - field.field.node.amenities_details.field_hero_ogg_video
+    - field.field.node.amenities_details.field_hero_video
+    - field.field.node.amenities_details.field_hero_webm_video
+    - field.field.node.amenities_details.field_info_block
+    - field.field.node.amenities_details.field_intro_description
+    - field.field.node.amenities_details.field_intro_short_description
+    - field.field.node.amenities_details.field_is_recommended
+    - field.field.node.amenities_details.field_key_features
+    - field.field.node.amenities_details.field_link_facebook
+    - field.field.node.amenities_details.field_link_instagram
+    - field.field.node.amenities_details.field_link_twitter
+    - field.field.node.amenities_details.field_location_details
+    - field.field.node.amenities_details.field_mail_to
+    - field.field.node.amenities_details.field_opening_hours
+    - field.field.node.amenities_details.field_other_amenity_item
+    - field.field.node.amenities_details.field_phone_number
+    - field.field.node.amenities_details.field_position
+    - field.field.node.amenities_details.field_primary_color
+    - field.field.node.amenities_details.field_priority
+    - field.field.node.amenities_details.field_secondary_color
+    - field.field.node.amenities_details.field_slider_images
+    - field.field.node.amenities_details.field_suitable
+    - field.field.node.amenities_details.field_title_social_media
+    - field.field.node.amenities_details.field_title_translation
+    - field.field.node.amenities_details.field_upload
+    - node.type.amenities_details
+  module:
+    - text
+    - user
+id: node.amenities_details.teaser
+targetEntityType: node
+bundle: amenities_details
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  flag_node_favorite:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  flag_node_removed:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  flag_turn_off_node_notification:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  addtoany: true
+  field_activity_weekend: true
+  field_amenity_experience: true
+  field_amenity_gallery: true
+  field_amenity_icon: true
+  field_amenity_icon_color: true
+  field_amenity_images: true
+  field_amenity_images_title: true
+  field_amenity_location: true
+  field_amenity_tags: true
+  field_amenity_type: true
+  field_autosuggestion_keywords: true
+  field_available_amenity_items: true
+  field_direct_url: true
+  field_facilities: true
+  field_headline: true
+  field_hero_image: true
+  field_hero_image_logo: true
+  field_hero_image_title: true
+  field_hero_ogg_video: true
+  field_hero_video: true
+  field_hero_webm_video: true
+  field_info_block: true
+  field_intro_description: true
+  field_intro_short_description: true
+  field_is_recommended: true
+  field_key_features: true
+  field_link_facebook: true
+  field_link_instagram: true
+  field_link_twitter: true
+  field_location_details: true
+  field_mail_to: true
+  field_opening_hours: true
+  field_other_amenity_item: true
+  field_phone_number: true
+  field_position: true
+  field_primary_color: true
+  field_priority: true
+  field_secondary_color: true
+  field_slider_images: true
+  field_suitable: true
+  field_title_social_media: true
+  field_title_translation: true
+  field_upload: true
+  langcode: true
+  search_api_excerpt: true

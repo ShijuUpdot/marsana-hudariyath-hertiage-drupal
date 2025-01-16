@@ -1,0 +1,22 @@
+uuid: e8434882-c337-49ee-b772-820da6cf001c
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.offers_listing
+id: node.offers_listing.promote
+field_name: promote
+entity_type: node
+bundle: offers_listing
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

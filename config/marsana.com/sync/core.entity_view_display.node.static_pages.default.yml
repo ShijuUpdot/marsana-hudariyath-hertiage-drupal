@@ -1,0 +1,56 @@
+uuid: 95107603-3e47-4103-8bf2-3ed050fed79b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.static_pages.body
+    - field.field.node.static_pages.field_content_for
+    - field.field.node.static_pages.field_hero_image_title
+    - field.field.node.static_pages.field_sub_title
+    - node.type.static_pages
+  module:
+    - options
+    - text
+    - user
+id: node.static_pages.default
+targetEntityType: node
+bundle: static_pages
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_content_for:
+    weight: 104
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_hero_image_title:
+    weight: 102
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_sub_title:
+    weight: 103
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true

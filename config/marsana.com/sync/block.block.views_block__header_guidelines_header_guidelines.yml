@@ -1,0 +1,36 @@
+uuid: c001cb7b-7722-4913-978e-8b1de0684e30
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.header_guidelines
+  module:
+    - block_visibility_groups
+    - system
+    - views
+  theme:
+    - marsana
+id: views_block__header_guidelines_header_guidelines
+theme: marsana
+region: other
+weight: -9
+provider: null
+plugin: 'views_block:header_guidelines-header_guidelines'
+settings:
+  id: 'views_block:header_guidelines-header_guidelines'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
+    context_mapping: {  }
+  request_path:
+    id: request_path
+    pages: /play
+    negate: false
+    context_mapping: {  }

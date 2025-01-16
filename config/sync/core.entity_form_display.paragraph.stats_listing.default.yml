@@ -1,0 +1,32 @@
+uuid: 2b69f9a1-ca4f-4706-adb4-9eca5cb56d30
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.stats_listing.field_stats_description
+    - field.field.paragraph.stats_listing.field_stats_value
+    - paragraphs.paragraphs_type.stats_listing
+id: paragraph.stats_listing.default
+targetEntityType: paragraph
+bundle: stats_listing
+mode: default
+content:
+  field_stats_description:
+    weight: 1
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_stats_value:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true

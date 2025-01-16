@@ -1,0 +1,28 @@
+uuid: 0cb49dc1-8af0-4763-8071-97b254a97ba5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.message.field_node
+    - message.template.amenity_reminder
+    - node.type.amenities_details
+id: message.amenity_reminder.field_node
+field_name: field_node
+entity_type: message
+bundle: amenity_reminder
+label: Node
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      amenities_details: amenities_details
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

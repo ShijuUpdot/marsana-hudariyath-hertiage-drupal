@@ -1,0 +1,19 @@
+uuid: 299e6f92-2524-443e-8937-d1d2f78eecdd
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.preloader_block
+    - field.storage.block_content.field_preloader_discover_label
+id: block_content.preloader_block.field_preloader_discover_label
+field_name: field_preloader_discover_label
+entity_type: block_content
+bundle: preloader_block
+label: 'Preloader Discover Label'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

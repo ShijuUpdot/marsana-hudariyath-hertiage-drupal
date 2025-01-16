@@ -1,0 +1,53 @@
+uuid: 222a9875-6d8e-413d-8d89-70b04f1968ea
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.eat_details.body
+    - field.field.node.eat_details.field_eat_big_image_section
+    - field.field.node.eat_details.field_eat_listing
+    - field.field.node.eat_details.field_eat_metatag
+    - field.field.node.eat_details.field_hero_image
+    - field.field.node.eat_details.field_hero_image_title
+    - field.field.node.eat_details.field_intro_description
+    - field.field.node.eat_details.field_listing_details_block
+    - field.field.node.eat_details.field_parallax_wrapper
+    - field.field.node.eat_details.field_parallax_wrapper_bottom
+    - field.field.node.eat_details.field_sort_order
+    - field.field.node.eat_details.field_sub_title
+    - node.type.eat_details
+  module:
+    - text
+    - user
+id: node.eat_details.teaser
+targetEntityType: node
+bundle: eat_details
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_eat_big_image_section: true
+  field_eat_listing: true
+  field_eat_metatag: true
+  field_hero_image: true
+  field_hero_image_title: true
+  field_intro_description: true
+  field_listing_details_block: true
+  field_parallax_wrapper: true
+  field_parallax_wrapper_bottom: true
+  field_sort_order: true
+  field_sub_title: true
+  langcode: true

@@ -1,0 +1,29 @@
+uuid: fcc0112b-78c8-4e2f-addf-51c0b141d149
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_amenity_tags
+    - node.type.amenities_details
+    - taxonomy.vocabulary.amenities_tags
+id: node.amenities_details.field_amenity_tags
+field_name: field_amenity_tags
+entity_type: node
+bundle: amenities_details
+label: 'Amenity Tags'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      amenities_tags: amenities_tags
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

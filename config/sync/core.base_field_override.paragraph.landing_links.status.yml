@@ -1,0 +1,22 @@
+uuid: 4c4c6fc9-3e85-4b60-89dc-77020d92c335
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.landing_links
+id: paragraph.landing_links.status
+field_name: status
+entity_type: paragraph
+bundle: landing_links
+label: Published
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,0 +1,918 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the Modon theme.
+ */
+/**
+ * Implements hook_preprocess_page() for page.html.twig.
+ */
+
+ use Drupal\taxonomy\Entity\Term;
+ use Drupal\Core\Form\FormStateInterface;
+ use Drupal\paragraphs\Entity\Paragraph;
+
+function marsana_preprocess_block(array &$variables) {
+
+  $variables['langcode'] = \Drupal::languageManager()->getCurrentLanguage()->getId();
+
+}
+
+function marsana_preprocess_menu__main(&$variables) {
+  $site_config = \Drupal::config('system.site');
+  $file_url_generator = \Drupal::service('file_url_generator');
+  // logo needs to be placed within specified folder
+
+  $variables['menuactive'] = '';
+  $node = \Drupal::routeMatch()->getParameter('node');
+
+  $variables['homepath'] = (get_language_class()=='ar')?'/ar':'/';
+  $variables['logopath'] = file_url_transform_relative($file_url_generator->generateAbsoluteString(theme_get_setting('logo.url')));
+
+  $lang_codes = get_lang_codes();
+  $variables['langcode'] = $lang_codes['langcode'];
+  $variables['langlink'] = $lang_codes['langlink'];
+}
+
+function marsana_preprocess_block__headerleft(array &$variables) {
+    $lang_codes = get_lang_codes();
+    $variables['langcode'] = $lang_codes['langcode'];
+    $variables['langlink'] = $lang_codes['langlink'];
+}
+
+function marsana_preprocess_page(&$variables) {
+  try {
+    if(\Drupal::service('path.matcher')->isFrontPage()) {
+      unset($variables['page']['content']['modon_content']);
+      $variables['is_front'] = TRUE;
+    }
+  } catch (Exception $e) {
+    $variables['is_front'] = FALSE;
+  }
+}
+
+function marsana_preprocess(&$variables, $hook) {
+  try {
+    $variables['is_front'] = \Drupal::service('path.matcher')->isFrontPage();
+  }
+  catch (Exception $e) {
+    $variables['is_front'] = FALSE;
+  }
+  // Ensure the cache varies correctly (new in Drupal 8.3).
+  $variables['#cache']['contexts'][] = 'url.path.is_front';
+}
+
+function marsana_preprocess_html(array &$variables) {
+  $variables['langclass'] = get_language_class();
+  $variables['is_front'] = \Drupal::service('path.matcher')->isFrontPage();
+}
+
+function marsana_preprocess_html__front(array &$variables) {
+  $variables['langclass'] = get_language_class();
+  $variables['is_front'] = TRUE;
+}
+
+function marsana_preprocess_links(array &$variables) {
+  $variables['langclass'] = get_language_class();
+}
+
+function get_language_class() {
+  $langclass = '';
+  $language_manager = \Drupal::languageManager();
+  if($language_manager->getCurrentLanguage()->getId() == 'ar') {
+    $langclass = 'ar';
+  } else {
+    $langclass = 'en';
+  }
+  return $langclass;
+}
+
+function get_lang_codes() {
+    $lang_variables = array();
+    $language_manager = \Drupal::languageManager();
+    $lang_variables['langcode'] = $language_manager->getLanguageName('ar');
+    if($language_manager->getCurrentLanguage()->getId() == 'ar') {
+      $lang_variables['langcode'] = 'English';
+      $lang_variables['langlink'] = '/';
+    } else  {
+      $lang_variables['langcode'] = 'عربي'; //$language_manager->getLanguageName('ar');
+      $lang_variables['langlink'] = '/ar';
+    }
+    return $lang_variables;
+}
+
+function marsana_preprocess_node(array &$variables) {
+  $rootnode = $variables['node'];
+
+  $currlanguage = \Drupal::languageManager()->getCurrentLanguage()->getId();
+  $variables['langcode'] = $currlanguage;
+
+}
+
+function marsana_preprocess_field(&$variables) {
+    $language = \Drupal::languageManager()->getCurrentLanguage();
+    $variables['langclass'] = $language->getId();
+}
+
+function marsana_preprocess_views_view_field(&$variables) {
+    $language = \Drupal::languageManager()->getCurrentLanguage();
+    $variables['langclass'] = $language->getId();
+}
+
+function marsana_preprocess_views_view_unformatted(&$variables) {
+  $file_url_generator = \Drupal::service('file_url_generator');
+  $view = $variables['view'];
+  $rows = $variables['rows'];
+
+  $language = $currlanguage = \Drupal::languageManager()->getCurrentLanguage()->getId();
+  $variables['langcode'] = $language;
+  if ($view->id() === 'footer_block')
+  {
+    $paragraph_storage = \Drupal::entityTypeManager()->getStorage('paragraph');
+    foreach ($rows as $id => $row)
+    {
+      $node = $view->result[$id]->_entity;
+      $language = getDefaultTranslation($node, $currlanguage);
+      if ($node->hasField('field_social_links'))
+      {
+        foreach ($node->field_social_links->getValue() as $key=>$paras)
+        {
+          $paragraph_ref_id = $paras['target_id'] ?? NULL;
+          if ($paragraph_ref_id)
+          {
+            $paragraph_entity = $paragraph_storage->load($paragraph_ref_id);
+            if($paragraph_entity->hasTranslation($language)) {
+              $variables['social_links'][$key]['social_link'] = $paragraph_entity->getTranslation($language)->field_social_link->value;
+            } else {
+              $variables['social_links'][$key]['social_link'] = $paragraph_entity->field_social_link->value;
+            }
+
+            if($paragraph_entity->field_social_link_icon->entity ) {
+              $variables['social_links'][$key]['icon'] = $paragraph_entity->field_social_link_icon->entity->getFileUri();
+            }
+          }
+        }
+      }
+    }
+  } elseif($view->id() == 'covid_guidelines')
+  {
+    $paragraph_storage = \Drupal::entityTypeManager()->getStorage('paragraph');
+    foreach ($rows as $id => $row)
+    {
+      $node = $view->result[$id]->_entity;
+      $language = getDefaultTranslation($node, $currlanguage);
+      if ($node->hasField('field_guidelines_listing'))
+      {
+        foreach ($node->field_guidelines_listing->getValue() as $key=>$paras)
+        {
+          $paragraph_ref_id = $paras['target_id'] ?? NULL;
+          if ($paragraph_ref_id)
+          {
+            $paragraph_entity = $paragraph_storage->load($paragraph_ref_id);
+            if($paragraph_entity->hasTranslation($language)) {
+              $variables['guidelines'][$key]['guidelines_text'] = $paragraph_entity->getTranslation($language)->field_guidelines_text->value;
+              $variables['guidelines'][$key]['sub_headline'] = $paragraph_entity->getTranslation($language)->field_sub_headline->value;
+            } else {
+              $variables['guidelines'][$key]['guidelines_text'] = $paragraph_entity->field_guidelines_text->value;
+              $variables['guidelines'][$key]['sub_headline'] = $paragraph_entity->field_sub_headline->value;
+            }
+
+            if($paragraph_entity->field_icon->entity ) {
+              $variables['guidelines'][$key]['icon'] = $paragraph_entity->field_icon->entity->getFileUri();
+            }
+          }
+        }
+      }
+    }
+  } elseif($view->id() == 'header_block') {
+    $lang_codes = get_lang_codes();
+    $variables['langcode'] = $lang_codes['langcode'];
+    $variables['langlink'] = $lang_codes['langlink'];
+	$paragraph_storage = \Drupal::entityTypeManager()->getStorage('paragraph');
+    foreach ($rows as $id => $row)
+    {
+      $node = $view->result[$id]->_entity;
+      $language = getDefaultTranslation($node, $currlanguage);
+      if ($node->hasField('field_header_social_links'))
+      {
+        foreach ($node->field_header_social_links->getValue() as $key=>$paras)
+        {
+          $paragraph_ref_id = $paras['target_id'] ?? NULL;
+          if ($paragraph_ref_id)
+          {
+            $paragraph_entity = $paragraph_storage->load($paragraph_ref_id);
+            if($paragraph_entity->hasTranslation($language)) {
+              $variables['social_links'][$key]['social_link'] = $paragraph_entity->getTranslation($language)->field_social_link->value;
+            } else {
+              $variables['social_links'][$key]['social_link'] = $paragraph_entity->field_social_link->value;
+            }
+
+            if($paragraph_entity->field_social_link_icon->entity ) {
+              $variables['social_links'][$key]['icon'] = $file_url_generator->generateAbsoluteString($paragraph_entity->get('field_social_link_icon')->entity->getFileUri());
+            }
+          }
+        } 
+      }
+    }
+
+      $vid = 'activities';
+
+      $avocabulary = \Drupal::entityTypeManager()->getStorage('taxonomy_vocabulary')->load($vid);
+
+      $variables['activities_label'] = $avocabulary->label();
+      
+      $terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree($vid);
+      foreach ($terms as $term) {
+        $term_obj = Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($term->tid);
+        $activities_translated_term = \Drupal::service('entity.repository')->getTranslationFromContext($term_obj, $language);
+        $activities_translated_term_en = \Drupal::service('entity.repository')->getTranslationFromContext($term_obj, 'en');
+
+        $activities_data[] = [
+         // 'tid' => $term->tid,
+         // 'tname' => $term->name,
+          'activitiesPosition' => $term_obj->get('field_position')->value,
+          'activitiesPositionTitle' => $activities_translated_term->get('field_title')->value,
+          'modalTitle' => $activities_translated_term_en->get('field_title')->value,
+        ];
+      }
+      $variables['activities'] =  $activities_data;
+      $activities_data_chuck =  array_chunk($activities_data, ceil(count($activities_data) / 2));
+      $variables['activities_data1'] = $activities_data_chuck[0];
+      $variables['activities_data2'] = $activities_data_chuck[1];
+
+      $fbId = 'f_b_outlets';
+
+      $fbVocabulary = \Drupal::entityTypeManager()->getStorage('taxonomy_vocabulary')->load($fbId);
+
+      $variables['f_b_outlets_label'] = $fbVocabulary->label();
+
+      $FBterms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree($fbId);
+      foreach ($FBterms as $FBterm) {
+        $FBterm_obj = Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($FBterm->tid);
+        $f_b_outlets_translated_term = \Drupal::service('entity.repository')->getTranslationFromContext($FBterm_obj, $language);
+        $f_b_outlets_translated_term_en = \Drupal::service('entity.repository')->getTranslationFromContext($FBterm_obj, 'en');
+
+        $f_b_outlets_data[] = [
+          'position' => $FBterm_obj->get('field_position')->value,
+          'positionNo' => $FBterm_obj->get('field_position_no')->value,
+          'positionTitle' => $f_b_outlets_translated_term->get('field_title')->value,
+          'modalTitle' => $f_b_outlets_translated_term_en->get('field_title')->value,
+        ];
+      }
+      $f_b_outlets_chunk =  array_chunk($f_b_outlets_data, ceil(count($f_b_outlets_data) / 2));
+      $variables['f_b_outlets_chunk1'] = $f_b_outlets_chunk[0];
+      $variables['f_b_outlets_chunk1_count'] = count($f_b_outlets_chunk[0]);
+      $variables['f_b_outlets_chunk2'] = $f_b_outlets_chunk[1];
+
+      $ftId = 'food_trucks';
+
+      $ftVocabulary = \Drupal::entityTypeManager()->getStorage('taxonomy_vocabulary')->load($ftId);
+
+      $variables['food_trucks_label'] = $ftVocabulary->label();
+
+      $FTterms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree($ftId);
+      foreach ($FTterms as $FTterm) {
+        $FTterm_obj = Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($FTterm->tid);
+        $food_trucks_translated_term = \Drupal::service('entity.repository')->getTranslationFromContext($FTterm_obj, $language);
+        $food_trucks_translated_term_en = \Drupal::service('entity.repository')->getTranslationFromContext($FTterm_obj, 'en');
+
+        $food_trucks_data[] = [
+          'tid' => $FTterm->tid,
+          'tname' => $FTterm->name,
+          'position' => $FTterm_obj->get('field_position')->value,
+          'positionNo' => $FTterm_obj->get('field_position_no')->value,
+          'positionTitle' => $food_trucks_translated_term->get('field_title')->value,
+          'modalTitle' => $food_trucks_translated_term_en->get('field_title')->value,
+        ];
+      }
+        $food_trucks_chunk = array_chunk($food_trucks_data, ceil(count($food_trucks_data) / 2));
+        $variables['food_trucks_chunk1'] = $food_trucks_chunk[0];
+        $variables['food_trucks_chunk2'] = $food_trucks_chunk[1];
+	      $variables['f_b_outlets_chunk2_count_total'] = $variables['f_b_outlets_chunk1_count']+count($f_b_outlets_chunk[1]);
+        $variables['food_trucks_count_total'] = $variables['f_b_outlets_chunk2_count_total'] + count($food_trucks_chunk[0]);
+        $variables['numbered_points'] = array_merge($f_b_outlets_data,$food_trucks_data);
+       
+  } elseif($view->id() == 'eat_listing') {
+      $paragraph_storage = \Drupal::entityTypeManager()->getStorage('paragraph');
+      foreach ($rows as $id => $row) {
+        $node = $view->result[$id]->_entity;
+        $language = getDefaultTranslation($node, $currlanguage);
+        if ($node->hasField('field_eat_listing')) {
+          $amenities = [];
+          foreach ($node->field_eat_listing->getValue() as $key=>$paras) {
+            $paragraph_ref_id = $paras['target_id'] ?? NULL;
+            if ($paragraph_ref_id) {
+              $paragraph_entity = $paragraph_storage->load($paragraph_ref_id);
+              if($paragraph_entity->get('field_amenity_type')->target_id) {
+                if(Term::load($paragraph_entity->get('field_amenity_type')->target_id)->hasTranslation($language)) {
+                  $amenities[] = Term::load($paragraph_entity->get('field_amenity_type')->target_id)->getTranslation($language)->name->value;
+                } else {
+                  $amenities[] = Term::load($paragraph_entity->get('field_amenity_type')->target_id)->name->value;
+                }
+              }
+              if($paragraph_entity->get('field_amenity_type')->target_id) {
+                if(Term::load($paragraph_entity->get('field_amenity_type')->target_id)->hasTranslation($language)) {
+                  $amenityType = Term::load($paragraph_entity->get('field_amenity_type')->target_id)->getTranslation($language)->name->value;
+                } else {
+                  $amenityType = Term::load($paragraph_entity->get('field_amenity_type')->target_id)->name->value;
+                } 
+              }
+              if($paragraph_entity->hasTranslation($language)) {
+                $variables['listing'][$key]['title'] = $paragraph_entity->getTranslation($language)->field_listing_title->value;
+                $variables['listing'][$key]['description'] = $paragraph_entity->getTranslation($language)->get('field_listing_description')->value;
+                if($paragraph_entity->getTranslation($language)->field_website_link->get(0) ) {
+                  $variables['listing'][$key]['website_link_url'] = $paragraph_entity->getTranslation($language)->field_website_link->get(0)->getUrl()->toString();
+                  $variables['listing'][$key]['website_link_title'] = $paragraph_entity->getTranslation($language)->field_website_link->title;
+                }
+                if($paragraph_entity->getTranslation($language)->field_phone_no->get(0) ) {
+                  $variables['listing'][$key]['phone_url'] = $paragraph_entity->getTranslation($language)->field_phone_no->get(0)->getUrl()->toString();
+                  $variables['listing'][$key]['phone_title'] = $paragraph_entity->getTranslation($language)->field_phone_no->title;
+                }
+                if($paragraph_entity->getTranslation($language)->field_menu_link->get(0) ) {
+                  $variables['listing'][$key]['menu_link_url'] = $paragraph_entity->getTranslation($language)->field_menu_link->get(0)->getUrl()->toString();
+                  $variables['listing'][$key]['menu_link_title'] = $paragraph_entity->getTranslation($language)->field_menu_link->title;
+                }
+                if($paragraph_entity->getTranslation($language)->field_instagram_profile->get(0) ) {
+                  $variables['listing'][$key]['insta_url'] = $paragraph_entity->getTranslation($language)->field_instagram_profile->get(0)->getUrl()->toString();
+                  $variables['listing'][$key]['insta_title'] = $paragraph_entity->getTranslation($language)->field_instagram_profile->title;
+                }
+              } else {
+                $variables['listing'][$key]['title'] = $paragraph_entity->field_listing_title->value;
+                $variables['listing'][$key]['description'] = $paragraph_entity->get('field_listing_description')->value;
+                if($paragraph_entity->field_website_link->get(0)) {
+                  $variables['listing'][$key]['website_link_url'] = $paragraph_entity->field_website_link->get(0)->getUrl()->toString();
+                  $variables['listing'][$key]['website_link_title'] = $paragraph_entity->field_website_link->title;
+                }
+                if($paragraph_entity->field_phone_no->get(0)) {
+                  $variables['listing'][$key]['phone_url'] = $paragraph_entity->field_phone_no->get(0)->getUrl()->toString();
+                  $variables['listing'][$key]['phone_title'] = $paragraph_entity->field_phone_no->title;
+                }
+                if($paragraph_entity->field_menu_link->get(0)) {
+                  $variables['listing'][$key]['menu_link_url'] = $paragraph_entity->field_menu_link->get(0)->getUrl()->toString();
+                  $variables['listing'][$key]['menu_link_title'] = $paragraph_entity->field_menu_link->title;
+                }
+                if($paragraph_entity->field_instagram_profile->get(0)) {
+                  $variables['listing'][$key]['insta_url'] = $paragraph_entity->field_instagram_profile->get(0)->getUrl()->toString();
+                  $variables['listing'][$key]['insta_title'] = $paragraph_entity->field_instagram_profile->title;
+                }
+              }
+              if($paragraph_entity->field_listing_image->entity ) {
+                $variables['listing'][$key]['bg_image'] = $file_url_generator->generateAbsoluteString($paragraph_entity->get('field_listing_image')->entity->getFileUri());
+              }
+              if($paragraph_entity->field_icon->entity ) {
+                $variables['listing'][$key]['logo'] = $file_url_generator->generateAbsoluteString($paragraph_entity->get('field_icon')->entity->getFileUri());
+              }
+              if($paragraph_entity->field_upload_menu->entity) {
+                $variables['listing'][$key]['menu_pdf'] = $file_url_generator->generateAbsoluteString($paragraph_entity->get('field_upload_menu')->entity->getFileUri());
+              }
+              if($paragraph_entity->get('field_amenity_type')->target_id) {
+                if(Term::load($paragraph_entity->get('field_amenity_type')->target_id)->hasTranslation($language)) {
+                  $amenityType = Term::load($paragraph_entity->get('field_amenity_type')->target_id)->getTranslation($language)->name->value;
+                } else {
+                  $amenityType = Term::load($paragraph_entity->get('field_amenity_type')->target_id)->name->value;
+                } 
+                $variables['listing'][$key]['amenityType'] = $amenityType;
+              }
+            }
+          }
+          $variables['amenities'] = array_unique($amenities); 
+        }
+      }
+  }  elseif($view->id() == 'play_listing') {
+      $paragraph_storage = \Drupal::entityTypeManager()->getStorage('paragraph');
+      foreach ($rows as $id => $row) {
+        $node = $view->result[$id]->_entity;
+        $language = getDefaultTranslation($node, $currlanguage);
+        if ($node->hasField('field_listing')) {
+          foreach ($node->field_listing->getValue() as $key=>$paras) {
+            $paragraph_ref_id = $paras['target_id'] ?? NULL;
+            if ($paragraph_ref_id) {
+              $paragraph_entity = $paragraph_storage->load($paragraph_ref_id);
+              if($paragraph_entity->hasTranslation($language)) {
+                $variables['listing'][$key]['title'] = $paragraph_entity->getTranslation($language)->field_listing_title->value;
+                $variables['listing'][$key]['description'] = $paragraph_entity->getTranslation($language)->get('field_listing_description')->value;
+              } else {
+                $variables['listing'][$key]['title'] = $paragraph_entity->field_listing_title->value;
+                $variables['listing'][$key]['description'] = $paragraph_entity->get('field_listing_description')->value;
+              }
+              if($paragraph_entity->field_listing_image->entity ) {
+                $variables['listing'][$key]['bg_image'] = $file_url_generator->generateAbsoluteString($paragraph_entity->get('field_listing_image')->entity->getFileUri());
+              }
+            }
+          }
+        }
+      }
+  }   elseif($view->id() == 'experience_listing') {
+      $paragraph_storage = \Drupal::entityTypeManager()->getStorage('paragraph');
+      foreach ($rows as $id => $row) {
+        $node = $view->result[$id]->_entity;
+        $language = getDefaultTranslation($node, $currlanguage);
+        $variables['experienceType'] = '';
+        if ($node->hasField('field_experience_type')) {
+          if(Term::load($row['content']['#row']->_entity->field_experience_type->target_id)->hasTranslation($language)) {
+            $experienceType = Term::load($row['content']['#row']->_entity->field_experience_type->target_id)->getTranslation($language)->name->value;
+          } else {
+            $experienceType = Term::load($row['content']['#row']->_entity->field_experience_type->target_id)->name->value;
+          }
+          $variables['experienceType'] = $experienceType;
+        }
+        if ($node->hasField('field_listing')) {
+          foreach ($node->field_listing->getValue() as $key=>$paras) {
+            $paragraph_ref_id = $paras['target_id'] ?? NULL;
+            if ($paragraph_ref_id) {
+              $paragraph_entity = $paragraph_storage->load($paragraph_ref_id);
+              if($paragraph_entity->hasTranslation($language)) {
+                $variables['listing'][$key]['title'] = $paragraph_entity->getTranslation($language)->field_listing_title->value;
+                $variables['listing'][$key]['description'] = $paragraph_entity->getTranslation($language)->get('field_listing_description')->value;
+              } else {
+                $variables['listing'][$key]['title'] = $paragraph_entity->field_listing_title->value;
+                $variables['listing'][$key]['description'] = $paragraph_entity->get('field_listing_description')->value;
+              }
+              if($paragraph_entity->field_listing_image->entity ) {
+                $variables['listing'][$key]['bg_image'] = $file_url_generator->generateAbsoluteString($paragraph_entity->get('field_listing_image')->entity->getFileUri());
+              }
+            }
+          }
+        }
+      }
+  } elseif($view->id() == 'menu_listing') {
+      foreach ($rows as $id => $row) {
+        $title = $row['content']['#row']->_entity->title->value;
+        //$link =  $row['content']['#row']->_entity->view_node->value;
+        //$listing_title = $row['content']['#row']->_entity->field_listing_title->value;
+        $variables['menu'][$title][] = array($id, $row);
+      }
+  } elseif($view->id() == 'eat_menu_listing') {
+    foreach ($rows as $id => $row) {
+        $title = $row['content']['#row']->_entity->title->value;
+        //$link =  $row['content']['#row']->_entity->view_node->value;
+        //$listing_title = $row['content']['#row']->_entity->field_listing_title->value;
+        $variables['menu'][$title][] = array($id, $row);
+    }
+  } elseif($view->id() == 'shop_menu_listing') {
+    foreach ($rows as $id => $row) {
+        $title = $row['content']['#row']->_entity->title->value;
+        $variables['menu'][$title][] = array($id, $row);
+    }
+  } elseif($view->id() == 'dock_menu_listing') {
+    foreach ($rows as $id => $row) {
+        $title = $row['content']['#row']->_entity->title->value;
+        $variables['menu'][$title][] = array($id, $row);
+    }
+  } elseif($view->id() == 'home_menu_listing') {
+    foreach ($rows as $id => $row) {
+        $title = $row['content']['#row']->_entity->title->value;
+        $variables['home_menu'][$title][] = array($id, $row);
+    }
+  } elseif($view->id() == 'home_eat_menu') {
+    foreach ($rows as $id => $row) {
+        $title = $row['content']['#row']->_entity->title->value;
+        $variables['home_menu'][$title][] = array($id, $row);
+    }
+  } elseif($view->id() == 'home_play_menu') {
+    foreach ($rows as $id => $row) {
+        $title = $row['content']['#row']->_entity->title->value;
+        $variables['home_menu'][$title][] = array($id, $row);
+    }
+  } elseif($view->id() == 'home_relax_menu') {
+    foreach ($rows as $id => $row) {
+        $title = $row['content']['#row']->_entity->title->value;
+        $variables['home_menu'][$title][] = array($id, $row);
+    }
+  } elseif($view->id() == 'home_shop_menu') {
+    foreach ($rows as $id => $row) {
+        $title = $row['content']['#row']->_entity->title->value;
+        $variables['home_menu'][$title][] = array($id, $row);
+    }
+  } elseif($view->id() == 'home_dock_menu') {
+    foreach ($rows as $id => $row) {
+        $title = $row['content']['#row']->_entity->title->value;
+        $variables['home_menu'][$title][] = array($id, $row);
+    }
+  } elseif($view->id() == 'home_mobile_eat_menu') {
+    foreach ($rows as $id => $row) {
+        $title = $row['content']['#row']->_entity->title->value;
+        $variables['home_menu'][$title][] = array($id, $row);
+    }
+  } elseif($view->id() == 'home_mobile_play_menu') {
+    foreach ($rows as $id => $row) {
+        $title = $row['content']['#row']->_entity->title->value;
+        $variables['home_menu'][$title][] = array($id, $row);
+    }
+  } elseif($view->id() == 'home_mobile_relax_menu') {
+    foreach ($rows as $id => $row) {
+        $title = $row['content']['#row']->_entity->title->value;
+        $variables['home_menu'][$title][] = array($id, $row);
+    }
+  } elseif($view->id() == 'home_mobile_shop_menu') {
+    foreach ($rows as $id => $row) {
+        $title = $row['content']['#row']->_entity->title->value;
+        $variables['home_menu'][$title][] = array($id, $row);
+    }
+  } elseif($view->id() == 'home_mobile_dock_menu') {
+    foreach ($rows as $id => $row) {
+        $title = $row['content']['#row']->_entity->title->value;
+        $variables['home_menu'][$title][] = array($id, $row);
+    }
+  } elseif($view->id() == 'home_eat_pop_up_content') {
+      $paragraph_storage = \Drupal::entityTypeManager()->getStorage('paragraph');
+      foreach ($rows as $id => $row) {
+        $node = $view->result[$id]->_entity;
+        $language = getDefaultTranslation($node, $currlanguage);
+
+        if ($node->hasField('field_eat_listing')) {
+          $amenities = '';
+          foreach ($node->field_eat_listing->getValue() as $ekey=>$eparas) {
+            $paragraph_ref_id = $eparas['target_id'] ?? NULL;
+            if ($paragraph_ref_id) {
+              $paragraph_entity = $paragraph_storage->load($paragraph_ref_id);
+              if($paragraph_entity->get('field_amenities')->target_id) {
+                if(Term::load($paragraph_entity->get('field_amenities')->target_id)->hasTranslation($language)) {
+                  $amenities = Term::load($paragraph_entity->get('field_amenities')->target_id)->getTranslation($language)->name->value;
+                } else {
+                  $amenities = Term::load($paragraph_entity->get('field_amenities')->target_id)->name->value;
+                } 
+                $variables['eatListing'][$ekey]['amenities'] = $amenities;
+              }
+              if($amenities and $amenities != '') {
+                if($paragraph_entity->hasTranslation($language)) {
+                  $variables['eatListing'][$ekey]['title'] = $paragraph_entity->getTranslation($language)->field_listing_title->value;
+                  $variables['eatListing'][$ekey]['description'] = $paragraph_entity->getTranslation($language)->get('field_listing_description')->value;
+                  if($paragraph_entity->getTranslation($language)->field_website_link->get(0) ) {
+                    $variables['eatListing'][$ekey]['website_link_url'] = $paragraph_entity->getTranslation($language)->field_website_link->get(0)->getUrl()->toString();
+                    $variables['eatListing'][$ekey]['website_link_title'] = $paragraph_entity->getTranslation($language)->field_website_link->title;
+                  }
+                  if($paragraph_entity->getTranslation($language)->field_phone_no->get(0) ) {
+                    $variables['eatListing'][$ekey]['phone_url'] = $paragraph_entity->getTranslation($language)->field_phone_no->get(0)->getUrl()->toString();
+                    $variables['eatListing'][$ekey]['phone_title'] = $paragraph_entity->getTranslation($language)->field_phone_no->title;
+                  }
+                  if($paragraph_entity->getTranslation($language)->field_menu_link->get(0) ) {
+                    $variables['eatListing'][$ekey]['menu_link_url'] = $paragraph_entity->getTranslation($language)->field_menu_link->get(0)->getUrl()->toString();
+                    $variables['eatListing'][$ekey]['menu_link_title'] = $paragraph_entity->getTranslation($language)->field_menu_link->title;
+                  }
+                  if($paragraph_entity->getTranslation($language)->field_instagram_profile->get(0) ) {
+                    $variables['eatListing'][$ekey]['insta_url'] = $paragraph_entity->getTranslation($language)->field_instagram_profile->get(0)->getUrl()->toString();
+                    $variables['eatListing'][$ekey]['insta_title'] = $paragraph_entity->getTranslation($language)->field_instagram_profile->title;
+                  }
+                } else {
+                  $variables['eatListing'][$ekey]['title'] = $paragraph_entity->field_listing_title->value;
+                  $variables['eatListing'][$ekey]['description'] = $paragraph_entity->get('field_listing_description')->value;
+                  if($paragraph_entity->field_website_link->get(0)) {
+                    $variables['eatListing'][$ekey]['website_link_url'] = $paragraph_entity->field_website_link->get(0)->getUrl()->toString();
+                    $variables['eatListing'][$ekey]['website_link_title'] = $paragraph_entity->field_website_link->title;
+                  }
+                  if($paragraph_entity->field_phone_no->get(0)) {
+                    $variables['eatListing'][$ekey]['phone_url'] = $paragraph_entity->field_phone_no->get(0)->getUrl()->toString();
+                    $variables['eatListing'][$ekey]['phone_title'] = $paragraph_entity->field_phone_no->title;
+                  }
+                  if($paragraph_entity->field_menu_link->get(0)) {
+                    $variables['eatListing'][$ekey]['menu_link_url'] = $paragraph_entity->field_menu_link->get(0)->getUrl()->toString();
+                    $variables['eatListing'][$ekey]['menu_link_title'] = $paragraph_entity->field_menu_link->title;
+                  }
+                  if($paragraph_entity->field_instagram_profile->get(0)) {
+                    $variables['eatListing'][$ekey]['insta_url'] = $paragraph_entity->field_instagram_profile->get(0)->getUrl()->toString();
+                    $variables['eatListing'][$ekey]['insta_title'] = $paragraph_entity->field_instagram_profile->title;
+                  }
+                }
+                if($paragraph_entity->field_listing_image->entity ) {
+                  $variables['eatListing'][$ekey]['bg_image'] = $file_url_generator->generateAbsoluteString($paragraph_entity->get('field_listing_image')->entity->getFileUri());
+                }
+                if($paragraph_entity->field_icon->entity ) {
+                  $variables['eatListing'][$ekey]['logo'] = $file_url_generator->generateAbsoluteString($paragraph_entity->get('field_icon')->entity->getFileUri());
+                }
+                if($paragraph_entity->field_upload_menu->entity) {
+                  $variables['eatListing'][$ekey]['menu_pdf'] = $file_url_generator->generateAbsoluteString($paragraph_entity->get('field_upload_menu')->entity->getFileUri());
+                }
+              }
+            }
+          }
+        }
+      }
+    } elseif($view->id() == 'home_play_pop_up_content') {
+      $paragraph_storage = \Drupal::entityTypeManager()->getStorage('paragraph');
+      $amenities = '';
+      foreach ($rows as $id => $row) {
+        $node = $view->result[$id]->_entity;
+        $language = getDefaultTranslation($node, $currlanguage);
+
+        if ($node->hasField('field_listing')) {
+          foreach ($node->field_listing->getValue() as $key=>$paras) {
+            $paragraph_ref_id = $paras['target_id'] ?? NULL;
+            if ($paragraph_ref_id) {
+              $paragraph_entity = $paragraph_storage->load($paragraph_ref_id);
+              if($paragraph_entity->get('field_amenities')->target_id) {
+                if(Term::load($paragraph_entity->get('field_amenities')->target_id)->hasTranslation($language)) {
+                  $amenities = Term::load($paragraph_entity->get('field_amenities')->target_id)->getTranslation($language)->name->value;
+                } else {
+                  $amenities = Term::load($paragraph_entity->get('field_amenities')->target_id)->name->value;
+                } 
+                $variables['listing'][$key]['amenities'] = $amenities;
+              }
+              if($amenities and $amenities != '') {
+                if($paragraph_entity->hasTranslation($language)) {
+                  $variables['listing'][$key]['title'] = $paragraph_entity->getTranslation($language)->field_listing_title->value;
+                  $variables['listing'][$key]['description'] = $paragraph_entity->getTranslation($language)->get('field_listing_description')->value;
+                  if($paragraph_entity->getTranslation($language)->field_website_link->get(0) ) {
+                    $variables['listing'][$key]['website_link_url'] = $paragraph_entity->getTranslation($language)->field_website_link->get(0)->getUrl()->toString();
+                    $variables['listing'][$key]['website_link_title'] = $paragraph_entity->getTranslation($language)->field_website_link->title;
+                  }
+                  if($paragraph_entity->getTranslation($language)->field_phone_no->get(0) ) {
+                    $variables['listing'][$key]['phone_url'] = $paragraph_entity->getTranslation($language)->field_phone_no->get(0)->getUrl()->toString();
+                    $variables['listing'][$key]['phone_title'] = $paragraph_entity->getTranslation($language)->field_phone_no->title;
+                  }
+                  if($paragraph_entity->getTranslation($language)->field_menu_link->get(0) ) {
+                    $variables['listing'][$key]['menu_link_url'] = $paragraph_entity->getTranslation($language)->field_menu_link->get(0)->getUrl()->toString();
+                    $variables['listing'][$key]['menu_link_title'] = $paragraph_entity->getTranslation($language)->field_menu_link->title;
+                  }
+                  if($paragraph_entity->getTranslation($language)->field_instagram_profile->get(0) ) {
+                    $variables['listing'][$key]['insta_url'] = $paragraph_entity->getTranslation($language)->field_instagram_profile->get(0)->getUrl()->toString();
+                    $variables['listing'][$key]['insta_title'] = $paragraph_entity->getTranslation($language)->field_instagram_profile->title;
+                  }
+                } else {
+                  $variables['listing'][$key]['title'] = $paragraph_entity->field_listing_title->value;
+                  $variables['listing'][$key]['description'] = $paragraph_entity->get('field_listing_description')->value;
+                  if($paragraph_entity->field_website_link->get(0)) {
+                    $variables['listing'][$key]['website_link_url'] = $paragraph_entity->field_website_link->get(0)->getUrl()->toString();
+                    $variables['listing'][$key]['website_link_title'] = $paragraph_entity->field_website_link->title;
+                  }
+                  if($paragraph_entity->field_phone_no->get(0)) {
+                    $variables['listing'][$key]['phone_url'] = $paragraph_entity->field_phone_no->get(0)->getUrl()->toString();
+                    $variables['listing'][$key]['phone_title'] = $paragraph_entity->field_phone_no->title;
+                  }
+                  if($paragraph_entity->field_menu_link->get(0)) {
+                    $variables['listing'][$key]['menu_link_url'] = $paragraph_entity->field_menu_link->get(0)->getUrl()->toString();
+                    $variables['listing'][$key]['menu_link_title'] = $paragraph_entity->field_menu_link->title;
+                  }
+                  if($paragraph_entity->field_instagram_profile->get(0)) {
+                    $variables['listing'][$key]['insta_url'] = $paragraph_entity->field_instagram_profile->get(0)->getUrl()->toString();
+                    $variables['listing'][$key]['insta_title'] = $paragraph_entity->field_instagram_profile->title;
+                  }
+                }
+                if($paragraph_entity->field_listing_image->entity ) {
+                  $variables['listing'][$key]['bg_image'] = $file_url_generator->generateAbsoluteString($paragraph_entity->get('field_listing_image')->entity->getFileUri());
+                }
+                if($paragraph_entity->field_icon->entity ) {
+                  $variables['listing'][$key]['logo'] = $file_url_generator->generateAbsoluteString($paragraph_entity->get('field_icon')->entity->getFileUri());
+                }
+                if($paragraph_entity->field_upload_menu->entity) {
+                  $variables['listing'][$key]['menu_pdf'] = $file_url_generator->generateAbsoluteString($paragraph_entity->get('field_upload_menu')->entity->getFileUri());
+                }
+             }
+            }
+          }
+        }
+      }
+  } elseif($view->id() == 'home_dock_pop_up_content') {
+      $paragraph_storage = \Drupal::entityTypeManager()->getStorage('paragraph');
+      $amenities = '';
+      foreach ($rows as $id => $row) {
+        $node = $view->result[$id]->_entity;
+        $language = getDefaultTranslation($node, $currlanguage);
+
+        if ($node->hasField('field_listing')) {
+          foreach ($node->field_listing->getValue() as $key=>$paras) {
+            $paragraph_ref_id = $paras['target_id'] ?? NULL;
+            if ($paragraph_ref_id) {
+              $paragraph_entity = $paragraph_storage->load($paragraph_ref_id);
+              if($paragraph_entity->get('field_amenities')->target_id) {
+                if(Term::load($paragraph_entity->get('field_amenities')->target_id)->hasTranslation($language)) {
+                  $amenities = Term::load($paragraph_entity->get('field_amenities')->target_id)->getTranslation($language)->name->value;
+                } else {
+                  $amenities = Term::load($paragraph_entity->get('field_amenities')->target_id)->name->value;
+                } 
+                $variables['listing'][$key]['amenities'] = $amenities;
+              }
+              if($amenities and $amenities != '') {
+                if($paragraph_entity->hasTranslation($language)) {
+                  $variables['listing'][$key]['title'] = $paragraph_entity->getTranslation($language)->field_listing_title->value;
+                  $variables['listing'][$key]['description'] = $paragraph_entity->getTranslation($language)->get('field_listing_description')->value;
+                  if($paragraph_entity->getTranslation($language)->field_website_link->get(0) ) {
+                    $variables['listing'][$key]['website_link_url'] = $paragraph_entity->getTranslation($language)->field_website_link->get(0)->getUrl()->toString();
+                    $variables['listing'][$key]['website_link_title'] = $paragraph_entity->getTranslation($language)->field_website_link->title;
+                  }
+                  if($paragraph_entity->getTranslation($language)->field_phone_no->get(0) ) {
+                    $variables['listing'][$key]['phone_url'] = $paragraph_entity->getTranslation($language)->field_phone_no->get(0)->getUrl()->toString();
+                    $variables['listing'][$key]['phone_title'] = $paragraph_entity->getTranslation($language)->field_phone_no->title;
+                  }
+                  if($paragraph_entity->getTranslation($language)->field_menu_link->get(0) ) {
+                    $variables['listing'][$key]['menu_link_url'] = $paragraph_entity->getTranslation($language)->field_menu_link->get(0)->getUrl()->toString();
+                    $variables['listing'][$key]['menu_link_title'] = $paragraph_entity->getTranslation($language)->field_menu_link->title;
+                  }
+                  if($paragraph_entity->getTranslation($language)->field_instagram_profile->get(0) ) {
+                    $variables['listing'][$key]['insta_url'] = $paragraph_entity->getTranslation($language)->field_instagram_profile->get(0)->getUrl()->toString();
+                    $variables['listing'][$key]['insta_title'] = $paragraph_entity->getTranslation($language)->field_instagram_profile->title;
+                  }
+                } else {
+                  $variables['listing'][$key]['title'] = $paragraph_entity->field_listing_title->value;
+                  $variables['listing'][$key]['description'] = $paragraph_entity->get('field_listing_description')->value;
+                  if($paragraph_entity->field_website_link->get(0)) {
+                    $variables['listing'][$key]['website_link_url'] = $paragraph_entity->field_website_link->get(0)->getUrl()->toString();
+                    $variables['listing'][$key]['website_link_title'] = $paragraph_entity->field_website_link->title;
+                  }
+                  if($paragraph_entity->field_phone_no->get(0)) {
+                    $variables['listing'][$key]['phone_url'] = $paragraph_entity->field_phone_no->get(0)->getUrl()->toString();
+                    $variables['listing'][$key]['phone_title'] = $paragraph_entity->field_phone_no->title;
+                  }
+                  if($paragraph_entity->field_menu_link->get(0)) {
+                    $variables['listing'][$key]['menu_link_url'] = $paragraph_entity->field_menu_link->get(0)->getUrl()->toString();
+                    $variables['listing'][$key]['menu_link_title'] = $paragraph_entity->field_menu_link->title;
+                  }
+                  if($paragraph_entity->field_instagram_profile->get(0)) {
+                    $variables['listing'][$key]['insta_url'] = $paragraph_entity->field_instagram_profile->get(0)->getUrl()->toString();
+                    $variables['listing'][$key]['insta_title'] = $paragraph_entity->field_instagram_profile->title;
+                  }
+                }
+                if($paragraph_entity->field_listing_image->entity ) {
+                  $variables['listing'][$key]['bg_image'] = $file_url_generator->generateAbsoluteString($paragraph_entity->get('field_listing_image')->entity->getFileUri());
+                }
+                if($paragraph_entity->field_icon->entity ) {
+                  $variables['listing'][$key]['logo'] = $file_url_generator->generateAbsoluteString($paragraph_entity->get('field_icon')->entity->getFileUri());
+                }
+                if($paragraph_entity->field_upload_menu->entity) {
+                  $variables['listing'][$key]['menu_pdf'] = $file_url_generator->generateAbsoluteString($paragraph_entity->get('field_upload_menu')->entity->getFileUri());
+                }
+             }
+            }
+          }
+        }
+      }
+  } elseif($view->id() == 'home_shop_pop_up_content') {
+      $paragraph_storage = \Drupal::entityTypeManager()->getStorage('paragraph');
+      $amenities = '';
+      foreach ($rows as $id => $row) {
+        $node = $view->result[$id]->_entity;
+        $language = getDefaultTranslation($node, $currlanguage);
+
+        if ($node->hasField('field_listing')) {
+          foreach ($node->field_listing->getValue() as $key=>$paras) {
+            $paragraph_ref_id = $paras['target_id'] ?? NULL;
+            if ($paragraph_ref_id) {
+              $paragraph_entity = $paragraph_storage->load($paragraph_ref_id);
+              if($paragraph_entity->get('field_amenities')->target_id) {
+                if(Term::load($paragraph_entity->get('field_amenities')->target_id)->hasTranslation($language)) {
+                  $amenities = Term::load($paragraph_entity->get('field_amenities')->target_id)->getTranslation($language)->name->value;
+                } else {
+                  $amenities = Term::load($paragraph_entity->get('field_amenities')->target_id)->name->value;
+                } 
+                $variables['listing'][$key]['amenities'] = $amenities;
+              }
+              if($amenities and $amenities != '') {
+                if($paragraph_entity->hasTranslation($language)) {
+                  $variables['listing'][$key]['title'] = $paragraph_entity->getTranslation($language)->field_listing_title->value;
+                  $variables['listing'][$key]['description'] = $paragraph_entity->getTranslation($language)->get('field_listing_description')->value;
+                  if($paragraph_entity->getTranslation($language)->field_website_link->get(0) ) {
+                    $variables['listing'][$key]['website_link_url'] = $paragraph_entity->getTranslation($language)->field_website_link->get(0)->getUrl()->toString();
+                    $variables['listing'][$key]['website_link_title'] = $paragraph_entity->getTranslation($language)->field_website_link->title;
+                  }
+                  if($paragraph_entity->getTranslation($language)->field_phone_no->get(0) ) {
+                    $variables['listing'][$key]['phone_url'] = $paragraph_entity->getTranslation($language)->field_phone_no->get(0)->getUrl()->toString();
+                    $variables['listing'][$key]['phone_title'] = $paragraph_entity->getTranslation($language)->field_phone_no->title;
+                  }
+                  if($paragraph_entity->getTranslation($language)->field_menu_link->get(0) ) {
+                    $variables['listing'][$key]['menu_link_url'] = $paragraph_entity->getTranslation($language)->field_menu_link->get(0)->getUrl()->toString();
+                    $variables['listing'][$key]['menu_link_title'] = $paragraph_entity->getTranslation($language)->field_menu_link->title;
+                  }
+                  if($paragraph_entity->getTranslation($language)->field_instagram_profile->get(0) ) {
+                    $variables['listing'][$key]['insta_url'] = $paragraph_entity->getTranslation($language)->field_instagram_profile->get(0)->getUrl()->toString();
+                    $variables['listing'][$key]['insta_title'] = $paragraph_entity->getTranslation($language)->field_instagram_profile->title;
+                  }
+                } else {
+                  $variables['listing'][$key]['title'] = $paragraph_entity->field_listing_title->value;
+                  $variables['listing'][$key]['description'] = $paragraph_entity->get('field_listing_description')->value;
+                  if($paragraph_entity->field_website_link->get(0)) {
+                    $variables['listing'][$key]['website_link_url'] = $paragraph_entity->field_website_link->get(0)->getUrl()->toString();
+                    $variables['listing'][$key]['website_link_title'] = $paragraph_entity->field_website_link->title;
+                  }
+                  if($paragraph_entity->field_phone_no->get(0)) {
+                    $variables['listing'][$key]['phone_url'] = $paragraph_entity->field_phone_no->get(0)->getUrl()->toString();
+                    $variables['listing'][$key]['phone_title'] = $paragraph_entity->field_phone_no->title;
+                  }
+                  if($paragraph_entity->field_menu_link->get(0)) {
+                    $variables['listing'][$key]['menu_link_url'] = $paragraph_entity->field_menu_link->get(0)->getUrl()->toString();
+                    $variables['listing'][$key]['menu_link_title'] = $paragraph_entity->field_menu_link->title;
+                  }
+                  if($paragraph_entity->field_instagram_profile->get(0)) {
+                    $variables['listing'][$key]['insta_url'] = $paragraph_entity->field_instagram_profile->get(0)->getUrl()->toString();
+                    $variables['listing'][$key]['insta_title'] = $paragraph_entity->field_instagram_profile->title;
+                  }
+                }
+                if($paragraph_entity->field_listing_image->entity ) {
+                  $variables['listing'][$key]['bg_image'] = $file_url_generator->generateAbsoluteString($paragraph_entity->get('field_listing_image')->entity->getFileUri());
+                }
+                if($paragraph_entity->field_icon->entity ) {
+                  $variables['listing'][$key]['logo'] = $file_url_generator->generateAbsoluteString($paragraph_entity->get('field_icon')->entity->getFileUri());
+                }
+                if($paragraph_entity->field_upload_menu->entity) {
+                  $variables['listing'][$key]['menu_pdf'] = $file_url_generator->generateAbsoluteString($paragraph_entity->get('field_upload_menu')->entity->getFileUri());
+                }
+             }
+            }
+          }
+        }
+      }
+  } elseif($view->id() == 'home_relax_pop_up_content') {
+      $paragraph_storage = \Drupal::entityTypeManager()->getStorage('paragraph');
+      $amenities = '';
+      foreach ($rows as $id => $row) {
+        $node = $view->result[$id]->_entity;
+        $language = getDefaultTranslation($node, $currlanguage);
+
+        if ($node->hasField('field_listing')) {
+          foreach ($node->field_listing->getValue() as $key=>$paras) {
+            $paragraph_ref_id = $paras['target_id'] ?? NULL;
+            if ($paragraph_ref_id) {
+              $paragraph_entity = $paragraph_storage->load($paragraph_ref_id);
+              if($paragraph_entity->get('field_amenities')->target_id) {
+                if(Term::load($paragraph_entity->get('field_amenities')->target_id)->hasTranslation($language)) {
+                  $amenities = Term::load($paragraph_entity->get('field_amenities')->target_id)->getTranslation($language)->name->value;
+                } else {
+                  $amenities = Term::load($paragraph_entity->get('field_amenities')->target_id)->name->value;
+                } 
+                $variables['listing'][$key]['amenities'] = $amenities;
+              }
+              if($amenities and $amenities != '') {
+                if($paragraph_entity->hasTranslation($language)) {
+                  $variables['listing'][$key]['title'] = $paragraph_entity->getTranslation($language)->field_listing_title->value;
+                  $variables['listing'][$key]['description'] = $paragraph_entity->getTranslation($language)->get('field_listing_description')->value;
+                  if($paragraph_entity->getTranslation($language)->field_website_link->get(0) ) {
+                    $variables['listing'][$key]['website_link_url'] = $paragraph_entity->getTranslation($language)->field_website_link->get(0)->getUrl()->toString();
+                    $variables['listing'][$key]['website_link_title'] = $paragraph_entity->getTranslation($language)->field_website_link->title;
+                  }
+                  if($paragraph_entity->getTranslation($language)->field_phone_no->get(0) ) {
+                    $variables['listing'][$key]['phone_url'] = $paragraph_entity->getTranslation($language)->field_phone_no->get(0)->getUrl()->toString();
+                    $variables['listing'][$key]['phone_title'] = $paragraph_entity->getTranslation($language)->field_phone_no->title;
+                  }
+                  if($paragraph_entity->getTranslation($language)->field_menu_link->get(0) ) {
+                    $variables['listing'][$key]['menu_link_url'] = $paragraph_entity->getTranslation($language)->field_menu_link->get(0)->getUrl()->toString();
+                    $variables['listing'][$key]['menu_link_title'] = $paragraph_entity->getTranslation($language)->field_menu_link->title;
+                  }
+                  if($paragraph_entity->getTranslation($language)->field_instagram_profile->get(0) ) {
+                    $variables['listing'][$key]['insta_url'] = $paragraph_entity->getTranslation($language)->field_instagram_profile->get(0)->getUrl()->toString();
+                    $variables['listing'][$key]['insta_title'] = $paragraph_entity->getTranslation($language)->field_instagram_profile->title;
+                  }
+                } else {
+                  $variables['listing'][$key]['title'] = $paragraph_entity->field_listing_title->value;
+                  $variables['listing'][$key]['description'] = $paragraph_entity->get('field_listing_description')->value;
+                  if($paragraph_entity->field_website_link->get(0)) {
+                    $variables['listing'][$key]['website_link_url'] = $paragraph_entity->field_website_link->get(0)->getUrl()->toString();
+                    $variables['listing'][$key]['website_link_title'] = $paragraph_entity->field_website_link->title;
+                  }
+                  if($paragraph_entity->field_phone_no->get(0)) {
+                    $variables['listing'][$key]['phone_url'] = $paragraph_entity->field_phone_no->get(0)->getUrl()->toString();
+                    $variables['listing'][$key]['phone_title'] = $paragraph_entity->field_phone_no->title;
+                  }
+                  if($paragraph_entity->field_menu_link->get(0)) {
+                    $variables['listing'][$key]['menu_link_url'] = $paragraph_entity->field_menu_link->get(0)->getUrl()->toString();
+                    $variables['listing'][$key]['menu_link_title'] = $paragraph_entity->field_menu_link->title;
+                  }
+                  if($paragraph_entity->field_instagram_profile->get(0)) {
+                    $variables['listing'][$key]['insta_url'] = $paragraph_entity->field_instagram_profile->get(0)->getUrl()->toString();
+                    $variables['listing'][$key]['insta_title'] = $paragraph_entity->field_instagram_profile->title;
+                  }
+                }
+                if($paragraph_entity->field_listing_image->entity ) {
+                  $variables['listing'][$key]['bg_image'] = $file_url_generator->generateAbsoluteString($paragraph_entity->get('field_listing_image')->entity->getFileUri());
+                }
+                if($paragraph_entity->field_icon->entity ) {
+                  $variables['listing'][$key]['logo'] = $file_url_generator->generateAbsoluteString($paragraph_entity->get('field_icon')->entity->getFileUri());
+                }
+                if($paragraph_entity->field_upload_menu->entity) {
+                  $variables['listing'][$key]['menu_pdf'] = $file_url_generator->generateAbsoluteString($paragraph_entity->get('field_upload_menu')->entity->getFileUri());
+                }
+             }
+            }
+          }
+        }
+      }
+    }
+    elseif ($view->id() == 'home_relax_pop_up_content') {
+      $variables['langcode'] = $lang_codes['langcode'];
+    }
+}
+
+function getDefaultTranslation($entity, $language) {
+  $deflangcode = \Drupal::languageManager()->getDefaultLanguage()->getId();
+  if(!$entity->hasTranslation($language)) {
+    $language = $deflangcode;
+  }
+  return $language;
+}
+
+function marsana_preprocess_paragraph(&$variables) {
+    $lang_codes = get_lang_codes();
+    $variables['langcode'] = $lang_codes['langcode'];
+    $variables['langlink'] = $lang_codes['langlink'];
+    $variables['langclass'] = get_language_class();
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function marsana_theme_suggestions_paragraph_alter(&$suggestions, $variables) {
+  $paragraph = $variables['elements']['#paragraph'];
+  $parent = $paragraph->getParentEntity();
+  if ($parent) {
+    $suggestions[] = 'paragraph__' . $parent->bundle() . '__' .  $paragraph->bundle();
+  }
+}
+

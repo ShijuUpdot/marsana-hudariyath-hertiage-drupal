@@ -1,0 +1,55 @@
+uuid: b464fac8-1806-43d6-a4ac-e5ec9cd3625e
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.footer_block
+    - field.storage.block_content.field_footer_social_block
+    - paragraphs.paragraphs_type.footer_social_links
+  module:
+    - entity_reference_revisions
+id: block_content.footer_block.field_footer_social_block
+field_name: field_footer_social_block
+entity_type: block_content
+bundle: footer_block
+label: 'Footer Social Block'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      footer_social_links: footer_social_links
+    target_bundles_drag_drop:
+      about_block:
+        weight: 8
+        enabled: false
+      about_section:
+        weight: 9
+        enabled: false
+      footer_social_block:
+        weight: 10
+        enabled: false
+      footer_social_links:
+        enabled: true
+        weight: 11
+      guidelines_type:
+        weight: 12
+        enabled: false
+      header_links:
+        weight: 15
+        enabled: false
+      indicators_type:
+        weight: 14
+        enabled: false
+      intro_description:
+        weight: 13
+        enabled: false
+      listing_details:
+        weight: 14
+        enabled: false
+field_type: entity_reference_revisions

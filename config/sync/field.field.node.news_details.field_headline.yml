@@ -1,0 +1,19 @@
+uuid: a30c7ea3-b607-4fec-afea-ef1754bee059
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_headline
+    - node.type.news_details
+id: node.news_details.field_headline
+field_name: field_headline
+entity_type: node
+bundle: news_details
+label: Headline
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

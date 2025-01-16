@@ -1,0 +1,6 @@
+services:
+  recent_search_log.normalizer.recent_search_entity:
+    class: Drupal\recent_search_log\Normalizer\RecentSearchEntityNormalizer
+    tags:
+      - { name: normalizer, priority: 99 }
+    arguments: ['@entity_type.manager', '@entity_type.repository', '@entity_field.manager']

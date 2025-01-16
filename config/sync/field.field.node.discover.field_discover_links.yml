@@ -1,0 +1,85 @@
+uuid: 1cb1ce72-c6d3-4d98-b6cd-3fc9157038e2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_discover_links
+    - node.type.discover
+    - paragraphs.paragraphs_type.links_block
+  module:
+    - entity_reference_revisions
+id: node.discover.field_discover_links
+field_name: field_discover_links
+entity_type: node
+bundle: discover
+label: 'Discover Links'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      links_block: links_block
+    target_bundles_drag_drop:
+      amenities_guidelines:
+        weight: 20
+        enabled: false
+      banner_block:
+        weight: 21
+        enabled: false
+      discover_listing:
+        weight: 22
+        enabled: false
+      event_guidelines:
+        weight: 23
+        enabled: false
+      features_block:
+        weight: 24
+        enabled: false
+      footer_social_links:
+        weight: 25
+        enabled: false
+      gallery_images:
+        weight: 26
+        enabled: false
+      guidelines:
+        weight: 27
+        enabled: false
+      intro_block:
+        weight: 28
+        enabled: false
+      key_points:
+        weight: 29
+        enabled: false
+      key_points_type:
+        weight: 30
+        enabled: false
+      link_type:
+        weight: 32
+        enabled: false
+      links_block:
+        enabled: true
+        weight: 31
+      listings:
+        weight: 33
+        enabled: false
+      location:
+        weight: 34
+        enabled: false
+      location_details:
+        weight: 35
+        enabled: false
+      single_banner:
+        weight: 36
+        enabled: false
+      stats_listing:
+        weight: 37
+        enabled: false
+      stay_stats_type:
+        weight: 38
+        enabled: false
+field_type: entity_reference_revisions

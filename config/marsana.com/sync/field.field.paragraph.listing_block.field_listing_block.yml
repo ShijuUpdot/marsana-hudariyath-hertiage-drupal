@@ -1,0 +1,49 @@
+uuid: 2f985089-dd1e-4234-b152-2d056bea7e5b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_listing_block
+    - paragraphs.paragraphs_type.listing_block
+    - paragraphs.paragraphs_type.listing_details
+  module:
+    - entity_reference_revisions
+id: paragraph.listing_block.field_listing_block
+field_name: field_listing_block
+entity_type: paragraph
+bundle: listing_block
+label: 'Listing Block'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      listing_details: listing_details
+    target_bundles_drag_drop:
+      big_image_block:
+        weight: 8
+        enabled: false
+      guidelines_listing:
+        weight: 9
+        enabled: false
+      listing_block:
+        weight: 10
+        enabled: false
+      listing_details:
+        enabled: true
+        weight: 11
+      parallax_wrapper_bottom_image:
+        weight: 12
+        enabled: false
+      parallax_wrapper_image:
+        weight: 13
+        enabled: false
+      social_links:
+        weight: 14
+        enabled: false
+field_type: entity_reference_revisions

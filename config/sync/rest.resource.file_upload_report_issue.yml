@@ -1,0 +1,17 @@
+uuid: 6b16010b-0a85-4145-a72c-982b6c417ac0
+langcode: en
+status: true
+dependencies:
+  module:
+    - report_issue_and_help
+    - serialization
+    - user
+id: file_upload_report_issue
+plugin_id: file_upload_report_issue
+granularity: method
+configuration:
+  POST:
+    supported_formats:
+      - json
+    supported_auth:
+      - cookie

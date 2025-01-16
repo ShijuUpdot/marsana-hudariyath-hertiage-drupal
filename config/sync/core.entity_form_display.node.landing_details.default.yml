@@ -1,0 +1,213 @@
+uuid: 8a9c588c-f6c0-4428-8412-7537af2c748d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.landing_details.body
+    - field.field.node.landing_details.field_experience_headline
+    - field.field.node.landing_details.field_hero_image
+    - field.field.node.landing_details.field_hero_image_title
+    - field.field.node.landing_details.field_hero_ogg_video
+    - field.field.node.landing_details.field_hero_video
+    - field.field.node.landing_details.field_hero_webm_video
+    - field.field.node.landing_details.field_intro
+    - field.field.node.landing_details.field_metatag
+    - field.field.node.landing_details.field_next_landing
+    - field.field.node.landing_details.field_next_landing_image
+    - field.field.node.landing_details.field_play_featured_section
+    - field.field.node.landing_details.field_play_single_banner_section
+    - field.field.node.landing_details.field_play_sticky_landing_links
+    - field.field.node.landing_details.field_previous_landing
+    - field.field.node.landing_details.field_previous_landing_image
+    - field.field.node.landing_details.field_primary_color
+    - field.field.node.landing_details.field_search_keywords
+    - field.field.node.landing_details.field_secondary_color
+    - image.style.thumbnail
+    - node.type.landing_details
+  module:
+    - file
+    - metatag
+    - paragraphs
+    - path
+    - svg_image
+id: node.landing_details.default
+targetEntityType: node
+bundle: landing_details
+mode: default
+content:
+  body_class:
+    type: string_textfield
+    weight: 16
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  created:
+    type: datetime_timestamp
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_experience_headline:
+    weight: 27
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_hero_image:
+    weight: 2
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_hero_image_title:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_hero_video:
+    weight: 1
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
+  field_intro:
+    type: entity_reference_paragraphs
+    weight: 5
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_metatag:
+    weight: 18
+    settings:
+      sidebar: true
+    third_party_settings: {  }
+    type: metatag_firehose
+    region: content
+  field_play_single_banner_section:
+    type: entity_reference_paragraphs
+    weight: 6
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_play_sticky_landing_links:
+    type: entity_reference_paragraphs
+    weight: 7
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_primary_color:
+    type: options_select
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_search_keywords:
+    weight: 26
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  langcode:
+    type: language_select
+    weight: 8
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 13
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 11
+    region: content
+    third_party_settings: {  }
+  specific_node_class:
+    type: boolean_checkbox
+    weight: 17
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 14
+    region: content
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 12
+    region: content
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  translation:
+    weight: 15
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 9
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      match_limit: 10
+    region: content
+    third_party_settings: {  }
+hidden:
+  body: true
+  field_hero_ogg_video: true
+  field_hero_webm_video: true
+  field_next_landing: true
+  field_next_landing_image: true
+  field_play_featured_section: true
+  field_previous_landing: true
+  field_previous_landing_image: true
+  field_secondary_color: true

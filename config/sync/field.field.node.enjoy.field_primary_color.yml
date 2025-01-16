@@ -1,0 +1,21 @@
+uuid: feb406a5-04c5-43bd-93a5-4f954cdbfa13
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_primary_color
+    - node.type.enjoy
+  module:
+    - options
+id: node.enjoy.field_primary_color
+field_name: field_primary_color
+entity_type: node
+bundle: enjoy
+label: 'Primary color'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

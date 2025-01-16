@@ -1,0 +1,22 @@
+uuid: bbcfb99d-cd08-4fba-b466-f87be5e28f25
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.trails_color
+id: taxonomy_term.trails_color.status
+field_name: status
+entity_type: taxonomy_term
+bundle: trails_color
+label: Published
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

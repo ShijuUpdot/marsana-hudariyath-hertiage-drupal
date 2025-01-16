@@ -1,0 +1,18 @@
+uuid: ea97c9c1-dd89-419b-940b-3c8b343025e0
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.landing_links
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: paragraph.landing_links
+target_entity_type_id: paragraph
+target_bundle: landing_links
+default_langcode: site_default
+language_alterable: true

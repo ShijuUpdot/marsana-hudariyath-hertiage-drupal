@@ -1,0 +1,84 @@
+uuid: 218e9daa-1f0a-4005-875e-1c989fd2091d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.home_slider_content.field_slider_bottom_text
+    - field.field.paragraph.home_slider_content.field_slider_description
+    - field.field.paragraph.home_slider_content.field_slider_image
+    - field.field.paragraph.home_slider_content.field_slider_ogg_video
+    - field.field.paragraph.home_slider_content.field_slider_title
+    - field.field.paragraph.home_slider_content.field_slider_video
+    - field.field.paragraph.home_slider_content.field_slider_webm_video
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.home_slider_content
+  module:
+    - file
+    - svg_image
+    - text
+id: paragraph.home_slider_content.default
+targetEntityType: paragraph
+bundle: home_slider_content
+mode: default
+content:
+  field_slider_bottom_text:
+    weight: 6
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+    region: content
+  field_slider_description:
+    weight: 5
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_slider_image:
+    weight: 0
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_slider_ogg_video:
+    weight: 2
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
+  field_slider_title:
+    weight: 4
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_slider_video:
+    weight: 1
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
+  field_slider_webm_video:
+    weight: 3
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
+  translation:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  status: true

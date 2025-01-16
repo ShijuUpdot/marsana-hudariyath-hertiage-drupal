@@ -1,0 +1,23 @@
+uuid: 0125d23c-dc0d-464a-b114-a0423538a933
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_link
+    - paragraphs.paragraphs_type.footer_social_links
+  module:
+    - link
+id: paragraph.footer_social_links.field_link
+field_name: field_link
+entity_type: paragraph
+bundle: footer_social_links
+label: Link
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

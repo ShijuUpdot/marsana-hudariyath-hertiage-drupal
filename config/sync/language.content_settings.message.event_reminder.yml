@@ -1,0 +1,18 @@
+uuid: 6da63bb6-cedd-4a12-8737-82b7d8052611
+langcode: en
+status: true
+dependencies:
+  config:
+    - message.template.event_reminder
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: message.event_reminder
+target_entity_type_id: message
+target_bundle: event_reminder
+default_langcode: site_default
+language_alterable: false

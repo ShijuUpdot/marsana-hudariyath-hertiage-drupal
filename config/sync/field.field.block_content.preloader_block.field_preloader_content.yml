@@ -1,0 +1,23 @@
+uuid: d00c1471-7fa1-4378-8d28-2b4d7e6b84ef
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.preloader_block
+    - field.storage.block_content.field_preloader_content
+  module:
+    - text
+id: block_content.preloader_block.field_preloader_content
+field_name: field_preloader_content
+entity_type: block_content
+bundle: preloader_block
+label: 'Preloader Content'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+  required_summary: false
+field_type: text_with_summary

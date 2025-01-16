@@ -1,0 +1,108 @@
+<?php
+
+/**
+ * @file
+ * Contains firebase_cloud_messaging.module.
+ */
+
+use Drupal\Core\Field\BaseFieldDefinition;
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Url;
+use Drupal\firebase_cloud_messaging\MessageManager;
+use Drupal\message\Entity\Message;
+
+/**
+ * Implements hook_help().
+ */
+function firebase_cloud_messaging_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the marvista_notification module.
+    case 'help.page.firebase_cloud_messaging':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('My Awesome Module') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+function firebase_cloud_messaging_form_alter(array &$form, \Drupal\Core\Form\FormStateInterface $formState, $form_id) {
+  $form_id_array = ['community_post_review_edit_form', 'community_post_photo_edit_form'];
+  if (in_array($form_id, $form_id_array)) {
+    $message_manager = MessageManager::service();
+    $form['notification'] = [
+      '#type' => 'details',
+      '#title' => 'Send notification',
+      '#weight' => 99,
+      '#open' => TRUE,
+    ];
+    $form['notification']['notification_send'] = [
+      '#type' => 'checkbox',
+      '#title' => 'Send notification',
+    ];
+    $url = Url::fromUri('internal:/admin/structure/message')->toString();
+    $form['notification']['notification_template'] = [
+      '#type' => 'select',
+      '#title' => 'Template',
+      '#options' => $message_manager->getTemplateOptions(),
+      '#description' => 'Message template of notification. Click to <a href="' . $url . '">Manage templates</a>',
+    ];
+    $form['#validate'][] = '_firebase_cloud_messaging_entity_form_submit';
+  }
+}
+
+function _firebase_cloud_messaging_entity_form_submit(array &$form, \Drupal\Core\Form\FormStateInterface $formState) {
+  $template_id = $formState->getValue('notification_template');
+  $send = boolval($formState->getValue('notification_send'));
+  if ($send == TRUE) {
+    /** @var \Drupal\Core\Entity\EntityInterface $entity */
+    $entity = $formState->getFormObject()->getEntity();
+    $allow_send_noti = false;
+    $owner_id = $entity->getOwnerId();
+    $user_entity = \Drupal\user\Entity\User::load($owner_id);
+    if(isset($user_entity->field_notification_setting) && !empty($user_entity->field_notification_setting->referencedEntities())) {
+      foreach($user_entity->field_notification_setting->referencedEntities() as $noti_para) {
+        if(isset($noti_para->field_type) && !empty($noti_para->field_type->value)
+          && $noti_para->field_type->value == 'approve') {
+          if(isset($noti_para->field_status) && !empty($noti_para->field_status->value)) {
+            $allow_send_noti = true;
+          }
+          break;
+        }
+      }
+    }
+
+    if($allow_send_noti) {
+      $message = Message::create([
+        'template' => $template_id,
+        'uid' => $owner_id,
+        'ref_entity_id' => $entity->id(),
+        'ref_entity_type' => $entity->getEntityTypeId(),
+        'ref_entity_bundle' => $entity->bundle(),
+        'message_channel' => 'push_notification',
+      ]);
+      Drupal::moduleHandler()->invokeAll('before_save_message', [$entity, $message, $form, $formState]);
+      $message->save();
+      $notifier = \Drupal::service('message_notify.sender');
+      $notifier->send($message, [], 'firebase_cloud_messaging');
+    }
+  }
+}
+
+function firebase_cloud_messaging_entity_base_field_info(\Drupal\Core\Entity\EntityTypeInterface $entity_type) {
+  if ($entity_type->id() == 'message') {
+    $fields = array();
+    $fields['ref_entity_id'] = BaseFieldDefinition::create('string')
+      ->setLabel(t('Entity id'));
+    $fields['ref_entity_type'] = BaseFieldDefinition::create('string')
+      ->setLabel(t('Entity type'));
+    $fields['ref_entity_bundle'] = BaseFieldDefinition::create('string')
+      ->setLabel(t('Entity bundle'));
+    $fields['message_channel'] = BaseFieldDefinition::create('string')
+      ->setLabel(t('Channel'));
+    return $fields;
+  }
+}
+
+

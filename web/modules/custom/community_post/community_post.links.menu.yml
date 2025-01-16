@@ -1,0 +1,17 @@
+
+# Community post menu items definition
+entity.community_post.collection:
+  title: 'Community post list'
+  route_name: entity.community_post.collection
+  description: 'List Community post entities'
+  parent: system.admin_structure
+  weight: 100
+
+
+# Community post type menu items definition
+entity.community_post_type.collection:
+  title: 'Community post type'
+  route_name: entity.community_post_type.collection
+  description: 'List Community post type (bundles)'
+  parent: system.admin_structure
+  weight: 99

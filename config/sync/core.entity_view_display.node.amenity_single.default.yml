@@ -1,0 +1,244 @@
+uuid: a4c49b95-f88d-46e4-ab7a-c64103c7b201
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.amenity_single.body
+    - field.field.node.amenity_single.field_amenity_experience
+    - field.field.node.amenity_single.field_amenity_icon
+    - field.field.node.amenity_single.field_amenity_icon_color
+    - field.field.node.amenity_single.field_amenity_images
+    - field.field.node.amenity_single.field_amenity_images_title
+    - field.field.node.amenity_single.field_amenity_tags
+    - field.field.node.amenity_single.field_amenity_type
+    - field.field.node.amenity_single.field_available_amenity_items
+    - field.field.node.amenity_single.field_headline
+    - field.field.node.amenity_single.field_hero_image
+    - field.field.node.amenity_single.field_hero_image_title
+    - field.field.node.amenity_single.field_hero_video
+    - field.field.node.amenity_single.field_info_block
+    - field.field.node.amenity_single.field_intro_description
+    - field.field.node.amenity_single.field_intro_short_description
+    - field.field.node.amenity_single.field_key_features
+    - field.field.node.amenity_single.field_location_details
+    - field.field.node.amenity_single.field_other_amenity_item
+    - field.field.node.amenity_single.field_primary_color
+    - field.field.node.amenity_single.field_secondary_color
+    - field.field.node.amenity_single.field_slider_images
+    - field.field.node.amenity_single.field_upload
+    - node.type.amenity_single
+  module:
+    - entity_reference_revisions
+    - file
+    - options
+    - svg_image
+    - text
+    - user
+id: node.amenity_single.default
+targetEntityType: node
+bundle: amenity_single
+mode: default
+content:
+  field_amenity_experience:
+    weight: 16
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_amenity_icon:
+    weight: 133
+    label: hidden
+    settings:
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_amenity_icon_color:
+    weight: 138
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_amenity_images:
+    weight: 135
+    label: above
+    settings:
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_amenity_images_title:
+    weight: 136
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_amenity_tags:
+    weight: 134
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_amenity_type:
+    weight: 2
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_available_amenity_items:
+    weight: 9
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_headline:
+    weight: 14
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_hero_image:
+    weight: 0
+    label: hidden
+    settings:
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_hero_image_title:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_hero_video:
+    weight: 6
+    label: hidden
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    type: file_default
+    region: content
+  field_info_block:
+    type: entity_reference_revisions_entity_view
+    weight: 7
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_intro_description:
+    weight: 13
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_intro_short_description:
+    weight: 12
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_key_features:
+    type: entity_reference_revisions_entity_view
+    weight: 11
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_location_details:
+    type: entity_reference_revisions_entity_view
+    weight: 8
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_other_amenity_item:
+    weight: 10
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_primary_color:
+    weight: 4
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_secondary_color:
+    weight: 5
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_slider_images:
+    weight: 15
+    label: hidden
+    settings:
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_upload:
+    weight: 137
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    type: file_default
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  addtoany: true
+  body: true
+  langcode: true
+  search_api_excerpt: true

@@ -1,0 +1,22 @@
+uuid: 75753726-c576-478c-bb09-a5d970eaf2bb
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.search_page
+id: node.search_page.status
+field_name: status
+entity_type: node
+bundle: search_page
+label: Published
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean
