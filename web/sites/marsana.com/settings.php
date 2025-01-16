@@ -781,11 +781,11 @@ $settings['entity_update_backup'] = TRUE;
 $settings['migrate_node_migrate_type_classic'] = FALSE;
 
 $databases['default']['default'] = array (
-		'database' => 'marsana_d10',
-	        'username' => 'modonsupervision@modonuatdb',
-	        'password' => 'Qfku8pA3bZndw',
+		'database' => 'hudayriyat_db',
+	        'username' => 'root',
+	        'password' => '',
 		'prefix' => '',
-		'host' => 'modonuatdb.mysql.database.azure.com',
+		'host' => 'hudayriyat.local.com',
 		'port' => '3306',
 		'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
 		'driver' => 'mysql',
