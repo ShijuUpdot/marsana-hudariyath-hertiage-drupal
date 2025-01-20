@@ -31,9 +31,9 @@
               <div id="animation_container">
                     {{ drupal_view('interactivemap_map_section') | render }}
                     <div class="trails-group">
-                    {% for tkey,trailItem in trails %}
-                        <img src="{{ trailItem['image_url'] }}" alt="" data-tag="{{ trailItem['trailsName']|replace({" ":"-", ".":"-", '&#039;':"-", '&amp;' : '-'})|lower }}" class="active">
-                    {% endfor %}
+                    {# {% for tkey,trailItem in trails %}
+                            <img src="{{ trailItem['image_url'] }}" alt="" data-tag="{{ trailItem['trailsName']|replace({" ":"-", ".":"-", '&#039;':"-", '&amp;' : '-'})|lower }}" class="active">
+                    {% endfor %} #}
                     </div>
                     <div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:100%; height:auto; position: absolute; left: 0px; top: 0px; display: block;">
                 </div>
@@ -156,9 +156,9 @@
             <canvas id="canvas" width="100%" height="auto" class="desktop-map-canvas"></canvas>
             {{ drupal_view('interactivemap_map_section') | render }}
             <div class="trails-group">
-            {% for tkey,trailItem in trails %}
+            {# {% for tkey,trailItem in trails %}
                 <img src="{{ trailItem['image_url'] }}" alt="" data-tag="{{ trailItem['trailsName']|replace({" ":"-", ".":"-", '&#039;':"-", '&amp;' : '-'})|lower }}" class="active">
-            {% endfor %}
+            {% endfor %} #}
             </div>
             <div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:100%; height:auto; position: absolute; left: 0px; top: 0px; display: block;">
             </div>

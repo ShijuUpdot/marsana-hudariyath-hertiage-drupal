@@ -5292,7 +5292,7 @@ lib.properties = {
 	opacity: 1.00,
 	manifest: [
 		{src:"/images/dynamic/interactive-map/CachedBmp_68.png?1613575889496", id:"CachedBmp_68"},
-		{src:"/images/dynamic/interactive-map/CachedBmp_766.png?1613575889497", id:"CachedBmp_766"},
+		// {src:"/images/dynamic/interactive-map/CachedBmp_766.png?1613575889497", id:"CachedBmp_766"},
 		// {src:"/images/dynamic/interactive-map/hudayriat_map_animated_atlas.png?1613575889332", id:"hudayriat_map_animated_atlas"}
 	],
 	preloads: []
