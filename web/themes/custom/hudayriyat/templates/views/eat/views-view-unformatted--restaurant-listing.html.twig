@@ -49,7 +49,6 @@
                         {% set title   = row.content['#view'].style_plugin.render_tokens[ fkey ]['{{ field_hero_image_title }}'] | striptags | trim %}
                         {% set assetType = row.content['#view'].style_plugin.render_tokens[ fkey ]['{{ field_amenity_type }}'] | striptags | trim %}
                         {% set assetSubType = row.content['#view'].style_plugin.render_tokens[ fkey ]['{{ field_amenity_tags }}'] | striptags | trim %}
-
                         <div class="col-6 col-lg-4 card-holder" data-tag="{{ assetSubType|lower|replace({' ': ''}) }}">
                             <div class="card-wrapper">
                               <div class="card resto">

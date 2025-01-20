@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'drupal/recommended-project',
-        'pretty_version' => 'dev-master',
-        'version' => 'dev-master',
-        'reference' => '4f13ada7534dd8ea5e4737054a1b84d953b6a3bd',
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
+        'reference' => 'db2d4ed369ec4cda7678a088e3fe003897575d3b',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -863,9 +863,9 @@
             'dev_requirement' => false,
         ),
         'drupal/recommended-project' => array(
-            'pretty_version' => 'dev-master',
-            'version' => 'dev-master',
-            'reference' => '4f13ada7534dd8ea5e4737054a1b84d953b6a3bd',
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => 'db2d4ed369ec4cda7678a088e3fe003897575d3b',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -1031,9 +1031,9 @@
             ),
         ),
         'drush/drush' => array(
-            'pretty_version' => '12.5.3',
-            'version' => '12.5.3.0',
-            'reference' => '7fe0a492d5126c457c5fb184c4668a132b0aaac6',
+            'pretty_version' => '13.3.3',
+            'version' => '13.3.3.0',
+            'reference' => 'd124723dacb4208ccb875b7114722e420fccf06d',
             'type' => 'library',
             'install_path' => __DIR__ . '/../drush/drush',
             'aliases' => array(),
@@ -1129,6 +1129,42 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+        'illuminate/collections' => array(
+            'pretty_version' => 'v11.38.2',
+            'version' => '11.38.2.0',
+            'reference' => '9100b083eeb85d38d78fc1de28f7326596ab2eda',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../illuminate/collections',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'illuminate/conditionable' => array(
+            'pretty_version' => 'v11.38.2',
+            'version' => '11.38.2.0',
+            'reference' => '911df1bda950a3b799cf80671764e34eede131c6',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../illuminate/conditionable',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'illuminate/contracts' => array(
+            'pretty_version' => 'v11.38.2',
+            'version' => '11.38.2.0',
+            'reference' => '534b697fc1dd9fbdd9fbf2f33fc9dcbb943dea75',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../illuminate/contracts',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'illuminate/macroable' => array(
+            'pretty_version' => 'v11.38.2',
+            'version' => '11.38.2.0',
+            'reference' => 'e1cb9e51b9ed5d3c9bc1ab431d0a52fe42a990ed',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../illuminate/macroable',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'instaclick/php-webdriver' => array(
             'dev_requirement' => true,
             'replaced' => array(
@@ -1152,6 +1188,15 @@
             'install_path' => __DIR__ . '/../justinrainbow/json-schema',
             'aliases' => array(),
             'dev_requirement' => true,
+        ),
+        'laravel/prompts' => array(
+            'pretty_version' => 'v0.1.25',
+            'version' => '0.1.25.0',
+            'reference' => '7b4029a84c37cb2725fc7f011586e2997040bc95',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../laravel/prompts',
+            'aliases' => array(),
+            'dev_requirement' => false,
         ),
         'league/container' => array(
             'pretty_version' => '4.2.2',
@@ -1650,8 +1695,8 @@
         'psr/container-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '^1.0',
-                1 => '1.1|2.0',
+                0 => '1.1|2.0',
+                1 => '^1.0',
             ),
         ),
         'psr/event-dispatcher' => array(
@@ -1681,8 +1726,8 @@
         'psr/http-client-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '1.0',
-                1 => '*',
+                0 => '*',
+                1 => '1.0',
             ),
         ),
         'psr/http-factory' => array(
@@ -1697,8 +1742,8 @@
         'psr/http-factory-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '1.0',
-                1 => '*',
+                0 => '*',
+                1 => '1.0',
             ),
         ),
         'psr/http-message' => array(
@@ -1713,8 +1758,8 @@
         'psr/http-message-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '1.0',
-                1 => '*',
+                0 => '*',
+                1 => '1.0',
             ),
         ),
         'psr/log' => array(
@@ -1732,6 +1777,15 @@
                 0 => '1.0.0 || 2.0.0 || 3.0.0',
                 1 => '1.0|2.0|3.0',
             ),
+        ),
+        'psr/simple-cache' => array(
+            'pretty_version' => '3.0.0',
+            'version' => '3.0.0.0',
+            'reference' => '764e0b3939f5ca87cb904f570ef9be2d78a07865',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../psr/simple-cache',
+            'aliases' => array(),
+            'dev_requirement' => false,
         ),
         'psy/psysh' => array(
             'pretty_version' => 'v0.12.4',
