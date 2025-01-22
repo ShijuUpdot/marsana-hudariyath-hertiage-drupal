@@ -37,7 +37,8 @@
             <div id="menu-burger">
               <span class="menu-icon"></span>
             </div>
-            {% if ('interactive' not in url) %}
+            {# Remove interactive CTA from the header #}
+            {# {% if ('interactive' not in url) %}
             <a class="interactive-map-redirection white-btn" target="_blank" href="/{{ langclass }}/interactive-map">
               <img src="/images/static/interactive-map.svg" alt="">
               <p class="detailed-txt">{{ 'Interactive Map' | t }}</p>
@@ -47,7 +48,7 @@
                <img src="/images/static/arrow-left-white-filled-circle.svg" alt="">
                <p class="detailed-txt">{{ 'Go back to Website' | t }}</p>
             </a>
-            {% endif %}
+            {% endif %} #}
             <div id="overlay-menu">
               <div class="overlay-wrapper">
                 <nav role='navigation' class="container nav-primary">
