@@ -34,7 +34,7 @@ const Calendar = (props) => {
     "Dec",
   ];
 
-  if (props.calenderData.years.length > 0) {
+  if (props.calenderData.years.length > 0 && props.calenderData.events[props.activeYear]) {
     eventData =
       props.calenderData.events[props.activeYear][
         `${props.activeMonth.toLocaleLowerCase()}`
